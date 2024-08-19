@@ -6,50 +6,46 @@ body {
     line-height: 1.6;
     margin: 0;
     padding-top: 100px; /* Adjust padding based on header height */
-    background: white;
-    color: black;
+    background: #ffffff;
+    color: #000000;
 }
 
 /* Header Styles */
 header {
     position: fixed;
     top: 0;
-    left: 0; /* Ensure header aligns to the left */
-    width: 100%; /* Full width */
+    left: 0;
+    width: 100%;
     background: #095339; /* Dark green background */
-    color: white; /* White text color */
+    color: #ffffff; /* White text color */
     padding: 1em 2em; /* Padding for spacing */
-    border-bottom: 4px solid #ffc425; /* 4px gold border at the bottom */
-    display: flex; /* Use flexbox layout */
-    align-items: center; /* Vertically center items */
-    overflow: visible; /* Ensure overflow handling */
+    border-bottom: 4px solid #ffc425; /* Gold border at the bottom */
+    display: flex;
+    align-items: center;
     z-index: 1000; /* Keep header on top */
 }
 
-/* Ensure header or nav allows dropdown overflow */
-nav {
-    display: flex; /* Use flexbox for navigation layout */
-    margin-left: 2em; /* Space between title and nav */
-}  
-
+/* Logo and Title */
 .logo-title {
-    display: flex; /* Use flexbox to align items horizontally */
-    align-items: center; /* Vertically center items */
+    display: flex;
+    align-items: center;
+    margin-right: 2em; /* Space between logo and nav */
 }
 
 .site-icon {
-    width: 40px; /* Adjust size as needed */
-    height: auto; /* Maintain aspect ratio */
+    width: 40px;
+    height: auto;
     margin-right: 1em; /* Space between icon and title */
 }
 
+/* Header Title */
 header h1 {
     margin: 0;
 }
 
 header h1 a {
-    color: white;
-    font-size: 1em; /* Adjust font size for better readability */
+    color: #ffffff;
+    font-size: 1em;
     text-decoration: none;
 }
 
@@ -58,59 +54,63 @@ header h1 a:hover {
 }
 
 /* Navigation Styles */
+nav {
+    display: flex;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex; /* Align navigation items horizontally */
-    background: transparent; /* Transparent background */
 }
 
 nav ul li {
-    position: relative; /* Needed for dropdown positioning */
+    position: relative;
     margin: 0 1em; /* Spacing between nav items */
 }
 
-nav ul li a, nav ul li span {
-    color: white; /* White text color */
+nav ul li a,
+nav ul li span {
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
-    padding: 0.5em 1em; /* Padding for better clickability */
-    text-transform: lowercase; /* Convert text to lowercase */
+    padding: 0.5em 1em;
+    text-transform: lowercase;
 }
 
-nav ul li a:hover, nav ul li span:hover {
-    color: white; /* Keep text white on hover */
-    text-decoration: underline solid #ffc425; /* Underline with gold color */
+nav ul li a:hover,
+nav ul li span:hover {
+    text-decoration: underline solid #ffc425; /* Gold underline on hover */
 }
 
 /* Dropdown Styles */
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: black; /* Light grey background */
+    background-color: #000000; /* Black background */
     min-width: 160px;
-    border-radius: 0; /* No border radius for a flat look */
-    z-index: 1000; /* Higher z-index for better layering */
-    top: 100%; /* Position directly below the parent item */
-    left: 0; /* Align with the parent item */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow */
-    white-space: nowrap; /* Prevents text wrapping */
+    border-radius: 0; /* Flat look */
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    white-space: nowrap;
 }
 
 /* Dropdown Links */
 .dropdown-content a {
-    color: white; /* Keep text white */
+    color: #ffffff;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
-    text-transform: lowercase; /* Convert text to lowercase */
+    text-transform: lowercase;
 }
 
 .dropdown-content a:hover {
     text-decoration: underline solid #ffc425; /* Gold underline on hover */
-    background-color: black; /* Medium grey for hover effect */
+    background-color: #000000; /* Hover background */
 }
 
 /* Show dropdown on hover */
@@ -124,21 +124,20 @@ nav ul li:hover > .dropdown-content {
 }
 
 .dropdown-submenu > span {
-    background: #073627; /* Darker green background for parent folders */
-    color: white; /* Gold text color */
-    padding: 12px; /* Increase padding for more emphasis */
-    cursor: default; /* Change cursor to indicate it's not clickable */
+    background: #073627; /* Darker green for parent folders */
+    color: #ffffff; /* White text color */
+    padding: 12px;
+    cursor: default;
     display: block;
-    font-weight: bold; /* Make text bold */
-    text-transform: lowercase; /* Convert text to lowercase */
+    font-weight: bold;
+    text-transform: lowercase;
 }
 
-/* Add a caret or icon to indicate it's a folder */
-.dropdown-submenu> span::after {
-    content: ' >'; /* Adds a down arrow to indicate it's a dropdown */
-    font-size: 1em; /* Slightly larger arrow for emphasis */
-    color: #ffc425; /* Keep the arrow gold */
-    font-weight: bold; /* Make the arrow bold */
+.dropdown-submenu > span::after {
+    content: ' >'; /* Down arrow for dropdown */
+    font-size: 1em;
+    color: #ffc425; /* Gold arrow */
+    font-weight: bold;
 }
 
 /* Nested Dropdown Styles */
@@ -146,15 +145,14 @@ nav ul li:hover > .dropdown-content {
     display: none;
     position: absolute;
     top: 0;
-    left: 100%; /* Position to the right of the parent submenu item */
-    background: black; /* Slightly lighter grey background */
+    left: 100%; /* Position to the right of parent submenu item */
+    background: #000000; /* Slightly lighter background */
     min-width: 160px;
-    border-radius: 0; /* No border radius for a flat look */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow */
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
 
-/* Show nested dropdown on hover */
 .dropdown-submenu:hover > .dropdown-content {
     display: block;
 }
@@ -164,41 +162,40 @@ main {
     max-width: 800px;
     margin: 2em auto;
     padding: 1em 2em;
-    background: #ffffff; /* White background */
-    color: black; /* Dark gray text color */
-    border-radius: 0; /* No border radius for a flat look */
+    background: #ffffff;
+    color: #000000;
+    border-radius: 0;
 }
 
-/* Main content heading style */
+/* Main Content Heading */
 main h1 {
-    border-bottom: 2px solid #ffc425; /* Gold underline for header */
-    padding: 0; /* Adjust padding to fit your design */
-    margin-bottom: 20px; /* Adjust margin as needed */
+    border-bottom: 2px solid #ffc425; /* Gold underline */
+    margin-bottom: 20px;
 }
 
 /* Footer Styles */
 footer {
-    background: #ffffff; /* White background */
-    border-top: 4px solid #ffc425; /* 4px gold border at the top */
-    color: gray; /* Dark gray text color */
+    background: #ffffff;
+    border-top: 4px solid #ffc425; /* Gold border at the top */
+    color: #808080; /* Dark gray text color */
     text-align: left;
     padding: 1em 2em;
     margin-top: 2em;
 }
 
 /* Button Styles */
-#printButton {
+button#printButton {
     background-color: #4CAF50; /* Green background */
-    color: white;              /* White text */
-    padding: 10px 20px;        /* Some padding */
-    border: none;              /* No border */
-    cursor: pointer;           /* Pointer/hand icon */
-    font-size: 16px;           /* Increase font size */
-    display: block;            /* Ensures it takes up full line space */
-    margin: 20px auto;         /* Centers the button with some space */
+    color: #ffffff; /* White text */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
 }
 
-#printButton:hover {
+button#printButton:hover {
     background-color: #45a049; /* Darker green on hover */
 }
 
@@ -206,7 +203,7 @@ footer {
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
-    color: #fff;
+    color: #ffffff;
     background-color: #073627;
     text-decoration: none;
     border-radius: 5px;
@@ -224,18 +221,18 @@ footer {
     }
 
     header {
-        flex-direction: column; /* Stack header items vertically on small screens */
-        padding: 0.5em 1em; /* Adjust padding for smaller screens */
+        flex-direction: column; /* Stack header items vertically */
+        padding: 0.5em 1em; /* Adjust padding */
     }
 
     nav {
-        margin-left: 0; /* Remove left margin */
-        margin-top: 1em; /* Add top margin for separation */
-        width: 100%; /* Full width for navigation */
+        margin-left: 0;
+        margin-top: 1em;
+        width: 100%;
     }
 
     .logo-title {
-        margin-bottom: 1em; /* Space below logo/title on small screens */
+        margin-bottom: 1em;
     }
 
     .menu-toggle {
@@ -245,50 +242,50 @@ footer {
     }
 
     nav ul {
-        display: none; /* Hide menu items by default */
+        display: none;
         flex-direction: column;
         width: 100%;
     }
 
     nav ul.active {
-        display: flex; /* Show menu items when active */
+        display: flex;
     }
 
     nav ul li {
         margin: 0;
     }
 
-    nav ul li a, nav ul li span {
-        padding: 1em; /* Increase padding for better touch targets */
+    nav ul li a,
+    nav ul li span {
+        padding: 1em;
     }
 
     .dropdown-content {
-        position: static; /* Make dropdowns full width on small screens */
-        box-shadow: none; /* Remove shadow */
-        border-radius: 0; /* Remove border radius */
+        position: static;
+        box-shadow: none;
     }
 }
 
 @media (max-width: 480px) {
     body {
-        font-size: 14px; /* Adjust font size for very small screens */
+        font-size: 14px; /* Adjust font size */
     }
 
     .logo-title {
-        flex-direction: column; /* Stack logo and title vertically */
-        align-items: center; /* Center align on small screens */
+        flex-direction: column;
+        align-items: center;
     }
 
     .site-icon {
-        margin-right: 0; /* Remove margin on small screens */
-        margin-bottom: 0.5em; /* Add space below the icon */
+        margin-right: 0;
+        margin-bottom: 0.5em;
     }
 
     header h1 {
-        font-size: 1.2em; /* Adjust font size for header */
+        font-size: 1.2em; /* Adjust header font size */
     }
 
     .download-button {
-        font-size: 14px; /* Adjust font size for small screens */
+        font-size: 14px; /* Adjust font size */
     }
 }

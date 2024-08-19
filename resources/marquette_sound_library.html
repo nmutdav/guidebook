@@ -3,171 +3,208 @@ layout: default
 title: home
 permalink: /resources/marquette_sound_library/
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marquette Sound Library</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            background-color: #e0f7fa; /* Light blue color */
-        }
+
+<br><br>
+<style>
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #e0f7fa; /* Light blue background */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    h1, p {
+        margin: 20px 0;
+    }
+
+    /* Container for images with overlay text */
+    .image-container {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
+        font-size: 36px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        text-align: center;
+        padding: 0 20px; /* Optional padding */
+    }
+
+    /* Playlist Styles */
+    .playlist-container {
+        width: 80%;
+        max-width: 600px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        box-sizing: border-box;
+        margin: 20px auto; /* Center playlist containers */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center content within playlist container */
+    }
+
+    .playlist {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        width: 100%; /* Ensure playlist takes full width */
+    }
+
+    .playlist li {
+        margin: 5px 0;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 4px;
+        transition: background-color 0.3s, font-weight 0.3s;
+    }
+
+    .playlist li.active {
+        font-weight: bold;
+        background-color: #e9ecef;
+    }
+
+    .player-container {
+        margin-bottom: 20px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
         .playlist-container {
-            width: 80%;
-            max-width: 600px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            box-sizing: border-box;
-            margin-bottom: 20px;
+            width: 90%;
         }
-        .playlist {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
+
+        .overlay-text {
+            font-size: 28px;
+            padding: 0 10px; /* Adjust padding for smaller screens */
         }
-        .playlist li {
-            margin: 5px 0;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 4px;
-            transition: background-color 0.3s, font-weight 0.3s;
+    }
+
+    @media (max-width: 480px) {
+        .overlay-text {
+            font-size: 24px;
         }
-        .playlist li.active {
-            font-weight: bold;
-            background-color: #e9ecef;
-        }
-        .player-container {
-            margin-bottom: 20px;
-        }
-        h1, p {
-            margin: 20px 0;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
-        <style>
-            .image-container {
-                position: relative;
-                display: inline-block;
-                width: 100%;
-                max-width: 800px; /* Adjust as needed */
-                margin: 20px auto;
-            }
-    
-            .image-container img {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-    
-            .overlay-text {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                color: white;
-                font-size: 36px;
-                font-weight: bold;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-                text-align: center;
-                padding: 0 20px; /* Optional: Adjust padding if needed */
-            }
-        </style>
-    </head>
-    <body>
-        <div class="image-container">
-            <img src="/assets/images/MarquetteHarborLighthouse.jpeg" alt="Marquette Harbor Lighthouse">
-            <div class="overlay-text">Marquette Sound Library</div>
-        </div> 
-    This is a free public audio library licensed under <a href="https://creativecommons.org/share-your-work/cclicenses/">Creative Commons CC BY.</a> In simplest terms, this content may be used in both commercial and non-commercial projects, <br> but may not be repackaged and sold elsewhere by anyone including the original creator.<br><br>Submit your sound files here: <a href="https://forms.gle/dcZEHysxEhNdVdfB6">Submission Form</a></p>
+    }
 
-    <!-- Playlist 1 -->
-    <div class="playlist-container">
-        <h2>Nature</h2>
-        <audio class="audioPlayer" controls>
-            Your browser does not support the audio element.
-        </audio>
-        <ul class="playlist">
-            <li data-src="song1.mp3">Song 1</li>
-            <li data-src="song2.mp3">Song 2</li>
-            <li data-src="song3.mp3">Song 3</li>
-        </ul>
-    </div>
+    /* Footer Styles */
+    footer {
+        background-color: #ffffff;
+        border-top: 1px solid #e0e0e0;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+        position: relative;
+        bottom: 0;
+    }
 
-    <!-- Playlist 2 -->
-    <div class="playlist-container">
-        <h2>Industry</h2>
-        <audio class="audioPlayer" controls>
-            Your browser does not support the audio element.
-        </audio>
-        </a>
-        <ul class="playlist">
-            <li data-src="song4.mp3">Song 4</li>
-            <li data-src="song5.mp3">Song 5</li>
-            <li data-src="song6.mp3">Song 6</li>
-        </ul>
-    </div>
+    footer p {
+        margin: 10px 0;
+        color: #666;
+    }
+</style>
 
-    <!-- Playlist 3 -->
-    <div class="playlist-container">
-        <h2>Synthetic</h2>
-        <audio class="audioPlayer" controls>
-            Your browser does not support the audio element.
-        </audio>
-        <ul class="playlist">
-            <li data-src="song7.mp3">Song 7</li>
-            <li data-src="song8.mp3">Song 8</li>
-            <li data-src="song9.mp3">Song 9</li>
-        </ul>
-    </div>
+<div class="image-container">
+    <img src="{{ '/assets/images/MarquetteHarborLighthouse.jpeg' | relative_url }}" alt="Marquette Harbor Lighthouse">
+    <div class="overlay-text">Marquette Sound Library</div>
+</div> 
 
-    <!-- Playlist 4 -->
-    <div class="playlist-container">
-        <h2>Vocal</h2>
-        <audio class="audioPlayer" controls>
-            Your browser does not support the audio element.
-        </audio>
-        <ul class="playlist">
-            <li data-src="song10.mp3">Song 10</li>
-            <li data-src="song11.mp3">Song 11</li>
-            <li data-src="song12.mp3">Song 12</li>
-        </ul>
-    </div>
+<p>
+    This is a free public audio library licensed under 
+    <a href="https://creativecommons.org/share-your-work/cclicenses/" target="_blank" rel="noopener noreferrer">Creative Commons CC BY</a>.
+    In simplest terms, this content may be used in both commercial and non-commercial projects, but may not be repackaged and sold elsewhere by anyone including the original creator.
+    <br><br>
+    Submit your sound files here: 
+    <a href="https://forms.gle/dcZEHysxEhNdVdfB6" target="_blank" rel="noopener noreferrer">Submission Form</a>
+</p>
 
-    <script>
-        document.querySelectorAll('.playlist').forEach(playlist => {
-            const audioPlayer = playlist.previousElementSibling; // Get the <audio> element
+<!-- Playlist 1 -->
+<div class="playlist-container">
+    <h2>Nature</h2>
+    <audio class="audioPlayer" controls aria-label="Nature Playlist">
+        Your browser does not support the audio element.
+    </audio>
+    <ul class="playlist" aria-label="Nature Playlist">
+        <li data-src="song1.mp3">Song 1</li>
+        <li data-src="song2.mp3">Song 2</li>
+        <li data-src="song3.mp3">Song 3</li>
+    </ul>
+</div>
 
-            playlist.querySelectorAll('li').forEach(item => {
-                item.addEventListener('click', () => {
-                    // Remove 'active' class from all items in the current playlist
-                    playlist.querySelectorAll('li').forEach(li => li.classList.remove('active'));
+<!-- Playlist 2 -->
+<div class="playlist-container">
+    <h2>Industry</h2>
+    <audio class="audioPlayer" controls aria-label="Industry Playlist">
+        Your browser does not support the audio element.
+    </audio>
+    <ul class="playlist" aria-label="Industry Playlist">
+        <li data-src="song4.mp3">Song 4</li>
+        <li data-src="song5.mp3">Song 5</li>
+        <li data-src="song6.mp3">Song 6</li>
+    </ul>
+</div>
 
-                    // Add 'active' class to the clicked item
-                    item.classList.add('active');
+<!-- Playlist 3 -->
+<div class="playlist-container">
+    <h2>Synthetic</h2>
+    <audio class="audioPlayer" controls aria-label="Synthetic Playlist">
+        Your browser does not support the audio element.
+    </audio>
+    <ul class="playlist" aria-label="Synthetic Playlist">
+        <li data-src="song7.mp3">Song 7</li>
+        <li data-src="song8.mp3">Song 8</li>
+        <li data-src="song9.mp3">Song 9</li>
+    </ul>
+</div>
 
-                    // Change the audio source and play
-                    audioPlayer.src = item.getAttribute('data-src');
-                    audioPlayer.play();
-                });
+<!-- Playlist 4 -->
+<div class="playlist-container">
+    <h2>Vocal</h2>
+    <audio class="audioPlayer" controls aria-label="Vocal Playlist">
+        Your browser does not support the audio element.
+    </audio>
+    <ul class="playlist" aria-label="Vocal Playlist">
+        <li data-src="song10.mp3">Song 10</li>
+        <li data-src="song11.mp3">Song 11</li>
+        <li data-src="song12.mp3">Song 12</li>
+    </ul>
+</div>
+<script>
+    document.querySelectorAll('.playlist').forEach(playlist => {
+        const audioPlayer = playlist.previousElementSibling; // Get the <audio> element
+
+        playlist.querySelectorAll('li').forEach(item => {
+            item.addEventListener('click', () => {
+                // Remove 'active' class from all items in the current playlist
+                playlist.querySelectorAll('li').forEach(li => li.classList.remove('active'));
+
+                // Add 'active' class to the clicked item
+                item.classList.add('active');
+
+                // Change the audio source and play
+                audioPlayer.src = item.getAttribute('data-src');
+                audioPlayer.play();
             });
         });
-    </script>
-</body>
-</html>
+    });
+</script>
