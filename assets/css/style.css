@@ -1,0 +1,219 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding-top: 100px; /* Adjust padding based on header height */
+    background: white;
+    color: black;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0; /* Ensure header aligns to the left */
+    width: 100%; /* Full width */
+    background: #095339; /* Dark green background */
+    color: white; /* White text color */
+    padding: 1em 2em; /* Padding for spacing */
+    border-bottom: 4px solid #ffc425; /* 4px gold border at the bottom */
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Vertically center items */
+    overflow: visible; /* Ensure overflow handling */
+    z-index: 1000; /* Keep header on top */
+}
+
+/* Ensure header or nav allows dropdown overflow */
+nav {
+    display: flex; /* Use flexbox for navigation layout */
+    margin-left: 2em; /* Space between title and nav */
+}  
+
+.logo-title {
+    display: flex; /* Use flexbox to align items horizontally */
+    align-items: center; /* Vertically center items */
+}
+
+.site-icon {
+    width: 40px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 1em; /* Space between icon and title */
+}
+
+header h1 {
+    margin: 0;
+}
+
+header h1 a {
+    color: white;
+    font-size: 1em; /* Adjust font size for better readability */
+    text-decoration: none;
+}
+
+header h1 a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Align navigation items horizontally */
+    background: transparent; /* Transparent background */
+}
+
+nav ul li {
+    position: relative; /* Needed for dropdown positioning */
+    margin: 0 1em; /* Spacing between nav items */
+}
+
+nav ul li a, nav ul li span {
+    color: white; /* White text color */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em 1em; /* Padding for better clickability */
+    text-transform: lowercase; /* Convert text to lowercase */
+}
+
+nav ul li a:hover, nav ul li span:hover {
+    color: white; /* Keep text white on hover */
+    text-decoration: underline solid #ffc425; /* Underline with gold color */
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black; /* Light grey background */
+    min-width: 160px;
+    border-radius: 0; /* No border radius for a flat look */
+    z-index: 1000; /* Higher z-index for better layering */
+    top: 100%; /* Position directly below the parent item */
+    left: 0; /* Align with the parent item */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow */
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+    color: white; /* Keep text white */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    text-transform: lowercase; /* Convert text to lowercase */
+}
+
+.dropdown-content a:hover {
+    text-decoration: underline solid #ffc425; /* Gold underline on hover */
+    background-color: black; /* Medium grey for hover effect */
+}
+
+/* Show dropdown on hover */
+nav ul li:hover > .dropdown-content {
+    display: block;
+}
+
+/* Submenu Styles */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > span {
+    background: #073627; /* Darker green background for parent folders */
+    color: white; /* Gold text color */
+    padding: 12px; /* Increase padding for more emphasis */
+    cursor: default; /* Change cursor to indicate it's not clickable */
+    display: block;
+    font-weight: bold; /* Make text bold */
+    text-transform: lowercase; /* Convert text to lowercase */
+}
+
+/* Add a caret or icon to indicate it's a folder */
+.dropdown-submenu> span::after {
+    content: ' >'; /* Adds a down arrow to indicate it's a dropdown */
+    font-size: 1em; /* Slightly larger arrow for emphasis */
+    color: #ffc425; /* Keep the arrow gold */
+    font-weight: bold; /* Make the arrow bold */
+}
+
+/* Nested Dropdown Styles */
+.dropdown-submenu .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%; /* Position to the right of the parent submenu item */
+    background: black; /* Slightly lighter grey background */
+    min-width: 160px;
+    border-radius: 0; /* No border radius for a flat look */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow */
+    z-index: 1000;
+}
+
+/* Show nested dropdown on hover */
+.dropdown-submenu:hover > .dropdown-content {
+    display: block;
+}
+
+/* Main Content Styles */
+main {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1em 2em;
+    background: #ffffff; /* White background */
+    color: black; /* Dark gray text color */
+    border-radius: 0; /* No border radius for a flat look */
+}
+
+main h1 {
+    border-bottom: 2px solid #ffc425; /* Gold underline for header */
+    padding: 0; /* Adjust padding to fit your design */
+    margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+/* Footer Styles */
+footer {
+    background: #ffffff; /* White background */
+    border-top: 4px solid #ffc425; /* 4px gold border at the top */
+    color: gray; /* Dark gray text color */
+    text-align: left;
+    padding: 1em 2em;
+    margin-top: 2em;
+}
+
+#printButton {
+    background-color: #4CAF50; /* Green background */
+    color: white;              /* White text */
+    padding: 10px 20px;        /* Some padding */
+    border: none;              /* No border */
+    cursor: pointer;           /* Pointer/hand icon */
+    font-size: 16px;           /* Increase font size */
+    display: block;            /* Ensures it takes up full line space */
+    margin: 20px auto;         /* Centers the button with some space */
+}
+
+#printButton:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #073627;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #ffc425;
+}
