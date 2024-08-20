@@ -14,7 +14,6 @@ Welcome to the Theatre & Dance AV Guidebook! Here you will find course curriculu
 {% for post in site.posts limit:5 %}
     <li>
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        <p>{{ post.excerpt }}</p>
     </li>
 {% endfor %}
 </ul>
