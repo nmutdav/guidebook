@@ -226,7 +226,6 @@ button#printButton:hover {
     }
 
     nav {
-        margin-left: 0;
         margin-top: 1em;
         width: 100%;
     }
@@ -239,16 +238,19 @@ button#printButton:hover {
         display: block;
         font-size: 24px;
         cursor: pointer;
+        margin: 0 auto;
     }
 
     nav ul {
-        display: none;
+        display: none; /* Hide menu by default */
         flex-direction: column;
         width: 100%;
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
     }
 
     nav ul.active {
-        display: flex;
+        display: flex; /* Show menu when active */
     }
 
     nav ul li {
@@ -261,8 +263,9 @@ button#printButton:hover {
     }
 
     .dropdown-content {
-        position: static;
+        position: static; /* Make dropdowns flow with document */
         box-shadow: none;
+        padding: 0; /* Remove padding for smaller screens */
     }
 }
 
@@ -288,4 +291,14 @@ button#printButton:hover {
     .download-button {
         font-size: 14px; /* Adjust font size */
     }
+}
+
+code {
+    font-family: monospace; /* Use a monospace font for code */
+    background-color: #f4f4f4; /* Light gray background for contrast */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 3px; /* Slightly rounded corners */
+    padding: 2px 4px; /* Some padding for better spacing */
+    font-size: 100%; /* Slightly smaller font size to fit in with surrounding text */
+    color: #333; /* Dark gray text color for readability */
 }

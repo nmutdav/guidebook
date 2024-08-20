@@ -4,114 +4,120 @@ title: home
 permalink: /curriculum/tutorials/qlab_tutorials/
 ---
 # QLab Tutorials
+*To complete these tutorials, use must first download the following workbook, then extract and place it the `Documents` folder on your computer.*
+
+<a href="{{ '/curriculum/workbooks/TH-242_workbook.zip/' | relative_url }}" download="TH-242_workbook.zip" class="download-button">
+    Download Workbook
+</a>
+
 ## Tutorial 1: Introduction to QLab
 
 **Objective**: Get familiar with the QLab interface and basic functions.
 
 **Steps**:
-1. **Overview of the Interface**:
-   - Show the main QLab window: workspace, cue list, inspector, and workspace tabs.
-   - Explain the purpose of each section.
 
-2. **Creating a New Workspace**:
-   - Demonstrate how to create a new workspace and name it.
+1. **Create a New Workspace**:
+   - `Open` Qlab
+   - Select `New Workspace`
+   - `File` > `Save As`...
+   - Select your save directory by navigating to `Documents` > `TH-242_workbook` > `Assignments`...
+   - Save as: `[YYMMDD] [your name] - qlab_tutorial_01`
+   - Select `Save workspace and media to a new project folder`
+   - Select `Save`
 
-3. **Adding Cues**:
-   - Add a basic audio cue and a video cue to the workspace.
-   - Show how to rename cues and organize them in the cue list.
+2. **Add Audio Cue**:
+   - Select `Cues` > `Audio`...
+   - A cue appears with its respective inspector window below.
+   - Double-click the yellow lettering `Double click or drag file here.` This is in the inspector window in the `Basics` tab next to `Target:`
+   - A file selection window appears.
+   - Navigate to `Documents` > `TH-242_workbook` > `Samples` > `Audio`... and select any file. It should load into the cue.
 
-4. **Basic Cue Editing**:
-   - Edit basic properties of audio and video cues, such as file selection and cue duration.
+3. **Edit Cue**:
+   - **Rename Cues**: 
+     - Click on the cue in the cue list to select it.
+     - Press `Command` + `R` or right-click the cue and choose `Rename` from the context menu.
+     - Enter a new name and press `Return`.
+   - **Organize Cues**:
+     - Drag and drop cues within the cue list to reorder them as desired.
+   - **Edit Basic Properties**:
+     - With the cue selected, use the inspector window to edit properties such as file selection and cue duration.
+     - Adjust the duration by modifying the `Duration` field in the `Basics` tab.
+     - To change the file, click on `Double click or drag file here` and select a different audio file.
 
-5. **Saving and Loading Workspaces**:
-   - Save the workspace and load it later to demonstrate how to preserve work.
+4. **Deliver**:
+   - `File` > `Save`.
+   - `QLab` > `Quit QLab`
+   - Navigate to your project folder. It should be in `Documents` > `TH-242_workbook` > `Assignments` > `[YYMMDD] [your name] - qlab_tutorial_01`.
+   - Control-click and select `compress...`. A .zip file should appear in the same directory.
+   - Email your assignment .zip to your [course instructor](mailto:dmrakovc@nmu.edu).
+     - `Subject: [YYMMDD] [your name] - qlab_tutorial_01`
+     - `Body: "See File Attached -- [Your Name]"`
+     - Attach the file using the paperclip icon and send.
 
-### **Tutorial 2: Setting Up Audio Cues**
+---
+### Tutorial 2: Applying Fades to Audio Cues in QLab
 
-**Objective**: Learn how to configure and manage audio cues.
+**Objective:** Learn how to add fade-in and fade-out effects to audio cues in QLab.
 
-**Steps**:
-1. **Importing Audio Files**:
-   - Show how to import audio files into QLab.
+#### **Steps:**
 
-2. **Creating Audio Cues**:
-   - Add an audio cue and configure its basic properties (e.g., volume, fade in/out).
+1. **Open Your Workspace:**
+   - Launch QLab.
+   - Go to `File > Open…`.
+   - Navigate to your project directory by selecting Documents > TH-242_workbook > Assignments… and choose your previously saved workspace file (e.g., [YYMMDD] [your name] - qlab_tutorial_01.qlab).
+   - Click `Open`.
 
-3. **Setting Cue Triggers**:
-   - Demonstrate how to trigger audio cues manually and automatically.
+2. **Add an Audio Cue:**
+   - Select `Cues > Audio…`.
+   - A new audio cue appears with its respective inspector window below.
+   - In the inspector window, double-click the yellow text `Double click or drag file here` in the Basics tab next to `Target:`.
+   - A file selection window appears.
+   - Navigate to Documents > TH-242_workbook > Samples > Audio… and select any audio file. It will load into the cue.
 
-4. **Advanced Audio Settings**:
-   - Explore advanced settings such as looping, play modes, and cue lists.
+3. **Apply Fade-In and Fade-Out Effects:**
+   - **Fade-In:**
+     - With the audio cue selected, go to the `Audio` tab in the inspector window.
+     - Locate the `Fade In` field.
+     - Enter a duration for the fade-in effect (e.g., `5s` for a 5-second fade-in).
 
-5. **Using Audio Effects**:
-   - Apply and adjust audio effects such as reverb and EQ.
+   - **Fade-Out:**
+     - Still in the `Audio` tab, locate the `Fade Out` field.
+     - Enter a duration for the fade-out effect (e.g., `5s` for a 5-second fade-out).
 
-### **Tutorial 3: Working with Video Cues**
+4. **Edit Cue Properties:**
+   - **Rename Cues:**
+     - Click on the audio cue in the cue list to select it.
+     - Press `Command + R` or right-click the cue and choose `Rename` from the context menu.
+     - Enter a new name and press `Return`.
 
-**Objective**: Understand how to use and manage video cues in QLab.
+   - **Adjust Basic Properties:**
+     - With the cue selected, use the inspector window to edit properties such as `Volume`, `Pan`, and `Playback Settings` in the Basics tab.
+     - Modify the `Duration` if needed to match your fade effects.
 
-**Steps**:
-1. **Importing Video Files**:
-   - Import a video file into QLab and create a video cue.
+5. **Organize Cues:**
+   - Drag and drop cues within the cue list to reorder them as desired.
 
-2. **Configuring Video Cues**:
-   - Adjust video properties including playback settings and scaling.
+6. **Preview the Audio Cue:**
+   - Click the `Go` button (play icon) in the inspector window to preview the audio cue with the fade effects.
+   - Ensure the fade-in and fade-out transitions sound smooth and as expected.
 
-3. **Adding Video Effects**:
-   - Apply video effects and transitions (e.g., fades, wipes).
+7. **Deliver:**
+   - **Save Your Workspace:**
+     - Go to `File > Save` to ensure all your changes are saved.
 
-4. **Syncing Video and Audio**:
-   - Show how to sync video cues with audio cues for seamless integration.
+   - **Create a .zip File:**
+     - Navigate to your project folder (Documents > TH-242_workbook > Assignments > [YYMMDD] [your name] - qlab_tutorial_01).
+     - Control-click (right-click) on the workspace file and select `Compress`.
+     - A .zip file should appear in the same directory.
 
-5. **Creating Video Cue Lists**:
-   - Create and manage a list of video cues for more complex shows.
+   - **Email Your Assignment:**
+     - Email the .zip file to your [course instructor](mailto:dmrakovc@nmu.edu).
+     - **Subject:** `[YYMMDD] [your name] - qlab_tutorial_02`
+     - **Body:** `"See File Attached -- [Your Name]"`
+     - Attach the .zip file using the paperclip icon and send.
 
-### **Tutorial 4: Using MIDI in QLab**
+**Tips:**
+- Test the audio cue with fades multiple times to ensure the transitions are smooth.
+- Adjust the fade durations as needed to achieve the desired audio effect.
 
-**Objective**: Integrate MIDI controls with QLab cues.
-
-**Steps**:
-1. **Setting Up MIDI Devices**:
-   - Connect and configure a MIDI device with QLab.
-
-2. **Creating MIDI Cues**:
-   - Add MIDI cues and configure MIDI messages to trigger actions.
-
-3. **Assigning MIDI Controls**:
-   - Show how to assign MIDI controls (e.g., sliders, buttons) to various cues.
-
-4. **Testing MIDI Integration**:
-   - Test the MIDI setup to ensure cues trigger correctly.
-
-5. **Advanced MIDI Configurations**:
-   - Explore advanced options like MIDI mapping and MIDI cue lists.
-
-### **Tutorial 5: Building a Complete Show**
-
-**Objective**: Combine audio, video, and MIDI cues to create a cohesive show.
-
-**Steps**:
-1. **Planning the Show**:
-   - Outline the sequence of cues and the overall show structure.
-
-2. **Adding and Organizing Cues**:
-   - Add and organize audio, video, and MIDI cues based on the show plan.
-
-3. **Setting Cue Timing and Triggers**:
-   - Configure cue timing, triggers, and automation for smooth transitions.
-
-4. **Testing the Show**:
-   - Perform a test run of the show, making adjustments as needed.
-
-5. **Exporting and Saving the Show**:
-   - Save the final show and export any necessary files or settings.
-
-### How to Create the Tutorials
-
-1. **Script the Content**: Write detailed instructions and explanations for each step.
-2. **Record Videos**: Use screen recording software to capture your demonstrations. Ensure clear audio explanations.
-3. **Edit the Videos**: Add annotations, callouts, and effects to highlight key points.
-4. **Upload and Share**: Upload the tutorials to a platform like YouTube and share the links with your audience.
-5. **Provide Additional Resources**: Include downloadable resources or supplementary materials if needed.
-
-Feel free to adjust the content based on your specific needs or audience!
+---

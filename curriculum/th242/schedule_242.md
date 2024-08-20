@@ -16,10 +16,8 @@ permalink: /curriculum/schedule_242/
 *Sign Up For Lab Hours. The sign-up sheet will be posted on the classroom door.*
 *Sound & Media Majors sign up for weekly lessons.The sign-up sheet will be posted on the classroom door.*
 
-### Assignment 1: QLab_Tutorial_1 - Due: Class 3
-<a href="path-to-your-file.zip" download="YourFileName" class="download-button">
-    Download Now
-</a>
+### Assignment 1: QLab_Tutorial_1
+*Due in Class 3*
 
 ## Class 2
 - **Q&A:** Time to ask any questions about Assignment 1.
