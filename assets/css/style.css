@@ -13,32 +13,32 @@ body {
 
 /* Header Styles */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 1em 2em;
-    background: #095339;
-    color: #ffffff;
-    border-bottom: 4px solid #ffc425;
-    position: fixed;
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center items in the header */
+    justify-content: flex-start; /* Align title and nav items to the left */
+    padding: 1em 2em; /* Padding for spacing */
+    background: #095339; /* Dark green background */
+    color: #ffffff; /* White text color */
+    border-bottom: 4px solid #ffc425; /* Gold border at the bottom */
+    position: fixed; /* Fix header to the top of the viewport */
     top: 0;
     width: 100%;
-    z-index: 1000;
-    box-sizing: border-box;
-    margin: 0;
+    z-index: 1000; /* Keep header on top */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+    margin: 0; /* Remove margin */
 }
 
 /* Logo and Title */
 .logo-title {
     display: flex;
-    align-items: center;
-    margin-right: 2em;
+    align-items: center; /* Center items vertically */
+    margin-right: 2em; /* Add space between title and nav */
 }
 
 .site-icon {
     width: 40px;
     height: auto;
-    margin-right: 1em;
+    margin-right: 1em; /* Space between icon and title */
 }
 
 /* Header Title */
@@ -59,7 +59,7 @@ header h1 a:hover {
 /* Navigation Styles */
 nav {
     display: flex;
-    align-items: center;
+    align-items: center; /* Vertically center nav items */
     margin-left: reverse; /* Push nav items to the right */
 }
 
@@ -68,29 +68,29 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    justify-content: flex-start;
-    position: relative;
+    display: flex; /* Align navigation items horizontally */
+    justify-content: flex-start; /* Align items to the left */
+    position: relative; /* Ensure nav is positioned for dropdowns */
 }
 
 /* Navigation Items */
 nav ul li {
-    position: relative;
-    margin: 0 1em;
+    position: relative; /* Ensure dropdowns are positioned relative to this */
+    margin: 0 1em; /* Add spacing between items */
 }
 
 /* Dropdown Styles */
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #000000;
+    background-color: #000000; /* Black background */
     min-width: 160px;
-    border-radius: 0;
-    z-index: 1000;
-    top: 100%;
-    left: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    white-space: nowrap;
+    border-radius: 0; /* Flat look */
+    z-index: 1000; /* Ensure dropdown is on top */
+    top: 100%; /* Position below the parent item */
+    left: 0; /* Align to the left of the parent item */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    white-space: nowrap; /* Prevent wrapping */
 }
 
 /* Dropdown Links */
@@ -104,25 +104,23 @@ nav ul li {
 }
 
 .dropdown-content a:hover {
-    text-decoration: underline solid #ffc425;
-    background-color: #000000;
+    text-decoration: underline solid #ffc425; /* Gold underline on hover */
+    background-color: #000000; /* Hover background */
 }
 
-/* Show dropdown on hover (desktop) */
-@media (min-width: 769px) {
-    nav ul li:hover > .dropdown-content {
-        display: block;
-    }
+/* Show dropdown on hover */
+nav ul li:hover > .dropdown-content {
+    display: block;
 }
 
 /* Submenu Styles */
 .dropdown-submenu {
-    position: relative;
+    position: relative; /* Position submenu relative to parent */
 }
 
 .dropdown-submenu > span {
-    background: #073627;
-    color: #ffffff;
+    background: #073627; /* Darker green for parent folders */
+    color: #ffffff; /* White text color */
     padding: 12px;
     cursor: default;
     display: block;
@@ -131,9 +129,9 @@ nav ul li {
 }
 
 .dropdown-submenu > span::after {
-    content: ' >';
+    content: ' >'; /* Down arrow for dropdown */
     font-size: 1em;
-    color: #ffc425;
+    color: #ffc425; /* Gold arrow */
     font-weight: bold;
 }
 
@@ -142,8 +140,8 @@ nav ul li {
     display: none;
     position: absolute;
     top: 0;
-    left: 100%;
-    background: #000000;
+    left: 100%; /* Position to the right of parent submenu item */
+    background: #000000; /* Slightly lighter background */
     min-width: 160px;
     border-radius: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -152,6 +150,7 @@ nav ul li {
 .dropdown-submenu:hover > .dropdown-content {
     display: block;
 }
+
 
 /* Main Content Styles */
 main {
@@ -165,20 +164,20 @@ main {
 
 /* Adjust the top margin to avoid overlap with the header */
 main {
-    margin-top: 120px;
+    margin-top: 120px; /* Increased to accommodate fixed header */
 }
 
 /* Main Content Heading */
 main h1 {
-    border-bottom: 2px solid #ffc425;
+    border-bottom: 2px solid #ffc425; /* Gold underline */
     margin-bottom: 20px;
 }
 
 /* Footer Styles */
 footer {
     background: #ffffff;
-    border-top: 4px solid #ffc425;
-    color: #808080;
+    border-top: 4px solid #ffc425; /* Gold border at the top */
+    color: #808080; /* Dark gray text color */
     text-align: left;
     padding: 1em 2em;
     margin-top: 2em;
@@ -186,8 +185,8 @@ footer {
 
 /* Button Styles */
 button#printButton {
-    background-color: #4CAF50;
-    color: #ffffff;
+    background-color: #4CAF50; /* Green background */
+    color: #ffffff; /* White text */
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -197,7 +196,7 @@ button#printButton {
 }
 
 button#printButton:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Darker green on hover */
 }
 
 .download-button {
@@ -219,27 +218,28 @@ button#printButton:hover {
 @media (max-width: 768px) {
     header {
         position: absolute;
-        flex-direction: column;
-        padding: 0.5em 1em;
-        height: auto;
-        border-bottom: none;
-        margin: 0;
+        flex-direction: column; /* Stack header items vertically */
+        padding: 0.5em 1em; /* Adjust padding */
+        height: auto; /* Allow height to adjust based on content */
+        border-bottom: none; /* Optional: Remove or adjust the border for mobile */
+        margin: 0; /* Ensure no extra margin */
         z-index: 1000;
     }
 
+    /* Adjust content padding for mobile */
     main {
         margin-top: 350px; /* Increased for variable header height on mobile */
     }
 
     nav {
-        display: flex;
+        display: flex;  
         flex-direction: column;
-        padding: 0.5em 1em;
+        padding: 0.5em 1em; /* Adjust padding */
         margin-top: 1em;
         width: 100%;
         line-height: 4em; /* Adjust line-height for double spacing */
         box-sizing: border-box;
-    }
+    }    
 
     .logo-title {
         margin-bottom: 1em;
@@ -253,13 +253,13 @@ button#printButton:hover {
     }
 
     nav ul {
-        display: none; /* Hide menu by default */
+        display: flex; /* Use flex to align items vertically */
         flex-direction: column; /* Stack items vertically */
         justify-content: center; /* Center items within the container */
-        align-items: flex-start; /* Align items to the start of the cross-axis */
+        align-items: flex-start; /* Align items to the start of the cross-axis (left for column layout) */
         width: 100%;
-        padding: 0;
-        margin: 0;
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
     }
 
     nav ul.active {
@@ -279,8 +279,6 @@ button#printButton:hover {
         position: static; /* Make dropdowns flow with document */
         box-shadow: none;
         padding: 0; /* Remove padding for smaller screens */
-        display: block; /* Ensure dropdown is visible */
-        background-color: #000000; /* Ensure dropdown background is visible */
     }
 }
 
@@ -306,19 +304,19 @@ button#printButton:hover {
     }
 
     .download-button {
-        font-size: 14px; /* Adjust button font size */
+        font-size: 14px; /* Adjust font size */
     }
 }
 
 /* Code Block Styles */
 code {
-    font-family: monospace;
-    background-color: #f4f4f4;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    padding: 2px 4px;
-    font-size: 100%;
-    color: #333;
+    font-family: monospace; /* Use a monospace font for code */
+    background-color: #f4f4f4; /* Light gray background for contrast */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 3px; /* Slightly rounded corners */
+    padding: 2px 4px; /* Some padding for better spacing */
+    font-size: 100%; /* Slightly smaller font size to fit in with surrounding text */
+    color: #333; /* Dark gray text color for readability */
 }
 
 /* Banner Styles */
@@ -328,7 +326,8 @@ code {
 }
 
 .banner img {
-    display: block;
-    width: 100%;
-    height: auto;
+    display: block; /* Ensures there's no extra space below the image */
+    width: 100%; /* Adjusts the width to fit the container */
+    height: auto; /* Keeps the aspect ratio intact */
 }
+
