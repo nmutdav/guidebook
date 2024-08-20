@@ -6,7 +6,7 @@ permalink: /curriculum/tutorials/qlab_tutorials/
 # QLab Tutorials
 *To complete these tutorials, use must first download the following workbook, then extract and place it the `Documents` folder on your computer.*
 
-<a href="{{ '/curriculum/workbooks/TH-242_workbook.zip/' | relative_url }}" download="TH-242_workbook.zip" class="download-button">
+<a href="https://github.com/nmutdav/guidebook/blob/master/curriculum/workbooks/TH-242_workbook.zip" download="TH-242_workbook.zip" class="download-button">
     Download Workbook
 </a>
 
