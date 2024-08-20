@@ -3,7 +3,7 @@ layout: default
 title: home
 ---
 <div class="centered-image">
-  <img src="assets/images/banner.png" alt="Banner" width="1400" style="display: block; margin-left: -300px;">
+  <img src="assets/images/banner.png" alt="Banner" width="1400" style="display: block; margin-left: -300px; margin-top: -50px;">
 </div>
 
 

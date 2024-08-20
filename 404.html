@@ -1,6 +1,7 @@
 ---
-permalink: /404.html
 layout: default
+title: home
+permalink: /404.html
 ---
 
 <style type="text/css" media="screen">
@@ -8,10 +9,11 @@ layout: default
     margin: 10px auto;
     max-width: 600px;
     text-align: center;
+    font-size: 2em; /* Set the body font size to 4em */
   }
   h1 {
     margin: 30px 0;
-    font-size: 4em;
+    font-size: 2em; /* Set a different size for the header if desired */
     line-height: 1;
     letter-spacing: -1px;
   }
@@ -20,6 +22,6 @@ layout: default
 <div class="container">
   <h1>404</h1>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+  <p><strong>Page not found</strong></p>
+  <img src="{{ '/assets/images/prof_xlr.png/' | relative_url }}" style: width="300px">
 </div>
