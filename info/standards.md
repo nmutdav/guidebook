@@ -93,7 +93,7 @@ Clear labeling facilitates efficient operation and troubleshooting. Labels shoul
 A standardized folder structure ensures files are easily accessible and organized.
 
 ### Pre-Production Folder Structure
-<img src="/assets/images/pre_production_folder_structure.jpg" alt="Alt_text" width="750" height="auto" style="margin-left: 0px">
+<img src="{{ '/assets/images/pre_production_folder_structure.jpg/' | relative_url }}" alt="Alt_text" width="750" height="auto" style="margin-left: 0px">
 
 ### Post-Production Folder Structure
-<img src="/assets/images/post_production_folder_structure.jpg" alt="Alt_text" width="750" height="auto" style="margin-left: 0px">
+<img src="{{ '/assets/images/post_production_folder_structure.jpg' | relative_url }}" alt="Alt_text" width="750" height="auto" style="margin-left: 0px">

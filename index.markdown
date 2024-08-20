@@ -1,11 +1,11 @@
 ---
 layout: default
 title: home
+permalink: /index
 ---
-<div class="centered-image">
-  <img src="assets/images/banner.png" alt="Banner" width="1400" style="display: block; margin-left: -300px; margin-top: -50px;">
+<div class="banner">
+  <img src="assets/images/banner.png" alt="Banner">
 </div>
-
 
 # Welcome
 Welcome to the Theatre & Dance AV Guidebook! Here you will find course curriculum designed especially for the Northern Michigan University Sound & Engineering Program.
