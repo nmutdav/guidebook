@@ -1,122 +1,103 @@
 ---
-layout: default
-title: home
-permalink: /roles/designers/sound_designer/
+layout: default  
+title: Audio Technician  
+permalink: /roles/technicians/audio_technician/  
 ---
-# 2.3: Sound Designer `"SD"`
-[apply for this position](../apply/sound_designer_apply.md)
+
+# Audio Technician `A2`
 
 ## Role Overview
 
-1. **Description:** Designs and tests soundscapes and audio effects for theatre performances using Max/MSP and SuperCollider.
-2. **Location:** Design Studio
-3. **Equipment:**
-   - **Audio Interface:** [Focusrite Scarlett 2i2](https://focusrite.com/en/audio-interface/scarlett/scarlett-2i2)
-   - **Headphones:** [Beyerdynamic DT 770 Pro](https://www.beyerdynamic.com/en/professionals/dt-770-pro.html)
-   - **Desktop Computer:** PC or Mac with high-performance audio capabilities
-   - **Laptop:** MacBook Pro for portable adjustments
-   - **DAW Software:** [Ableton Live](https://www.ableton.com/en/live/)
-   - **Media Storage:** External SSDs
-   - **[Required Course Equipment](../../info/syllabus.md)**
+### Description
 
----
-## 3.3.1: Designing with Max/MSP
+As an Audio Technician (A2), you assist the A1 engineer by handling microphones, setting up and managing audio equipment, and ensuring clear sound quality throughout performances.
 
-*Prerequisites: [What is Max/MSP?](https://cycling74.com/products/max/)*
+### Location
 
-#### Workflow Summary: `Setup` ➠ `Create` ➠ `Test`
+- **Front of House**
+- **Stage**
+- **A2 Station in Greenroom**
 
-### `Setup`
-1. **Install Max/MSP:**
-   - Download and install the latest version from [Cycling '74](https://cycling74.com/download).
+### Equipment
 
-2. **Configure Environment:**
-   - Set up Max/MSP preferences, including audio settings and external devices.
+- **Microphones**: Lavalier, handheld, shotgun
+- **Cables and Connectors**: XLR, TRS, etc.
+- **Cable Tester**
+- **Wireless Systems**: Sennheiser, Shure, or similar
 
-3. **Save Your Project:**
-   - Create a new project and save it in a structured folder, e.g., `Documents` > `[YYYY] Show Files` > `[YYMMDD Event]`.
+## Workflow 4.1.1: Attaching Lavalier Microphones to Actors
 
-### `Create`
-1. **Build Patches:**
-   - Design audio patches using Max/MSP’s visual programming environment to create soundscapes and effects.
+*Prerequisites: [Basic Microphone Handling](#)*
 
-2. **Incorporate External Libraries:**
-   - Use additional libraries and objects as needed for more complex audio processing.
+### Workflow Summary: `Prepare` ➠ `Attach` ➠ `Test`
 
-3. **Test Locally:**
-   - Run and refine patches within Max/MSP to ensure audio quality and performance.
+#### `Prepare`
+1. **Review Script and Actor List:**
+   - Identify which actors need lavalier microphones and review their scenes.
+2. **Select Equipment:**
+   - Choose the appropriate lavalier microphones and wireless systems based on the performance environment.
 
-### `Test`
-1. **Simulate Performance Conditions:**
-   - Test patches in a setup that mimics the theatre environment to evaluate how they will perform live.
+#### `Attach`
+1. **Setup Wireless System:**
+   - Ensure that wireless transmitters and receivers are charged and paired. Test frequencies to avoid interference.
+2. **Prepare Lavalier Microphones:**
+   - Attach microphones to clips or accessories, ensuring they are functional and ready for use.
+3. **Clip to Actors:**
+   - Securely attach the lavalier microphones to actors’ clothing. Common placements include:
+     - **For Male Actors:** Near the collar or chest area, hidden under clothing.
+     - **For Female Actors:** Inside the neckline or upper torso area, ensuring discretion.
+   - Use mic windshields if needed to reduce noise from clothing movement or breath.
 
-2. **Adjust Parameters:**
-   - Fine-tune audio parameters and effects based on testing results.
+#### `Test`
+1. **Conduct Sound Check:**
+   - Have the actor perform typical movements and dialogue to ensure proper microphone placement and sound quality.
+2. **Adjust Levels:**
+   - Set and adjust audio levels on the wireless transmitters and receivers to ensure clear audio without distortion.
+3. **Final Verification:**
+   - Confirm that the microphone is securely attached and not visible or prone to shifting during the performance.
 
-3. **Prepare for Integration:**
-   - Export or prepare patches for integration with other audio systems and software.
+## Workflow 4.1.2: Miking a 4-Piece Drum Kit
 
----
-## 3.3.2: Creating with SuperCollider
+*Prerequisites: [Basic Drum Kit Setup](#)*
 
-*Prerequisites: [What is SuperCollider?](https://supercollider.github.io/)*
+### Workflow Summary: `Setup` ➠ `Place Mics` ➠ `Test`
 
-#### Workflow Summary: `Setup` ➠ `Compose` ➠ `Test`
+#### `Setup`
+1. **Set Up Drum Kit and Tune:**
+   - Assemble and tune the drum kit to ensure optimal sound quality.
+2. **Collect Equipment:**
+   - Gather microphones, stands, cables, and the XLR snake.
+3. **Setup Mic Stands and Mics:**
+   - Position mic stands and attach microphones.
+4. **Plug in XLR Cables:**
+   - Route XLR cables into the snake, keeping cable runs tidy. Coil excess cables at mic stands to avoid buildup.
+   - **Channel 1:** Kick Drum
+   - **Channel 2:** Snare Drum
+   - **Channel 3 & 4:** Toms
+   - **Channel 5 & 6:** Overheads
+   - **Channel 7:** Hi-Hat
 
-### `Setup`
-1. **Install SuperCollider:**
-   - Download and install the latest version from [SuperCollider GitHub](https://github.com/supercollider/supercollider/releases).
+#### `Place Mics`
+1. **Kick Drum:**
+   - Place the mic inside or outside the kick drum hole, aimed at the beater impact point.
+2. **Snare Drum:**
+   - Position the mic 1-2 inches above the drumhead, pointing towards the center.
+3. **Toms:**
+   - Place the mic close to the rim of the tom, aimed at the center of the drumhead.
+4. **Overheads:**
+   - Position mics in an XY or spaced pair configuration above the drum kit, around 3-4 feet high.
 
-2. **Configure Environment:**
-   - Set up SuperCollider preferences, including audio settings and server configurations.
+#### `Test`
+1. **Conduct Testing:**
+   - Have the drummer play the kit and adjust microphone positions and gain levels on the console. Alternatively, have a TDAV Crew member test while the engineer adjusts mix settings. (Refer to Workflow 3.1.3)
+2. **Balance Sound:**
+   - Fine-tune mic levels and placement to ensure a balanced and clear mix.
 
-3. **Save Your Project:**
-   - Create a new project and save it in a structured folder, e.g., `Documents` > `[YYYY] Show Files` > `[YYMMDD Event]`.
-
-### `Compose`
-1. **Write Code:**
-   - Develop audio compositions and sound effects using SuperCollider’s programming language.
-
-2. **Test Locally:**
-   - Run and refine code within SuperCollider to ensure it meets design requirements.
-
-3. **Prepare for Integration:**
-   - Export audio files or prepare compositions for use in live performance.
-
-### `Test`
-1. **Simulate Performance Conditions:**
-   - Test compositions in a setup that simulates the theatre environment.
-
-2. **Adjust Parameters:**
-   - Fine-tune compositions and effects based on testing results.
-
-3. **Prepare for Integration:**
-   - Export or integrate compositions with other audio systems and software.
-
----
-## 3.3.3: Integrating Sound Design
-
-### Workflow Summary: `Combine` ➠ `Sync` ➠ `Optimize`
-
-1. **Combine Tools:**
-   - Integrate sound design elements created with Max/MSP and SuperCollider.
-
-2. **Sync with Performance:**
-   - Ensure sound design elements are synchronized with live performance elements, such as cues and visuals.
-
-3. **Optimize for Live Performance:**
-   - Test and adjust sound design to ensure clarity and effectiveness in the theatre environment.
-
----
 ## Suggestions for Advancement
 
-Once comfortable with the basics, consider exploring:
+Once familiar with these workflows, consider exploring:
 
-- **Advanced Max/MSP Techniques:** Explore complex audio processing and real-time interaction.
-- **SuperCollider Extensions:** Investigate additional libraries and extensions for enhanced sound design.
-- **Integration with DAWs:** Learn how to integrate Max/MSP and SuperCollider with DAWs like Ableton Live for complex setups.
-- **Live Sound Management:** Develop skills for live sound mixing and troubleshooting.
-- **Etc.:** Continue exploring new technologies and advanced techniques in sound design.
-
----
-[return to index](../../index.md)
+- **Advanced Lavalier Techniques:** Learn about more sophisticated mic placement and concealment strategies.
+- **Drum Kit Variations:** Explore techniques for miking different types of drum kits and percussion instruments.
+- **Live Sound Mixing:** Develop skills in live sound mixing and troubleshooting for improved performance management.
+- **Wireless Systems Management:** Gain expertise in managing and troubleshooting wireless audio systems for complex setups.

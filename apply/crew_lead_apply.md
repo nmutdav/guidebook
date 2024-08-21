@@ -6,7 +6,7 @@ permalink: /apply/crew_lead_apply/
 # Crew Lead Application
 
 - Contract: June 1, 2025 - June 1, 2026
-- Application Opens: December 1, 2025
+- Application Opens: March 1, 2025
 - Application Closes: May 1, 2025
 - Position is only open to enrolled Northern Michigan University Students.
 

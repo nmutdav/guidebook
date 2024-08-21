@@ -1,7 +1,7 @@
 ---
 layout: default
 title: home
-permalink: /curriculum/syllabus_242/
+permalink: /curriculum/th242/syllabus_242/
 ---
 # Syllabus TH-242
 **Offered:** Fall, even years<br>
@@ -33,16 +33,25 @@ By the end of this course, students will be proficient in setting up and operati
     - Event Application: Practical knowledge of applying these skills to various types of live events and venues.
 
 ## Grading
-- Attendance = 40%
-- Assignments = 40%
-- Participation = 20%
 
-**Grading scale:**<br>
-- A (90% - 100%): Exceptional performance; outstanding competence.
-- B (80% - 89%): Above-average performance; effective and exceeds expectations.
-- C (70% - 79%): Satisfactory performance; meets average standards.
-- D (60% - 69%): Below-average performance; notable deficiencies.
-- F (0% - 59%): Unsatisfactory performance; failed to meet requirements or frequent absences.
+**Assessment Breakdown:**
+- **Assignments:** 60%
+- **Midterm Tech-Olympics:** 20%
+- **Final Tech-Olympics:** 20%
+
+**Grading Scale:**
+
+- **A (90% - 100%)**: Exceptional performance demonstrating outstanding competence and a thorough understanding of course material. Consistently exceeds expectations with high-quality work and innovative problem-solving skills.
+- **B (80% - 89%)**: Above-average performance showing effective and proficient grasp of the material. Meets and often exceeds expectations with solid work and good problem-solving abilities.
+- **C (70% - 79%)**: Satisfactory performance meeting average standards. Demonstrates a competent understanding of course content with acceptable work quality and some effective problem-solving skills.
+- **D (60% - 69%)**: Below-average performance with notable deficiencies. Struggles to meet average standards, showing limited understanding and effectiveness. Improvement is needed to meet course expectations.
+- **F (0% - 59%)**: Unsatisfactory performance that fails to meet minimum course requirements. Significant deficiencies in understanding and execution, or frequent absences impacting overall performance.
+
+**Notes:**
+- **Attendance and Participation**: Regular attendance and active participation are crucial for successful completion of the course.
+- **Late Submissions**: Assignments submitted after the deadline may incur a penalty unless prior arrangements are made.
+
+For any questions regarding grading or to discuss performance, please contact the instructor.
 
 ## Plagiarism Policy
 Collaboration when studying is encouraged; however, each student must submit their own individual work. To ensure academic integrity, please review the university’s [policy on plagiarism](https://nmu.edu/writingcenter/plagiarism) and familiarize yourself with the guidelines. For further assistance or clarification, consider consulting the Writing Center or your instructor.

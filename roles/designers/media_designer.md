@@ -1,31 +1,35 @@
 ---
-layout: default
-title: home
-permalink: /roles/designers/media_designer/
+layout: default  
+title: Media Designer  
+permalink: /roles/designers/media_designer/  
 ---
-# 2.2: Media Designer for Theatre Projection `"MD"`
-[apply for this position](../apply/media_designer_apply.md)
+
+# Media Designer for Theatre Projection
 
 ## Role Overview
 
-1. **Description:** Designs and tests projection content for theatre performances using Processing IDE and Resolume Arena.
-2. **Location:** Design Studio
-3. **Equipment:**
-   - **Projection System:** [Christie D4K40-RGB](https://www.christiedigital.com/products/projectors/d4k40-rgb/)
-   - **Projection Control Software:** [Resolume Arena](https://resolume.com/software/arena/)
-   - **Desktop Computer:** PC with high-performance GPU
-   - **Laptop:** MacBook Pro for real-time adjustments
-   - **Media Storage:** External SSDs
-   - **[Required Course Equipment](../../info/syllabus.md)**
+### Description
 
----
-## 3.2.1: Designing with Processing IDE
+As a Media Designer for Theatre Projection, you will design and test projection content for theatre performances using Processing IDE and integrate it with QLab for seamless live control. This role involves creating dynamic visuals tailored for theatre projection, optimizing them for performance, and ensuring they meet production needs.
 
-*Prerequisites: [What is Processing IDE?](https://processing.org/about/)*
+### Location
 
-#### Workflow Summary: `Setup` ➠ `Create` ➠ `Export`
+- **Design Studio:** On-site presence is required for design and testing.
 
-### `Setup`
+### Equipment
+
+- **Assigned Equipment:** <a href="{{ '/curriculum/th242/syllabus_242/' | relative_url }}">(see syllabus)</a>
+- **Media Storage:** External SSDs
+- **Projection System:** [Epson Pro L1505U](https://www.epson.com/For-Work/Projectors/Professional/PowerLite-Pro-L1505U) (or similar high-lumen projector for accurate representation)
+- **Media Control Software:** [QLab](https://figure53.com/qlab/) for show control and multimedia integration
+
+## Workflow 2.2.1: Designing with Processing IDE
+
+*Prerequisites: [What is Processing IDE?](https://processing.org/)*
+
+### Workflow Summary: `Setup` ➠ `Create` ➠ `Export`
+
+#### `Setup`
 1. **Install Processing IDE:**
    - Download and install the latest version from [Processing.org](https://processing.org/download/).
 
@@ -35,7 +39,7 @@ permalink: /roles/designers/media_designer/
 3. **Save Your Project:**
    - Create a new project and save it in a structured folder, e.g., `Documents` > `[YYYY] Show Files` > `[YYMMDD Event]`.
 
-### `Create`
+#### `Create`
 1. **Develop Visuals:**
    - Write code to create dynamic and interactive visuals suited for theatre projection.
 
@@ -45,52 +49,14 @@ permalink: /roles/designers/media_designer/
 3. **Prepare for Export:**
    - Optimize visuals for projection, adjusting resolution and frame rate as necessary.
 
-### `Export`
+#### `Export`
 1. **Export as Video or Images:**
-   - Export your Processing sketches as video files or image sequences for use in Resolume Arena.
+   - Export your Processing sketches as video files or image sequences for use in the theatre projection setup.
 
 2. **Organize Files:**
    - Save and organize exported files in a structured manner for easy integration.
 
----
-## 3.2.2: Testing Projections with Resolume Arena
-
-*Prerequisites: [What is Resolume Arena?](https://resolume.com/arena/)*
-
-#### Workflow Summary: `Setup` ➠ `Test` ➠ `Adjust`
-
-### `Setup`
-1. **Create a New Composition:**
-   - Open Resolume Arena and click `New Composition`.
-
-2. **Import Media:**
-   - Import videos or images exported from Processing into Resolume Arena.
-
-3. **Configure Project Settings:**
-   - Set resolution, frame rate, and other parameters in `Composition` > `Composition Settings`.
-
-### `Test`
-1. **Build Layers:**
-   - Arrange imported media into layers within Resolume Arena.
-
-2. **Apply Effects:**
-   - Add and adjust visual effects and transitions as needed.
-
-3. **Simulate Projection:**
-   - Use the `Output Monitor` to simulate how projections will appear in the theatre environment.
-
-### `Adjust`
-1. **Refine Content:**
-   - Make necessary adjustments to visuals based on test results.
-
-2. **Verify Alignment:**
-   - Ensure that projections align accurately with the set design and staging.
-
-3. **Finalize Setup:**
-   - Prepare the final version of the projection content for live performance.
-
----
-## 3.2.3: Projection Mapping Basics
+## Workflow 2.2.2: Projection Mapping Basics
 
 ### Workflow Summary: `Design` ➠ `Map` ➠ `Calibrate`
 
@@ -98,21 +64,54 @@ permalink: /roles/designers/media_designer/
    - Develop and finalize visuals in Processing IDE tailored for the specific set design.
 
 2. **Map Projection:**
-   - Use Resolume Arena or other mapping tools to align visuals with projection surfaces.
+   - Use relevant tools to align visuals with projection surfaces. Consider using [MadMapper](https://madmapper.com/) for advanced mapping capabilities.
 
 3. **Calibrate the Projector:**
    - Adjust focus, alignment, and brightness to ensure precise projection.
 
----
+## Workflow 2.2.3: Integrating with QLab
+
+*Prerequisites: [What is QLab?](https://figure53.com/qlab/)*
+
+### Workflow Summary: `Setup` ➠ `Import` ➠ `Sync`
+
+#### `Setup`
+1. **Install QLab:**
+   - Download and install the latest version from [Figure 53](https://figure53.com/qlab/).
+
+2. **Configure QLab Environment:**
+   - Set up QLab with necessary preferences and create a new workspace for the project.
+
+3. **Prepare Media Files:**
+   - Ensure that all media files (videos, images, etc.) are organized and compatible with QLab.
+
+#### `Import`
+1. **Import Media into QLab:**
+   - Drag and drop your exported video files or image sequences into QLab.
+
+2. **Create Cues:**
+   - Set up cues in QLab for triggering projection content during the performance. Configure each cue with the appropriate playback settings.
+
+3. **Organize Cues:**
+   - Arrange cues in a logical sequence and set up any required automation or control settings.
+
+#### `Sync`
+1. **Test Cue Timing:**
+   - Run through the cues in QLab to ensure that they trigger at the correct times and integrate seamlessly with live performance elements.
+
+2. **Adjust Sync Settings:**
+   - Fine-tune cue timings and synchronization with other performance elements, such as lighting and sound.
+
+3. **Finalize Setup:**
+   - Prepare the final QLab workspace for live performance, ensuring all cues are correctly configured and tested.
+
 ## Suggestions for Advancement
 
 Once comfortable with the basics, consider exploring:
 
 - **Advanced Processing Techniques:** Delve into complex animations and interactivity within Processing.
-- **Mapping Software:** Investigate specialized projection mapping software for more detailed alignment.
-- **Visual Integration:** Learn how to integrate real-time data with projection content.
-- **Technical Troubleshooting:** Develop skills to quickly address and resolve technical issues in design.
-- **Etc.:** Continue exploring new technologies and design methods for theatre projection.
-
----
-[return to index](../../index.md)
+- **Mapping Software:** Investigate specialized projection mapping software like [MadMapper](https://madmapper.com/) for more detailed alignment.
+- **QLab Features:** Learn advanced features of QLab, including scripting and networked control for more sophisticated setups.
+- **Visual Integration:** Explore ways to integrate real-time data and interactive elements with projection content.
+- **Technical Troubleshooting:** Develop skills to quickly address and resolve technical issues in design and live performance.
+- **New Technologies:** Continue exploring new technologies and design methods for theatre projection, such as immersive projection systems or VR integration.

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Home
-permalink: /curriculum/schedule_242/
+permalink: /curriculum/th242/schedule_242/
 ---
 # Schedule
 
