@@ -19,7 +19,6 @@ Welcome to the Theatre & Dance AV Guidebook! Here you will find course curriculu
                 <a href="{{ post.url | relative_url }}" class="post-title">{{ post.title }}</a>
             </div>
             <div class="post-content">
-                {{ post.excerpt | markdownify | truncatewords: 100 }} <!-- Adjust the word count as needed -->
                 <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
             </div>
         </li>

@@ -327,7 +327,8 @@ code {
 
 .banner img {
     display: block; /* Ensures there's no extra space below the image */
-    width: 100%; /* Adjusts the width to fit the container */
+    margin-left: -250px;
+    width: 150%; /* Adjusts the width to fit the container */
     height: auto; /* Keeps the aspect ratio intact */
 }
 
