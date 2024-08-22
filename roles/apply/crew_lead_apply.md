@@ -1,7 +1,7 @@
 ---
 layout: default
 title: home
-permalink: /apply/crew_lead_apply/
+permalink: /roles/apply/crew_lead_apply/
 ---
 # Crew Lead Application
 

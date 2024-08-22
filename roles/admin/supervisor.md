@@ -1,6 +1,6 @@
 ---
 layout: default
-title: home
+title: Sound and Media Supervisor
 permalink: /roles/admin/supervisor/
 ---
 # Sound & Media Supervisor

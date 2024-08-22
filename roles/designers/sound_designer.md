@@ -1,6 +1,6 @@
 ---
 layout: default  
-title: Audio Technician  
+title: Sound Designer
 permalink: /roles/designers/sound_designer/
 ---
 # Sound Designer

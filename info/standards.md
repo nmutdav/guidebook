@@ -1,6 +1,6 @@
 ---
 layout: default
-title: home
+title: Standards of Practice
 permalink: /info/standards/
 ---
 # Standards of Practice

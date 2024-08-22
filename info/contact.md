@@ -1,6 +1,6 @@
 ---
 layout: default
-title: home
+title: Contact
 permalink: /info/contact/
 ---
 # Contact

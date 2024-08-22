@@ -1,7 +1,7 @@
 ---
 layout: default
 title: home
-permalink: /apply/press_manager_apply/
+permalink: /roles/apply/press_manager_apply/
 ---
 # Press Manager Application
 - Contract: June 1, 2025 - June 1, 2026

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: home
-permalink: /apply/photo_journalist_apply/
+permalink: /roles/apply/photo_journalist_apply/
 ---
 # Photo Journalist Application
 

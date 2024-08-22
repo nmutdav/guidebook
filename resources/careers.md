@@ -1,4 +1,9 @@
-[return to index](../index.md)
+---
+layout: default
+title: Careers in Theatre & AV
+permalink: /resources/careers
+---
+
 # Careers in Theatre & AV
 
 ## What Kind of Jobs Can I Get?
@@ -63,8 +68,7 @@ Use a simple format to ensure readability and compatibility with [Applicant Trac
   - Left-justified text
   - Regular dashes for bullets
 
-**[Your Name]**
-
+**[Your Name]**  
 **Contact**  
 Address:  
 Phone:  
@@ -95,8 +99,7 @@ Website:
   - Single spaced with double carriage returns
   - Left-justified text
 
-**[Your Name]**
-
+**[Your Name]**  
 **Contact**  
 Address:  
 Phone:  
@@ -107,35 +110,13 @@ Website:
 
 To the Hiring Committee,
 
-[Introduction]
+[Introduction]  
 ...
 
+[Body]  
 ...
 
-...
-
-...
-
-...
-
-[Body]
-
-...
-
-...
-
-...
-
-...
-
-...
-
-[Conclusion]
-
-...
-
-...
-
+[Conclusion]  
 ...
 
 Sincerely,
@@ -143,6 +124,3 @@ Sincerely,
 <br>
 
 [Your Name]
-
----
-[return to index](../index.md)

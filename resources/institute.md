@@ -1,6 +1,6 @@
 ---
 layout: default
-title: home
+title: UP SDI Proposal
 permalink: /resources/institute/
 ---
 <html lang="en">
