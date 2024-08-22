@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Tech Olympics
-permalink: /curriculum/th242/tech_olympics/
+permalink: /curriculum/th142/tech_olympics/
 ---
 # PA System Setup and Management Tech-Olympics
 

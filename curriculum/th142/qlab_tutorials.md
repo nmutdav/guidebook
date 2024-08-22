@@ -1,7 +1,7 @@
 ---
 layout: default
 title: QLab Tutorials
-permalink: /curriculum/th242/qlab_tutorials/
+permalink: /curriculum/th142/qlab_tutorials/
 ---
 
 # QLab Tutorials

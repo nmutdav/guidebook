@@ -1,9 +1,8 @@
 ---
 layout: default
 title: PA System Setup and Management
-permalink: /curriculum/th242/pa_sessions/
+permalink: /curriculum/th142/pa_sessions/
 ---
-
 # PA System Setup and Management
 
 *By the end of this course, students will be proficient in setting up and operating a basic PA system for live events.*

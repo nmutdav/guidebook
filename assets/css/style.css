@@ -151,7 +151,6 @@ nav ul li:hover > .dropdown-content {
     display: block;
 }
 
-
 /* Main Content Styles */
 main {
     max-width: 1000px;
@@ -308,138 +307,34 @@ button#printButton:hover {
     }
 }
 
-/* Code Block Styles */
-code {
-    font-family: monospace; /* Use a monospace font for code */
-    background-color: #f4f4f4; /* Light gray background for contrast */
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 3px; /* Slightly rounded corners */
-    padding: 2px 4px; /* Some padding for better spacing */
-    font-size: 100%; /* Slightly smaller font size to fit in with surrounding text */
-    color: #333; /* Dark gray text color for readability */
-}
-
-/* Banner Styles */
-.banner {
-    margin: 0;
-    padding: 0;
-}
-
-.banner img {
-    display: block; /* Ensures there's no extra space below the image */
-    margin-left: -250px;
-    width: 150%; /* Adjusts the width to fit the container */
-    height: auto; /* Keeps the aspect ratio intact */
-}
-
-/* Basic table styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-th, td {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-.latest-posts {
-    padding: 20px;
-    background-color: #f9f9f9;
-}
-
-.latest-posts h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.latest-posts ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.latest-posts .post-box {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.latest-posts .post-header {
-    margin-bottom: 10px;
-}
-
-.latest-posts .post-title {
-    font-size: 20px;
-    color: #095339;
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.latest-posts .post-title:hover {
-    text-decoration: none;
-}
-
-.latest-posts .post-content {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.6;
-    font-family: 'Arial', sans-serif;
-}
-
-.latest-posts .read-more {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 15px;
+/* General Code Block Styles */
+pre {
+    font-family: 'Courier New', Courier, monospace;
     font-size: 14px;
-    color: #ffffff;
-    text-decoration: none;
-    border: 1px solid #095339;
-    border-radius: 4px;
-    background-color: #095339;
-    transition: background-color 0.3s, color 0.3s;
+
+    font-weight:bold;
+    line-height: 1;
+    color: #000000; /* Black text */
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 16px; /* Padding inside the code block */
+    overflow-x: auto; /* Horizontal scroll if code is too wide */
+    white-space: pre-wrap; /* Wrap long lines */
+    margin: 16px 0; /* Margin around the code block */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for better separation */
+    background-color: #ffffff; /* Ensure white background */
+    color: #000000; /* Ensure black text color */
 }
 
-.latest-posts .read-more:hover {
-    background-color: #ffc425;
-    color: #095339;
+/* Inline Code Styling */
+code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: #000000; /* Black text */
+    background-color: none; /* Light gray background for inline code */
+    padding: 2px 4px; /* Padding inside inline code */
+    border-radius: 4px; /* Rounded corners */
+    border: none; /* Light gray border */
+    display: inline; /* Inline display */
 }
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .latest-posts .post-box {
-        padding: 10px;
-    }
-
-    .latest-posts .post-title {
-        font-size: 18px;
-    }
-
-    .latest-posts .post-content {
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .latest-posts .post-title {
-        font-size: 16px;
-    }
-
-    .latest-posts .post-content {
-        font-size: 14px;
-    }
-}
-

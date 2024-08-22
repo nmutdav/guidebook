@@ -1,55 +1,55 @@
 ---
 layout: default
-title: Syllabus TH-242
-permalink: /curriculum/th242/syllabus_242/
+title: Syllabus TH-142
+permalink: /curriculum/th142/syllabus_142/
 ---
 
-# Syllabus TH-242
+# Syllabus TH-142
 **Offered:** Fall, even years<br>
 **Room:** McClintock Room 125-O<br>
 **Time:** Mondays and Wednesdays from 8:00am to 9:40am<br>
 **Instructor:** <a href="https://nmu.edu/theatreanddance/dominic-mrakovcich" target="_blank">Dominic Mrakovcich</a>
 
 ## Course Description
-This course provides an introduction to sound and media design using Processing IDE. Students will explore the basics of sound design and media design, learning how to utilize Processing for creating interactive and dynamic sound and media experiences.
+An introduction to the skills, software, and techniques of a sound and media specialist for theatre and the entertainment industry. Students are introduced to cabling, speaker and PA systems as well as basic programming and sound and media technology.
 
 **Notes:** This is an eight-week course.
 
 ## Tracks & Objectives
+The course instructor will choose two tracks from the program offerings list based on the difficulty and prerequisites most suitable for the class. 
 
-1. **Sound Design with Processing IDE**<br>
-   By the end of this course, students will be proficient in using Processing IDE for sound design, including creating sound visualizations and interactive audio applications.<br><br>
-   *Learning Outcomes:*
-   - **Sound Basics:** Understanding basic sound principles and how to work with audio in Processing.
-   - **Interactive Sound:** Techniques for creating interactive sound experiences using Processing.
-   - **Sound Visualization:** Skills for visualizing audio data and creating dynamic visualizations in Processing.
-   - **Project Implementation:** Ability to develop and implement a sound design project using Processing IDE.<br><br>
-
-2. **Media Design with Processing IDE**<br>
-   By the end of this course, students will be proficient in using Processing IDE for media design, including creating animations, interactive visuals, and multimedia projects.<br><br>
-   *Learning Outcomes:*
-   - **Media Basics:** Understanding basic media design principles and how to work with graphics and animations in Processing.
-   - **Interactive Media:** Techniques for creating interactive media elements that respond to user input.
-   - **Visual Storytelling:** Skills for developing engaging and visually cohesive media projects in Processing.
-   - **Project Implementation:** Ability to develop and implement a media design project using Processing IDE.
+1. **QLAB and Media Management**<br>
+By the end of this course, students will be proficient in using QLAB for managing and integrating sound and media in live performance settings.<br><br>
+    *Learning Outcomes:*
+    - **QLAB Fundamentals:** Understanding the interface and basic functionality of QLAB software.
+    - **Media Integration:** Techniques for integrating audio, video, and lighting cues using QLAB.
+    - **Cue Programming:** Skills for creating and managing complex cue sequences and show control.
+    - **Troubleshooting:** Ability to diagnose and resolve common issues that may arise during live performances.<br><br>
+2. **PA System Setup and Management**<br>
+By the end of this course, students will be proficient in setting up and operating a basic PA system for live events.<br><br>
+    *Learning Outcomes:*
+    - **Cabling:** Techniques for properly connecting and routing audio cables.
+    - **Speaker Configuration:** Skills for positioning and calibrating speakers for optimal sound distribution.
+    - **Sound Management:** Understanding how to adjust sound levels and equalization for clear and balanced audio.
+    - **Event Application:** Practical knowledge of applying these skills to various types of live events and venues.
 
 ## Course Calendar
 
-- **Week 1:** Introduction to Processing IDE for Sound and Media Design
-- **Week 2:** Sound Design Basics and Interactive Audio
-- **Week 3:** Visualizing Sound and Audio Data
-- **Week 4:** Media Design Basics and Interactive Graphics
-- **Week 5:** Animations and Interactive Visuals
-- **Week 6:** Integrating Sound and Media
-- **Week 7:** Project Development and Troubleshooting
-- **Week 8:** Final Project Presentation and Course Wrap-Up
+- **Week 1:** Introduction to PA Systems and Microphone Types
+- **Week 2:** Operating a Basic Analog Mixer and Cabling Techniques
+- **Week 3:** Speaker Placement and Calibration
+- **Week 4:** Sound Level Management and Troubleshooting
+- **Week 5:** Mid-Term Tech-Olympics
+- **Week 6:** QLAB Fundamentals and Media Integration
+- **Week 7:** Cue Programming and Troubleshooting in QLAB
+- **Week 8:** Final Tech-Olympics and Course Wrap-Up
 
 ## Grading
 
 **Assessment Breakdown:**
 - **Assignments:** 60%
-- **Midterm Project:** 20%
-- **Final Project:** 20%
+- **Midterm Tech-Olympics:** 20%
+- **Final Tech-Olympics:** 20%
 
 **Grading Scale:**
 
@@ -75,7 +75,8 @@ Accommodations are available upon request. Contact the course instructor or coll
 - **The NMUTDAV Guidebook:** Essential guidebook for the course.
 - **[MacBook Pro](https://www.apple.com/)** & **[MacOS](https://www.apple.com/macos/sonoma/):** Required hardware and operating system for running course software and performing assignments.
 - **Internet Access:** Necessary for downloading software and accessing online resources.
-- **[Processing IDE](https://processing.org/):** Software for creating sound and media design projects.
+- **[QLAB](https://qlab.app):** Multimedia playback software for audio, video, and lighting cues.
+- **[Analog Obsession Plugins](https://analogobsession.com/):** Audio plugins for enhancing sound processing.
 - **[Audacity](https://www.audacityteam.org/):** Free software for audio editing.
 - **[FreeSound.org](https://freesound.org):** Repository for Creative Commons sound effects and audio files.
 - **[Pexels](https://pexels.com):** Source for free stock photos and videos.
@@ -87,4 +88,3 @@ Lab sessions are optional but encouraged for extra help. Sign up on the sheet po
 - **Instructor:** Dominic Mrakovcich
 - **Email:** [dmrakovc@nmu.edu](mailto:dmrakovc@nmu.edu)
 - **Office Hours:** [Specify days and times]
-    
