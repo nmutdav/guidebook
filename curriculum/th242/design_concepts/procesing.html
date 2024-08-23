@@ -1,0 +1,111 @@
+---
+layout: default
+title: Processing
+permalink: /curriculum/th242/design_concepts/processing/
+---
+    <main>
+        <h1>Introduction to Processing</h1>
+        <section>
+            <h2>What is Processing?</h2>
+            <p>Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts. It is built to teach the fundamentals of programming in a visual and interactive way. Processing is used for creating visual art, animations, interactive applications, and can also be integrated into sound design projects.</p>
+        </section>
+
+        <section>
+            <h2>Key Features of Processing</h2>
+            <ul>
+                <li><strong>Simplicity:</strong> Processing simplifies the programming process with a straightforward syntax and structure.</li>
+                <li><strong>Graphics and Animation:</strong> It provides easy-to-use functions for creating 2D and 3D graphics and animations.</li>
+                <li><strong>Interactivity:</strong> Processing supports user interaction through mouse and keyboard events.</li>
+                <li><strong>Sound Integration:</strong> With the help of additional libraries, Processing can handle audio processing and synthesis.</li>
+                <li><strong>Extensibility:</strong> It allows for the integration of various libraries to expand its functionality, including sound, video, and networking.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Getting Started with Processing</h2>
+            <p>To start working with Processing, follow these steps:</p>
+            <ol>
+                <li><strong>Download and Install Processing:</strong> Visit the <a href="https://processing.org/download/" target="_blank" rel="noopener noreferrer">Processing website</a> to download the latest version and install it on your computer.</li>
+                <li><strong>Set Up Your Workspace:</strong> Open Processing and familiarize yourself with the integrated development environment (IDE), which includes an editor, a console, and a preview window.</li>
+                <li><strong>Write Your First Sketch:</strong> Create a new sketch by writing a simple program to draw shapes or display text on the screen. Here’s a basic example:</li>
+            </ol>
+            <pre><code>
+void setup() {
+    size(800, 600);
+    background(255);
+}
+
+void draw() {
+    fill(0, 102, 153);
+    ellipse(mouseX, mouseY, 50, 50);
+}
+            </code></pre>
+            <p>This code sets up a canvas of 800x600 pixels and draws a circle at the position of the mouse cursor.</p>
+        </section>
+
+        <section>
+            <h2>Processing for Sound Design</h2>
+            <p>Processing can also be used for sound design by incorporating libraries such as the Minim or Sound libraries. Here’s how you can use Processing for sound:</p>
+            <ul>
+                <li><strong>Audio Playback:</strong> Play audio files and control playback parameters such as volume and pitch.</li>
+                <li><strong>Sound Analysis:</strong> Analyze audio signals to visualize sound waves or frequency spectrums.</li>
+                <li><strong>Sound Synthesis:</strong> Create and manipulate sounds using built-in synthesis functions or external libraries.</li>
+            </ul>
+            <p>Example code for simple audio playback:</p>
+            <pre><code>
+import processing.sound.*;
+
+SoundFile file;
+
+void setup() {
+    size(400, 200);
+    file = new SoundFile(this, "audiofile.mp3");
+    file.play();
+}
+
+void draw() {
+    background(255);
+}
+            </code></pre>
+            <p>This example plays an audio file when the sketch starts.</p>
+        </section>
+
+        <section>
+            <h2>Applying Processing in Design</h2>
+            <p>Processing can be utilized to enhance your sound and media design projects by:</p>
+            <ul>
+                <li><strong>Visualizing Sound:</strong> Create visual representations of audio data, such as spectrograms or waveform displays.</li>
+                <li><strong>Interactive Media:</strong> Develop interactive experiences where sound and visuals respond to user inputs or environmental changes.</li>
+                <li><strong>Creative Coding:</strong> Experiment with generative art and sound to create unique multimedia projects.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Examples of Projects</h2>
+            <p>Here are a few example projects you can explore with Processing:</p>
+            <ul>
+                <li><strong>Interactive Visualizations:</strong> Combine audio and visual data to create immersive and responsive installations.</li>
+                <li><strong>Generative Music:</strong> Use Processing to generate music or soundscapes based on algorithmic rules or user interactions.</li>
+                <li><strong>Sound-Responsive Art:</strong> Develop art that changes dynamically based on live audio input or pre-recorded soundtracks.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Conclusion</h2>
+            <p>Processing offers a versatile platform for both sound and media design. By learning Processing, you can create compelling and interactive multimedia projects that blend code with creativity.</p>
+        </section>
+<html>
+    <main>
+        <body>
+        <ul class="links-list">
+            <li><a href="{{ '/curriculum/th242/design_concepts/intro' | relative_url }}">Introduction to Design</a></li>
+            <li><a href="{{ '/curriculum/th242/design_concepts/workflows' | relative_url }}">Introduction to Design Workflows</a></li>
+            <li><a href="{{ '/curriculum/th242/design_concepts/processing' | relative_url }}">Introduction to Processing</a></li>
+            <li><a href="{{ '/curriculum/th242/design_concepts/pde_media_01' | relative_url }}">Processing Media Tutorials</a></li>
+            <li><a href="{{ '/curriculum/th242/design_concepts/pde_sound_01' | relative_url }}">Processing Sound Tutorials</a></li>
+            <li><a href="{{ '/curriculum/th242/design_concepts/assignments' | relative_url }}">Assignments</a></li>
+            <li><a href="{{ '/curriculum/th242/design_concepts/examples' | relative_url }}">Examples</a></li>
+        </ul>
+        </body>
+    </main>
+</html>

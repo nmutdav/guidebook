@@ -1,0 +1,250 @@
+---
+layout: default
+title: media design 1
+permalink: /curriculum/th242/design_concepts/pde_media_01/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing Tutorial Series 1</title>
+</head>
+<body>
+    <h1>Processing Tutorial Series - Media 1</h1>
+    
+    <section id="tutorial-1">
+        <h2>Tutorial 1: Introduction to Processing</h2>
+        <p><strong>Objective:</strong> Get familiar with the Processing environment and basic concepts.</p>
+        <h3>1. Overview of Processing</h3>
+        <p>Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts. It was created to simplify the process of coding for visual projects and make programming accessible for artists and designers.</p>
+        <h3>2. Setting Up Processing</h3>
+        <ul>
+            <li>Download Processing from <a href="https://processing.org/download/" target="_blank" rel="noopener noreferrer">Processing.org</a>.</li>
+            <li>Install it following the instructions for your operating system.</li>
+        </ul>
+        <h3>3. Your First Sketch</h3>
+        <p>Open Processing and create a new sketch. A Processing sketch is a single file with a .pde extension that contains your code.</p>
+        <pre><code>
+void setup() {
+    size(800, 600);  // Define the size of the window
+    background(200); // Set the background color
+}
+
+void draw() {
+    ellipse(400, 300, 100, 100); // Draw an ellipse at the center of the window
+}
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>void setup()</code>: Initializes the sketch; this function runs once when the program starts.</li>
+            <li><code>size(800, 600)</code>: Sets the dimensions of the window, crucial for your visual space.</li>
+            <li><code>background(200)</code>: Sets a gray background color to start with.</li>
+            <li><code>void draw()</code>: Continuously executes the code inside it, updating the display.</li>
+            <li><code>ellipse(400, 300, 100, 100)</code>: Draws a circle in the center of the window.</li>
+        </ul>
+        <p>This tutorial introduces the basic structure of a Processing sketch and the fundamental functions for creating simple graphics.</p>
+    </section>
+
+    <section id="tutorial-2">
+        <h2>Tutorial 2: Basic Drawing Functions</h2>
+        <p><strong>Objective:</strong> Learn basic drawing functions and how to create shapes.</p>
+        <h3>1. Drawing Shapes</h3>
+        <pre><code>
+void setup() {
+    size(800, 600);
+    background(255);
+}
+
+void draw() {
+    fill(255, 0, 0);    // Set the fill color to red
+    rect(100, 100, 150, 100); // Draw a rectangle
+    fill(0, 255, 0);    // Set the fill color to green
+    ellipse(400, 300, 100, 100); // Draw a circle
+    fill(0, 0, 255);    // Set the fill color to blue
+    triangle(600, 150, 550, 300, 650, 300); // Draw a triangle
+}
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>fill(255, 0, 0)</code>: Sets the fill color for shapes. You can use RGB values to choose colors.</li>
+            <li><code>rect(100, 100, 150, 100)</code>: Draws a rectangle at the specified position with the given width and height.</li>
+            <li><code>ellipse(400, 300, 100, 100)</code>: Draws an ellipse at the specified position with the given width and height.</li>
+            <li><code>triangle(600, 150, 550, 300, 650, 300)</code>: Draws a triangle with vertices at the specified coordinates.</li>
+        </ul>
+        <p>Understanding these basic drawing functions is essential for creating visual elements and compositions in your sketches.</p>
+    </section>
+
+    <section id="tutorial-3">
+        <h2>Tutorial 3: Working with Colors</h2>
+        <p><strong>Objective:</strong> Learn how to use and manipulate colors in Processing.</p>
+        <h3>1. Using Colors</h3>
+        <pre><code>
+void setup() {
+    size(800, 600);
+}
+
+void draw() {
+    background(255); // Set the background color to white
+    
+    // Draw with different colors
+    fill(255, 0, 0); // Red
+    ellipse(200, 300, 100, 100);
+    
+    fill(0, 255, 0); // Green
+    rect(350, 250, 100, 100);
+    
+    fill(0, 0, 255); // Blue
+    triangle(500, 300, 450, 450, 550, 450);
+}
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>fill(255, 0, 0)</code>: Sets the fill color using RGB values. Here, it's red.</li>
+            <li><code>fill(0, 255, 0)</code>: Sets the fill color to green.</li>
+            <li><code>fill(0, 0, 255)</code>: Sets the fill color to blue.</li>
+            <li><code>background(255)</code>: Sets the background color to white, ensuring the shapes are visible.</li>
+        </ul>
+        <p>Color manipulation is key for creating visually appealing and distinct elements in your sketches.</p>
+    </section>
+
+    <section id="tutorial-4">
+        <h2>Tutorial 4: Understanding Coordinates</h2>
+        <p><strong>Objective:</strong> Learn about the coordinate system in Processing and how to position shapes.</p>
+        <h3>1. Coordinate System Basics</h3>
+        <pre><code>
+void setup() {
+    size(800, 600);
+    background(255);
+}
+
+void draw() {
+    fill(255, 0, 0);
+    ellipse(mouseX, mouseY, 50, 50); // Draw an ellipse at the mouse position
+}
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>mouseX</code>: Provides the current x-coordinate of the mouse pointer.</li>
+            <li><code>mouseY</code>: Provides the current y-coordinate of the mouse pointer.</li>
+            <li><code>ellipse(mouseX, mouseY, 50, 50)</code>: Draws an ellipse at the mouse location, demonstrating how to use coordinate values.</li>
+        </ul>
+        <p>Understanding coordinates is essential for positioning elements accurately and creating interactive sketches.</p>
+    </section>
+
+    <section id="tutorial-5">
+        <h2>Tutorial 5: Basic Animation</h2>
+        <p><strong>Objective:</strong> Create simple animations by updating the position of shapes over time.</p>
+        <h3>1. Creating Basic Animation</h3>
+        <pre><code>
+float x = 0;
+
+void setup() {
+    size(800, 600);
+    background(255);
+}
+
+void draw() {
+    background(255);
+    fill(0, 100, 255);
+    ellipse(x, height / 2, 50, 50); // Draw an ellipse moving horizontally
+    x += 2; // Increment x to animate the ellipse
+    if (x > width) {
+        x = 0; // Reset x to 0 if it goes off-screen
+    }
+}
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>float x = 0</code>: Initializes the x-coordinate for the ellipse.</li>
+            <li><code>x += 2</code>: Updates the x-coordinate each frame, creating movement.</li>
+            <li><code>if (x > width)</code>: Resets the x-coordinate when the ellipse moves off-screen, creating a continuous loop.</li>
+        </ul>
+        <p>Animating shapes is fundamental for creating dynamic and engaging visual experiences.</p>
+    </section>
+
+    <section id="tutorial-6">
+        <h2>Tutorial 6: Using Functions</h2>
+        <p><strong>Objective:</strong> Learn how to create and use functions to organize and reuse code.</p>
+        <h3>1. Defining and Calling Functions</h3>
+        <pre><code>
+void setup() {
+    size(800, 600);
+}
+
+void draw() {
+    background(255);
+    drawEllipse(400, 300, 100); // Call the custom function to draw an ellipse
+}
+
+void drawEllipse(float x, float y, float diameter) {
+    fill(0, 100, 255);
+    ellipse(x, y, diameter, diameter); // Draw an ellipse with given parameters
+}
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>void drawEllipse(float x, float y, float diameter)</code>: Defines a custom function that draws an ellipse based on parameters.</li>
+            <li><code>drawEllipse(400, 300, 100)</code>: Calls the function to draw an ellipse at the specified location and size.</li>
+        </ul>
+        <p>Using functions helps to organize your code, making it more modular and reusable.</p>
+    </section>
+
+    <section id="tutorial-7">
+        <h2>Tutorial 7: User Input</h2>
+        <p><strong>Objective:</strong> Learn how to handle user input such as mouse clicks and keyboard presses.</p>
+        <h3>1. Handling Mouse Input</h3>
+        <pre><code>
+void setup() {
+    size(800, 600);
+    background(255);
+}
+
+void draw() {
+    fill(255, 0, 0);
+    if (mousePressed) {
+        ellipse(mouseX, mouseY, 50, 50); // Draw an ellipse where the mouse is clicked
+    }
+}
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>if (mousePressed)</code>: Checks if the mouse is pressed.</li>
+            <li><code>ellipse(mouseX, mouseY, 50, 50)</code>: Draws an ellipse at the current mouse position when pressed.</li>
+        </ul>
+        <p>Handling user input allows you to create interactive sketches that respond to user actions.</p>
+    </section>
+
+    <section id="tutorial-8">
+        <h2>Tutorial 8: Creating Interactive Visuals</h2>
+        <p><strong>Objective:</strong> Combine previously learned concepts to create interactive and dynamic visuals.</p>
+        <h3>1. Interactive Visualization</h3>
+        <pre><code>
+void setup() {
+    size(800, 600);
+}
+
+void draw() {
+    background(255);
+    fill(map(mouseX, 0, width, 0, 255), 100, 150);
+    ellipse(mouseX, height / 2, 100, 100); // Change the color of the ellipse based on mouse position
+}
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>map(mouseX, 0, width, 0, 255)</code>: Maps the mouse X position to a color value, changing the ellipse color dynamically.</li>
+        </ul>
+        <p>Combining concepts helps to create rich and interactive visual experiences, showcasing your understanding of Processing.</p>
+    </section>
+        <ul class="links-list">
+            <li><a href="{{ '/curriculum/th242/design_concepts/intro' | relative_url }}">Introduction to Design</a></li>
+            <li><a href="{{ '/curriculum/th242/design_concepts/workflows' | relative_url }}">Introduction to Design Workflows</a></li>
+            <li><a href="{{ '/curriculum/th242/design_concepts/processing' | relative_url }}">Introduction to Processing</a></li>
+            <li><a href="{{ '/curriculum/th242/design_concepts/pde_media_01' | relative_url }}">Processing Media Tutorials</a></li>
+            <li><a href="{{ '/curriculum/th242/design_concepts/pde_sound_01' | relative_url }}">Processing Sound Tutorials</a></li>
+            <li><a href="{{ '/curriculum/th242/design_concepts/assignments' | relative_url }}">Assignments</a></li>
+            <li><a href="{{ '/curriculum/th242/design_concepts/examples' | relative_url }}">Examples</a></li>
+        </ul>
+        </body>
+    </main>
+</html>

@@ -1,0 +1,321 @@
+---
+layout: default
+title: sound design tutorials one
+permalink: /curriculum/th242/design_concepts/pde_sound_01/
+---
+<body>
+    <h1>Processing Tutorial Series - Sound 1</h1>
+        <section id="tutorial-1">
+            <h2>Tutorial 1: Basic Sound Playback</h2>
+            <p><strong>Objective:</strong> Learn how to play a sound file.</p>
+            <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+
+void setup() {
+    size(800, 600);
+    mySound = new SoundFile(this, "soundfile.mp3");
+    mySound.play();
+}
+
+void draw() {
+    background(255);
+}
+            </code></pre>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><code>SoundFile mySound;</code>: Creates a SoundFile object to manage sound playback.</li>
+                <li><code>mySound.play();</code>: Starts playing the sound file.</li>
+            </ul>
+            <p>This tutorial introduces basic sound playback functionality.</p>
+        </section>
+
+        <section id="tutorial-2">
+            <h2>Tutorial 2: Toggle Playback</h2>
+            <p><strong>Objective:</strong> Learn how to toggle sound playback on and off with mouse clicks.</p>
+            <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+boolean isPlaying = false;
+
+void setup() {
+    size(800, 600);
+    mySound = new SoundFile(this, "soundfile.mp3");
+}
+
+void draw() {
+    background(255);
+}
+
+void mousePressed() {
+    if (isPlaying) {
+        mySound.pause();
+    } else {
+        mySound.play();
+    }
+    isPlaying = !isPlaying;
+}
+            </code></pre>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><code>boolean isPlaying = false;</code>: Tracks whether the sound is currently playing.</li>
+                <li><code>mousePressed()</code>: Toggles the playback state of the sound when the mouse is pressed.</li>
+            </ul>
+            <p>This tutorial demonstrates how to control sound playback using mouse clicks.</p>
+        </section>
+
+        <section id="tutorial-3">
+            <h2>Tutorial 3: Looping Sound</h2>
+            <p><strong>Objective:</strong> Learn how to loop a sound file.</p>
+            <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+
+void setup() {
+    size(800, 600);
+    mySound = new SoundFile(this, "soundfile.mp3");
+    mySound.loop(); // Loop the sound file
+}
+
+void draw() {
+    background(255);
+}
+            </code></pre>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><code>mySound.loop();</code>: Loops the sound file so it plays continuously.</li>
+            </ul>
+            <p>This tutorial demonstrates how to loop a sound file.</p>
+        </section>
+
+        <section id="tutorial-4">
+            <h2>Tutorial 4: Adjusting Playback Volume</h2>
+            <p><strong>Objective:</strong> Learn how to adjust the volume level of playback.</p>
+            <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+
+void setup() {
+    size(800, 600);
+    mySound = new SoundFile(this, "soundfile.mp3");
+    mySound.loop(); // Loop the sound file
+}
+
+void draw() {
+    background(255);
+}
+            </code></pre>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><code>mySound.amp(volume);</code>: Adjusts the playback volume of the sound file.</li>
+            </ul>
+            <p>This tutorial introduces adjusting the volume level of playback.</p>
+        </section>
+
+        <section id="tutorial-5">
+            <h2>Tutorial 5: Visualizing Volume</h2>
+            <p><strong>Objective:</strong> Learn how to visualize the volume level of sound playback.</p>
+            <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+Amplitude amp;
+
+void setup() {
+    size(800, 600);
+    
+    // Initialize SoundFile and Amplitude objects
+    mySound = new SoundFile(this, "soundfile.mp3");
+    amp = new Amplitude(this);
+    
+    // Play the sound
+    mySound.play();
+    
+    // Attach the Amplitude object to the SoundFile
+    amp.input(mySound);
+}
+
+void draw() {
+    background(255);
+    
+    // Get the current volume level
+    float volume = amp.analyze(); // Correct function to get amplitude
+    
+    // Use volume level for visual feedback or other purposes
+    fill(0);
+    ellipse(width / 2, height / 2, volume * 200, volume * 200); // Example visualization
+}
+            </code></pre>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><code>Amplitude amp;</code>: Creates an Amplitude object to measure the sound's amplitude (volume).</li>
+                <li><code>float volume = amp.analyze();</code>: Retrieves the current volume level of the sound.</li>
+            </ul>
+            <p>This tutorial introduces visualizing the amplitude of sound playback.</p>
+        </section>
+
+        <section id="tutorial-6">
+            <h2>Tutorial 6: Applying Reverb Effect</h2>
+            <p><strong>Objective:</strong> Learn how to apply a reverb effect to a sound playback.</p>
+            <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+Reverb reverb;
+float volume = 0.5;  // Volume level for both original and reverb
+
+void setup() {
+    size(800, 600);
+    background(255);
+    fill(0);
+    textSize(32);
+    textAlign(CENTER, CENTER);
+    text("Press SPACEBAR to play sound", width / 2, height / 2);
+    
+    // Load sound file
+    mySound = new SoundFile(this, "soundfile.mp3"); // Replace with your sound file
+    
+    // Initialize Reverb
+    reverb = new Reverb(this);
+    
+    // Set reverb parameters
+    float reverbSize = 1.0;     // Size of the reverb (0.0 to 1.0)
+    float reverbDamping = 1.0;  // Damping of the reverb (0.0 to 1.0)
+    float reverbWidth = 0.5;    // Width of the reverb (0.0 to 1.0)
+    
+    // Apply reverb effect
+    reverb.set(reverbSize, reverbDamping, reverbWidth);
+}
+
+void draw() {
+    // Instructions are already displayed in setup()
+}
+
+void keyPressed() {
+    if (key == ' ') {
+        // Play the original sound
+        mySound.play();
+        
+        // Play the reverb-processed sound
+        SoundFile reverbSound = new SoundFile(this, "soundfile.mp3");
+        reverbSound.play();
+        
+        // Apply reverb to the sound
+        reverb.process(reverbSound);
+        
+        // Adjust volume for both original and reverb sounds
+        mySound.amp(volume);
+        reverbSound.amp(volume);
+    }
+}
+            </code></pre>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><code>Reverb reverb;</code>: Creates a Reverb object to apply the reverb effect.</li>
+                <li><code>reverb.set(reverbSize, reverbDamping, reverbWidth);</code>: Sets the reverb effect parameters.</li>
+                <li><code>reverb.process(reverbSound);</code>: Applies the reverb effect to the sound.</li>
+                <li><code>mySound.amp(volume);</code> and <code>reverbSound.amp(volume);</code>: Adjust the volume level for both original and reverb sounds.</li>
+            </ul>
+            <p>This tutorial demonstrates applying a reverb effect to sound playback.</p>
+        </section>
+
+        <section id="tutorial-7">
+            <h2>Tutorial 7: Combining All Skills</h2>
+            <p><strong>Objective:</strong> Learn how to apply reverb, visualize volume, and play multiple sounds simultaneously.</p>
+            <pre><code>
+import processing.sound.*;
+
+SoundFile sound1;
+SoundFile sound2;
+Amplitude amp;
+Reverb reverb;
+float volume = 0.5;  // Volume level
+
+void setup() {
+    size(800, 600);
+    background(255);
+    fill(0);
+    textSize(32);
+    textAlign(CENTER, CENTER);
+    text("Press SPACEBAR to play sounds", width / 2, height / 2);
+    
+    // Load sound files
+    sound1 = new SoundFile(this, "soundfile1.mp3"); // Replace with your first sound file
+    sound2 = new SoundFile(this, "soundfile2.mp3"); // Replace with your second sound file
+    
+    // Initialize Reverb
+    reverb = new Reverb(this);
+    
+    // Set reverb parameters
+    float reverbSize = 1.0;
+    float reverbDamping = 1.0;
+    float reverbWidth = 0.5;
+    reverb.set(reverbSize, reverbDamping, reverbWidth);
+    
+    // Initialize Amplitude
+    amp = new Amplitude(this);
+    amp.input(sound1); // Attach the Amplitude object to the first sound
+}
+
+void draw() {
+    background(255);
+    
+    // Get the current volume level for visualization
+    float volumeLevel = amp.analyze();
+    
+    // Visualize the volume level
+    fill(0, 100, 255, 150); // Semi-transparent blue
+    float ellipseSize = volumeLevel * 400;
+    ellipse(width / 2, height / 2, ellipseSize, ellipseSize);
+}
+
+void keyPressed() {
+    if (key == ' ') {
+        // Play both sounds
+        sound1.play();
+        sound2.play();
+        
+        // Apply reverb to both sounds
+        reverb.process(sound1);
+        reverb.process(sound2);
+        
+        // Adjust volume for both sounds
+        sound1.amp(volume);
+        sound2.amp(volume);
+    }
+}
+            </code></pre>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><code>SoundFile sound1;</code> and <code>SoundFile sound2;</code>: Creates two SoundFile objects for managing playback of two separate sound files.</li>
+                <li><code>Amplitude amp;</code>: Measures the amplitude (volume) of the first sound.</li>
+                <li><code>Reverb reverb;</code>: Applies reverb effect to both sounds.</li>
+                <li><code>float volumeLevel = amp.analyze();</code>: Retrieves the current volume level of the first sound for visualization.</li>
+                <li><code>ellipse(width / 2, height / 2, ellipseSize, ellipseSize);</code>: Visualizes the volume level as an ellipse.</li>
+                <li><code>sound1.play();</code> and <code>sound2.play();</code>: Plays both sound files simultaneously when the SPACEBAR is pressed.</li>
+                <li><code>reverb.process(sound1);</code> and <code>reverb.process(sound2);</code>: Applies reverb to both sound files.</li>
+                <li><code>sound1.amp(volume);</code> and <code>sound2.amp(volume);</code>: Adjusts the volume for both sounds.</li>
+            </ul>
+            <p>This final tutorial combines all the skills learned: playing multiple sounds, applying reverb, visualizing volume, and adjusting volume levels.</p>
+        </section>
+    </main>
+
+    <html>
+        <main>
+            <body>
+            <ul class="links-list">
+                <li><a href="{{ '/curriculum/th242/design_concepts/intro' | relative_url }}">Introduction to Design</a></li>
+                <li><a href="{{ '/curriculum/th242/design_concepts/workflows' | relative_url }}">Introduction to Design Workflows</a></li>
+                <li><a href="{{ '/curriculum/th242/design_concepts/processing' | relative_url }}">Introduction to Processing</a></li>
+                <li><a href="{{ '/curriculum/th242/design_concepts/pde_media_01' | relative_url }}">Processing Media Tutorials</a></li>
+                <li><a href="{{ '/curriculum/th242/design_concepts/pde_sound_01' | relative_url }}">Processing Sound Tutorials</a></li>
+                <li><a href="{{ '/curriculum/th242/design_concepts/assignments' | relative_url }}">Assignments</a></li>
+                <li><a href="{{ '/curriculum/th242/design_concepts/examples' | relative_url }}">Examples</a></li>
+            </ul>
+            </body>
+        </main>
+    </html>

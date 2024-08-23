@@ -1,9 +1,7 @@
 title: The TDAV Guidebook
 email: your-email@example.com
-description: >- 
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: >-
+  Welcome to The TDAV Guidebook, your comprehensive resource for mastering TDAV techniques and tools. Explore detailed guides, practical tips, and expert insights designed to enhance your knowledge and skills. Whether you're a beginner or an experienced user, our site offers valuable content to help you succeed.
 
 baseurl: "/guidebook" # the subpath of your site, e.g. /blog
 url: "https://nmutdav.github.io" # the base hostname & protocol for your site, e.g. http://example.com

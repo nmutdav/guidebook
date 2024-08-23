@@ -7,6 +7,7 @@ permalink: /index
   <img src="assets/images/banner.png" alt="Banner">
 </div>
 
+
 # Welcome
 Welcome to the Theatre & Dance AV Guidebook! Here you will find course curriculum designed especially for the Northern Michigan University Sound & Engineering Program.
 
