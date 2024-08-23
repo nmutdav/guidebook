@@ -1,0 +1,91 @@
+---
+layout: default
+title: Assignment 3
+permalink: /curriculum/th242/assignments/assignment_3/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3: Surreal Visual and Audio Integration</title>
+</head>
+<body>
+    <h1>TH-242: Media and Sound Design - Assignment 3</h1>
+    <h2>Surreal Visual and Audio Integration</h2>
+    <p><strong>Due:</strong> Class 5</p>
+    <p><strong>Objective:</strong> Create a Processing sketch with surreal visual and audio effects.</p>
+
+    <h3>Step-by-Step Instructions:</h3>
+
+    <ol>
+        <li>
+            <h4>Start with Your Existing Sketch:</h4>
+            <p>Open the Processing sketch from Assignment 2 where you integrated visuals and audio controls. This will be the base for adding surreal effects.</p>
+        </li>
+
+        <li>
+            <h4>Add Surreal Visuals:</h4>
+            <p>Modify your sketch to include unusual shapes, colors, and patterns. Use code like this for creating surreal visuals:</p>
+            <pre><code>
+void setup() {
+  size(600, 600);
+  background(0);
+}
+
+void draw() {
+  background(0);
+  noStroke();
+  fill(random(255), random(255), random(255), 100);
+  ellipse(random(width), random(height), random(50, 150), random(50, 150));
+  fill(random(255), random(255), random(255), 100);
+  rect(random(width), random(height), random(50, 150), random(50, 150));
+}
+            </code></pre>
+            <p>This code creates random colorful ellipses and rectangles, giving a surreal look. You can modify shapes and colors to fit your vision.</p>
+        </li>
+
+        <li>
+            <h4>Incorporate Surreal Audio Effects:</h4>
+            <p>Modify your audio playback to include effects like pitch shifting or reverb. Use the Minim library’s audio effects for this. Example code:</p>
+            <pre><code>
+import ddf.minim.*;
+import ddf.minim.effects.*;
+
+Minim minim;
+AudioPlayer player;
+Reverb reverb;
+
+void setup() {
+  size(600, 600);
+  minim = new Minim(this);
+  player = minim.loadFile("your_audio_file.mp3"); // Replace with your file name
+  player.play();
+  reverb = new Reverb();
+  reverb.setDecay(0.9);
+  reverb.setDamping(0.7);
+}
+
+void draw() {
+  // Apply reverb to audio
+  reverb.process(player.mix);
+}
+            </code></pre>
+            <p>Replace `"your_audio_file.mp3"` with your audio file name. Adjust the reverb settings to create a more surreal sound.</p>
+        </li>
+
+        <li>
+            <h4>Test and Refine:</h4>
+            <p>Run your sketch and ensure that both the visuals and audio create a surreal experience. Adjust parameters as needed to enhance the surreal effect.</p>
+        </li>
+
+        <li>
+            <h4>Submit:</h4>
+            <ul>
+                <li>Submit your updated Processing sketch file (.pde) showcasing surreal visuals and audio effects.</li>
+                <li>Include a brief description of the surreal techniques used in both visuals and audio, and any challenges faced.</li>
+            </ul>
+        </li>
+    </ol>
+</body>
+</html>

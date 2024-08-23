@@ -1,0 +1,25 @@
+---
+layout: default
+title: Assignments
+permalink: curriculum/th242/assignments/index/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments Index</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <h1>Assignments Index</h1>
+        <ul>
+            {% assign assignments = 16 %}
+            {% for i in (1..assignments) %}
+                <li><a href="{{ '/curriculum/th242/assignments/assignment_' | append: i | relative_url }}">Assignment {{ i }}</a></li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>

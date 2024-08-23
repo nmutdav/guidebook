@@ -3,7 +3,61 @@ layout: default
 title: Processing
 permalink: /curriculum/th242/design_concepts/processing/
 ---
-    <main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Sound & Media Design</title>
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+    <style>
+        /* Button Styling */
+        .navigation-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #073627; /* Green gold background */
+            color: white; /* White text */
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #ffc425; /* Gold on hover */
+        }
+
+        /* Links List */
+        .links-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .links-list li {
+            margin: 5px 0;
+        }
+
+        .links-list a {
+            color: #073627;
+            text-decoration: none;
+        }
+
+        .links-list a:hover {
+            color: #ffc425;
+        }
+        body {
+    background: url("{{ '/assets/images/pexels-steve-1573434.jpg' | relative_url }}") no-repeat center center fixed;
+    background-size: cover;
+}
+    </style>
+</head>
+<body>
         <h1>Introduction to Processing</h1>
         <section>
             <h2>What is Processing?</h2>
@@ -94,18 +148,20 @@ void draw() {
             <h2>Conclusion</h2>
             <p>Processing offers a versatile platform for both sound and media design. By learning Processing, you can create compelling and interactive multimedia projects that blend code with creativity.</p>
         </section>
-<html>
     <main>
-        <body>
+        <div class="navigation-buttons">
+            <a class="nav-button" href="{{ '/curriculum/th242/design_concepts/workflows' | relative_url }}">Previous</a>
+            <a class="nav-button" href="{{ '/curriculum/th242/design_concepts/pde_media_01' | relative_url }}">Next</a>
+        </div>
+    </main>
         <ul class="links-list">
+            <li><a href="{{ '/curriculum/th242/design_concepts/index' | relative_url }}">Index</a></li>
             <li><a href="{{ '/curriculum/th242/design_concepts/intro' | relative_url }}">Introduction to Design</a></li>
             <li><a href="{{ '/curriculum/th242/design_concepts/workflows' | relative_url }}">Introduction to Design Workflows</a></li>
             <li><a href="{{ '/curriculum/th242/design_concepts/processing' | relative_url }}">Introduction to Processing</a></li>
             <li><a href="{{ '/curriculum/th242/design_concepts/pde_media_01' | relative_url }}">Processing Media Tutorials</a></li>
             <li><a href="{{ '/curriculum/th242/design_concepts/pde_sound_01' | relative_url }}">Processing Sound Tutorials</a></li>
-            <li><a href="{{ '/curriculum/th242/design_concepts/assignments' | relative_url }}">Assignments</a></li>
-            <li><a href="{{ '/curriculum/th242/design_concepts/examples' | relative_url }}">Examples</a></li>
+            <li><a href="{{ '/curriculum/th242/design_concepts/conclusion' | relative_url }}">Conclusion</a></li>
         </ul>
-        </body>
-    </main>
+</body>
 </html>
