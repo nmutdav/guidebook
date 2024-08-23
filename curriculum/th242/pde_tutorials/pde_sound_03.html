@@ -1,0 +1,370 @@
+---
+layout: default
+title: sound design 3
+permalink: /curriculum/th242/pde_tutorials/pde_sound_03/
+---
+<body>
+    <h1>Processing Sound Design Tutorial Series 3</h1>
+
+    <div id="tutorials">
+
+        <section id="tutorial-1">
+            <h2>Tutorial 1: Creating a Granular Synthesizer</h2>
+            <p><strong>Objective:</strong> Design a granular synthesizer to manipulate sound by breaking it into grains.</p>
+            <h3>1. Implementing Granular Synthesis:</h3>
+            <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+Granular granular;
+
+void setup() {
+    size(800, 600);
+    mySound = new SoundFile(this, "soundfile.wav");
+    granular = new Granular(this);
+    granular.process(mySound, 100, 0.5); // Process the sound with 100 grains and 0.5 density
+    mySound.play();
+}
+
+void draw() {
+    background(255);
+}
+            </code></pre>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><code>Granular granular;</code>: Creates a granular synthesizer object.</li>
+                <li><code>granular.process(mySound, 100, 0.5);</code>: Processes the sound file with granular synthesis.</li>
+            </ul>
+            <p>This tutorial introduces granular synthesis, allowing you to manipulate audio by dividing it into grains.</p>
+        </section>
+
+        <section id="tutorial-2">
+            <h2>Tutorial 2: Building a Waveform Visualizer</h2>
+            <p><strong>Objective:</strong> Visualize the waveform of an audio file in real-time.</p>
+            <h3>1. Displaying the Waveform:</h3>
+            <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+Amplitude amplitude;
+float[] waveform;
+
+void setup() {
+    size(800, 600);
+    mySound = new SoundFile(this, "soundfile.wav");
+    mySound.play();
+    amplitude = new Amplitude(this);
+    amplitude.input(mySound);
+}
+
+void draw() {
+    background(0);
+    stroke(255);
+    noFill();
+    
+    waveform = amplitude.getWaveform();
+    beginShape();
+    for (int i = 0; i < waveform.length; i++) {
+        float x = map(i, 0, waveform.length, 0, width);
+        float y = map(waveform[i], -1, 1, height / 2, 0);
+        vertex(x, y);
+    }
+    endShape();
+}
+            </code></pre>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><code>amplitude.getWaveform();</code>: Retrieves the waveform data of the audio signal.</li>
+                <li><code>beginShape(); ... endShape();</code>: Draws the waveform data on the screen.</li>
+            </ul>
+            <p>This tutorial demonstrates how to create a real-time waveform visualizer for audio analysis.</p>
+        </section>
+
+        <section id="tutorial-3">
+            <h2>Tutorial 3: Implementing a Real-Time Beat Detection</h2>
+            <p><strong>Objective:</strong> Detect and visualize beats in real-time from an audio stream.</p>
+            <h3>1. Detecting Beats:</h3>
+            <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+BeatDetect beatDetect;
+int beatThreshold = 10;
+
+void setup() {
+    size(800, 600);
+    mySound = new SoundFile(this, "soundfile.wav");
+    mySound.play();
+    beatDetect = new BeatDetect(this);
+    beatDetect.input(mySound);
+}
+
+void draw() {
+    background(255);
+    beatDetect.process();
+    
+    if (beatDetect.isBeat(beatThreshold)) {
+        fill(255, 0, 0);
+        ellipse(width / 2, height / 2, 100, 100); // Indicate beat with a red circle
+    }
+}
+            </code></pre>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><code>beatDetect.process();</code>: Processes the audio to detect beats.</li>
+                <li><code>beatDetect.isBeat(beatThreshold);</code>: Checks if the detected beat exceeds the threshold.</li>
+            </ul>
+            <p>This tutorial covers how to implement beat detection and visualize it in real-time.</p>
+        </section>
+
+        <section id="tutorial-4">
+            <h2>Tutorial 4: Designing a Real-Time Audio Reverb Effect</h2>
+            <p><strong>Objective:</strong> Create a real-time audio reverb effect to enhance sound quality.</p>
+            <h3>1. Applying Reverb:</h3>
+            <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+Reverb reverb;
+float reverbAmount = 0.5;
+
+void setup() {
+    size(800, 600);
+    mySound = new SoundFile(this, "soundfile.wav");
+    mySound.play();
+    reverb = new Reverb(this);
+    reverb.process(mySound, reverbAmount);
+}
+
+void draw() {
+    background(255);
+    reverbAmount = map(mouseX, 0, width, 0, 1); // Control reverb amount with mouseX
+    reverb.process(mySound, reverbAmount);
+}
+            </code></pre>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><code>reverbAmount = map(mouseX, 0, width, 0, 1);</code>: Adjusts reverb amount based on mouseX position.</li>
+                <li><code>reverb.process(mySound, reverbAmount);</code>: Applies reverb effect with the updated amount.</li>
+            </ul>
+            <p>This tutorial shows how to design a real-time audio reverb effect and control it interactively.</p>
+        </section>
+
+        <section id="tutorial-5">
+            <h2>Tutorial 5: Creating a Dynamic Sound Effects Processor</h2>
+            <p><strong>Objective:</strong> Design a sound effects processor with dynamic parameter control.</p>
+            <h3>1. Implementing Sound Effects Processing:</h3>
+            <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+Filter filter;
+Delay delay;
+float filterCutoff = 1000;
+float delayTime = 0.5;
+
+void setup() {
+    size(800, 600);
+    mySound = new SoundFile(this, "soundfile.wav");
+    mySound.play();
+    filter = new Filter(this);
+    delay = new Delay(this);
+}
+
+void draw() {
+    background(255);
+    filterCutoff = map(mouseX, 0, width, 100, 5000); // Control filter cutoff with mouseX
+    delayTime = map(mouseY, 0, height, 0.1, 1); // Control delay time with mouseY
+    
+    filter.process(mySound, filterCutoff, 1);
+    delay.process(mySound, delayTime);
+}
+            </code></pre>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><code>filterCutoff = map(mouseX, 0, width, 100, 5000);</code>: Adjusts filter cutoff frequency based on mouseX position.</li>
+                <li><code>delayTime = map(mouseY, 0, height, 0.1, 1);</code>: Adjusts delay time based on mouseY position.</li>
+                <li><code>filter.process(mySound, filterCutoff, 1);</code>: Applies the filter with the updated cutoff frequency.</li>
+                <li><code>delay.process(mySound, delayTime);</code>: Applies the delay with the updated time parameter.</li>
+            </ul>
+            <p>This tutorial demonstrates how to create a dynamic sound effects processor with real-time control.</p>
+        </section>
+
+        <section id="tutorial-6">
+            <h2>Tutorial 6: Building a Multi-Tap Delay Effect</h2>
+            <p><strong>Objective:</strong> Implement a multi-tap delay effect for complex sound processing.</p>
+            <h3>1. Creating a Multi-Tap Delay:</h3>
+            <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+Delay multiTapDelay;
+
+void setup() {
+    size(800, 600);
+    mySound = new SoundFile(this, "soundfile.wav");
+    mySound.play();
+    multiTapDelay = new Delay(this);
+}
+
+void draw() {
+    background(255);
+    multiTapDelay.process(mySound, 0.5); // Apply a basic delay effect
+    // Additional taps can be implemented by chaining multiple Delay instances
+}
+            </code></pre>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><code>multiTapDelay.process(mySound, 0.5);</code>: Applies a multi-tap delay effect with a delay time of 0.5 seconds.</li>
+            </ul>
+            <p>This tutorial covers the basics of creating a multi-tap delay effect. Additional taps can be added for more complexity.</p>
+        </section>
+
+        <section id="tutorial-7">
+            <h2>Tutorial 7: Creating an Interactive Drum Machine</h2>
+            <p><strong>Objective:</strong> Design a simple drum machine with interactive controls.</p>
+            <h3>1. Implementing a Drum Machine:</h3>
+            <pre><code>
+import processing.sound.*;
+
+SoundFile kick, snare, hiHat;
+boolean kickPlaying = false;
+boolean snarePlaying = false;
+boolean hiHatPlaying = false;
+
+void setup() {
+    size(800, 600);
+    kick = new SoundFile(this, "kick.wav");
+    snare = new SoundFile(this, "snare.wav");
+    hiHat = new SoundFile(this, "hihat.wav");
+}
+
+void draw() {
+    background(255);
+    if (mousePressed) {
+        if (mouseX < width / 3) {
+            kick.play();
+        } else if (mouseX < 2 * width / 3) {
+            snare.play();
+        } else {
+            hiHat.play();
+        }
+    }
+}
+            </code></pre>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><code>kick.play();</code>, <code>snare.play();</code>, <code>hiHat.play();</code>: Plays different drum sounds based on mouse position.</li>
+            </ul>
+            <p>This tutorial introduces creating an interactive drum machine, where different drum sounds are triggered by mouse clicks.</p>
+        </section>
+
+        <section id="tutorial-8">
+            <h2>Tutorial 8: Designing a Real-Time Audio Spectrum Analyzer</h2>
+            <p><strong>Objective:</strong> Visualize the frequency spectrum of an audio signal in real-time.</p>
+            <h3>1. Creating a Spectrum Analyzer:</h3>
+            <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+FFT fft;
+int spectrumSize = 512;
+
+void setup() {
+    size(800, 600);
+    mySound = new SoundFile(this, "soundfile.wav");
+    mySound.play();
+    fft = new FFT(this, spectrumSize);
+    fft.input(mySound);
+}
+
+void draw() {
+    background(0);
+    fft.analyze();
+    stroke(255);
+    noFill();
+    beginShape();
+    for (int i = 0; i < fft.specSize(); i++) {
+        float x = map(i, 0, fft.specSize(), 0, width);
+        float y = map(fft.getBand(i), 0, 1, height, 0);
+        vertex(x, y);
+    }
+    endShape();
+}
+            </code></pre>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><code>fft.analyze();</code>: Analyzes the audio input to get frequency spectrum data.</li>
+                <li><code>beginShape(); ... endShape();</code>: Visualizes the frequency spectrum as a waveform.</li>
+            </ul>
+            <p>This tutorial covers creating a real-time audio spectrum analyzer for visualizing frequency data.</p>
+        </section>
+
+        <section id="tutorial-9">
+            <h2>Tutorial 9: Implementing a Real-Time Audio Oscillator</h2>
+            <p><strong>Objective:</strong> Design a real-time audio oscillator to generate sound waves.</p>
+            <h3>1. Creating an Audio Oscillator:</h3>
+            <pre><code>
+import processing.sound.*;
+
+Oscillator osc;
+float frequency = 440;
+
+void setup() {
+    size(800, 600);
+    osc = new Oscillator(this);
+    osc.play();
+}
+
+void draw() {
+    background(255);
+    frequency = map(mouseX, 0, width, 100, 1000); // Control frequency with mouseX
+    osc.setFreq(frequency);
+}
+            </code></pre>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><code>osc.setFreq(frequency);</code>: Sets the oscillator frequency based on mouseX position.</li>
+            </ul>
+            <p>This tutorial focuses on creating a real-time audio oscillator and controlling its frequency interactively.</p>
+        </section>
+
+        <section id="tutorial-10">
+            <h2>Tutorial 10: Designing a Real-Time Audio Filter Bank</h2>
+            <p><strong>Objective:</strong> Create a filter bank to apply multiple filters to an audio signal.</p>
+            <h3>1. Implementing a Filter Bank:</h3>
+            <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+Filter[] filters;
+int numFilters = 5;
+
+void setup() {
+    size(800, 600);
+    mySound = new SoundFile(this, "soundfile.wav");
+    mySound.play();
+    filters = new Filter[numFilters];
+    for (int i = 0; i < numFilters; i++) {
+        filters[i] = new Filter(this);
+    }
+}
+
+void draw() {
+    background(255);
+    for (int i = 0; i < numFilters; i++) {
+        float freq = map(i, 0, numFilters, 100, 10000);
+        filters[i].process(mySound, freq, 1);
+    }
+}
+            </code></pre>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><code>filters[i].process(mySound, freq, 1);</code>: Applies each filter with a different frequency.</li>
+            </ul>
+            <p>This tutorial demonstrates how to design a filter bank and apply multiple filters to an audio signal.</p>
+        </section>
+
+    </div>
+</body>
+</html>
