@@ -1,23 +1,24 @@
 ---
 layout: default
-title: sound design 1
+title: media design 1
 permalink: /curriculum/th242/pde_tutorials/pde_sound_01/
 ---
-        <h1>Sound Design Tutorial Series 1</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorials</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+    <script src="{{ site.baseurl }}/assets/js/menu.js" defer></script>
+</head>
+<body>
+    {% include header.html %}
 
+    <main>
         <section id="tutorial-1">
-            <h2>Tutorial 1: Introduction to Sound in Processing</h2>
-            <p><strong>Objective:</strong> Learn the basics of integrating sound with Processing.</p>
-            <h3>1. Setup Processing for Sound</h3>
-            <ul>
-                <li><strong>Install the Sound Library:</strong></li>
-                <ul>
-                    <li>Open Processing.</li>
-                    <li>Go to <code>Sketch &gt; Import Library &gt; Add Library...</code>.</li>
-                    <li>Search for "Sound" and install it.</li>
-                </ul>
-                <li><strong>Play a Sound File:</strong></li>
-            </ul>
+            <h2>Tutorial 1: Basic Sound Playback</h2>
+            <p><strong>Objective:</strong> Learn how to play a sound file.</p>
             <pre><code>
 import processing.sound.*;
 
@@ -35,19 +36,15 @@ void draw() {
             </code></pre>
             <p><strong>Explanation:</strong></p>
             <ul>
-                <li><code>import processing.sound.*;</code>: Imports the Sound library for sound functionalities.</li>
-                <li><code>SoundFile mySound;</code>: Declares a variable for the sound file.</li>
-                <li><code>void setup()</code>: Initializes the sketch and plays the sound file.</li>
-                <li><code>mySound = new SoundFile(this, "soundfile.mp3");</code>: Loads the sound file. Replace <code>"soundfile.mp3"</code> with your sound file.</li>
-                <li><code>mySound.play();</code>: Starts playback of the sound file.</li>
+                <li><code>SoundFile mySound;</code>: Creates a SoundFile object to manage sound playback.</li>
+                <li><code>mySound.play();</code>: Starts playing the sound file.</li>
             </ul>
-            <p>This tutorial introduces how to play a sound file in Processing. Ensure that the sound file is in the sketch’s "data" folder.</p>
+            <p>This tutorial introduces basic sound playback functionality.</p>
         </section>
 
         <section id="tutorial-2">
-            <h2>Tutorial 2: Controlling Sound Playback</h2>
-            <p><strong>Objective:</strong> Learn to control sound playback with basic interactions.</p>
-            <h3>1. Play and Pause Sound:</h3>
+            <h2>Tutorial 2: Toggle Playback</h2>
+            <p><strong>Objective:</strong> Learn how to toggle sound playback on and off with mouse clicks.</p>
             <pre><code>
 import processing.sound.*;
 
@@ -75,78 +72,14 @@ void mousePressed() {
             <p><strong>Explanation:</strong></p>
             <ul>
                 <li><code>boolean isPlaying = false;</code>: Tracks whether the sound is currently playing.</li>
-                <li><code>void mousePressed()</code>: A function that is called when the mouse is pressed. It toggles play and pause of the sound.</li>
-                <li><code>if (isPlaying)</code>: Checks if the sound is currently playing to pause it or play it based on the current state.</li>
-                <li><code>mySound.pause();</code> and <code>mySound.play();</code>: Control the playback of the sound.</li>
+                <li><code>mousePressed()</code>: Toggles the playback state of the sound when the mouse is pressed.</li>
             </ul>
-            <p>This tutorial demonstrates how to control sound playback using mouse interactions.</p>
+            <p>This tutorial demonstrates how to control sound playback using mouse clicks.</p>
         </section>
 
         <section id="tutorial-3">
-            <h2>Tutorial 3: Adjusting Volume</h2>
-            <p><strong>Objective:</strong> Learn how to adjust the volume of the sound playback.</p>
-            <h3>1. Setting Volume Levels:</h3>
-            <pre><code>
-import processing.sound.*;
-
-SoundFile mySound;
-Amplitude amp;
-
-void setup() {
-    size(800, 600);
-    mySound = new SoundFile(this, "soundfile.mp3");
-    amp = new Amplitude(this);
-    mySound.play();
-}
-
-void draw() {
-    background(255);
-    float volume = amp.getLevel(); // Get the current volume level
-    // Use volume level for visual feedback or other purposes
-}
-            </code></pre>
-            <p><strong>Explanation:</strong></p>
-            <ul>
-                <li><code>Amplitude amp;</code>: Creates an Amplitude object to measure the sound's amplitude (volume).</li>
-                <li><code>float volume = amp.getLevel();</code>: Retrieves the current volume level of the sound.</li>
-            </ul>
-            <p>This tutorial introduces adjusting and retrieving the volume level of sound playback.</p>
-        </section>
-
-        <section id="tutorial-4">
-            <h2>Tutorial 4: Playing Multiple Sounds</h2>
-            <p><strong>Objective:</strong> Learn to play and control multiple sound files simultaneously.</p>
-            <h3>1. Handling Multiple Sound Files:</h3>
-            <pre><code>
-import processing.sound.*;
-
-SoundFile sound1;
-SoundFile sound2;
-
-void setup() {
-    size(800, 600);
-    sound1 = new SoundFile(this, "sound1.mp3");
-    sound2 = new SoundFile(this, "sound2.mp3");
-    sound1.play();
-    sound2.play();
-}
-
-void draw() {
-    background(255);
-}
-            </code></pre>
-            <p><strong>Explanation:</strong></p>
-            <ul>
-                <li><code>SoundFile sound1;</code> and <code>SoundFile sound2;</code>: Declare variables for two sound files.</li>
-                <li><code>sound1.play();</code> and <code>sound2.play();</code>: Play both sounds simultaneously.</li>
-            </ul>
-            <p>This tutorial shows how to manage and play multiple sound files at once.</p>
-        </section>
-
-        <section id="tutorial-5">
-            <h2>Tutorial 5: Looping Sounds</h2>
-            <p><strong>Objective:</strong> Learn how to loop sounds for continuous playback.</p>
-            <h3>1. Looping a Sound File:</h3>
+            <h2>Tutorial 3: Looping Sound</h2>
+            <p><strong>Objective:</strong> Learn how to loop a sound file.</p>
             <pre><code>
 import processing.sound.*;
 
@@ -164,27 +97,23 @@ void draw() {
             </code></pre>
             <p><strong>Explanation:</strong></p>
             <ul>
-                <li><code>mySound.loop();</code>: Starts looping the sound file indefinitely.</li>
+                <li><code>mySound.loop();</code>: Loops the sound file so it plays continuously.</li>
             </ul>
-            <p>This tutorial demonstrates how to create a looped playback for continuous sound effects or music.</p>
+            <p>This tutorial demonstrates how to loop a sound file.</p>
         </section>
 
-        <section id="tutorial-6">
-            <h2>Tutorial 6: Using Sound Effects</h2>
-            <p><strong>Objective:</strong> Apply basic sound effects like reverb or delay.</p>
-            <h3>1. Applying Reverb Effect:</h3>
+        <section id="tutorial-4">
+            <h2>Tutorial 4: Adjusting Playback Volume</h2>
+            <p><strong>Objective:</strong> Learn how to adjust the volume level of playback.</p>
             <pre><code>
 import processing.sound.*;
 
 SoundFile mySound;
-Reverb reverb;
 
 void setup() {
     size(800, 600);
     mySound = new SoundFile(this, "soundfile.mp3");
-    reverb = new Reverb(this);
-    reverb.process(mySound, 0.5); // Apply reverb with 50% effect level
-    mySound.play();
+    mySound.loop(); // Loop the sound file
 }
 
 void draw() {
@@ -193,16 +122,14 @@ void draw() {
             </code></pre>
             <p><strong>Explanation:</strong></p>
             <ul>
-                <li><code>Reverb reverb;</code>: Creates a Reverb object to apply reverberation effects.</li>
-                <li><code>reverb.process(mySound, 0.5);</code>: Applies the reverb effect to the sound file.</li>
+                <li><code>mySound.amp(volume);</code>: Adjusts the playback volume of the sound file.</li>
             </ul>
-            <p>This tutorial introduces how to apply sound effects to enhance audio playback.</p>
+            <p>This tutorial introduces adjusting the volume level of playback.</p>
         </section>
 
-        <section id="tutorial-7">
-            <h2>Tutorial 7: Real-Time Sound Analysis</h2>
-            <p><strong>Objective:</strong> Analyze sound in real-time for visual feedback or interaction.</p>
-            <h3>1. Visualizing Sound Amplitude:</h3>
+        <section id="tutorial-5">
+            <h2>Tutorial 5: Visualizing Volume</h2>
+            <p><strong>Objective:</strong> Learn how to visualize the volume level of sound playback.</p>
             <pre><code>
 import processing.sound.*;
 
@@ -211,485 +138,183 @@ Amplitude amp;
 
 void setup() {
     size(800, 600);
+    
+    // Initialize SoundFile and Amplitude objects
     mySound = new SoundFile(this, "soundfile.mp3");
     amp = new Amplitude(this);
+    
+    // Play the sound
     mySound.play();
+    
+    // Attach the Amplitude object to the SoundFile
+    amp.input(mySound);
 }
 
 void draw() {
     background(255);
-    float volume = amp.getLevel(); // Get the current volume level
-    fill(0, 100, 255);
-    ellipse(width/2, height/2, volume * 500, volume * 500); // Visualize amplitude
+    
+    // Get the current volume level
+    float volume = amp.analyze(); // Correct function to get amplitude
+    
+    // Use volume level for visual feedback or other purposes
+    fill(0);
+    ellipse(width / 2, height / 2, volume * 200, volume * 200); // Example visualization
 }
             </code></pre>
             <p><strong>Explanation:</strong></p>
             <ul>
-                <li><code>float volume = amp.getLevel();</code>: Retrieves the volume level.</li>
-                <li><code>ellipse(width/2, height/2, volume * 500, volume * 500);</code>: Visualizes the volume level as a dynamic ellipse.</li>
+                <li><code>Amplitude amp;</code>: Creates an Amplitude object to measure the sound's amplitude (volume).</li>
+                <li><code>float volume = amp.analyze();</code>: Retrieves the current volume level of the sound.</li>
             </ul>
-            <p>This tutorial demonstrates how to visualize sound amplitude in real-time.</p>
-        </section>
-
-        <section id="tutorial-8">
-            <h2>Tutorial 8: Implementing Basic Audio Filters</h2>
-            <p><strong>Objective:</strong> Apply basic audio filters to modify sound characteristics.</p>
-            <h3>1. Using Low-Pass Filter:</h3>
-            <pre><code>
-import processing.sound.*;
-
-SoundFile mySound;
-LowPass lowPass;
-
-void setup() {
-    size(800, 600);
-    mySound = new SoundFile(this, "soundfile.mp3");
-    lowPass = new LowPass(this);
-    lowPass.process(mySound);
-    mySound.play();
-}
-
-void draw() {
-    background(255);
-}
-            </code></pre>
-            <p><strong>Explanation:</strong></p>
-            <ul>
-                <li><code>LowPass lowPass;</code>: Creates a LowPass filter object to apply a low-pass filter effect.</li>
-                <li><code>lowPass.process(mySound);</code>: Applies the filter to the sound file.</li>
-            </ul>
-            <p>This tutorial introduces basic audio filtering techniques.</p>
-        </section>
-
-        <section id="tutorial-9">
-            <h2>Tutorial 9: Creating Sound with Synthesizers</h2>
-            <p><strong>Objective:</strong> Generate sounds using Processing’s built-in synthesizers.</p>
-            <h3>1. Using a Simple Synthesizer:</h3>
-            <pre><code>
-import processing.sound.*;
-
-Oscillator osc;
-
-void setup() {
-    size(800, 600);
-    osc = new Oscillator(this);
-    osc.setFreq(440); // Set frequency to 440 Hz
-    osc.amp(0.5); // Set amplitude
-    osc.play();
-}
-
-void draw() {
-    background(255);
-}
-            </code></pre>
-            <p><strong>Explanation:</strong></p>
-            <ul>
-                <li><code>Oscillator osc;</code>: Creates an Oscillator object to generate sound.</li>
-                <li><code>osc.setFreq(440);</code>: Sets the frequency of the sound.</li>
-                <li><code>osc.amp(0.5);</code>: Sets the amplitude of the sound.</li>
-                <li><code>osc.play();</code>: Starts playing the sound.</li>
-            </ul>
-            <p>This tutorial covers generating simple tones with an oscillator.</p>
-        </section>
-
-        <section id="tutorial-10">
-            <h2>Tutorial 10: Interactive Sound Design</h2>
-            <p><strong>Objective:</strong> Create interactive sound experiences with user input.</p>
-            <h3>1. Adjusting Sound with Mouse Input:</h3>
-            <pre><code>
-import processing.sound.*;
-
-SoundFile mySound;
-float volume = 0.5;
-
-void setup() {
-    size(800, 600);
-    mySound = new SoundFile(this, "soundfile.mp3");
-    mySound.play();
-}
-
-void draw() {
-    background(255);
-    volume = map(mouseX, 0, width, 0, 1); // Map mouseX to volume
-    mySound.amp(volume);
-}
-            </code></pre>
-            <p><strong>Explanation:</strong></p>
-            <ul>
-                <li><code>float volume = 0.5;</code>: Initializes the volume level.</li>
-                <li><code>volume = map(mouseX, 0, width, 0, 1);</code>: Maps the mouseX position to a volume range between 0 and 1.</li>
-                <li><code>mySound.amp(volume);</code>: Adjusts the sound amplitude based on mouseX position.</li>
-            </ul>
-            <p>This tutorial demonstrates how to create interactive sound experiences by manipulating sound based on user input.</p>
-        </section>
-    </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sound Design Tutorial Series 2</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        pre {
-            background-color: #eee;
-            border-left: 4px solid #333;
-            padding: 10px;
-            overflow-x: auto;
-        }
-        code {
-            font-family: monospace;
-        }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        a {
-            color: #1a73e8;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Sound Design Tutorial Series 2</h1>
-
-        <section id="tutorial-1">
-            <h2>Tutorial 1: Modifying Sound Frequencies</h2>
-            <p><strong>Objective:</strong> Learn to manipulate the frequency of sound to create different pitches.</p>
-            <h3>1. Changing the Frequency of an Oscillator:</h3>
-            <pre><code>
-import processing.sound.*;
-
-Oscillator osc;
-float freq = 440;
-
-void setup() {
-    size(800, 600);
-    osc = new Oscillator(this);
-    osc.play();
-}
-
-void draw() {
-    background(255);
-    freq = map(mouseX, 0, width, 100, 1000); // Map mouseX to frequency range
-    osc.setFreq(freq);
-}
-            </code></pre>
-            <p><strong>Explanation:</strong></p>
-            <ul>
-                <li><code>freq = map(mouseX, 0, width, 100, 1000);</code>: Maps the mouseX position to a frequency range from 100 Hz to 1000 Hz.</li>
-                <li><code>osc.setFreq(freq);</code>: Updates the frequency of the oscillator based on mouseX position.</li>
-            </ul>
-            <p>This tutorial demonstrates how to adjust the pitch of a sound by changing its frequency.</p>
-        </section>
-
-        <section id="tutorial-2">
-            <h2>Tutorial 2: Creating Sound Envelopes</h2>
-            <p><strong>Objective:</strong> Learn to create sound envelopes to shape the attack, decay, sustain, and release of sounds.</p>
-            <h3>1. Implementing an ADSR Envelope:</h3>
-            <pre><code>
-import processing.sound.*;
-
-Oscillator osc;
-float attack = 0.1;
-float decay = 0.2;
-float sustain = 0.7;
-float release = 0.3;
-
-void setup() {
-    size(800, 600);
-    osc = new Oscillator(this);
-    osc.play();
-}
-
-void draw() {
-    background(255);
-    // Example of envelope parameters affecting sound
-    osc.amp(1.0, attack); // Attack phase
-    osc.amp(sustain, decay); // Decay and sustain phase
-    osc.amp(0, release); // Release phase
-}
-            </code></pre>
-            <p><strong>Explanation:</strong></p>
-            <ul>
-                <li><code>osc.amp(1.0, attack);</code>: Sets the amplitude to maximum during the attack phase.</li>
-                <li><code>osc.amp(sustain, decay);</code>: Adjusts amplitude to the sustain level after decay.</li>
-                <li><code>osc.amp(0, release);</code>: Fades out the sound during the release phase.</li>
-            </ul>
-            <p>This tutorial introduces ADSR (Attack, Decay, Sustain, Release) envelopes for shaping sound characteristics.</p>
-        </section>
-
-        <section id="tutorial-3">
-            <h2>Tutorial 3: Using Advanced Filters</h2>
-            <p><strong>Objective:</strong> Apply more advanced filters to shape and modify sound.</p>
-            <h3>1. Implementing a Band-Pass Filter:</h3>
-            <pre><code>
-import processing.sound.*;
-
-SoundFile mySound;
-BandPass bandPass;
-
-void setup() {
-    size(800, 600);
-    mySound = new SoundFile(this, "soundfile.mp3");
-    bandPass = new BandPass(this);
-    bandPass.process(mySound, 1000, 0.5); // Center frequency and bandwidth
-    mySound.play();
-}
-
-void draw() {
-    background(255);
-}
-            </code></pre>
-            <p><strong>Explanation:</strong></p>
-            <ul>
-                <li><code>BandPass bandPass;</code>: Creates a BandPass filter object.</li>
-                <li><code>bandPass.process(mySound, 1000, 0.5);</code>: Applies the band-pass filter with a center frequency of 1000 Hz and bandwidth of 0.5.</li>
-            </ul>
-            <p>This tutorial covers the use of advanced filters like band-pass to shape sound frequencies.</p>
-        </section>
-
-        <section id="tutorial-4">
-            <h2>Tutorial 4: Creating Sound with Granular Synthesis</h2>
-            <p><strong>Objective:</strong> Explore granular synthesis techniques to create complex sounds.</p>
-            <h3>1. Implementing Granular Synthesis:</h3>
-            <pre><code>
-import processing.sound.*;
-
-Granular granular;
-
-void setup() {
-    size(800, 600);
-    granular = new Granular(this);
-    granular.set("soundfile.mp3");
-    granular.play();
-}
-
-void draw() {
-    background(255);
-}
-            </code></pre>
-            <p><strong>Explanation:</strong></p>
-            <ul>
-                <li><code>Granular granular;</code>: Creates a Granular synthesis object.</li>
-                <li><code>granular.set("soundfile.mp3");</code>: Loads a sound file for granular synthesis.</li>
-                <li><code>granular.play();</code>: Starts playing the granular synthesis.</li>
-            </ul>
-            <p>This tutorial introduces granular synthesis, which manipulates small segments of audio to create unique sounds.</p>
-        </section>
-
-        <section id="tutorial-5">
-            <h2>Tutorial 5: Implementing Sound Modulation</h2>
-            <p><strong>Objective:</strong> Apply modulation techniques to change sound characteristics over time.</p>
-            <h3>1. Using Frequency Modulation (FM):</h3>
-            <pre><code>
-import processing.sound.*;
-
-Oscillator carrier;
-Oscillator modulator;
-
-void setup() {
-    size(800, 600);
-    carrier = new Oscillator(this);
-    modulator = new Oscillator(this);
-    carrier.play();
-    modulator.play();
-}
-
-void draw() {
-    background(255);
-    float modFreq = map(mouseX, 0, width, 1, 10); // Modulator frequency
-    modulator.setFreq(modFreq);
-    carrier.setFreq(440 + modulator.getFreq() * 50); // Frequency modulation
-}
-            </code></pre>
-            <p><strong>Explanation:</strong></p>
-            <ul>
-                <li><code>modFreq = map(mouseX, 0, width, 1, 10);</code>: Maps the mouseX position to a frequency range for modulation.</li>
-                <li><code>carrier.setFreq(440 + modulator.getFreq() * 50);</code>: Applies frequency modulation to the carrier signal.</li>
-            </ul>
-            <p>This tutorial demonstrates frequency modulation to create complex sounds by varying the carrier frequency.</p>
+            <p>This tutorial introduces visualizing the amplitude of sound playback.</p>
         </section>
 
         <section id="tutorial-6">
-            <h2>Tutorial 6: Sampling and Playback</h2>
-            <p><strong>Objective:</strong> Learn how to work with sound samples for playback and manipulation.</p>
-            <h3>1. Loading and Playing Sound Samples:</h3>
-            <pre><code>
-import processing.sound.*;
-
-SoundFile sample;
-
-void setup() {
-    size(800, 600);
-    sample = new SoundFile(this, "sample.wav");
-    sample.play();
-}
-
-void draw() {
-    background(255);
-}
-            </code></pre>
-            <p><strong>Explanation:</strong></p>
-            <ul>
-                <li><code>SoundFile sample;</code>: Creates a SoundFile object for sampling.</li>
-                <li><code>sample = new SoundFile(this, "sample.wav");</code>: Loads a WAV file.</li>
-                <li><code>sample.play();</code>: Starts playback of the sample.</li>
-            </ul>
-            <p>This tutorial shows how to load and play sound samples in Processing.</p>
-        </section>
-
-        <section id="tutorial-7">
-            <h2>Tutorial 7: Real-Time Audio Effects</h2>
-            <p><strong>Objective:</strong> Apply real-time audio effects to modify sound as it plays.</p>
-            <h3>1. Adding Reverb to a Sound:</h3>
+            <h2>Tutorial 6: Applying Reverb Effect</h2>
+            <p><strong>Objective:</strong> Learn how to apply a reverb effect to a sound playback.</p>
             <pre><code>
 import processing.sound.*;
 
 SoundFile mySound;
 Reverb reverb;
+float volume = 0.5;  // Volume level for both original and reverb
 
 void setup() {
     size(800, 600);
-    mySound = new SoundFile(this, "soundfile.mp3");
+    background(255);
+    fill(0);
+    textSize(32);
+    textAlign(CENTER, CENTER);
+    text("Press SPACEBAR to play sound", width / 2, height / 2);
+    
+    // Load sound file
+    mySound = new SoundFile(this, "soundfile.mp3"); // Replace with your sound file
+    
+    // Initialize Reverb
     reverb = new Reverb(this);
-    reverb.process(mySound, 0.5); // Apply reverb with decay time
-    mySound.play();
+    
+    // Set reverb parameters
+    float reverbSize = 1.0;     // Size of the reverb (0.0 to 1.0)
+    float reverbDamping = 1.0;  // Damping of the reverb (0.0 to 1.0)
+    float reverbWidth = 0.5;    // Width of the reverb (0.0 to 1.0)
+    
+    // Apply reverb effect
+    reverb.set(reverbSize, reverbDamping, reverbWidth);
 }
 
 void draw() {
-    background(255);
-}
-            </code></pre>
-            <p><strong>Explanation:</strong></p>
-            <ul>
-                <li><code>Reverb reverb;</code>: Creates a Reverb effect object.</li>
-                <li><code>reverb.process(mySound, 0.5);</code>: Applies the reverb effect with a decay time of 0.5 seconds.</li>
-            </ul>
-            <p>This tutorial explores how to apply real-time audio effects, like reverb, to enhance sound playback.</p>
-        </section>
-
-        <section id="tutorial-8">
-            <h2>Tutorial 8: Generating Sound Waves</h2>
-            <p><strong>Objective:</strong> Learn to generate various sound waves using processing tools.</p>
-            <h3>1. Creating Different Waveforms:</h3>
-            <pre><code>
-import processing.sound.*;
-
-Oscillator osc;
-
-void setup() {
-    size(800, 600);
-    osc = new Oscillator(this);
-    osc.setWaveform(SINE); // Sine wave
-    osc.play();
+    // Instructions are already displayed in setup()
 }
 
-void draw() {
-    background(255);
-    if (mousePressed) {
-        osc.setWaveform(SQUARE); // Change to square wave
-    } else {
-        osc.setWaveform(SINE); // Sine wave
+void keyPressed() {
+    if (key == ' ') {
+        // Play the original sound
+        mySound.play();
+        
+        // Play the reverb-processed sound
+        SoundFile reverbSound = new SoundFile(this, "soundfile.mp3");
+        reverbSound.play();
+        
+        // Apply reverb to the sound
+        reverb.process(reverbSound);
+        
+        // Adjust volume for both original and reverb sounds
+        mySound.amp(volume);
+        reverbSound.amp(volume);
     }
 }
             </code></pre>
             <p><strong>Explanation:</strong></p>
             <ul>
-                <li><code>osc.setWaveform(SINE);</code>: Sets the waveform to a sine wave.</li>
-                <li><code>if (mousePressed) { osc.setWaveform(SQUARE); }</code>: Changes the waveform to a square wave when the mouse is pressed.</li>
+                <li><code>Reverb reverb;</code>: Creates a Reverb object to apply the reverb effect.</li>
+                <li><code>reverb.set(reverbSize, reverbDamping, reverbWidth);</code>: Sets the reverb effect parameters.</li>
+                <li><code>reverb.process(reverbSound);</code>: Applies the reverb effect to the sound.</li>
+                <li><code>mySound.amp(volume);</code> and <code>reverbSound.amp(volume);</code>: Adjust the volume level for both original and reverb sounds.</li>
             </ul>
-            <p>This tutorial shows how to switch between different sound waveforms in real-time.</p>
+            <p>This tutorial demonstrates applying a reverb effect to sound playback.</p>
         </section>
 
-        <section id="tutorial-9">
-            <h2>Tutorial 9: Modulating Sound Parameters</h2>
-            <p><strong>Objective:</strong> Apply modulation techniques to dynamically change sound parameters.</p>
-            <h3>1. Modulating Amplitude with a LFO:</h3>
+        <section id="tutorial-7">
+            <h2>Tutorial 7: Combining All Skills</h2>
+            <p><strong>Objective:</strong> Learn how to apply reverb, visualize volume, and play multiple sounds simultaneously.</p>
             <pre><code>
 import processing.sound.*;
 
-Oscillator osc;
-Oscillator lfo;
+SoundFile sound1;
+SoundFile sound2;
+Amplitude amp;
+Reverb reverb;
+float volume = 0.5;  // Volume level
 
 void setup() {
     size(800, 600);
-    osc = new Oscillator(this);
-    lfo = new Oscillator(this);
-    lfo.setFreq(0.5); // Low-Frequency Oscillator
-    lfo.amp(0.5);
-    lfo.play();
-    osc.play();
+    background(255);
+    fill(0);
+    textSize(32);
+    textAlign(CENTER, CENTER);
+    text("Press SPACEBAR to play sounds", width / 2, height / 2);
+    
+    // Load sound files
+    sound1 = new SoundFile(this, "soundfile1.mp3"); // Replace with your first sound file
+    sound2 = new SoundFile(this, "soundfile2.mp3"); // Replace with your second sound file
+    
+    // Initialize Reverb
+    reverb = new Reverb(this);
+    
+    // Set reverb parameters
+    float reverbSize = 1.0;
+    float reverbDamping = 1.0;
+    float reverbWidth = 0.5;
+    reverb.set(reverbSize, reverbDamping, reverbWidth);
+    
+    // Initialize Amplitude
+    amp = new Amplitude(this);
+    amp.input(sound1); // Attach the Amplitude object to the first sound
 }
 
 void draw() {
     background(255);
-    osc.amp(0.5 + lfo.get() * 0.5); // Modulate amplitude with LFO
-}
-            </code></pre>
-            <p><strong>Explanation:</strong></p>
-            <ul>
-                <li><code>lfo.setFreq(0.5);</code>: Sets the frequency of the low-frequency oscillator (LFO).</li>
-                <li><code>osc.amp(0.5 + lfo.get() * 0.5);</code>: Modulates the amplitude of the main oscillator with the LFO.</li>
-            </ul>
-            <p>This tutorial demonstrates how to use an LFO to modulate sound parameters such as amplitude.</p>
-        </section>
-
-        <section id="tutorial-10">
-            <h2>Tutorial 10: Building a Simple Drum Machine</h2>
-            <p><strong>Objective:</strong> Create a basic drum machine using sound samples and triggers.</p>
-            <h3>1. Triggering Drum Samples:</h3>
-            <pre><code>
-import processing.sound.*;
-
-SoundFile kick;
-SoundFile snare;
-SoundFile hiHat;
-
-void setup() {
-    size(800, 600);
-    kick = new SoundFile(this, "kick.wav");
-    snare = new SoundFile(this, "snare.wav");
-    hiHat = new SoundFile(this, "hihat.wav");
+    
+    // Get the current volume level for visualization
+    float volumeLevel = amp.analyze();
+    
+    // Visualize the volume level
+    fill(0, 100, 255, 150); // Semi-transparent blue
+    float ellipseSize = volumeLevel * 400;
+    ellipse(width / 2, height / 2, ellipseSize, ellipseSize);
 }
 
-void draw() {
-    background(255);
-    if (mousePressed) {
-        if (mouseX < width / 3) kick.play(); // Play kick drum
-        else if (mouseX < width * 2 / 3) snare.play(); // Play snare drum
-        else hiHat.play(); // Play hi-hat
+void keyPressed() {
+    if (key == ' ') {
+        // Play both sounds
+        sound1.play();
+        sound2.play();
+        
+        // Apply reverb to both sounds
+        reverb.process(sound1);
+        reverb.process(sound2);
+        
+        // Adjust volume for both sounds
+        sound1.amp(volume);
+        sound2.amp(volume);
     }
 }
             </code></pre>
             <p><strong>Explanation:</strong></p>
             <ul>
-                <li><code>SoundFile kick, snare, hiHat;</code>: Creates SoundFile objects for different drum sounds.</li>
-                <li><code>if (mousePressed) { ... }</code>: Plays different drum sounds based on mouse position.</li>
+                <li><code>SoundFile sound1;</code> and <code>SoundFile sound2;</code>: Creates two SoundFile objects for managing playback of two separate sound files.</li>
+                <li><code>Amplitude amp;</code>: Measures the amplitude (volume) of the first sound.</li>
+                <li><code>Reverb reverb;</code>: Applies reverb effect to both sounds.</li>
+                <li><code>float volumeLevel = amp.analyze();</code>: Retrieves the current volume level of the first sound for visualization.</li>
+                <li><code>ellipse(width / 2, height / 2, ellipseSize, ellipseSize);</code>: Visualizes the volume level as an ellipse.</li>
+                <li><code>sound1.play();</code> and <code>sound2.play();</code>: Plays both sound files simultaneously when the SPACEBAR is pressed.</li>
+                <li><code>reverb.process(sound1);</code> and <code>reverb.process(sound2);</code>: Applies reverb to both sound files.</li>
+                <li><code>sound1.amp(volume);</code> and <code>sound2.amp(volume);</code>: Adjusts the volume for both sounds.</li>
             </ul>
-            <p>This tutorial helps you build a simple drum machine using sample playback and user input.</p>
+            <p>This final tutorial combines all the skills learned: playing multiple sounds, applying reverb, visualizing volume, and adjusting volume levels.</p>
         </section>
-    </div>
+    </main>
+
+    {% include footer.html %}
 </body>
 </html>
-

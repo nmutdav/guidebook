@@ -3,11 +3,16 @@ layout: default
 title: media design 1
 permalink: /curriculum/th242/pde_tutorials/pde_media_01/
 ---
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Processing Tutorial Series 1</title>
 </head>
 <body>
     <h1>Processing Tutorial Series 1</h1>
+    
     <section id="tutorial-1">
         <h2>Tutorial 1: Introduction to Processing</h2>
         <p><strong>Objective:</strong> Get familiar with the Processing environment and basic concepts.</p>
@@ -15,7 +20,7 @@ permalink: /curriculum/th242/pde_tutorials/pde_media_01/
         <p>Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts. It was created to simplify the process of coding for visual projects and make programming accessible for artists and designers.</p>
         <h3>2. Setting Up Processing</h3>
         <ul>
-            <li>Download Processing from <a href="https://processing.org/download/" target="_blank">Processing.org</a>.</li>
+            <li>Download Processing from <a href="https://processing.org/download/" target="_blank" rel="noopener noreferrer">Processing.org</a>.</li>
             <li>Install it following the instructions for your operating system.</li>
         </ul>
         <h3>3. Your First Sketch</h3>
@@ -169,133 +174,71 @@ void setup() {
 
 void draw() {
     background(255);
-    drawCircle(400, 300, 50); // Call the custom function
+    drawEllipse(400, 300, 100); // Call the custom function to draw an ellipse
 }
 
-void drawCircle(float x, float y, float diameter) {
+void drawEllipse(float x, float y, float diameter) {
     fill(0, 100, 255);
-    ellipse(x, y, diameter, diameter); // Draw an ellipse using function parameters
+    ellipse(x, y, diameter, diameter); // Draw an ellipse with given parameters
 }
         </code></pre>
         <p><strong>Explanation:</strong></p>
         <ul>
-            <li><code>void drawCircle(float x, float y, float diameter)</code>: Defines a function to draw a circle at a specified position and size.</li>
-            <li><code>drawCircle(400, 300, 50)</code>: Calls the function to draw a circle with the given parameters.</li>
+            <li><code>void drawEllipse(float x, float y, float diameter)</code>: Defines a custom function that draws an ellipse based on parameters.</li>
+            <li><code>drawEllipse(400, 300, 100)</code>: Calls the function to draw an ellipse at the specified location and size.</li>
         </ul>
-        <p>Using functions helps in organizing code, making it more modular and easier to manage.</p>
+        <p>Using functions helps to organize your code, making it more modular and reusable.</p>
     </section>
 
     <section id="tutorial-7">
-        <h2>Tutorial 7: Responding to User Input</h2>
-        <p><strong>Objective:</strong> Learn how to make sketches interactive by responding to user input.</p>
+        <h2>Tutorial 7: User Input</h2>
+        <p><strong>Objective:</strong> Learn how to handle user input such as mouse clicks and keyboard presses.</p>
         <h3>1. Handling Mouse Input</h3>
         <pre><code>
 void setup() {
     size(800, 600);
+    background(255);
 }
 
 void draw() {
-    background(255);
+    fill(255, 0, 0);
     if (mousePressed) {
-        fill(255, 0, 0);
-        ellipse(mouseX, mouseY, 50, 50); // Draw an ellipse at the mouse position when clicked
+        ellipse(mouseX, mouseY, 50, 50); // Draw an ellipse where the mouse is clicked
     }
 }
         </code></pre>
         <p><strong>Explanation:</strong></p>
         <ul>
-            <li><code>if (mousePressed)</code>: Checks if the mouse is pressed, enabling interaction.</li>
-            <li><code>ellipse(mouseX, mouseY, 50, 50)</code>: Draws an ellipse at the current mouse position, making the sketch interactive.</li>
+            <li><code>if (mousePressed)</code>: Checks if the mouse is pressed.</li>
+            <li><code>ellipse(mouseX, mouseY, 50, 50)</code>: Draws an ellipse at the current mouse position when pressed.</li>
         </ul>
-        <p>Handling user input is crucial for creating interactive and engaging applications.</p>
+        <p>Handling user input allows you to create interactive sketches that respond to user actions.</p>
     </section>
 
     <section id="tutorial-8">
-        <h2>Tutorial 8: Saving and Loading Files</h2>
-        <p><strong>Objective:</strong> Learn how to save and load data from files in Processing.</p>
-        <h3>1. Saving and Loading Data</h3>
+        <h2>Tutorial 8: Creating Interactive Visuals</h2>
+        <p><strong>Objective:</strong> Combine previously learned concepts to create interactive and dynamic visuals.</p>
+        <h3>1. Interactive Visualization</h3>
         <pre><code>
 void setup() {
     size(800, 600);
-    saveFrame("screenshot.png"); // Save a screenshot of the current frame
 }
 
 void draw() {
     background(255);
-    fill(0, 100, 255);
-    ellipse(mouseX, mouseY, 50, 50);
+    fill(map(mouseX, 0, width, 0, 255), 100, 150);
+    ellipse(mouseX, height / 2, 100, 100); // Change the color of the ellipse based on mouse position
 }
         </code></pre>
         <p><strong>Explanation:</strong></p>
         <ul>
-            <li><code>saveFrame("screenshot.png")</code>: Saves the current frame as a PNG file.</li>
-            <li><code>background(255)</code>: Resets the background color for the new frame.</li>
+            <li><code>map(mouseX, 0, width, 0, 255)</code>: Maps the mouse X position to a color value, changing the ellipse color dynamically.</li>
         </ul>
-        <p>Saving and loading files allows you to preserve your work and manage assets in your sketches.</p>
+        <p>Combining concepts helps to create rich and interactive visual experiences, showcasing your understanding of Processing.</p>
     </section>
 
-    <section id="tutorial-9">
-        <h2>Tutorial 9: Using Libraries</h2>
-        <p><strong>Objective:</strong> Learn how to use external libraries to extend Processing’s functionality.</p>
-        <h3>1. Adding and Using Libraries</h3>
-        <pre><code>
-import peasy.*;
-
-PeasyCam cam;
-
-void setup() {
-    size(800, 600, P3D);
-    cam = new PeasyCam(this, 500);
-}
-
-void draw() {
-    background(255);
-    fill(0, 100, 255);
-    box(100); // Draw a 3D box
-}
-        </code></pre>
-        <p><strong>Explanation:</strong></p>
-        <ul>
-            <li><code>import peasy.*</code>: Imports the PeasyCam library for 3D camera control.</li>
-            <li><code>PeasyCam cam</code>: Creates a new PeasyCam instance for 3D navigation.</li>
-            <li><code>cam = new PeasyCam(this, 500)</code>: Initializes the PeasyCam with a default distance.</li>
-        </ul>
-        <p>Libraries extend Processing’s capabilities, allowing for more complex and varied functionality.</p>
-    </section>
-
-    <section id="tutorial-10">
-        <h2>Tutorial 10: Creating User Interfaces</h2>
-        <p><strong>Objective:</strong> Learn to create basic user interfaces with Processing.</p>
-        <h3>1. Adding Buttons and Sliders</h3>
-        <pre><code>
-import controlP5.*;
-
-ControlP5 cp5;
-int sliderValue = 50;
-
-void setup() {
-    size(800, 600);
-    cp5 = new ControlP5(this);
-    cp5.addSlider("sliderValue")
-       .setPosition(100, 100)
-       .setSize(200, 20)
-       .setRange(0, 100);
-}
-
-void draw() {
-    background(255);
-    fill(0, 100, 255);
-    ellipse(width / 2, height / 2, sliderValue, sliderValue);
-}
-        </code></pre>
-        <p><strong>Explanation:</strong></p>
-        <ul>
-            <li><code>import controlP5.*</code>: Imports the ControlP5 library for UI elements.</li>
-            <li><code>ControlP5 cp5</code>: Creates an instance of the ControlP5 library.</li>
-            <li><code>cp5.addSlider("sliderValue")</code>: Adds a slider to control a variable.</li>
-            <li><code>ellipse(width / 2, height / 2, sliderValue, sliderValue)</code>: Draws an ellipse with size controlled by the slider.</li>
-        </ul>
-        <p>Creating user interfaces allows you to interact with your sketch in a more structured way, adding functionality and control elements.</p>
-    </section>
+    <footer>
+        <p>&copy; 2024 Processing Tutorials. All rights reserved.</p>
+    </footer>
 </body>
 </html>
