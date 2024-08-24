@@ -1,0 +1,139 @@
+---
+layout: default
+title: Theory of Design and Design Principles with Processing IDE
+permalink: /curriculum/th242/design_concepts/processing_ide/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theory of Design and Design Principles with Processing IDE</title>
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+    <style>
+        /* Button Styling */
+        .navigation-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #073627; /* Green gold background */
+            color: white; /* White text */
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #ffc425; /* Gold on hover */
+        }
+
+        /* Links List */
+        .links-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .links-list li {
+            margin: 5px 0;
+        }
+
+        .links-list a {
+            color: #073627;
+            text-decoration: none;
+        }
+
+        .links-list a:hover {
+            color: #ffc425;
+        }
+
+        body {
+            background: url("{{ '/assets/images/pexels-steve-1573434.jpg' | relative_url }}") no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        h2 {
+            color: #073627;
+        }
+
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border: 1px solid #ddd;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section>
+            <h2>Theory of Design</h2>
+            <p>Design is a systematic approach to creating visually and functionally effective solutions. It involves understanding the principles that guide the creation of aesthetically pleasing and practical elements. This course explores how these principles apply to sound and media design, focusing on visual aspects using the Processing IDE.</p>
+        </section>
+        
+        <section>
+            <h2>Design Principles in Visual Media</h2>
+            <p>Key principles of visual design include:</p>
+            <ul>
+                <li><strong>Balance:</strong> Achieving visual equilibrium by distributing elements evenly.</li>
+                <li><strong>Contrast:</strong> Using differences in color, size, and shape to create emphasis and visual interest.</li>
+                <li><strong>Repetition:</strong> Consistently using elements to create unity and cohesiveness.</li>
+                <li><strong>Alignment:</strong> Arranging elements to create a visual connection and guide the viewer’s eye.</li>
+                <li><strong>Proximity:</strong> Grouping related elements together to create visual relationships.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Visual Design with Processing IDE</h2>
+            <p>Processing IDE is a powerful tool for creating visual art and interactive graphics. It’s particularly strong in handling dynamic and algorithmic visual content. Here’s a basic example to demonstrate how Processing can be used to create interactive visuals:</p>
+            <pre><code>void setup() {
+    size(800, 600);
+    background(0);
+}
+
+void draw() {
+    background(0);
+    fill(255);
+    // Example: Draw a circle that follows the mouse position
+    float circleSize = map(mouseX, 0, width, 50, 200);
+    ellipse(mouseX, mouseY, circleSize, circleSize);
+}
+</code></pre>
+        </section>
+
+        <section>
+            <h2>Strengths of Processing IDE</h2>
+            <p>Processing IDE offers several advantages for visual design:</p>
+            <ul>
+                <li><strong>Ease of Use:</strong> Simple syntax and a straightforward environment make it accessible for beginners.</li>
+                <li><strong>Real-Time Feedback:</strong> Immediate visual feedback during development helps in fine-tuning designs quickly.</li>
+                <li><strong>Flexibility:</strong> Supports a wide range of visual projects, from static graphics to complex interactive installations.</li>
+                <li><strong>Integration:</strong> Easily integrates with other tools and libraries for extended functionality.</li>
+            </ul>
+            <p>These features make Processing IDE a versatile tool for exploring visual design principles and creating engaging multimedia experiences.</p>
+        </section>
+    </div>
+</body>
+</html>

@@ -3,118 +3,143 @@ layout: default
 title: Syllabus TH-242
 permalink: /curriculum/th242/syllabus_242/
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Sound & Media Design</title>
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+    <style>
+        /* Button Styling */
+        .navigation-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
 
-<main style="margin: 0;">
-<h1>Syllabus TH-242: Introduction to Sound and Media Design</h1>
-<li><strong>Offered:</strong> Fall, even years</li>
-<li><strong>Room:</strong> McClintock Room 125-O</li>
-<li><strong>Time:</strong> Mondays and Wednesdays from 8:00am to 9:40am</li>
-<li><strong>Instructor:</strong> <a href="https://nmu.edu/theatreanddance/dominic-mrakovcich">Dominic Mrakovcich</a></li>
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #073627; /* Green gold background */
+            color: white; /* White text */
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
-<h2>Course Description</h2>
-<p>TH-242 provides a comprehensive introduction to sound and media design using the Processing IDE. The course emphasizes foundational skills in both sound and media design, with a focus on creating design concepts from simplified parameters. Students will learn to develop, present, and execute design proposals applicable to various media contexts including theatre, film, and multimedia projects.</p>
+        .nav-button:hover {
+            background-color: #ffc425; /* Gold on hover */
+        }
 
-<p><strong>Notes:</strong> This is an eight-week course.</p>
+        /* Links List */
+        .links-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
 
-<details>
-  <summary>What is Processing IDE?</summary>
-  <p><strong>Processing IDE</strong> is a flexible software platform used to develop visual art, animations, and interactive projects. It is widely used in creative coding due to its ease of use and accessibility. The environment provides an intuitive interface for writing code and includes numerous built-in libraries for graphics, sound, and interaction.</p>
-  <p><strong>Key Features:</strong></p>
-  <ul>
-    <li><strong>Visual Feedback:</strong> Immediate graphical output of code, allowing for rapid iteration.</li>
-    <li><strong>Simple Syntax:</strong> Designed to be easy to learn for artists and non-programmers.</li>
-    <li><strong>Extensive Libraries:</strong> Includes libraries for graphics, sound, and user interaction.</li>
-    <li><strong>Community Support:</strong> A large community and many resources for learning and troubleshooting.</li>
-  </ul>
-  <p><strong>Application in Sound and Media Design:</strong></p>
-  <p>Processing IDE is particularly useful in an introductory course on sound and media design for several reasons:</p>
-  <ul>
-    <li><strong>Ease of Learning:</strong> Its simple syntax and visual feedback make it accessible for beginners, allowing students to quickly grasp the basics of coding for sound and media projects.</li>
-    <li><strong>Interactive Projects:</strong> The IDE supports interactive media, enabling students to create projects that respond to user input, a crucial aspect of modern sound and media design.</li>
-    <li><strong>Rapid Prototyping:</strong> The immediate graphical output facilitates rapid prototyping, helping students experiment with different design concepts and iterate on their ideas efficiently.</li>
-  </ul>
-  <p><strong>Applicability to Theatre and Other Fields:</strong></p>
-  <p>Processing IDE is not only valuable in a classroom setting but also has broad applications in various fields:</p>
-  <ul>
-    <li><strong>Theatre:</strong> In theatre, Processing IDE can be used to design interactive stage visuals, soundscapes, and lighting effects that enhance the audience's experience.</li>
-    <li><strong>Film and Multimedia:</strong> It supports the creation of dynamic visuals and soundtracks for film and multimedia projects, allowing for creative exploration and innovative design solutions.</li>
-    <li><strong>Art Installations:</strong> Artists and designers use Processing IDE to develop interactive art installations that respond to environmental factors or audience interactions.</li>
-    <li><strong>Educational Tools:</strong> Its user-friendly nature makes it an excellent tool for teaching coding concepts and design principles in various educational settings.</li>
-  </ul>
-</details>
+        .links-list li {
+            margin: 5px 0;
+        }
 
+        .links-list a {
+            color: #073627;
+            text-decoration: none;
+        }
+
+        .links-list a:hover {
+            color: #ffc425;
+        }
+
+        body {
+            background: url("{{ '/assets/images/pexels-steve-1573434.jpg' | relative_url }}") no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Syllabus TH-242: Introduction to Sound and Media Design</h1>
+        <ul>
+            <li><strong>Offered:</strong> Fall, even years</li>
+            <li><strong>Room:</strong> McClintock Room 125-O</li>
+            <li><strong>Time:</strong> Mondays and Wednesdays from 8:00am to 9:40am</li>
+            <li><strong>Instructor:</strong> <a href="https://nmu.edu/theatreanddance/dominic-mrakovcich">Dominic Mrakovcich</a></li>
+        </ul>
+
+        <h2>Course Description</h2>
+        <p>TH-242 provides a comprehensive introduction to sound and media design using Processing IDE and SuperCollider. The course emphasizes foundational skills in sound and media design, focusing on creating design concepts from simplified parameters. Students will develop, present, and execute design proposals applicable to various media contexts, including theatre, film, and multimedia projects.</p>
+        <p><strong>Notes:</strong> This is an eight-week course.</p>
+
+        <details>
+            <summary>What are Processing IDE and SuperCollider?</summary>
+            <p><strong>Processing IDE</strong> is a flexible software platform used to develop visual art, animations, and interactive projects. It provides an intuitive interface for coding and includes numerous built-in libraries for graphics, sound, and interaction.</p>
+            <p><strong>SuperCollider</strong> is a platform for audio synthesis and algorithmic composition. It is used for creating complex audio applications and real-time sound processing. Students will learn to use SuperCollider for sound synthesis, sampling, and interactive audio applications.</p>
+            <p><strong>Application in Sound and Media Design:</strong></p>
+            <ul>
+                <li><strong>Processing IDE:</strong> Useful for interactive media and rapid prototyping of visual elements.</li>
+                <li><strong>SuperCollider:</strong> Ideal for advanced sound synthesis and real-time audio manipulation.</li>
+            </ul>
+        </details>
+
+        <h2>Tracks & Objectives</h2>
+
+        <h3>1. Sound Design with SuperCollider</h3>
+        <p>Develop proficiency in using SuperCollider for sound synthesis and interactive audio applications.</p>
+        <ul>
+            <li><strong>Sound Fundamentals:</strong> Understand sound principles and audio processing within SuperCollider.</li>
+            <li><strong>Interactive Sound Design:</strong> Create interactive sound environments and applications.</li>
+            <li><strong>Audio Synthesis:</strong> Implement techniques for advanced sound synthesis and manipulation.</li>
+            <li><strong>Project Execution:</strong> Complete a sound design project using SuperCollider.</li>
+        </ul>
+
+        <h3>2. Media Design with Processing IDE</h3>
+        <p>Acquire skills in designing media such as animations, interactive visuals, and multimedia projects using Processing IDE.</p>
+        <ul>
+            <li><strong>Media Design Principles:</strong> Master core concepts for graphics and animations in Processing.</li>
+            <li><strong>Interactive Media:</strong> Develop media elements responsive to user input.</li>
+            <li><strong>Visual Storytelling:</strong> Create cohesive and compelling media projects.</li>
+            <li><strong>Project Execution:</strong> Complete a media design project using Processing IDE.</li>
+        </ul>
+
+        <h3>3. Design Proposals and Deliverables</h3>
+        <p>Focus on the creation, presentation, and execution of design proposals, ensuring effective communication and practical application.</p>
+        <ul>
+            <li><strong>Proposal Crafting:</strong> Develop and refine design proposals for sound and media projects.</li>
+            <li><strong>Execution:</strong> Produce deliverables and execute design proposals effectively.</li>
+            <li><strong>Presentation Skills:</strong> Communicate design concepts and their execution effectively.</li>
+        </ul>
+
+        <h2>Grading Breakdown</h2>
+        <ul>
+            <li><strong>Regular Assignments (5 total):</strong> 20% (4% each)</li>
+            <li><strong>Midterm Project:</strong> 20%</li>
+            <li><strong>Final Project & Proposal Execution:</strong> 30%</li>
+            <li><strong>Participation & Presentations:</strong> 10%</li>
+        </ul>
+        <p><strong>Grading Scale:</strong></p>
+        <ul>
+            <li><strong>A (90% - 100%):</strong> Exceptional performance with high-quality work and innovative solutions.</li>
+            <li><strong>B (80% - 89%):</strong> Above-average performance with solid understanding and proficient work.</li>
+            <li><strong>C (70% - 79%):</strong> Satisfactory performance meeting average standards.</li>
+            <li><strong>D (60% - 69%):</strong> Below-average performance with notable deficiencies.</li>
+            <li><strong>F (0% - 59%):</strong> Unsatisfactory performance failing to meet minimum requirements.</li>
+        </ul>
+
+        <p><strong>Notes:</strong></p>
+        <ul>
+            <li><strong>Attendance and Participation:</strong> Essential for success. Active participation and regular attendance are required.</li>
+            <li><strong>Late Submissions:</strong> Late assignments may incur penalties unless prior arrangements are made.</li>
+        </ul>
+
+        <h2>Contact Information</h2>
+        <p>If you have any questions or concerns, please contact the instructor via email or visit during office hours. Contact details and office hours are available on the instructor’s <a href="https://nmu.edu/theatreanddance/dominic-mrakovcich">profile page</a>.</p>
+
+        <div class="navigation-buttons">
+            <a class="nav-button" href="{{ site.baseurl }}/curriculum/th242/">Index</a>
+            <a class="nav-button" href="{{ site.baseurl }}/curriculum/th242/schedule_242/">Next</a>
+        </div>
+    </main>
 </body>
 </html>
-
-<h2>Tracks & Objectives</h2>
-
-<h3>1. Sound Design with Processing IDE</h3>
-<p>Develop proficiency in using Processing IDE for creating sound experiences, including visualizations and interactive audio applications.</p>
-<ul>
-  <li><strong>Sound Fundamentals:</strong> Understand sound principles and audio processing within Processing.</li>
-  <li><strong>Interactive Sound Design:</strong> Create interactive sound environments and applications.</li>
-  <li><strong>Audio Visualization:</strong> Implement techniques for visualizing audio data.</li>
-  <li><strong>Project Execution:</strong> Complete a sound design project using Processing IDE.</li>
-</ul>
-
-<h3>2. Media Design with Processing IDE</h3>
-<p>Acquire skills in designing media such as animations, interactive visuals, and multimedia projects using Processing IDE.</p>
-<ul>
-  <li><strong>Media Design Principles:</strong> Master core concepts for graphics and animations in Processing.</li>
-  <li><strong>Interactive Media:</strong> Develop media elements responsive to user input.</li>
-  <li><strong>Visual Storytelling:</strong> Create cohesive and compelling media projects.</li>
-  <li><strong>Project Execution:</strong> Complete a media design project using Processing IDE.</li>
-</ul>
-
-<h3>3. Design Proposals and Deliverables</h3>
-<p>Focus on the creation, presentation, and execution of design proposals, ensuring effective communication and practical application.</p>
-<ul>
-  <li><strong>Proposal Crafting:</strong> Develop and refine design proposals for sound and media projects.</li>
-  <li><strong>Execution:</strong> Produce deliverables and execute design proposals effectively.</li>
-  <li><strong>Presentation Skills:</strong> Communicate design concepts and their execution effectively.</li>
-</ul>
-
-<h2>Grading Breakdown</h2>
-<ul>
-  <li><strong>Regular Assignments (5 total):</strong> 20% (4% each)</li>
-  <li><strong>Midterm Project:</strong> 20%</li>
-  <li><strong>Final Project & Proposal Execution:</strong> 30%</li>
-  <li><strong>Participation & Presentations:</strong> 10%</li>
-</ul>
-<p><strong>Grading Scale:</strong></p>
-<ul>
-  <li><strong>A (90% - 100%):</strong> Exceptional performance with high-quality work and innovative solutions.</li>
-  <li><strong>B (80% - 89%):</strong> Above-average performance with solid understanding and proficient work.</li>
-  <li><strong>C (70% - 79%):</strong> Satisfactory performance meeting average standards.</li>
-  <li><strong>D (60% - 69%):</strong> Below-average performance with notable deficiencies.</li>
-  <li><strong>F (0% - 59%):</strong> Unsatisfactory performance failing to meet minimum requirements.</li>
-</ul>
-
-<p><strong>Notes:</strong></p>
-<ul>
-  <li><strong>Attendance and Participation:</strong> Essential for success. Active participation and regular attendance are required.</li>
-  <li><strong>Late Submissions:</strong> Late assignments may incur penalties unless prior arrangements are made.</li>
-</ul>
-
-<h2>Plagiarism Policy</h2>
-<p>While studying together is encouraged, all submitted work must be original. Any use of uncredited sources, copying of another student’s work, or submission of work that is not your own will be considered plagiarism and will be subject to disciplinary action.</p>
-
-<p>In addition, the use of AI or similar tools (such as chatbots, code generators, or content generators) to complete assignments, projects, or any other coursework is strictly prohibited unless explicitly allowed by the instructor. All submitted work must reflect your own understanding, effort, and creativity. Submitting work generated by AI tools without proper acknowledgment will be treated as academic dishonesty.</p>
-
-<p>Refer to the university’s <a href="https://nmu.edu/writingcenter/plagiarism">plagiarism policy</a> and consult the Writing Center or instructor if you need clarification on what constitutes plagiarism or improper use of tools.</p>
-
-<h2>Accommodations</h2>
-<p>Accommodations are available upon request. Contact the instructor or collegiate staff. For more details, refer to the <a href="https://nmu.edu/disabilityservices/draft-reasonable-accommodation-policy">Reasonable Accommodations Policy</a>.</p>
-
-<h2>Required Equipment</h2>
-<ul>
-  <li><strong>The NMUTDAV Guidebook:</strong> Essential guidebook for the course.</li>
-  <li><strong>Internet Access:</strong> Necessary for software downloads and online resources.</li>
-  <li><a href="https://processing.org/">Processing IDE:</a> Software for sound and media design projects.</li>
-  <li><a href="https://www.audacityteam.org/">Audacity:</a> Free software for audio editing.</li>
-</ul>
-</main>
-</html>
-<h2>Office Hours</h2>
-<p>Office hours will be listed weekly, and students may sign up on the provided sign-up sheet. If the posted times do not work for you, please request an appointment by sending your availabilities to the instructor via email at <a href="mailto:dmrakovc@nmu.edu">dmrakovc@nmu.edu</a>.</p>
-

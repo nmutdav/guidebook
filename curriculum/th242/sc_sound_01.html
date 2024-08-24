@@ -1,0 +1,268 @@
+---
+layout: default
+title: Introduction to Sound & Media Design
+permalink: /curriculum/th242/sc_sound_01/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Sound & Media Design</title>
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+    <style>
+        /* Button Styling */
+        .navigation-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #073627; /* Green gold background */
+            color: white; /* White text */
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #ffc425; /* Gold on hover */
+        }
+
+        /* Links List */
+        .links-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .links-list li {
+            margin: 5px 0;
+        }
+
+        .links-list a {
+            color: #073627;
+            text-decoration: none;
+        }
+
+        .links-list a:hover {
+            color: #ffc425;
+        }
+
+        body {
+            background: url("{{ '/assets/images/pexels-steve-1573434.jpg' | relative_url }}") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* Style for dropdown menus */
+        .dropdown-menu {
+            display: none; /* Hide dropdowns by default */
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .links-list .dropdown-toggle {
+            cursor: pointer;
+            text-decoration: none;
+            color: #073627;
+        }
+
+        .links-list .dropdown-toggle:hover {
+            color: #ffc425;
+        }
+
+        .links-list .dropdown-menu a {
+            text-decoration: none;
+            color: #073627;
+        }
+
+        .links-list .dropdown-menu a:hover {
+            color: #ffc425;
+        }
+    </style>
+</head>
+<body>
+    <h1>Supercollider Tutorial Series - Sound 1</h1>
+    <section id="tutorial-1">
+        <h2>Tutorial 1: Basic Sound Playback</h2>
+        <p><strong>Objective:</strong> Learn how to play a sound file.</p>
+        <pre><code>
+s.boot;  // Boot the Supercollider server
+
+// Define a SynthDef to play a sample
+(
+SynthDef(\basicSound, {
+    |out = 0, bufnum, amp = 0.5|
+    var sound = PlayBuf.ar(1, bufnum, BufRateScale.kr(bufnum), doneAction: 2);
+    sound = sound * amp;
+    Out.ar(out, sound);
+}).add;
+)
+
+// Load a sound file into a buffer
+(
+b = Buffer.read(s, "path/to/soundfile.wav"); // Replace with your sound file path
+)
+
+// Play the sound
+(
+Synth(\basicSound, [\bufnum, b]);
+)
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>s.boot;</code>: Starts the Supercollider server.</li>
+            <li><code>SynthDef</code>: Defines a synthesis unit for playing a sample.</li>
+            <li><code>PlayBuf.ar</code>: Plays the buffer content.</li>
+            <li><code>Buffer.read</code>: Loads a sound file into a buffer.</li>
+            <li><code>Synth</code>: Creates an instance of the defined SynthDef to play the sound.</li>
+        </ul>
+        <p>This tutorial introduces basic sound playback functionality.</p>
+    </section>
+
+    <section id="tutorial-2">
+        <h2>Tutorial 2: Adjusting Volume</h2>
+        <p><strong>Objective:</strong> Learn how to adjust the volume level of playback.</p>
+        <pre><code>
+s.boot;  // Boot the Supercollider server
+
+// Define a SynthDef to play a sample with volume control
+(
+SynthDef(\volumeControl, {
+    |out = 0, bufnum, amp = 0.5|
+    var sound = PlayBuf.ar(1, bufnum, BufRateScale.kr(bufnum), doneAction: 2);
+    sound = sound * amp;
+    Out.ar(out, sound);
+}).add;
+)
+
+// Load a sound file into a buffer
+(
+b = Buffer.read(s, "path/to/soundfile.wav"); // Replace with your sound file path
+)
+
+// Play the sound with volume control
+(
+Synth(\volumeControl, [\bufnum, b, \amp, 0.8]); // Adjust the volume here
+)
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>amp</code>: The amplitude control for adjusting volume.</li>
+            <li><code>Synth(\volumeControl, [\amp, 0.8]);</code>: Sets the volume level of the playback.</li>
+        </ul>
+        <p>This tutorial demonstrates how to control sound volume.</p>
+    </section>
+
+    <section id="tutorial-3">
+        <h2>Tutorial 3: Applying ADSR Envelope</h2>
+        <p><strong>Objective:</strong> Learn how to apply an ADSR (Attack, Decay, Sustain, Release) envelope to a sound.</p>
+        <pre><code>
+s.boot;  // Boot the Supercollider server
+
+// Define a SynthDef with ADSR envelope
+(
+SynthDef(\adsrEnvelope, {
+    |out = 0, bufnum, amp = 0.5, atk = 0.01, dec = 0.1, sus = 0.5, rel = 0.5|
+    var env = EnvGen.kr(Env.perc(atk, dec, sus, rel), doneAction: 2);
+    var sound = PlayBuf.ar(1, bufnum, BufRateScale.kr(bufnum), doneAction: 2);
+    sound = sound * env * amp;
+    Out.ar(out, sound);
+}).add;
+)
+
+// Load a sound file into a buffer
+(
+b = Buffer.read(s, "path/to/soundfile.wav"); // Replace with your sound file path
+)
+
+// Play the sound with ADSR envelope
+(
+Synth(\adsrEnvelope, [\bufnum, b, \amp, 0.8, \atk, 0.02, \dec, 0.2, \sus, 0.7, \rel, 0.3]);
+)
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>EnvGen.kr(Env.perc(...))</code>: Creates an ADSR envelope with specified parameters.</li>
+            <li><code>atk</code>, <code>dec</code>, <code>sus</code>, <code>rel</code>: Parameters for Attack, Decay, Sustain, and Release times.</li>
+        </ul>
+        <p>This tutorial introduces applying an ADSR envelope to control the sound's amplitude over time.</p>
+    </section>
+
+    <section id="tutorial-4">
+        <h2>Tutorial 4: Pitch Shifting</h2>
+        <p><strong>Objective:</strong> Learn how to shift the pitch of a sound.</p>
+        <pre><code>
+s.boot;  // Boot the Supercollider server
+
+// Define a SynthDef with pitch shifting
+(
+SynthDef(\pitchShift, {
+    |out = 0, bufnum, pitch = 1.0, amp = 0.5|
+    var sound = PlayBuf.ar(1, bufnum, BufRateScale.kr(bufnum) * pitch, doneAction: 2);
+    sound = sound * amp;
+    Out.ar(out, sound);
+}).add;
+)
+
+// Load a sound file into a buffer
+(
+b = Buffer.read(s, "path/to/soundfile.wav"); // Replace with your sound file path
+)
+
+// Play the sound with pitch shifting
+(
+Synth(\pitchShift, [\bufnum, b, \pitch, 1.5]); // Shift pitch up by 1.5x
+)
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>pitch</code>: Factor to shift the pitch of the sound. Values greater than 1.0 increase the pitch.</li>
+            <li><code>BufRateScale.kr(bufnum) * pitch</code>: Adjusts the playback rate to shift pitch.</li>
+        </ul>
+        <p>This tutorial demonstrates pitch shifting of a sound.</p>
+    </section>
+
+    <section id="tutorial-5">
+        <h2>Tutorial 5: Combining Effects</h2>
+        <p><strong>Objective:</strong> Learn how to combine multiple effects like volume control, ADSR envelope, and pitch shifting.</p>
+        <pre><code>
+s.boot;  // Boot the Supercollider server
+
+// Define a SynthDef combining volume, ADSR envelope, and pitch shifting
+(
+SynthDef(\combinedEffects, {
+    |out = 0, bufnum, amp = 0.5, pitch = 1.0, atk = 0.01, dec = 0.1, sus = 0.5, rel = 0.5|
+    var env = EnvGen.kr(Env.perc(atk, dec, sus, rel), doneAction: 2);
+    var sound = PlayBuf.ar(1, bufnum, BufRateScale.kr(bufnum) * pitch, doneAction: 2);
+    sound = sound * env * amp;
+    Out.ar(out, sound);
+}).add;
+)
+
+// Load a sound file into a buffer
+(
+b = Buffer.read(s, "path/to/soundfile.wav"); // Replace with your sound file path
+)
+
+// Play the sound with combined effects
+(
+Synth(\combinedEffects, [\bufnum, b, \amp, 0.8, \pitch, 1.5, \atk, 0.02, \dec, 0.2, \sus, 0.7, \rel, 0.3]);
+)
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li>This SynthDef combines volume control, ADSR envelope, and pitch shifting.</li>
+        </ul>
+        <p>This tutorial demonstrates how to combine multiple sound effects for more complex sound design.</p>
+    </section>
+    <main>
+        <div class="navigation-buttons">
+            <a class ="nav-button" href="{{ '/curriculum/th242/index' | relative_url }}">Index</a>
+            <a class="nav-button" href="{{ '/curriculum/th242/supercollider' | relative_url }}">Previous</a>
+            <a class="nav-button" href="{{ '/curriculum/th242/assignments' | relative_url }}">Next</a>
+        </div>
+    </main>
