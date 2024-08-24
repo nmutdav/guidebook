@@ -246,6 +246,7 @@ a.button:focus {
     nav {
         display: flex;  
         flex-direction: column;
+        justify-self: left;
         padding: 0.5em 1em; /* Adjust padding */
         margin-top: 1em;
         width: 100%;
@@ -395,4 +396,12 @@ code {
     text-decoration: none; /* Remove underline on hover */
     color: #ffffff; /* White text on hover */
     background-color: #073627; /* Dark green background on hover */
+}
+
+
+/* Hide floating nav on screens smaller than 768px (mobile view) */
+@media only screen and (max-width: 1000px) {
+    .links-list a {
+        display: none;
+    }
 }
