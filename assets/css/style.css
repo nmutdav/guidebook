@@ -1,15 +1,3 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding-top: auto; /* Adjust padding based on header height */
-    background: #ffffff;
-    color: #000000;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-}
-
-/* Header Styles */
 header {
     display: flex; /* Use flexbox for layout */
     align-items: center; /* Vertically center items in the header */
@@ -26,7 +14,6 @@ header {
     margin: 0; /* Remove margin */
 }
 
-/* Logo and Title */
 .logo-title {
     display: flex;
     align-items: center; /* Center items vertically */
@@ -39,7 +26,6 @@ header {
     margin-right: 1em; /* Space between icon and title */
 }
 
-/* Header Title */
 header h1 {
     margin: 0;
 }
@@ -54,14 +40,12 @@ header h1 a:hover {
     text-decoration: underline;
 }
 
-/* Navigation Styles */
 nav {
     display: flex;
     align-items: center; /* Vertically center nav items */
     margin-left: reverse; /* Push nav items to the right */
 }
 
-/* Navigation List */
 nav ul {
     list-style: none;
     padding: 0;
@@ -71,13 +55,11 @@ nav ul {
     position: relative; /* Ensure nav is positioned for dropdowns */
 }
 
-/* Navigation Items */
 nav ul li {
     position: relative; /* Ensure dropdowns are positioned relative to this */
     margin: 0 1em; /* Add spacing between items */
 }
 
-/* Dropdown Styles */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -91,7 +73,6 @@ nav ul li {
     white-space: nowrap; /* Prevent wrapping */
 }
 
-/* Dropdown Links */
 .dropdown-content a {
     color: #ffffff;
     padding: 12px 16px;
@@ -106,12 +87,10 @@ nav ul li {
     background-color: #444444; /* Slightly lighter background on hover */
 }
 
-/* Show dropdown on hover */
 nav ul li:hover > .dropdown-content {
     display: block;
 }
 
-/* Submenu Styles */
 .dropdown-submenu {
     position: relative; /* Position submenu relative to parent */
 }
@@ -133,7 +112,6 @@ nav ul li:hover > .dropdown-content {
     font-weight: bold;
 }
 
-/* Nested Dropdown Styles */
 .dropdown-submenu .dropdown-content {
     display: none;
     position: absolute;
@@ -149,7 +127,6 @@ nav ul li:hover > .dropdown-content {
     display: block;
 }
 
-/* Main Content Styles */
 main {
     max-width: 1000px;
     margin: 2em auto; /* Center the content horizontally with vertical margins */
@@ -160,27 +137,76 @@ main {
     box-sizing: border-box; /* Ensure padding and border are included in width */
 }
 
-/* Adjusting for Smaller Screens */
-@media (max-width: 1200px) {
-    main {
-        margin-left: 20px; /* Reduce left margin for smaller screens */
-        margin-right: 20px; /* Add right margin to maintain balance */
-    }
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding-top: auto; /* Adjust padding based on header height */
+    background: #ffffff;
+    color: #000000;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-
-/* Adjust the top margin to avoid overlap with the header */
-main {
-    margin-top: 120px; /* Increased to accommodate fixed header */
+pre {
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    background: #efefef; /* White background for high contrast */
+    color: black; /* Black text for maximum readability */
+    padding: 1em;
+    border: 2px solid #000; /* Bold black border for strong contrast */
+    border-radius: 4px; /* Slightly rounded corners for a simple, clean look */
+    overflow-x: auto; /* Horizontal scroll if content overflows */
+    white-space: pre-wrap; /* Preserve formatting */
+    margin: 1.5em 0; /* Spacing around code blocks */
 }
 
-/* Main Content Heading */
+code {
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+    background: transparent; /* Light gray background for slight contrast */
+    color: black; /* Black text for clarity */
+    padding: 0.2em 0.4em;
+    border: 0px solid #000; /* Strong black border for distinction */
+    border-radius: 4px; /* Rounded corners for a neat appearance */
+    font-size: 0.95em; /* Slightly smaller font size for inline code */
+    font-weight: bold;
+}
+
+table {
+    width: max-content;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for better readability */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-size: auto;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.banner {
+    text-align: left; /* Align content within the banner container */
+}
+
+.banner img {
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto;    /* Maintain aspect ratio */
+    display: block;  /* Remove bottom space/line-height */
+}
 main h1 {
     border-bottom: 2px solid #ffc425; /* Gold underline */
     margin-bottom: 20px;
 }
 
-/* Footer Styles */
+
 footer {
     background: #ffffff;
     border-top: 4px solid #ffc425; /* Gold border at the top */
@@ -190,7 +216,7 @@ footer {
     margin-top: 2em;
 }
 
-/* Button Styles */
+
 button,
 a.button {
     display: inline-block;
@@ -206,56 +232,57 @@ a.button {
     margin: 5px; /* Space between buttons */
 }
 
-/* Hover effect for all buttons */
 button:hover,
 a.button:hover {
-    background-color: #ffc425; /* Gold background on hover */
-    transform: scale(1.05); /* Slight scale effect */
+    background-color: #ffc425;
+    transform: scale(1.05);
 }
 
-/* Focus effect for buttons */
 button:focus,
 a.button:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(255, 195, 37, 0.5); /* Gold shadow for focus */
 }
 
-/* Container for navigation buttons */
 .navigation-buttons {
     text-align: center; /* Center buttons horizontally */
     margin-top: 20px;   /* Space above the buttons */
 }
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-    header {
-        position: absolute;
-        flex-direction: column; /* Stack header items vertically */
-        padding: 0.5em 1em; /* Adjust padding */
-        height: auto; /* Allow height to adjust based on content */
-        border-bottom: none; /* Optional: Remove or adjust the border for mobile */
-        margin: 0; /* Ensure no extra margin */
-        z-index: 1000;
+@media (max-width: 500px) {
+    main {
+        margin-left: 1px;
+        margin-right: 1px;
+        justify-content: center;
     }
 
-    /* Adjust content padding for mobile */
-    main {
-        margin-top: 350px; /* Increased for variable header height on mobile */
+    body {
+        justify-content: center;
+    }
+
+    header {
+        position: absolute;
+        flex-direction: row;
+        padding:0%;
+        z-index: 1000;
+        position: sticky;
     }
 
     nav {
-        display: flex;  
-        flex-direction: column;
-        justify-self: left;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
         padding: 0.5em 1em; /* Adjust padding */
         margin-top: 1em;
+        margin-bottom: 1em;
         width: 100%;
-        line-height: 4em; /* Adjust line-height for double spacing */
         box-sizing: border-box;
     }    
 
     .logo-title {
         margin-bottom: 1em;
+       transform: scale(0.5);
+        display: none;
     }
 
     .menu-toggle {
@@ -267,7 +294,7 @@ a.button:focus {
 
     nav ul {
         display: flex; /* Use flex to align items vertically */
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: row; /* Stack items vertically */
         justify-content: center; /* Center items within the container */
         align-items: flex-start; /* Align items to the start of the cross-axis (left for column layout) */
         width: 100%;
@@ -293,115 +320,42 @@ a.button:focus {
         box-shadow: none;
         padding: 0; /* Remove padding for smaller screens */
     }
+
+.navigation-buttons {
+    text-align: center;
+    margin: 20px 0;
 }
 
-@media (max-width: 480px) {
-    body {
-        font-size: 14px; /* Adjust font size */
-        margin: 0;
-        padding-top: 150px; /* Adjust padding based on the new header height */
-    }
-
-    .logo-title {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .site-icon {
-        margin-right: 0;
-        margin-bottom: 0.5em;
-    }
-
-    header h1 {
-        font-size: 1.2em; /* Adjust header font size */
-    }
-
-    .download-button {
-        font-size: 14px; /* Adjust font size */
-    }
+.nav-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #073627; /* Green gold background */
+    color: white; /* White text */
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-/* General Code Block Styles */
-pre {
-    font-family: Menlo, Monaco, 'Courier New', monospace;
-    font-size: 14px;
-    font-weight: bold;
-    background: #efefef; /* White background for high contrast */
-    color: black; /* Black text for maximum readability */
-    padding: 1em;
-    border: 2px solid #000; /* Bold black border for strong contrast */
-    border-radius: 4px; /* Slightly rounded corners for a simple, clean look */
-    overflow-x: auto; /* Horizontal scroll if content overflows */
-    white-space: pre-wrap; /* Preserve formatting */
-    margin: 1.5em 0; /* Spacing around code blocks */
+.nav-button:hover {
+    background-color: #ffc425; /* Gold on hover */
 }
 
-/* Inline Code Styles */
-code {
-    font-family: Menlo, Monaco, 'Courier New', monospace;
-    background: transparent; /* Light gray background for slight contrast */
-    color: black; /* Black text for clarity */
-    padding: 0.2em 0.4em;
-    border: 0px solid #000; /* Strong black border for distinction */
-    border-radius: 4px; /* Rounded corners for a neat appearance */
-    font-size: 0.95em; /* Slightly smaller font size for inline code */
-    font-weight: bold;
-}
-
-/* Banner Styles */
-.banner {
-    text-align: left; /* Align content within the banner container */
-}
-
-.banner img {
-    max-width: 100%; /* Ensure the image is responsive */
-    height: auto;    /* Maintain aspect ratio */
-    display: block;  /* Remove bottom space/line-height */
-}
-/* Navigation List Styles */
 .links-list {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-    position: fixed; /* Fix position to stay in place */
-    top: 50%; /* Position midway down the screen */
-    left: 10px; /* Distance from the left side */
-    transform: translateY(-50%); /* Center the list vertically */
-    background-color: #ffffff; /* Background color to stand out */
-    border: 1px solid #ddd; /* Light border for definition */
-    border-radius: 4px; /* Slightly rounded corners for aesthetics */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Enhanced shadow for better visibility */
-    padding: 8px; /* Padding for spacing */
-    z-index: 1000; /* Ensure it stays above other content */
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
 }
 
-/* Navigation List Item Styles */
 .links-list li {
-    margin: 4px 0; /* Space between items */
+    margin: 5px 0;
 }
 
-/* Navigation Links Styles */
 .links-list a {
-    color: #073627; /* Dark green text */
-    text-decoration: none; /* Remove underline */
-    font-size: 0.9em; /* Compact font size */
-    display: block; /* Make the link fill the list item */
-    padding: 6px 10px; /* Padding for easier clicking */
-    border-radius: 3px; /* Slightly rounded corners for links */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+    color: #073627;
+    text-decoration: none;
 }
 
-/* Hover Effect for Navigation Links */
 .links-list a:hover {
-    text-decoration: none; /* Remove underline on hover */
-    color: #ffffff; /* White text on hover */
-    background-color: #073627; /* Dark green background on hover */
-}
-
-
-/* Hide floating nav on screens smaller than 768px (mobile view) */
-@media only screen and (max-width: 1000px) {
-    .links-list a {
-        display: none;
-    }
+    color: #ffc425;
 }
