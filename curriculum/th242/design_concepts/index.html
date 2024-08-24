@@ -34,13 +34,13 @@ permalink: /curriculum/th242/design_concepts/index/
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
       font-size: 2.5em;
       margin-bottom: 0.5em;
-      text-align: center;
+      text-align: left;
     }
 
     p {
       color: #e0e0e0;
       margin-bottom: 1em;
-      text-align: center;
+      text-align: left;
     }
 
     .buttons-container {
@@ -49,23 +49,25 @@ permalink: /curriculum/th242/design_concepts/index/
     }
 
     .button {
-      display: block;
-      margin: 0.5em auto;
-      padding: 0.5em 1em;
-      font-size: 1em;
-      color: #ffffff;
-      background-color: #007bff;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      text-align: center;
-      width: 80%;
-      max-width: 300px;
-    }
+  display: block;
+  margin: 0.5em auto;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  width: 80%;
+  max-width: 300px; /* Adjusted for a more reasonable button width */
+  box-sizing: border-box; /* Ensures padding and border are included in the total width */
+}
 
-    .button:hover {
-      background-color: #0056b3;
-    }
+.button:hover {
+  background-color: #0056b3;
+}
+
   </style>
 </head>
 <body>
@@ -74,12 +76,17 @@ permalink: /curriculum/th242/design_concepts/index/
     <p>Welcome to the "Introduction to Sound & Media Design" course using the Processing IDE. This course explores the fundamentals of sound and media design through hands-on projects and tutorials using Processing. Below you'll find links to various course materials and resources.</p>
 
     <div class="buttons-container">
-        <a href="{{ '/curriculum/th242/design_concepts/intro' | relative_url }}" class="button">Introduction to Design</a>
-        <a href="{{ '/curriculum/th242/design_concepts/workflows' | relative_url }}" class="button">Design Workflows</a>
-        <a href="{{ '/curriculum/th242/design_concepts/processing' | relative_url }}" class="button">Introduction to Processing</a>
-        <a href="{{ '/curriculum/th242/design_concepts/pde_media_01' | relative_url }}" class="button">Media Tutorials</a>
-        <a href="{{ '/curriculum/th242/design_concepts/pde_sound_01' | relative_url }}" class="button">Sound Tutorials</a>
-        <a href="{{ '/curriculum/th242/design_concepts/conclusion' | relative_url }}" class="button">Conclusion</a>
+      <a class="button" href="{{ '/curriculum/th242/design_concepts/index' | relative_url }}">Index</a>
+      <a class="button" href="{{ '/curriculum/th242/design_concepts/intro' | relative_url }}">Introduction to Design</a>
+      <a class="button" href="{{ '/curriculum/th242/design_concepts/workflows' | relative_url }}">Introduction to Design Workflows</a>
+      <a class="button" href="{{ '/curriculum/th242/design_concepts/processing' | relative_url }}">Introduction to Processing</a>
+      <a class="button" href="{{ '/curriculum/th242/design_concepts/pde_media_01' | relative_url }}">Media Tutorial Series 1</a>
+      <a class="button" href="{{ '/curriculum/th242/design_concepts/pde_media_02' | relative_url }}">Media Tutorial Series 2</a>
+      <a class="button" href="{{ '/curriculum/th242/design_concepts/pde_media_03' | relative_url }}">Media Tutorial Series 3</a>
+      <a class="button" href="{{ '/curriculum/th242/design_concepts/pde_sound_01' | relative_url }}">Sound Tutorial Series 1</a>
+      <a class="button" href="{{ '/curriculum/th242/design_concepts/pde_sound_02' | relative_url }}">Sound Tutorial Series 2</a>
+      <a class="button" href="{{ '/curriculum/th242/design_concepts/pde_sound_03' | relative_url }}">Sound Tutorial Series 3</a>
+      <a class="button" href="{{ '/curriculum/th242/design_concepts/conclusion' | relative_url }}">Conclusion</a>
     </div>
   </main>
 </body>

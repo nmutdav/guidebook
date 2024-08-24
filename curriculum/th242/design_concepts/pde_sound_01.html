@@ -54,7 +54,32 @@ permalink: /curriculum/th242/design_concepts/pde_sound_01/
         body {
     background: url("{{ '/assets/images/pexels-steve-1573434.jpg' | relative_url }}") no-repeat center center fixed;
     background-size: cover;
+}/* Style for dropdown menus */
+.dropdown-menu {
+    display: none; /* Hide dropdowns by default */
+    list-style-type: none;
+    padding-left: 20px;
 }
+
+.links-list .dropdown-toggle {
+    cursor: pointer;
+    text-decoration: none;
+    color: #073627;
+}
+
+.links-list .dropdown-toggle:hover {
+    color: #ffc425;
+}
+
+.links-list .dropdown-menu a {
+    text-decoration: none;
+    color: #073627;
+}
+
+.links-list .dropdown-menu a:hover {
+    color: #ffc425;
+}
+
     </style>
 </head>
 <body>
@@ -363,14 +388,23 @@ void keyPressed() {
             <a class="nav-button" href="{{ '/curriculum/th242/design_concepts/conclusion' | relative_url }}">Next</a>
         </div>
     </main>
-        <ul class="links-list">
-            <li><a href="{{ '/curriculum/th242/design_concepts/index' | relative_url }}">Index</a></li>
-            <li><a href="{{ '/curriculum/th242/design_concepts/intro' | relative_url }}">Introduction to Design</a></li>
-            <li><a href="{{ '/curriculum/th242/design_concepts/workflows' | relative_url }}">Introduction to Design Workflows</a></li>
-            <li><a href="{{ '/curriculum/th242/design_concepts/processing' | relative_url }}">Introduction to Processing</a></li>
-            <li><a href="{{ '/curriculum/th242/design_concepts/pde_media_01' | relative_url }}">Processing Media Tutorials</a></li>
-            <li><a href="{{ '/curriculum/th242/design_concepts/pde_sound_01' | relative_url }}">Processing Sound Tutorials</a></li>
-            <li><a href="{{ '/curriculum/th242/design_concepts/conclusion' | relative_url }}">Conclusion</a></li>
-        </ul>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <ul class="links-list">
+        <li><a href="{{ '/curriculum/th242/design_concepts/index' | relative_url }}">Index</a></li>
+        <li><a href="{{ '/curriculum/th242/design_concepts/intro' | relative_url }}">Introduction to Design</a></li>
+        <li><a href="{{ '/curriculum/th242/design_concepts/workflows' | relative_url }}">Introduction to Design Workflows</a></li>
+        <li><a href="{{ '/curriculum/th242/design_concepts/processing' | relative_url }}">Introduction to Processing</a></li>
+        <li><a href="{{ '/curriculum/th242/design_concepts/pde_media_01' | relative_url }}">Media Tutorial Series 1</a></li>
+        <li><a href="{{ '/curriculum/th242/design_concepts/pde_media_02' | relative_url }}">Media Tutorial Series 2</a></li>
+        <li><a href="{{ '/curriculum/th242/design_concepts/pde_media_03' | relative_url }}">Media Tutorial Series 3</a></li>
+        <li><a href="{{ '/curriculum/th242/design_concepts/pde_sound_01' | relative_url }}">Sound Tutorial Series 1</a></li>
+        <li><a href="{{ '/curriculum/th242/design_concepts/pde_sound_02' | relative_url }}">Sound Tutorial Series 2</a></li>
+        <li><a href="{{ '/curriculum/th242/design_concepts/pde_sound_03' | relative_url }}">Sound Tutorial Series 3</a></li>
+        <li><a href="{{ '/curriculum/th242/design_concepts/conclusion' | relative_url }}">Conclusion</a></li>
+    </ul>
 </body>
 </html>
