@@ -1,3 +1,4 @@
+/* Header styles */
 header {
     display: flex; /* Use flexbox for layout */
     align-items: center; /* Vertically center items in the header */
@@ -9,11 +10,12 @@ header {
     position: fixed; /* Fix header to the top of the viewport */
     top: 0;
     width: 100%;
-    z-index: 2000; /* Keep header on top */
-    box-sizing: border-box; /* Ensure padding and border are included in width */
-    margin: 0; /* Remove margin */
+    z-index: 2000;
+    box-sizing: border-box;
+    margin: 0;
 }
 
+/* Logo and title styling */
 .logo-title {
     display: flex;
     align-items: center; /* Center items vertically */
@@ -36,7 +38,8 @@ header h1 a {
     text-decoration: none;
 }
 
-header h1 a:hover {
+header h1 a:hover, 
+header h1 a:active {
     text-decoration: underline;
 }
 
@@ -127,6 +130,7 @@ nav ul li:hover > .dropdown-content {
     display: block;
 }
 
+/* Main content styling */
 main {
     max-width: 1000px;
     margin: 2em auto; /* Center the content horizontally with vertical margins */
@@ -137,61 +141,66 @@ main {
     box-sizing: border-box; /* Ensure padding and border are included in width */
 }
 
+/* Body styling */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding-top: auto; /* Adjust padding based on header height */
+    padding-top: 0; /* Adjust padding based on header height */
     background: #ffffff;
     color: #000000;
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+/* Preformatted text styling */
 pre {
     font-family: Menlo, Monaco, 'Courier New', monospace;
     font-size: 14px;
     font-weight: bold;
-    background: #efefef; /* White background for high contrast */
-    color: black; /* Black text for maximum readability */
+    background: #efefef; /* Light gray background for contrast */
+    color: black; /* Black text for readability */
     padding: 1em;
-    border: 2px solid #000; /* Bold black border for strong contrast */
-    border-radius: 4px; /* Slightly rounded corners for a simple, clean look */
+    border: 2px solid #000; /* Black border for contrast */
+    border-radius: 4px; /* Slightly rounded corners */
     overflow-x: auto; /* Horizontal scroll if content overflows */
     white-space: pre-wrap; /* Preserve formatting */
     margin: 1.5em 0; /* Spacing around code blocks */
 }
 
+/* Inline code styling */
 code {
     font-family: Menlo, Monaco, 'Courier New', monospace;
     background: transparent; /* Light gray background for slight contrast */
     color: black; /* Black text for clarity */
     padding: 0.2em 0.4em;
-    border: 0px solid #000; /* Strong black border for distinction */
-    border-radius: 4px; /* Rounded corners for a neat appearance */
+    border-radius: 4px; /* Rounded corners for neat appearance */
     font-size: 0.95em; /* Slightly smaller font size for inline code */
     font-weight: bold;
 }
 
+/* Table styling */
 table {
-    width: max-content;
+    width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for better readability */
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
 }
 
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-    font-size: auto;
 }
 
 th {
     background-color: #f2f2f2;
 }
+
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+
+/* Banner styling */
 .banner {
     text-align: left; /* Align content within the banner container */
 }
@@ -201,12 +210,14 @@ tr:nth-child(even) {
     height: auto;    /* Maintain aspect ratio */
     display: block;  /* Remove bottom space/line-height */
 }
+
+/* Main heading styling */
 main h1 {
     border-bottom: 2px solid #ffc425; /* Gold underline */
     margin-bottom: 20px;
 }
 
-
+/* Footer styling */
 footer {
     background: #ffffff;
     border-top: 4px solid #ffc425; /* Gold border at the top */
@@ -216,146 +227,57 @@ footer {
     margin-top: 2em;
 }
 
-
-button,
-a.button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #ffffff;
+/* Button styling */
+a.button, button {
+    display: inline-flex; /* Use inline-flex for better alignment and spacing */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    padding: 12px 24px; /* Slightly larger padding for better touch targets */
+    font-size: 16px; /* Consistent font size */
+    color: #ffffff; /* White text */
     background-color: #073627; /* Dark green background */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Slightly more rounded corners for a modern look */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
     text-decoration: none; /* Remove underline from links */
     margin: 5px; /* Space between buttons */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    text-align: center; /* Center text within the button */
 }
 
-button:hover,
-a.button:hover {
-    background-color: #ffc425;
+a.button:hover, 
+a.button:active, 
+button:hover, 
+button:active {
+    background-color: #ffc425; /* Gold on hover */
     transform: scale(1.05);
 }
 
-button:focus,
-a.button:focus {
+a.button:focus,
+button:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(255, 195, 37, 0.5); /* Gold shadow for focus */
 }
 
+/* Navigation button styling */
 .navigation-buttons {
     text-align: center; /* Center buttons horizontally */
-    margin-top: 20px;   /* Space above the buttons */
-}
-
-@media (max-width: 500px) {
-    main {
-        margin-left: 1px;
-        margin-right: 1px;
-        justify-content: center;
-    }
-
-    body {
-        justify-content: center;
-    }
-
-    header {
-        position: absolute;
-        flex-direction: row;
-        padding:0%;
-        z-index: 1000;
-        position: sticky;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        padding: 0.5em 1em; /* Adjust padding */
-        margin-top: 1em;
-        margin-bottom: 1em;
-        width: 100%;
-        box-sizing: border-box;
-    }    
-
-    .logo-title {
-        margin-bottom: 1em;
-       transform: scale(0.5);
-        display: none;
-    }
-
-    .menu-toggle {
-        display: block;
-        font-size: 24px;
-        cursor: pointer;
-        margin: 0 auto;
-    }
-
-    nav ul {
-        display: flex; /* Use flex to align items vertically */
-        flex-direction: row; /* Stack items vertically */
-        justify-content: center; /* Center items within the container */
-        align-items: flex-start; /* Align items to the start of the cross-axis (left for column layout) */
-        width: 100%;
-        padding: 0; /* Remove default padding */
-        margin: 0; /* Remove default margin */
-    }
-
-    nav ul.active {
-        display: flex; /* Show menu when active */
-    }
-
-    nav ul li {
-        margin: 0;
-    }
-
-    nav ul li a,
-    nav ul li span {
-        padding: 1em;
-    }
-
-    .dropdown-content {
-        position: static; /* Make dropdowns flow with document */
-        box-shadow: none;
-        padding: 0; /* Remove padding for smaller screens */
-    }
-
-.navigation-buttons {
-    text-align: center;
-    margin: 20px 0;
+    margin-top: 20px; /* Space above the buttons */
 }
 
 .nav-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #073627; /* Green gold background */
-    color: white; /* White text */
+    background-color: #073627;
+    color: white;
     text-decoration: none;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    font-size: 16px
 }
 
-.nav-button:hover {
-    background-color: #ffc425; /* Gold on hover */
+@media (max-width: 1000px) {
+    .logo-title {
+        display: none;
+    }
 }
 
-.links-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 20px 0;
-}
-
-.links-list li {
-    margin: 5px 0;
-}
-
-.links-list a {
-    color: #073627;
-    text-decoration: none;
-}
-
-.links-list a:hover {
-    color: #ffc425;
-}
