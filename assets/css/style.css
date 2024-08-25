@@ -260,7 +260,6 @@ button:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(255, 195, 37, 0.5); /* Gold shadow for focus */
 }
-
 /* Navigation button styling */
 .navigation-buttons {
     text-align: center; /* Center buttons horizontally */
@@ -270,11 +269,20 @@ button:focus {
 .nav-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #073627;
+    background-color: #073627; /* Default background color */
     color: white;
     text-decoration: none;
-    font-size: 16px
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
 }
+
+.nav-button:hover,
+.nav-button:active {
+    background-color: #ffc425; /* Gold on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
 
 @media (max-width: 1000px) {
     .logo-title {
