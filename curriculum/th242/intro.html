@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Introduction to Sound & Media Design
+title: Principles of Design
 permalink: /curriculum/th242/intro/
 ---
 <!DOCTYPE html>
@@ -11,75 +11,145 @@ permalink: /curriculum/th242/intro/
     <title>Introduction to Sound & Media Design</title>
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
 </head>
-    <body>
-        <h1>Introduction to Design Principles</h1>
-        <p>Design is the art of crafting experiences through the careful arrangement of visual and auditory elements to achieve specific goals and communicate effectively. This course delves into fundamental design principles with a focus on sound and media. You will explore how to manipulate both audio and visual elements using SuperCollider and Processing. By learning to tweak small code snippets and adjust parameters, you'll gain hands-on experience in creating engaging and dynamic multimedia projects.</p>
+<body>
+    <h1>Introduction to Design Principles</h1>
+    <p>Design is the art of crafting experiences through the careful arrangement of visual and auditory elements to achieve specific goals and communicate effectively. This course delves into fundamental design principles with a focus on sound and media. You will explore how to manipulate both audio and visual elements using SuperCollider and Processing. By learning to tweak small code snippets and adjust parameters, you'll gain hands-on experience in creating engaging and dynamic multimedia projects.</p>
 
-        <section>
-            <h2>Design Principles in Audio</h2>
-            <p>Audio design revolves around the manipulation and integration of sound to enhance the overall experience. Key principles include:</p>
+    <section>
+        <h2>Design Principles in Audio</h2>
+        <p>Audio design involves creating sound experiences that are engaging and effective. Key principles include:</p>
+        <ul>
+            <li><strong>Sampling:</strong> Incorporating pre-recorded audio to create unique soundscapes. Techniques and considerations include:</li>
             <ul>
-                <li><strong>Sampling:</strong> Incorporating pre-recorded audio into your projects to create unique soundscapes. SuperCollider allows you to load and play samples, offering control over how they are processed and manipulated.</li>
-                <li><strong>Envelope Control:</strong> Shaping the dynamics of sound using attack, decay, sustain, and release phases to craft expressive audio effects. This can greatly influence the emotional impact of the sound.</li>
-                <li><strong>Spatialization:</strong> Positioning sound in a stereo or surround field to create a sense of space and depth. Effective spatialization can make your audio experience more immersive and realistic.</li>
+                <li><strong>Looping:</strong> Repeating segments of audio to establish rhythmic patterns or textures.</li>
+                <li><strong>Pitch Shifting:</strong> Modifying the pitch of samples to match tonal qualities.</li>
+                <li><strong>Time Stretching:</strong> Altering playback speed without changing pitch to fit different contexts.</li>
+                <li><strong>Layering:</strong> Combining multiple samples to create rich, complex soundscapes.</li>
             </ul>
-            <p>For deeper insights into audio design, explore these resources:</p>
+            <li><strong>Envelope Control:</strong> Shaping sound dynamics over time with attack, decay, sustain, and release phases. Key aspects include:</li>
             <ul>
-                <li><a href="https://supercollider.github.io" target="_blank">SuperCollider Documentation</a></li>
-                <li><a href="https://www.soundonsound.com/techniques/sound-design-sampling" target="_blank">Sound On Sound: Sampling Techniques</a></li>
-                <li><a href="https://www.audiotool.com/" target="_blank">Audiotool: Online Audio Workstation</a></li>
+                <li><strong>Attack:</strong> The time for a sound to reach peak amplitude.</li>
+                <li><strong>Decay:</strong> The time for the sound to drop to the sustain level.</li>
+                <li><strong>Sustain:</strong> The volume level while the sound is held.</li>
+                <li><strong>Release:</strong> The time for the sound to fade out after the note is released.</li>
+                <li><strong>Dynamic Variation:</strong> Using envelope variations to create expressive and evolving sounds.</li>
             </ul>
-        </section>
+            <li><strong>Spatialization:</strong> Placing sound within a stereo or surround field to create depth. Techniques include:</li>
+            <ul>
+                <li><strong>Panning:</strong> Distributing sound across the stereo field to create a sense of space.</li>
+                <li><strong>3D Audio:</strong> Positioning sound sources in a three-dimensional space.</li>
+                <li><strong>Distance Attenuation:</strong> Simulating how sound diminishes over distance.</li>
+                <li><strong>Reverb and Echo:</strong> Using reverberation and echo effects to enhance spatial effects.</li>
+            </ul>
+            <li><strong>Dynamic Range:</strong> Managing the difference between the quietest and loudest parts of an audio signal. Key techniques include:</li>
+            <ul>
+                <li><strong>Compression:</strong> Reducing the volume of loud sounds and boosting quieter ones for balance.</li>
+                <li><strong>Limiting:</strong> Preventing distortion by capping audio levels.</li>
+                <li><strong>Expansion:</strong> Increasing the dynamic range to enhance contrast between quiet and loud sounds.</li>
+            </ul>
+        </ul>
+    </section>
 
-        <section>
-            <h2>Design Principles in Media</h2>
-            <p>Media design involves creating visual elements that complement and enhance the overall multimedia experience. Essential principles include:</p>
+    <section>
+        <h2>Design Principles in Media</h2>
+        <p>Media design involves creating visual elements that enhance the multimedia experience. Essential principles include:</p>
+        <ul>
+            <li><strong>Visual Composition:</strong> Arranging visual elements to create a balanced and engaging design. Key principles are:</li>
             <ul>
-                <li><strong>Visual Composition:</strong> Arranging visual elements to create a balanced and engaging design. This involves understanding layout, color theory, and typography to craft effective visuals.</li>
-                <li><strong>Interaction:</strong> Designing interactive elements that respond to user inputs and provide meaningful feedback. Processing can be used to create visuals that react dynamically to sound or user interactions.</li>
-                <li><strong>Feedback and Adaptation:</strong> Allowing visuals to adapt based on user actions or environmental changes to enhance the interactive experience.</li>
+                <li><strong>Rule of Thirds:</strong> Dividing the visual field into a 3x3 grid and placing elements along these lines or intersections for balance.</li>
+                <li><strong>Hierarchy:</strong> Using size, color, and placement to indicate importance and guide viewer attention.</li>
+                <li><strong>Contrast:</strong> Employing differences in color, brightness, and size to make elements stand out and improve readability.</li>
+                <li><strong>Alignment:</strong> Ensuring that elements are aligned to create a clean, organized layout.</li>
+                <li><strong>Proximity:</strong> Grouping related elements together to create a sense of cohesion and organization.</li>
+                <li><strong>Repetition:</strong> Using recurring elements or styles to create consistency and unity in the design.</li>
             </ul>
-            <p>Enhance your media design skills with these valuable resources:</p>
-            <ul class>
-                <li><a href="https://processing.org/reference/" target="_blank">Processing Reference</a></li>
-                <li><a href="https://www.smashingmagazine.com/category/visual-design" target="_blank">Smashing Magazine: Visual Design</a></li>
-                <li><a href="https://www.adobe.com/products/xd.html" target="_blank">Adobe XD: Interactive Design Tool</a></li>
+            <li><strong>Color Theory:</strong> Understanding how colors interact and influence perception. Key aspects include:</li>
+            <ul>
+                <li><strong>Color Harmony:</strong> Using color schemes like analogous, complementary, and triadic to create visual appeal.</li>
+                <li><strong>Color Psychology:</strong> Leveraging the psychological effects of colors to influence mood and perception.</li>
+                <li><strong>Contrast and Legibility:</strong> Ensuring sufficient contrast between text and background for readability.</li>
             </ul>
-        </section>
+            <li><strong>Typography:</strong> Choosing and arranging typefaces to enhance readability and aesthetics. Key principles include:</li>
+            <ul>
+                <li><strong>Font Selection:</strong> Choosing fonts that fit the design's tone and purpose.</li>
+                <li><strong>Hierarchy and Scale:</strong> Using different font sizes and weights to create a typographic hierarchy.</li>
+                <li><strong>Spacing:</strong> Applying appropriate line spacing, letter spacing, and margins for readability.</li>
+            </ul>
+            <li><strong>Interaction:</strong> Designing interactive elements that respond to user inputs. Considerations include:</li>
+            <ul>
+                <li><strong>Usability:</strong> Ensuring that interactive elements are intuitive and easy to use.</li>
+                <li><strong>Responsive Design:</strong> Creating designs that adapt to different devices and screen sizes.</li>
+                <li><strong>Feedback Mechanisms:</strong> Providing immediate feedback to user actions to enhance engagement.</li>
+            </ul>
+            <li><strong>Animation and Motion:</strong> Using animation to enhance visual appeal and user experience. Key techniques include:</li>
+            <ul>
+                <li><strong>Timing and Easing:</strong> Applying timing functions to make animations smooth and natural.</li>
+                <li><strong>Transitions:</strong> Creating smooth transitions between different states or scenes to maintain flow.</li>
+                <li><strong>Storytelling Through Motion:</strong> Using animation to tell a story or guide the user through an experience.</li>
+            </ul>
+        </ul>
+    </section>
 
-        <section>
-            <h2>Integrating Sound and Visual Design</h2>
-            <p>The integration of sound and visual design creates a unified multimedia experience where auditory and visual elements enhance each other. Key techniques include:</p>
+    <section>
+        <h2>Integrating Sound and Visual Design</h2>
+        <p>Integrating sound and visual design creates a cohesive multimedia experience. Techniques include:</p>
+        <ul>
+            <li><strong>Audio-Visual Synchronization:</strong> Aligning audio cues with visual elements to enhance coherence. Techniques include:</li>
             <ul>
-                <li><strong>Audio-Visual Synchronization:</strong> Aligning audio cues with visual events to create a cohesive experience. This can be achieved by syncing visual changes in Processing with sound parameters controlled in SuperCollider.</li>
-                <li><strong>Interactive Media:</strong> Designing interactive experiences where audio and visual elements respond to user input, creating a dynamic and engaging environment.</li>
-                <li><strong>Feedback Loops:</strong> Using feedback from one medium (e.g., sound) to influence another (e.g., visuals) to create responsive and immersive experiences.</li>
+                <li><strong>Syncing Visuals to Audio:</strong> Triggering visual changes based on audio events, such as animations timed with beats.</li>
+                <li><strong>Visualizing Audio:</strong> Creating visual representations of audio data, such as frequency bars or waveform displays.</li>
             </ul>
-            <p>Explore these examples and tutorials to deepen your understanding of integrating sound and visuals:</p>
+            <li><strong>Interactive Media:</strong> Designing media where audio and visuals respond to user input. Considerations include:</li>
             <ul>
-                <li><a href="https://www.youtube.com/watch?v=Q1K0GsWw5_g" target="_blank">Interactive Audio-Visual Installation Tutorial</a></li>
-                <li><a href="https://www.tubikstudio.com/designing-interactive-media/" target="_blank">Designing Interactive Media: Tubik Studio</a></li>
-                <li><a href="https://www.interaction-design.org/literature/topics/interaction-design" target="_blank">Interaction Design Foundation: Interactive Design</a></li>
+                <li><strong>Real-time Audio-Visual Interaction:</strong> Creating visuals that change in response to real-time audio analysis.</li>
+                <li><strong>Interactive Feedback:</strong> Allowing user actions to influence both audio and visual elements for an immersive experience.</li>
             </ul>
-        </section>
-        <section>
-            <h2>Code as a Canvas</h2>
-            <p>In this course, code serves as a canvas for creativity in both sound and media design. You will start with two small code snippets—one for SuperCollider and one for Processing. Your primary tasks are to:</p>
+            <li><strong>Feedback Loops:</strong> Using feedback from one medium to influence another. Techniques include:</li>
             <ul>
-                <li>Understand each line of code and its purpose.</li>
-                <li>Experiment with parameters to explore different outcomes and effects.</li>
-                <li>Expand upon the provided snippets to develop your own unique designs.</li>
+                <li><strong>Audio-Driven Visuals:</strong> Using audio characteristics, such as volume or pitch, to drive visual changes.</li>
+                <li><strong>Visual-Driven Audio:</strong> Creating audio effects that respond to visual elements or changes.</li>
             </ul>
-            <p>The course is structured to facilitate your learning:</p>
+            <li><strong>Aesthetic Unity:</strong> Ensuring that audio and visual elements work together harmoniously. Considerations include:</li>
             <ul>
-                <li>Odd-numbered classes: Focus on lectures that introduce concepts, followed by explanations of assignments and time for hands-on work.</li>
-                <li>Even-numbered classes: Dedicated to in-class projects and providing additional support from the instructor.</li>
+                <li><strong>Consistency:</strong> Maintaining a consistent aesthetic across both audio and visual elements to create a unified experience.</li>
+                <li><strong>Theme and Style:</strong> Ensuring that audio and visuals reflect the same theme or style to enhance overall coherence.</li>
             </ul>
-            <p>Remember, while the course will involve coding, the emphasis is on design. Focus on how manipulating code parameters can lead to new and innovative designs rather than getting overwhelmed by the coding itself.</p>
-        </section>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Code as a Canvas</h2>
+        <p>In this course, code serves as a canvas for creativity in both sound and media design. Key activities include:</p>
+        <ul>
+            <li><strong>Understanding Code:</strong> Analyzing and comprehending each line of code to understand its purpose and impact. Key aspects include:</li>
+            <ul>
+                <li><strong>Syntax and Structure:</strong> Learning the syntax and structure of SuperCollider and Processing to modify and build upon code effectively.</li>
+                <li><strong>Debugging:</strong> Identifying and fixing issues in code to ensure correct functionality and output.</li>
+            </ul>
+            <li><strong>Experimenting with Parameters:</strong> Adjusting parameters to explore different outcomes and effects. Techniques include:</li>
+            <ul>
+                <li><strong>Parameter Tweaking:</strong> Modifying values to see how they affect audio and visual outputs, facilitating a deeper understanding of design principles.</li>
+                <li><strong>Exploring Variations:</strong> Creating multiple versions of your design to compare results and refine your approach.</li>
+            </ul>
+            <li><strong>Expanding on Code Snippets:</strong> Building upon provided snippets to create unique designs. Activities include:</li>
+            <ul>
+                <li><strong>Customization:</strong> Tailoring code to fit specific project needs and creative ideas.</li>
+                <li><strong>Integration:</strong> Combining elements from different code snippets to create complex, multi-faceted designs.</li>
+                <li><strong>Optimization:</strong> Improving code efficiency and performance to enhance the overall quality of the design.</li>
+            </ul>
+        </ul>
+        <p>The course is structured to facilitate learning:</p>
+        <ul>
+            <li>Odd-numbered classes: Focus on lectures introducing concepts, explanations of assignments, and hands-on work to apply new knowledge.</li>
+            <li>Even-numbered classes: Dedicated to in-class projects and providing additional support from the instructor to foster practical experience.</li>
+        </ul>
+        <p>While coding is part of the course, the emphasis is on design. Focus on how adjusting code parameters can lead to innovative designs and solutions rather than getting overwhelmed by the technical details.</p>
+    </section>
+
+    <div class="navigation-buttons">
+        <a class="nav-button" href="{{ '/curriculum/th242/index' | relative_url }}">Index</a>
+        <a class="nav-button" href="{{ '/curriculum/th242/schedule_242' | relative_url }}">Previous</a>
+        <a class="nav-button" href="{{ '/curriculum/th242/workflows' | relative_url }}">Next</a>
     </div>
-        <div class="navigation-buttons">
-            <a class ="nav-button" href="{{ '/curriculum/th242/index' | relative_url }}">Index</a>
-            <a class="nav-button" href="{{ '/curriculum/th242/schedule_242' | relative_url }}">Previous</a>
-            <a class="nav-button" href="{{ '/curriculum/th242/workflows' | relative_url }}">Next</a>
-        </div>
+</body>
+</html>

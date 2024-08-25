@@ -135,6 +135,7 @@ main {
     max-width: 1000px;
     margin: 2em auto; /* Center the content horizontally with vertical margins */
     padding: 1em 2em;
+    margin-top: 2em;
     background: #ffffff;
     color: #000000;
     border-radius: 8px; /* Slightly rounded corners for a softer look */
@@ -279,5 +280,7 @@ button:focus {
     .logo-title {
         display: none;
     }
+    header {
+        font-size: smaller;
+    }
 }
-
