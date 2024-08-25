@@ -1,0 +1,234 @@
+<h1>Assignment Examples </h1>
+<section>
+    <h2>Assignment 1: Basic Sampler Exploration</h2>
+    <pre><code>
+// Boot the SuperCollider server
+s.boot;
+
+// Basic Sampler Function
+(
+{
+var buf = Buffer.read(s, "path/to/sample.wav"); // Load the sample
+var snd = PlayBuf.ar(1, buf, BufRateScale.kr(buf), loop: 1);
+Out.ar(0, snd);
+}.play;
+)
+    </code></pre>
+</section>
+
+<section>
+    <h2>Assignment 2: Simple Animation</h2>
+    <pre><code>
+int circleColor;
+float angle = 0;
+float radius = 100;
+float speed = 0.05;
+
+void setup() {
+size(800, 600);
+circleColor = color(255, 0, 0); // Initial color
+}
+
+void draw() {
+background(0);
+
+// Update color based on mouse position
+float r = map(mouseX, 0, width, 0, 255);
+float g = map(mouseY, 0, height, 0, 255);
+circleColor = color(r, g, 255 - r);
+
+// Draw rotating ellipse
+float x = width / 2 + cos(angle) * radius;
+float y = height / 2 + sin(angle) * radius;
+fill(circleColor);
+noStroke();
+ellipse(x, y, 50, 50);
+
+// Update angle
+angle += speed;
+
+// Draw line
+stroke(255);
+line(width / 2, height / 2, x, y);
+}
+
+void keyPressed() {
+if (keyCode == LEFT) {
+speed -= 0.01;
+} else if (keyCode == RIGHT) {
+speed += 0.01;
+}
+}
+    </code></pre>
+</section>
+
+<section>
+    <h2>Assignment 3: Envelope Control</h2>
+    <pre><code>
+// Boot the SuperCollider server
+s.boot;
+
+// Sampler with Envelope Control
+(
+{
+var freq = 440;
+var amp = 0.5;
+var buf = Buffer.read(s, "path/to/sample.wav");
+var snd = PlayBuf.ar(1, buf, BufRateScale.kr(buf), loop: 1, rate: freq);
+
+// Envelope control
+var env = EnvGen.kr(Env.perc(0.01, 0.5), doneAction: 2);
+snd = snd * amp * env;
+
+// Effects
+snd = FreeVerb.ar(snd, 0.8, 0.9, 0.5);
+
+Out.ar(0, snd);
+}.play;
+)
+    </code></pre>
+</section>
+
+<section>
+    <h2>Assignment 4: Interactive Animation</h2>
+    <pre><code>
+int circleColor;
+float angle = 0;
+float radius = 100;
+float speed = 0.05;
+
+void setup() {
+size(800, 600);
+circleColor = color(255, 0, 0); // Initial color
+}
+
+void draw() {
+background(0);
+
+// Update color based on mouse position
+float r = map(mouseX, 0, width, 0, 255);
+float g = map(mouseY, 0, height, 0, 255);
+circleColor = color(r, g, 255 - r);
+
+// Draw rotating ellipse
+float x = width / 2 + cos(angle) * radius;
+float y = height / 2 + sin(angle) * radius;
+fill(circleColor);
+noStroke();
+ellipse(x, y, 50, 50);
+
+// Update angle
+angle += speed;
+
+// Draw line
+stroke(255);
+line(width / 2, height / 2, x, y);
+}
+
+void keyPressed() {
+if (keyCode == LEFT) {
+speed -= 0.01;
+} else if (keyCode == RIGHT) {
+speed += 0.01;
+}
+}
+    </code></pre>
+</section>
+
+<section>
+    <h2>Assignment 5: Spatialization</h2>
+    <pre><code>
+// Boot the SuperCollider server
+s.boot;
+
+// Spatialization Example
+(
+{
+var buf = Buffer.read(s, "path/to/sample.wav");
+var pan = SinOsc.kr(0.5).range(-1, 1); // Oscillator to modulate pan
+var snd = PlayBuf.ar(1, buf, BufRateScale.kr(buf), loop: 1);
+snd = Pan2.ar(snd, pan); // Panning
+Out.ar(0, snd);
+}.play;
+)
+    </code></pre>
+</section>
+
+<section>
+    <h2>Assignment 6: Shape Animation</h2>
+    <pre><code>
+float angle = 0;
+float radius = 100;
+
+void setup() {
+size(800, 600);
+}
+
+void draw() {
+background(0);
+
+// Draw a shape following a circular path
+float x = width / 2 + cos(angle) * radius;
+float y = height / 2 + sin(angle) * radius;
+fill(255, 0, 0);
+noStroke();
+ellipse(x, y, 50, 50);
+
+// Update angle
+angle += 0.05;
+}
+    </code></pre>
+</section>
+
+<section>
+    <h2>Assignment 7: Interactive Sound Modification</h2>
+    <pre><code>
+// Boot the SuperCollider server
+s.boot;
+
+// Interactive Sound Modification Example
+(
+{
+var freq = MouseX.kr(100, 1000); // Frequency controlled by mouse X position
+var buf = Buffer.read(s, "path/to/sample.wav");
+var snd = PlayBuf.ar(1, buf, BufRateScale.kr(buf), loop: 1, rate: freq);
+Out.ar(0, snd);
+}.play;
+)
+    </code></pre>
+</section>
+
+<section>
+    <h2>Assignment 8: Audio-Visual Synchronization</h2>
+    <pre><code>
+int circleColor;
+float angle = 0;
+float radius = 100;
+float speed = 0.05;
+
+void setup() {
+size(800, 600);
+circleColor = color(255, 0, 0); // Initial color
+}
+
+void draw() {
+background(0);
+
+// Update color based on audio amplitude
+float audioLevel = map(sin(angle), -1, 1, 0, 255); // Simulated audio level
+circleColor = color(audioLevel, 255 - audioLevel, 255);
+
+// Draw rotating ellipse
+float x = width / 2 + cos(angle) * radius;
+float y = height / 2 + sin(angle) * radius;
+fill(circleColor);
+noStroke();
+ellipse(x, y, 50, 50);
+
+// Update angle
+angle += speed;
+
+// Draw line
+stroke(255);
+line(width / 2, height / 2, x, y);
+}

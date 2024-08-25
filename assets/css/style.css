@@ -281,6 +281,6 @@ button:focus {
         display: none;
     }
     header {
-        font-size: smaller;
+        font-size: medium;
     }
 }

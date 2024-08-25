@@ -1,0 +1,294 @@
+---
+layout: default
+title: Introduction to Sound & Media Design
+permalink: /curriculum/th242/pde_sound_03/
+---
+<main>
+<body>
+    <h1>Processing Tutorial Series - Sound 3</h1>
+    <section id="tutorial-1">
+        <h2>Tutorial 1: Advanced Sound Synthesis</h2>
+        <p><strong>Objective:</strong> Create a sound synthesizer with multiple oscillators and modulation.</p>
+        <pre><code>
+import processing.sound.*;
+
+Oscillator osc1, osc2;
+float frequency1 = 440; // Base frequency for osc1
+float frequency2 = 880; // Base frequency for osc2
+
+void setup() {
+    size(800, 600);
+    osc1 = new Oscillator(this);
+    osc2 = new Oscillator(this);
+    
+    osc1.setFrequency(frequency1);
+    osc2.setFrequency(frequency2);
+    
+    osc1.play();
+    osc2.play();
+}
+
+void draw() {
+    background(255);
+    float modFreq = map(mouseX, 0, width, 1, 10); // Modulation frequency based on mouse position
+    osc2.setFrequency(frequency2 + sin(frameCount * 0.05) * 50); // Frequency modulation
+}
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>Oscillator osc1, osc2;</code>: Creates two oscillators for sound synthesis.</li>
+            <li><code>osc2.setFrequency(float freq);</code>: Modulates the frequency of the second oscillator.</li>
+            <li><code>map(value, start1, stop1, start2, stop2);</code>: Maps mouse position to modulation frequency.</li>
+        </ul>
+        <p>This tutorial involves creating a complex synthesizer with modulation effects.</p>
+    </section>
+
+    <section id="tutorial-2">
+        <h2>Tutorial 2: Real-Time Audio Filtering</h2>
+        <p><strong>Objective:</strong> Apply a band-pass filter to isolate specific frequencies.</p>
+        <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+Filter bandPassFilter;
+
+void setup() {
+    size(800, 600);
+    mySound = new SoundFile(this, "soundfile.mp3");
+    mySound.play();
+    
+    bandPassFilter = new Filter(this);
+    bandPassFilter.set(1000, 0.5); // Set filter frequency and resonance
+    bandPassFilter.input(mySound);
+}
+
+void draw() {
+    background(255);
+}
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>Filter bandPassFilter;</code>: Creates a band-pass filter for isolating frequencies.</li>
+            <li><code>bandPassFilter.set(float frequency, float resonance);</code>: Sets the filter's frequency and resonance.</li>
+            <li><code>bandPassFilter.input(SoundFile sound);</code>: Applies the filter to the sound file.</li>
+        </ul>
+        <p>This tutorial demonstrates filtering specific frequencies from a sound using a band-pass filter.</p>
+    </section>
+
+    <section id="tutorial-3">
+        <h2>Tutorial 3: Complex Sound Effects</h2>
+        <p><strong>Objective:</strong> Combine multiple effects like reverb, delay, and distortion.</p>
+        <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+Reverb reverb;
+Delay delay;
+Distortion distortion;
+
+void setup() {
+    size(800, 600);
+    mySound = new SoundFile(this, "soundfile.mp3");
+    mySound.play();
+    
+    reverb = new Reverb(this);
+    delay = new Delay(this);
+    distortion = new Distortion(this);
+    
+    reverb.process(mySound, 0.5); // Apply reverb
+    delay.process(mySound, 500); // Apply delay
+    distortion.process(mySound, 0.3); // Apply distortion
+}
+
+void draw() {
+    background(255);
+}
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>Reverb reverb;</code>: Creates a reverb effect object.</li>
+            <li><code>Delay delay;</code>: Creates a delay effect object.</li>
+            <li><code>Distortion distortion;</code>: Creates a distortion effect object.</li>
+            <li><code>process(SoundFile sound, float amount);</code>: Applies effects to the sound file.</li>
+        </ul>
+        <p>This tutorial combines multiple effects to create complex sound textures.</p>
+    </section>
+
+    <section id="tutorial-4">
+        <h2>Tutorial 4: Audio Reactive Visualization</h2>
+        <p><strong>Objective:</strong> Create visual effects that respond to audio input.</p>
+        <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+FFT fft;
+
+void setup() {
+    size(800, 600);
+    mySound = new SoundFile(this, "soundfile.mp3");
+    mySound.play();
+    
+    fft = new FFT(this, 512);
+    fft.input(mySound);
+}
+
+void draw() {
+    background(255);
+    
+    fft.analyze();
+    
+    stroke(0);
+    noFill();
+    
+    for (int i = 0; i < fft.specSize(); i++) {
+        float x = map(i, 0, fft.specSize(), 0, width);
+        float y = map(fft.getBand(i), 0, 1, height, 0);
+        ellipse(x, y, 5, 5);
+    }
+}
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>FFT fft;</code>: Creates an FFT object for frequency analysis.</li>
+            <li><code>fft.analyze();</code>: Analyzes the sound file and updates the visual representation.</li>
+            <li><code>ellipse(x, y, 5, 5);</code>: Visualizes frequency data with ellipses.</li>
+        </ul>
+        <p>This tutorial creates visual effects that respond to audio input using FFT analysis.</p>
+    </section>
+
+    <section id="tutorial-5">
+        <h2>Tutorial 5: Audio Sampling and Playback</h2>
+        <p><strong>Objective:</strong> Sample and playback audio segments.</p>
+        <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+AudioSample sample;
+
+void setup() {
+    size(800, 600);
+    mySound = new SoundFile(this, "soundfile.mp3");
+    mySound.play();
+    
+    sample = new AudioSample(this, "soundfile.mp3");
+}
+
+void draw() {
+    background(255);
+}
+
+void keyPressed() {
+    if (key == 's') {
+        sample.play(); // Play sample
+    }
+}
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>AudioSample sample;</code>: Creates an audio sample object for playback.</li>
+            <li><code>sample.play();</code>: Plays the audio sample when a key is pressed.</li>
+        </ul>
+        <p>This tutorial covers sampling and playback of audio segments.</p>
+    </section>
+
+    <section id="tutorial-6">
+        <h2>Tutorial 6: Real-Time Audio Modulation</h2>
+        <p><strong>Objective:</strong> Implement real-time modulation of audio parameters.</p>
+        <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+float modulationAmount = 0.5;
+
+void setup() {
+    size(800, 600);
+    mySound = new SoundFile(this, "soundfile.mp3");
+    mySound.play();
+}
+
+void draw() {
+    background(255);
+    float modulationValue = map(mouseY, 0, height, 0, 1); // Modulation based on mouse position
+    mySound.rate(modulationValue); // Adjust playback rate
+}
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>map(value, start1, stop1, start2, stop2);</code>: Maps mouse position to modulation value.</li>
+            <li><code>mySound.rate(float rate);</code>: Adjusts playback rate based on modulation value.</li>
+        </ul>
+        <p>This tutorial demonstrates real-time modulation of audio parameters using mouse input.</p>
+    </section>
+
+    <section id="tutorial-7">
+        <h2>Tutorial 7: Dynamic Audio Effects</h2>
+        <p><strong>Objective:</strong> Apply dynamic effects that change based on audio input.</p>
+        <pre><code>
+import processing.sound.*;
+
+SoundFile mySound;
+Compressor compressor;
+
+void setup() {
+    size(800, 600);
+    mySound = new SoundFile(this, "soundfile.mp3");
+    mySound.play();
+    
+    compressor = new Compressor(this);
+    compressor.process(mySound, 2.0, 0.5); // Apply compression
+}
+
+void draw() {
+    background(255);
+}
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>Compressor compressor;</code>: Creates a compressor effect object.</li>
+            <li><code>compressor.process(SoundFile sound, float threshold, float ratio);</code>: Applies dynamic range compression to the sound.</li>
+        </ul>
+        <p>This tutorial covers applying dynamic effects like compression to audio input.</p>
+    </section>
+
+    <section id="tutorial-8">
+        <h2>Tutorial 8: Creating Custom Soundscapes</h2>
+        <p><strong>Objective:</strong> Design complex soundscapes using multiple sound files and effects.</p>
+        <pre><code>
+import processing.sound.*;
+
+SoundFile[] sounds = new SoundFile[3];
+Reverb[] reverbs = new Reverb[3];
+
+void setup() {
+    size(800, 600);
+    sounds[0] = new SoundFile(this, "sound1.mp3");
+    sounds[1] = new SoundFile(this, "sound2.mp3");
+    sounds[2] = new SoundFile(this, "sound3.mp3");
+    
+    for (int i = 0; i < 3; i++) {
+        sounds[i].play();
+        reverbs[i] = new Reverb(this);
+        reverbs[i].process(sounds[i], 0.3); // Apply reverb to each sound
+    }
+}
+
+void draw() {
+    background(255);
+}
+        </code></pre>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>SoundFile[] sounds = new SoundFile[3];</code>: Creates an array of sound files.</li>
+            <li><code>Reverb[] reverbs = new Reverb[3];</code>: Creates an array of reverb effect objects.</li>
+            <li><code>for (int i = 0; i &lt; 3; i++) { ... }</code>: Applies reverb to each sound file.</li>
+        </ul>
+        <p>This tutorial demonstrates creating complex soundscapes by combining multiple sound files with effects.</p>
+    </section>
+
+    <div class="navigation-buttons">
+        <a class ="nav-button" href="{{ '/curriculum/th242/index' | relative_url }}">Index</a>
+        <a href="{{ '/curriculum/th242/pde_sound_02/' | relative_url }}" class="nav-button">Previous</a>
+        <a href="{{ '/curriculum/th242/assignments/' | relative_url }}" class="nav-button">Next</a>
+    </div>
+</body>
+</main>
