@@ -3,66 +3,36 @@ layout: default
 title: Assignments
 permalink: /curriculum/th242/assignments/
 ---
-<main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments - TH-242</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-    <h1>{{ page.title }}</h1>
-    <section>
-        <h2>Assignment Overview</h2>
-        <p>In this class, we will use the Processing IDE exclusively to explore and develop multimedia projects involving both audio and visual elements. Each assignment will guide you through integrating audio and media into your Processing projects, helping you build and refine your skills in creative coding.</p>
-    </section>
+    <main>
+        <h1>Assignments</h1>
+        <section>
+            <p>In this class, we will use the Processing IDE to explore multimedia projects integrating audio and visual elements. Each assignment involves team-based collaboration with rotating members to help you build and refine your skills in creative coding. Individual contributions are required for each assignment to ensure personal accountability. We will use GitHub for collaboration, and each team will set up a repository and use the NMUTDAV GitHub (<a href="https://github.com/nmutdav" target="_blank">github.io</a>) to host and showcase their projects.</p>
+        </section>
 
-    <h2>Template Code Snippets</h2>
-    <section>
-        <h3>Processing Template Code</h3>
-        <pre><code>
-// Basic Animation with Audio in Processing
-import processing.sound.*;
-
-SoundFile sample;
-float angle = 0;
-float radius = 100;
-float speed = 0.05;
-
-void setup() {
-    size(800, 600);
-    sample = new SoundFile(this, "path/to/sample.wav"); // Load audio sample
-    sample.play(); // Start playback
-}
-
-void draw() {
-    background(0);
-
-    // Update color based on mouse position
-    float r = map(mouseX, 0, width, 0, 255);
-    float g = map(mouseY, 0, height, 0, 255);
-    fill(r, g, 255 - r);
-
-    // Draw a rotating ellipse
-    float x = width / 2 + cos(angle) * radius;
-    float y = height / 2 + sin(angle) * radius;
-    ellipse(x, y, 50, 50);
-
-    // Update angle for rotation
-    angle += speed;
-
-    // Draw a line from the center to the circle
-    stroke(255);
-    line(width / 2, height / 2, x, y);
-}
-
-// Adjust rotation speed with arrow keys
-void keyPressed() {
-    if (keyCode == LEFT) {
-        speed -= 0.01;
-    } else if (keyCode == RIGHT) {
-        speed += 0.01;
-    }
-}
-        </code></pre>
-    </section>
-
-    <section>
-        <h2>Assignments</h2>
+        <!-- Team Grouping and Roles -->
+        <section>
+            <h2>Team Grouping and Roles</h2>
+            <ul>
+                <li><strong>Team Formation:</strong> Teams will be formed for each assignment, lasting a minimum of three weeks. After this period, teams will be reorganized to ensure a mix of experiences and perspectives.</li>
+                <li><strong>Roles:</strong>
+                    <ul>
+                        <li><strong>Project Lead:</strong> Organizes team meetings, manages project assets, and oversees project progress.</li>
+                        <li><strong>Resource Curator:</strong> Gathers and organizes images, audio, and other assets relevant to the project.</li>
+                        <li><strong>Code Developer:</strong> Focuses on implementing the coding aspects of the project, including writing and debugging code.</li>
+                        <li><strong>Documenter:</strong> Maintains project documentation, including README files and assignment reflections.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
 
         <!-- Assignment 1 -->
         <div class="assignment">
@@ -76,9 +46,9 @@ void keyPressed() {
                         <li>Experiment with different visualizations based on audio properties.</li>
                     </ul>
                 </li>
-                <li><strong>Reflection:</strong> Submit a written reflection on your experience. Discuss what you learned about audio visualization and the challenges faced.</li>
-                <li><strong>Proposal for Next Assignment:</strong> Outline your approach for the next assignment, including initial ideas or concepts for integrating audio and visuals.</li>
-                <li><strong>Class Presentation:</strong> Prepare a brief presentation showcasing your audio visualization. Demonstrate how the visual changes in response to the audio.</li>
+                <li><strong>Team Collaboration:</strong> Rotate team roles and use GitHub for version control and project management.</li>
+                <li><strong>Reflection:</strong> Submit a text file reflection on your experience and challenges.</li>
+                <li><strong>GitHub Submission:</strong> Ensure your project is hosted on GitHub Pages. Submit the URL via email.</li>
             </ul>
         </div>
 
@@ -89,13 +59,13 @@ void keyPressed() {
                 <li><strong>Objective:</strong> Develop an interactive animation that responds to audio input or user actions.</li>
                 <li><strong>Tasks:</strong>
                     <ul>
-                        <li>Create animations that change based on audio playback or user interactions, such as mouse clicks or movements.</li>
+                        <li>Create animations that change based on audio playback or user interactions.</li>
                         <li>Implement features like adjusting audio volume or playback speed through user input.</li>
                     </ul>
                 </li>
-                <li><strong>Reflection:</strong> Submit a written reflection on your experience. Discuss how user interactions and audio influence the animation.</li>
-                <li><strong>Proposal for Next Assignment:</strong> Outline your approach for the next assignment, including ideas for further enhancing interactivity with audio.</li>
-                <li><strong>Class Presentation:</strong> Prepare a brief presentation of your interactive animation. Highlight how it responds to both audio and user inputs.</li>
+                <li><strong>Team Collaboration:</strong> Continue rotating roles and use GitHub for collaboration and project management.</li>
+                <li><strong>Reflection:</strong> Submit a text file reflection on how user interactions and audio influenced the animation.</li>
+                <li><strong>GitHub Submission:</strong> Ensure your project is hosted on GitHub Pages. Submit the URL via email.</li>
             </ul>
         </div>
 
@@ -107,12 +77,12 @@ void keyPressed() {
                 <li><strong>Tasks:</strong>
                     <ul>
                         <li>Analyze audio properties such as volume or frequency.</li>
-                        <li>Use these properties to drive visual effects, such as changing colors, shapes, or animations based on the audio input.</li>
+                        <li>Use these properties to drive visual effects, such as changing colors, shapes, or animations.</li>
                     </ul>
                 </li>
-                <li><strong>Reflection:</strong> Submit a written reflection on your experience. Discuss how audio properties influenced your visual effects and any challenges encountered.</li>
-                <li><strong>Proposal for Next Assignment:</strong> Outline your approach for the next assignment, including ideas for more complex audio-responsive features.</li>
-                <li><strong>Class Presentation:</strong> Prepare a brief presentation demonstrating your audio-responsive visual effects. Showcase how different audio properties affect the visuals.</li>
+                <li><strong>Team Collaboration:</strong> Rotate roles and use GitHub for collaboration and project management.</li>
+                <li><strong>Reflection:</strong> Submit a text file reflection on how audio properties influenced your visual effects.</li>
+                <li><strong>GitHub Submission:</strong> Ensure your project is hosted on GitHub Pages. Submit the URL via email.</li>
             </ul>
         </div>
 
@@ -127,9 +97,9 @@ void keyPressed() {
                         <li>Create a seamless experience where audio and visuals enhance each other.</li>
                     </ul>
                 </li>
-                <li><strong>Reflection:</strong> Submit a written reflection on your experience. Discuss how you combined advanced audio and visual techniques and any challenges faced.</li>
-                <li><strong>Proposal for Next Assignment:</strong> Outline your approach for future projects, including initial ideas or concepts to explore.</li>
-                <li><strong>Class Presentation:</strong> Prepare a presentation of your advanced interactive project. Highlight the integration of audio and visual elements and user interactivity.</li>
+                <li><strong>Team Collaboration:</strong> Rotate roles and ensure each member’s contributions are clear. Use GitHub for collaboration and project management.</li>
+                <li><strong>Reflection:</strong> Submit a text file reflection on combining advanced techniques and challenges faced.</li>
+                <li><strong>GitHub Submission:</strong> Ensure your project is hosted on GitHub Pages. Submit the URL via email.</li>
             </ul>
         </div>
 
@@ -140,13 +110,13 @@ void keyPressed() {
                 <li><strong>Objective:</strong> Create an interactive soundscape where user actions affect the audio environment.</li>
                 <li><strong>Tasks:</strong>
                     <ul>
-                        <li>Design an interactive environment where users can influence sound through their interactions.</li>
+                        <li>Design an environment where users influence sound through their interactions.</li>
                         <li>Incorporate multiple audio samples and effects to create a dynamic soundscape.</li>
                     </ul>
                 </li>
-                <li><strong>Reflection:</strong> Submit a written reflection on your experience. Discuss how user interactions influence the soundscape and any challenges faced.</li>
-                <li><strong>Proposal for Next Assignment:</strong> Outline your approach for the next assignment, including ideas for expanding interactive audio features.</li>
-                <li><strong>Class Presentation:</strong> Prepare a presentation of your interactive soundscape. Showcase how user interactions impact the audio environment.</li>
+                <li><strong>Team Collaboration:</strong> Rotate roles and use GitHub for collaboration and project management.</li>
+                <li><strong>Reflection:</strong> Submit a text file reflection on how user interactions influenced the soundscape.</li>
+                <li><strong>GitHub Submission:</strong> Ensure your project is hosted on GitHub Pages. Submit the URL via email.</li>
             </ul>
         </div>
 
@@ -158,12 +128,12 @@ void keyPressed() {
                 <li><strong>Tasks:</strong>
                     <ul>
                         <li>Create animations that visually represent audio frequencies or beats.</li>
-                        <li>Experiment with different visualization styles and effects based on the audio input.</li>
+                        <li>Experiment with visualization styles based on audio input.</li>
                     </ul>
                 </li>
-                <li><strong>Reflection:</strong> Submit a written reflection on your experience. Discuss the effectiveness of your visualizers and any difficulties encountered.</li>
-                <li><strong>Proposal for Next Assignment:</strong> Outline your approach for the next assignment, including ideas for refining or expanding visualizations.</li>
-                <li><strong>Class Presentation:</strong> Prepare a presentation of your animated audio visualizers. Demonstrate how they represent audio data and enhance user experience.</li>
+                <li><strong>Team Collaboration:</strong> Rotate roles and collaborate on visual styles and animations. Use GitHub for collaboration and project management.</li>
+                <li><strong>Reflection:</strong> Submit a text file reflection on the effectiveness of your visualizers and any difficulties encountered.</li>
+                <li><strong>GitHub Submission:</strong> Ensure your project is hosted on GitHub Pages. Submit the URL via email.</li>
             </ul>
         </div>
 
@@ -174,41 +144,33 @@ void keyPressed() {
                 <li><strong>Objective:</strong> Create an interactive narrative where audio drives the story elements and user interactions.</li>
                 <li><strong>Tasks:</strong>
                     <ul>
-                        <li>Develop a narrative that is influenced by audio cues and user choices.</li>
-                        <li>Implement audio effects and interactions that impact the storyline or visual presentation.</li>
+                        <li>Develop a narrative influenced by audio cues and user choices.</li>
+                        <li>Implement audio effects and interactions impacting the storyline or visuals.</li>
                     </ul>
                 </li>
-                <li><strong>Reflection:</strong> Submit a written reflection on your experience. Discuss how audio and user interactions shaped the narrative and any challenges faced.</li>
-                <li><strong>Proposal for Next Assignment:</strong> Outline your approach for the next assignment, including ideas for integrating more complex audio-driven elements.</li>
-                <li><strong>Class Presentation:</strong> Prepare a presentation of your interactive story. Highlight how audio influences the narrative and user experience.</li>
+                <li><strong>Team Collaboration:</strong> Rotate roles and collaborate on narrative design and audio integration. Use GitHub for collaboration and project management.</li>
+                <li><strong>Reflection:</strong> Submit a text file reflection on how audio and user interactions shaped the narrative.</li>
+                <li><strong>GitHub Submission:</strong> Ensure your project is hosted on GitHub Pages. Submit the URL via email.</li>
             </ul>
         </div>
 
         <!-- Assignment 8 -->
         <div class="assignment">
-            <h3>Assignment 8: Final Audio-Visual Project</h3>
+            <h3>Assignment 8: Collaborative Audio-Visual Experience</h3>
             <ul>
-                <li><strong>Objective:</strong> Integrate various elements from previous assignments into a comprehensive final project.</li>
+                <li><strong>Objective:</strong> Collaborate on a comprehensive audio-visual project incorporating techniques learned throughout the course.</li>
                 <li><strong>Tasks:</strong>
                     <ul>
-                        <li>Combine advanced audio and visual techniques developed throughout the course.</li>
-                        <li>Include interactive features and ensure a cohesive user experience.</li>
-                        <li>Prepare a detailed report on your project, reflecting on the development process and final outcomes.</li>
+                        <li>Combine elements from previous assignments into a cohesive project.</li>
+                        <li>Ensure a polished and interactive final product that showcases advanced audio and visual integration.</li>
                     </ul>
                 </li>
-                <li><strong>Reflection:</strong> Submit a detailed written reflection on your final project. Discuss the integration of audio and visual elements and overall project experience.</li>
-                <li><strong>Proposal for Future Work:</strong> Outline potential directions for future projects or enhancements based on your final project experience.</li>
-                <li><strong>Class Presentation:</strong> Prepare a final presentation showcasing your comprehensive audio-visual project. Engage with the class in a Q&A session and demonstrate key features.</li>
+                <li><strong>Team Collaboration:</strong> Rotate roles and ensure effective collaboration. Use GitHub for project management and version control.</li>
+                <li><strong>Reflection:</strong> Submit a text file reflection summarizing the overall project experience and the integration of learned techniques.</li>
+                <li><strong>GitHub Submission:</strong> Ensure your project is hosted on GitHub Pages. Submit the URL via email.</li>
             </ul>
         </div>
-
-    </section>
-
-    <div class="navigation-buttons">
-        <a class="nav-button" href="{{ '/curriculum/th242/index' | relative_url }}">Index</a>
-        <a class="nav-button" href="{{ '/curriculum/th242/sc_sound_01' | relative_url }}">Previous</a>
-        <a class="nav-button" href="{{ '/curriculum/th242/resources' | relative_url }}">Next</a>
-    </div>
+    </main>
 </body>
-</main>
 </html>
+<a class ="nav-button" href="{{ '/curriculum/th242/index' | relative_url }}">Index</a>
