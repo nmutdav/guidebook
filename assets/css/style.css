@@ -147,7 +147,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding-top: 0; /* Adjust padding based on header height */
+    padding-top: 2em; /* Adjust padding based on header height */
     background: #ffffff;
     color: #000000;
     overflow-x: hidden; /* Prevent horizontal scroll */
