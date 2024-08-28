@@ -21,12 +21,14 @@
 
 /* Logo and title styling */
 .logo-title {
+    text-align: left;
     display: flex;
     align-items: center; /* Center items vertically */
     margin-right: 2em; /* Add space between title and nav */
 }
 
 .site-icon {
+    text-align: left;
     width: 40px;
     height: auto;
     margin-right: 1em; /* Space between icon and title */
@@ -103,7 +105,7 @@ nav ul li:hover > .dropdown-content {
 }
 
 .dropdown-submenu > span {
-    background: #073627; /* Darker green for parent folders */
+    background: #095339; /* Darker green for parent folders */
     color: #ffffff; /* White text color */
     padding: 12px;
     cursor: default;
@@ -152,7 +154,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding-top: 2em; /* Adjust padding based on header height */
-    background: #ffffff;
+    background: #095339;
     color: #000000;
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
@@ -240,7 +242,7 @@ a.button, button {
     padding: 12px 24px; /* Slightly larger padding for better touch targets */
     font-size: 16px; /* Consistent font size */
     color: #ffffff; /* White text */
-    background-color: #073627; /* Dark green background */
+    background-color: #095339; /* Dark green background */
     border: solid 2px #ffc425; /* Remove default border */
     border-radius: 8px; /* Slightly more rounded corners for a modern look */
     cursor: pointer; /* Pointer cursor on hover */
@@ -274,7 +276,7 @@ button:focus {
 .nav-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #073627; /* Default background color */
+    background-color: #095339; /* Default background color */
     color: white;
     text-decoration: none;
      border: solid 2px #ffc425; /* Remove default border */
@@ -286,7 +288,7 @@ button:focus {
 .nav-button:hover,
 .nav-button:active {
     background-color: #ffc425; /* Gold on hover */
-    color: #073627;
+    color: #095339;
     transform: scale(1.05); /* Slightly enlarge the button */
 }
 
@@ -297,11 +299,10 @@ button:focus {
     }
     .header-mobile {
         display: block;
-
         position: sticky;
         top: 0; /* Ensures the sticky header stays at the top */
         text-align: center;
-        background-color:  #073627;
+        background-color:  #095339;
         margin: 0; /* Ensures there’s no extra space around the header */
         z-index: 3000; /* Keeps the header on top of other elements */
         color: #073627; /* Ensures text contrasts well with the black background */
