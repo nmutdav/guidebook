@@ -65,3 +65,51 @@ The Press team captures and processes visual content to document and promote eve
 - **Photo Journalist**: Captures and documents events through photography.
 - **Photo Editor**: Edits and processes event photos.
 - **Video Editor**: Edits and produces video content from recordings.
+
+Certainly! Here’s a detailed progression of responsibilities with specific roles included, focusing on a typical production or technical environment:
+
+## General Progression of Responsibilities
+
+### Year 1, Semester 1
+- **Stage Hand**: Begin with entry-level tasks such as setting up and striking equipment, managing props, and assisting with basic technical operations.
+- **Training and Orientation**: Learn the basics of production, safety protocols, and equipment handling.
+
+### Year 1, Semester 2
+- **Assistant Technician**: Assist senior technicians in tasks like rigging lights, operating sound equipment, and managing backstage logistics.
+- **Skill Development**: Gain hands-on experience in different technical areas and improve proficiency with equipment.
+
+### Year 1, Summer
+- **Intern**: Work as an intern in a production environment to apply skills in a real-world setting. Focus on gaining a broader understanding of different roles.
+- **Evaluation**: Receive feedback on performance and set goals for professional development.
+
+### Year 2, Semester 1
+- **Technician**: Take on more independent tasks such as operating sound or lighting equipment, setting up technical elements for shows, and troubleshooting issues.
+- **Leadership Opportunities**: Begin leading small teams of stage hands or assistants for specific tasks.
+
+### Year 2, Semester 2
+- **Crew Lead**: Oversee a team of technicians and stage hands, coordinate setup and breakdown of equipment, and ensure smooth execution of production elements.
+- **Performance Review**: Regularly assess and adjust team operations, seek feedback for improvement.
+
+### Year 2, Summer
+- **Special Projects Lead**: Manage special projects or large-scale setups that require advanced coordination and leadership.
+- **Professional Development**: Pursue certifications or additional training in specialized areas like advanced sound engineering or lighting design.
+
+### Year 3, Semester 1
+- **Sound Engineer (A1)**: Take on the role of primary sound engineer, responsible for the sound system setup, mixing, and troubleshooting during performances.
+- **Strategic Input**: Contribute to planning and designing sound setups for complex productions.
+
+### Year 3, Semester 2
+- **Media Engineer (M1)**: Oversee media integration, including video projections, media playback, and coordination with other technical aspects of the production.
+- **Leadership**: Lead major technical projects and manage cross-functional teams.
+
+### Year 3, Summer
+- **Technical Director**: Assume a higher-level role managing overall technical production aspects, including coordinating with multiple departments (sound, lighting, media).
+- **Career Advancement**: Prepare for potential transitions to senior or executive roles.
+
+### Year 4, Semester 1
+- **Production Manager**: Oversee the entire production process, including budget management, scheduling, and coordinating all technical and production teams.
+- **Organizational Impact**: Drive major projects and initiatives, ensuring alignment with organizational goals and quality standards.
+
+### Year 4, Semester 2
+- **Technical Director / Senior Production Manager**: Finalize major projects and contribute to long-term strategic planning.
+- **Future Planning**: Prepare for career transitions, including potential roles in senior management or advanced production positions.
