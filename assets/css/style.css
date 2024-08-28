@@ -1,5 +1,5 @@
 /* Header styles */
-header {
+.header-desktop {
     display: flex; /* Use flexbox for layout */
     align-items: center; /* Vertically center items in the header */
     justify-content: flex-start; /* Align title and nav items to the left */
@@ -13,6 +13,10 @@ header {
     z-index: 2000;
     box-sizing: border-box;
     margin: 0;
+}
+
+.header-mobile {
+    display: none;
 }
 
 /* Logo and title styling */
@@ -237,7 +241,7 @@ a.button, button {
     font-size: 16px; /* Consistent font size */
     color: #ffffff; /* White text */
     background-color: #073627; /* Dark green background */
-    border: none; /* Remove default border */
+    border: solid 2px #ffc425; /* Remove default border */
     border-radius: 8px; /* Slightly more rounded corners for a modern look */
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
@@ -252,6 +256,7 @@ a.button:active,
 button:hover, 
 button:active {
     background-color: #ffc425; /* Gold on hover */
+    color: #073627;
     transform: scale(1.05);
 }
 
@@ -280,18 +285,37 @@ button:focus {
 .nav-button:hover,
 .nav-button:active {
     background-color: #ffc425; /* Gold on hover */
+    color: #073627;
     transform: scale(1.05); /* Slightly enlarge the button */
 }
 
 
 @media (max-width: 1000px) {
-    .logo-title {
+    .header-desktop {
         display: none;
     }
-    header {
-        font-size: medium;
+    .header-mobile {
+        display: block;
+    
+        position: sticky;
+        top: 0; /* Ensures the sticky header stays at the top */
+        text-align: center;
+        background-color: #073627;
+        margin: 0; /* Ensures there’s no extra space around the header */
+        z-index: 3000; /* Keeps the header on top of other elements */
+        color: #073627; /* Ensures text contrasts well with the black background */
+        padding: 10px; /* Adds padding for better spacing */
+    }
+    main {
+        margin: 0; /* Sets margin to 0, removes any default margin */
+    }
+    
+    body {
+        padding: 0em; /* Adds padding inside the body */
+        margin: 0; /* Sets margin to 0, removes any default margin */
     }
 }
+
 
 @media print {
     header {
