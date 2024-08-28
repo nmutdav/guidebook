@@ -310,17 +310,22 @@ button:focus {
     }
     main {
         margin: 0; /* Sets margin to 0, removes any default margin */
+        width: 100%;
     }
     
     body {
-        padding: 0em; /* Adds padding inside the body */
+        padding: 0; /* Adds padding inside the body */
         margin: 0; /* Sets margin to 0, removes any default margin */
+        width: 100%;
     }
 }
 
 
 @media print {
-    header {
+    .header-desktop {
+        display: none;
+    }
+    .header-mobile {
         display: none;
     }
     footer {
