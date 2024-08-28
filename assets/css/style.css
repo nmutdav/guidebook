@@ -301,7 +301,7 @@ button:focus {
         position: sticky;
         top: 0; /* Ensures the sticky header stays at the top */
         text-align: center;
-        background-color: #ffc425;
+        background-color:  #073627;
         margin: 0; /* Ensures there’s no extra space around the header */
         z-index: 3000; /* Keeps the header on top of other elements */
         color: #073627; /* Ensures text contrasts well with the black background */
