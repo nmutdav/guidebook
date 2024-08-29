@@ -66,7 +66,78 @@ The Press team captures and processes visual content to document and promote eve
 - **Photo Editor**: Edits and processes event photos.
 - **Video Editor**: Edits and produces video content from recordings.
 
-Certainly! Here’s a detailed progression of responsibilities with specific roles included, focusing on a typical production or technical environment:
+## TDAV Production and Technical Role Ladder
+
+Important Notes:
+- All positions and progressions are at the discretion of mentors or supervisors.
+- Advancement through levels is based on individual performance and experience, not automatic.
+- Roles may be skipped or revisited based on specific needs and skill development.
+
+---
+
+Entry-Level: Stage Hand
+- Responsibilities: Assist with setting up and striking equipment, managing props, and supporting basic technical operations.
+- Skills Developed: Equipment handling, stage logistics, basic technical skills.
+- Duration: 1 semester or more, depending on skill development.
+
+Level 1: Assistant Technician
+- Prerequisites: Stage Hand experience.
+- Responsibilities: Support senior technicians with rigging, sound equipment, and backstage logistics.
+- Skills Developed: Technical proficiency, equipment maintenance, problem-solving.
+- Duration: 1 semester, with ongoing skill assessment.
+
+Level 2: Technician
+- Prerequisites: Assistant Technician experience.
+- Responsibilities: Independently operate sound or lighting equipment, set up technical elements, troubleshoot issues.
+- Skills Developed: Advanced technical skills, independent problem-solving, leadership of small teams.
+- Duration: 1 semester, with performance review.
+
+Level 3: Crew Lead
+- Prerequisites: Technician experience.
+- Responsibilities: Oversee a team of technicians and stage hands, coordinate equipment setup and breakdown, ensure smooth production execution.
+- Skills Developed: Team leadership, project coordination, operational management.
+- Duration: 1 semester, with regular performance evaluations.
+
+Level 4: Special Projects Lead
+- Prerequisites: Crew Lead experience.
+- Responsibilities: Manage large-scale or special projects, advanced coordination of production elements.
+- Skills Developed: Advanced project management, strategic planning, specialized technical skills.
+- Duration: 1 semester, with focus on professional development.
+
+Level 5: Sound Engineer (A1)
+- Prerequisites: Special Projects Lead experience.
+- Responsibilities: Primary responsibility for sound system setup, mixing, and troubleshooting during performances.
+- Skills Developed: Expert sound engineering, complex system integration, strategic input.
+- Duration: 1 semester, with ongoing responsibilities in major projects.
+
+Level 6: Media Engineer (M1)
+- Prerequisites: Sound Engineer (A1) experience.
+- Responsibilities: Manage media systems, including video projections and media playback, coordinate technical aspects.
+- Skills Developed: Media system integration, cross-functional team leadership, advanced troubleshooting.
+- Duration: 1 semester, with opportunities for leadership in major projects.
+
+Level 7: Technical Director
+- Prerequisites: Media Engineer (M1) experience.
+- Responsibilities: Oversee all technical aspects of production, coordinate between departments, manage technical teams.
+- Skills Developed: Overall production management, cross-departmental coordination, strategic planning.
+- Duration: 1 semester, with preparation for senior roles.
+
+Level 8: Production Manager
+- Prerequisites: Technical Director experience.
+- Responsibilities: Manage entire production process including budgeting, scheduling, and coordination of all technical and production teams.
+- Skills Developed: Comprehensive project management, budget oversight, team coordination.
+- Duration: 1 semester, with focus on strategic impact and organizational goals.
+
+Level 9: Technical Director / Senior Production Manager
+- Prerequisites: Production Manager experience.
+- Responsibilities: Finalize major projects, contribute to long-term strategic planning, oversee senior production roles.
+- Skills Developed: Senior management, strategic leadership, long-term project planning.
+- Duration: Until graduation or career transition, with opportunities for advanced roles in senior management.
+
+---
+
+Throughout this ladder, individuals are encouraged to seek professional development through workshops, internships, and networking to enhance their skills and advance their careers in production and technical roles.
+
 
 ## General Progression of Responsibilities
 
