@@ -5,7 +5,7 @@ permalink: /roles/the_tdav_crew/
 ---
 # The TDAV Crew
 
-<img src="{{ '/assets/images/tdav_crew.jpg' | relative_url }}" alt="Alt_text" width="1000" height="auto" style="margin-left: -100px">
+<img src="{{ '/assets/images/tdav_crew.jpg' | relative_url }}" alt="Alt_text" width="1000" height="auto" style="margin-left: -10px">
 
 ## Academic Role Flexibility
 
