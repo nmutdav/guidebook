@@ -13,8 +13,7 @@ permalink: /roles/apply/press_manager_apply/
 **event rate:** $15.00
 
 **Position Summary:**
-
-As the Press Manager, you will be responsible for overseeing all press relations and media coverage for events and productions. Your primary duties will include managing press interactions, coordinating media coverage, and ensuring that all press materials are effectively communicated. You will work closely with the Crew Lead and other team members to document events, handle media inquiries, and promote the production through various channels. Strong organizational skills and experience in media relations are crucial for this role.
+As the Press Manager, you are the main point of contact between our organization and the Marketing Manager. Your role involves managing media relations, overseeing press releases, coordinating media coverage, and fostering strong relationships with journalists and media outlets. Key skills include a deep understanding of media dynamics, exceptional organizational abilities, and effective communication. Responsibilities also include handling press materials, monitoring media coverage, and contributing to the development of media campaigns.
 
 ## How to Apply
 Submit the following materials no later than the application close date. Send via email to the [NMU Sound & Media Supervisor](https://nmu.edu/theatreanddance/dominic-mrakovcich).
