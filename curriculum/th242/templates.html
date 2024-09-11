@@ -1,0 +1,116 @@
+---
+layout: default
+title: Templates
+permalink: /curriculum/th242/templates
+---
+<main>
+    <body>
+        <h1>{{ page.title }}</h1>
+<h2>Rainstorm animation</h2>
+<pre>
+    int numDrops = 100; // Number of raindrops
+    Raindrop[] drops = new Raindrop[numDrops];
+    
+    void setup() {
+      size(800, 600);
+      background(0);
+      
+      // Initialize raindrops
+      for (int i = 0; i < numDrops; i++) {
+        drops[i] = new Raindrop(random(width), random(-height, 0));
+      }
+    }
+    
+    void draw() {
+      background(0, 50); // Semi-transparent background to create a trail effect
+      
+      // Update and display each raindrop
+      for (int i = 0; i < numDrops; i++) {
+        drops[i].update();
+        drops[i].display();
+      }
+    }
+    
+    // Raindrop class
+    class Raindrop {
+      float x, y;
+      float speed;
+      
+      Raindrop(float x, float y) {
+        this.x = x;
+        this.y = y;
+        this.speed = random(2, 5);
+      }
+      
+      void update() {
+        y += speed;
+        // Reset drop to the top if it goes off screen
+        if (y > height) {
+          y = random(-50, -10);
+          x = random(width);
+          speed = random(2, 5);
+        }
+      }
+      
+      void display() {
+        stroke(138, 43, 226); // Color of raindrop (blueish)
+        strokeWeight(2);
+        line(x, y, x, y + 10);
+      }
+    }
+</pre>
+<h2> Simple Sound Effect Player</h2>
+<pre>
+import ddf.minim.*; // Import the Minim library
+
+Minim minim; // The Minim object
+AudioPlayer player; // The audio player object
+
+void setup() {
+  size(400, 200);
+  minim = new Minim(this); // Initialize Minim
+  
+  // Load the sound file (make sure the file is in the 'data' folder)
+  player = minim.loadFile("sound.mp3"); // Change the file name if needed
+  
+  background(0); // Set background to black
+  fill(255); // Set text color to white
+  textAlign(CENTER, CENTER);
+  textSize(20);
+  text("Press any key to play sound", width / 2, height / 2);
+}
+</pre>
+
+<h2>Interactive Gradient</h2>
+
+<pre>
+    void setup() {
+        size(800, 600);
+        noLoop(); // Prevent continuous redrawing
+      }
+      
+      void draw() {
+        // Map mouse position to gradient colors
+        float red1 = map(mouseX, 0, width, 0, 255);
+        float green1 = map(mouseY, 0, height, 0, 255);
+        float blue1 = map(mouseX + mouseY, 0, width + height, 0, 255);
+        
+        float red2 = map(mouseX, 0, width, 255, 0);
+        float green2 = map(mouseY, 0, height, 255, 0);
+        float blue2 = map(mouseX + mouseY, 0, width + height, 255, 0);
+      
+        // Draw the gradient background
+        for (int i = 0; i <= height; i++) {
+          float inter = map(i, 0, height, 0, 1);
+          float r = lerp(red1, red2, inter);
+          float g = lerp(green1, green2, inter);
+          float b = lerp(blue1, blue2, inter);
+          stroke(r, g, b);
+          line(0, i, width, i);
+        }
+      }
+      
+      void mouseMoved() {
+        redraw(); // Redraw the background when the mouse is moved
+      }
+</pre>
