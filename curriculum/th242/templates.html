@@ -114,3 +114,42 @@ void setup() {
         redraw(); // Redraw the background when the mouse is moved
       }
 </pre>
+<h2>Basic Synthesizer</h2>
+<pre>
+import processing.sound.*;  // Import the Sound library for audio functionality
+
+SinOsc oscillator;  // Declare an instance of the SinOsc class for generating sine wave sounds
+float frequency = 440; // Initial frequency for the sine wave (440 Hz corresponds to A4)
+
+void setup() {
+  size(600, 400);  // Set the size of the window to 600x400 pixels
+  background(0);  // Set the background color to black
+  oscillator = new SinOsc(this);  // Initialize the sine wave oscillator
+  oscillator.play();  // Start playing the oscillator sound
+  oscillator.freq(frequency);  // Set the initial frequency of the oscillator
+}
+
+void draw() {
+  background(0);  // Continuously set the background color to black
+  fill(255);  // Set the fill color to white
+  textSize(32);  // Set the text size to 32 pixels
+  text("Press keys 1-5 to change frequency", 10, height / 2);  // Display instructions in the center of the window
+}
+
+void keyPressed() {
+  switch(key) {  // Check which key was pressed
+    case '1': frequency = 261.63; // Set frequency to 261.63 Hz (C4) if '1' is pressed
+      break;
+    case '2': frequency = 293.66; // Set frequency to 293.66 Hz (D4) if '2' is pressed
+      break;
+    case '3': frequency = 329.63; // Set frequency to 329.63 Hz (E4) if '3' is pressed
+      break;
+    case '4': frequency = 349.23; // Set frequency to 349.23 Hz (F4) if '4' is pressed
+      break;
+    case '5': frequency = 392.00; // Set frequency to 392.00 Hz (G4) if '5' is pressed
+      break;
+    default: return;  // Do nothing if any key other than 1-5 is pressed
+  }
+  oscillator.freq(frequency);  // Update the oscillator frequency to the new value
+}
+    </pre>
