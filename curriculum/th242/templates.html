@@ -360,3 +360,122 @@ class AudioSnippet {
   }
 
 </pre>
+<h2>Terrain Designer</h2>
+<pre>
+  // Parameters for terrain
+  int cols, rows;
+  int w = 800, h = 800;
+  float[][] terrain;
+  float[][] originalTerrain;
+  float scl = 20; // Scale factor for terrain height
+  float baseHeight = 100; // Base height for terrain
+  float mouseInfluence = 50; // Subtle effect of the mouse on terrain
+  float returnSpeed = 0.1; // Speed at which the terrain returns to its original shape
+  
+  // Camera rotation angles
+  float angleX = PI / 3; // Initial X-axis rotation
+  float angleY = PI;     // Initial Y-axis rotation
+  float angleSpeed = 0.05; // Speed of rotation
+  
+  void setup() {
+    size(800, 800, P3D);
+    cols = w / (int)scl;
+    rows = h / (int)scl;
+    terrain = new float[cols][rows];
+    originalTerrain = new float[cols][rows];
+    generateTerrain();
+  }
+  
+  void draw() {
+    background(135, 206, 235); // Sky color
+    lights();
+    translate(width/2, height/2);
+    rotateX(angleX); // Rotate to view the terrain from an angle
+    rotateY(angleY); // Rotate for better view
+  
+    // Update terrain based on mouse position
+    updateTerrain();
+  
+    // Render terrain
+    noFill();
+    stroke(0);
+    beginShape(TRIANGLES);
+    for (int y = 0; y < rows-1; y++) {
+      for (int x = 0; x < cols-1; x++) {
+        float x0 = x * scl - w/2;
+        float y0 = y * scl - h/2;
+        float x1 = (x+1) * scl - w/2;
+        float y1 = y * scl - h/2;
+        float x2 = x * scl - w/2;
+        float y2 = (y+1) * scl - h/2;
+        float x3 = (x+1) * scl - w/2;
+        float y3 = (y+1) * scl - h/2;
+  
+        vertex(x0, y0, terrain[x][y]);
+        vertex(x1, y1, terrain[x+1][y]);
+        vertex(x2, y2, terrain[x][y+1]);
+  
+        vertex(x1, y1, terrain[x+1][y]);
+        vertex(x3, y3, terrain[x+1][y+1]);
+        vertex(x2, y2, terrain[x][y+1]);
+      }
+    }
+    endShape();
+  }
+  
+  void generateTerrain() {
+    // Generate a simple terrain with noise
+    for (int y = 0; y < rows; y++) {
+      for (int x = 0; x < cols; x++) {
+        float height = map(noise(x * 0.1, y * 0.1), 0, 1, -baseHeight, baseHeight);
+        terrain[x][y] = height;
+        originalTerrain[x][y] = height; // Store original terrain
+      }
+    }
+  }
+  
+  void updateTerrain() {
+    // Temporary array to store updated terrain values
+    float[][] updatedTerrain = new float[cols][rows];
+    for (int y = 0; y < rows; y++) {
+      for (int x = 0; x < cols; x++) {
+        // Calculate distance from mouse position
+        float dx = mouseX - (x * scl + width / 2);
+        float dy = mouseY - (y * scl + height / 2);
+        float distance = sqrt(dx * dx + dy * dy);
+  
+        // Subtle influence of mouse on terrain height
+        float influence = constrain(map(distance, 0, width / 4, mouseInfluence, 0), 0, mouseInfluence);
+        updatedTerrain[x][y] = terrain[x][y] + influence * 0.1; // Temporary deformation
+  
+        // Smoothly return terrain to its original height
+        terrain[x][y] = lerp(terrain[x][y], updatedTerrain[x][y], returnSpeed);
+      }
+    }
+    
+    // Smoothly return terrain to its original shape over time
+    for (int y = 0; y < rows; y++) {
+      for (int x = 0; x < cols; x++) {
+        if (dist(mouseX, mouseY, x * scl + width / 2, y * scl + height / 2) > width / 4) {
+          terrain[x][y] = lerp(terrain[x][y], originalTerrain[x][y], returnSpeed);
+        }
+      }
+    }
+  }
+  
+  void keyPressed() {
+    // Rotate based on key press
+    if (key == 'w' || key == 'W') {
+      angleX -= angleSpeed; // Rotate up
+    }
+    if (key == 's' || key == 'S') {
+      angleX += angleSpeed; // Rotate down
+    }
+    if (key == 'a' || key == 'A') {
+      angleY -= angleSpeed; // Rotate left
+    }
+    if (key == 'd' || key == 'D') {
+      angleY += angleSpeed; // Rotate right
+    }
+  }
+  </pre>
