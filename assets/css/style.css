@@ -243,7 +243,7 @@ a.button, button {
     font-size: 16px; /* Consistent font size */
     color: #ffffff; /* White text */
     background-color: #095339; /* Dark green background */
-    border: solid 2px #ffc425; /* Remove default border */
+    border: none; /* Remove default border */
     border-radius: 8px; /* Slightly more rounded corners for a modern look */
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
