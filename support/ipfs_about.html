@@ -1,0 +1,77 @@
+---
+layout: default
+title: Using IPFS (InterPlanetaryFileSystem) for University File Storage
+permalink: /support/ipfs_about.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>Using IPFS as a University Backup Drive</h1>
+    <p>Welcome to this tutorial on using IPFS (InterPlanetary File System) as a backup drive for your university projects. IPFS is a decentralized storage network that allows you to store and share files across the globe.</p>
+    
+    <h2>Table of Contents</h2>
+    <ul>
+        <li><a href="#what-is-ipfs">What is IPFS?</a></li>
+        <li><a href="#install-ipfs">Installing IPFS on Your Desktop</a></li>
+        <li><a href="#add-files">Adding Files to IPFS</a></li>
+        <li><a href="#retrieve-files">Retrieving Files from IPFS</a></li>
+        <li><a href="#benefits-of-more-users">Benefits of More Users in IPFS</a></li>
+        <li><a href="#best-practices">Best Practices</a></li>
+    </ul>
+
+    <h2 id="what-is-ipfs">What is IPFS?</h2>
+    <p>IPFS is a peer-to-peer hypermedia protocol designed to make the web faster, safer, and more open. Instead of relying on a centralized server, IPFS uses a distributed network to store and retrieve files. Each file is identified by its content, making it easy to share and retrieve.</p>
+
+    <h2 id="install-ipfs">Installing IPFS on Your Desktop</h2>
+    <ol>
+        <li>Visit the <a href="https://ipfs.io/#install" target="_blank">IPFS Installation Page</a>.</li>
+        <li>Choose the appropriate version for your operating system (Windows, macOS, or Linux).</li>
+        <li>Follow the installation instructions provided on the page.</li>
+        <li>After installation, open your terminal or command prompt.</li>
+        <li>Run the following command to initialize IPFS:</li>
+        <pre><code>ipfs init</code></pre>
+        <li>Start the IPFS daemon by running:</li>
+        <pre><code>ipfs daemon</code></pre>
+    </ol>
+
+    <h2 id="add-files">Adding Files to IPFS</h2>
+    <p>To add files to IPFS, follow these steps:</p>
+    <ol>
+        <li>Open your terminal or command prompt.</li>
+        <li>Navigate to the directory containing the files you want to back up.</li>
+        <li>Add a file to IPFS using the command:</li>
+        <pre><code>ipfs add yourfile.ext</code></pre>
+        <li>IPFS will return a unique hash (CID) for your file. This hash is how your file is identified on the IPFS network.</li>
+    </ol>
+
+    <h2 id="retrieve-files">Retrieving Files from IPFS</h2>
+    <p>To retrieve your files from IPFS, use the following command:</p>
+    <pre><code>ipfs cat yourfileCID</code></pre>
+    <p>You can also view the file in a web browser by visiting:</p>
+    <pre><code>https://ipfs.io/ipfs/yourfileCID</code></pre>
+
+    <h2 id="benefits-of-more-users">Benefits of More Users in IPFS</h2>
+    <p>Encouraging more users within a university to adopt IPFS offers several advantages:</p>
+    <ol>
+        <li><strong>Increased Redundancy:</strong> More users mean that files are replicated across multiple nodes, enhancing availability and resilience.</li>
+        <li><strong>Improved Accessibility:</strong> A larger network results in faster retrieval times as files can be accessed from various locations.</li>
+        <li><strong>Decentralized Storage:</strong> Spreading storage across many users reduces reliance on central servers, minimizing the risk of data loss.</li>
+        <li><strong>Collaborative Projects:</strong> Students can easily share files with peers, streamlining group work through unique IPFS hashes.</li>
+        <li><strong>Reduced Bandwidth Costs:</strong> Distributed hosting decreases the burden on any single user’s bandwidth, improving performance.</li>
+        <li><strong>Incentivizing Participation:</strong> Users may benefit from faster access to shared resources, encouraging more participation.</li>
+        <li><strong>Enhanced Security:</strong> Files are identified by content hashes, reducing the risk of unauthorized changes.</li>
+        <li><strong>Facilitated Long-term Access:</strong> Multiple users storing the same content ensures long-term availability of important files.</li>
+    </ol>
+
+    <h2 id="best-practices">Best Practices</h2>
+    <ul>
+        <li>Regularly back up your important files to IPFS.</li>
+        <li>Share the CID with peers for collaborative projects.</li>
+        <li>Consider using IPFS in conjunction with other backup solutions.</li>
+        <li>Keep your IPFS node running to ensure your files are accessible.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>Using IPFS as a backup drive can provide a reliable and decentralized way to store your university projects. With just a few commands, you can ensure your important files are safe and accessible anytime, anywhere.</p>
+</body>
+</html>
