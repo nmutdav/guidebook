@@ -10,10 +10,27 @@
 <body>
     {% include header.html %}
 
+    <input type="text" id="search-input" placeholder="Search..." aria-label="Search">
+    <div id="results-container"></div>
+
     <main>
         {{ content }}
     </main>
 
     {% include footer.html %}
+
+    <script src="{{ site.baseurl }}/assets/js/simple-jekyll-search.min.js"></script>
+    <script>
+      var options = {
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        dataSource: '{{ site.baseurl }}/search.json', // Ensure this path is correct
+        limit: 10,
+        noResultsText: "No results found",
+        fuzzy: true
+      };
+
+      new SimpleJekyllSearch(options);
+    </script>
 </body>
 </html>
