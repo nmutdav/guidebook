@@ -1,14 +1,19 @@
 ---
 layout: default
-title: Using IPFS (InterPlanetaryFileSystem) for University File Storage
+title: Using IPFS (InterPlanetary File System) for University File Storage
 permalink: /support/ipfs_about.html
 ---
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using IPFS for University File Storage</title>
+</head>
 <body>
     <h1>Using IPFS as a University Backup Drive</h1>
     <p>Welcome to this tutorial on using IPFS (InterPlanetary File System) as a backup drive for your university projects. IPFS is a decentralized storage network that allows you to store and share files across the globe.</p>
-    
+
     <h2>Table of Contents</h2>
     <ul>
         <li><a href="#what-is-ipfs">What is IPFS?</a></li>
@@ -17,10 +22,21 @@ permalink: /support/ipfs_about.html
         <li><a href="#retrieve-files">Retrieving Files from IPFS</a></li>
         <li><a href="#benefits-of-more-users">Benefits of More Users in IPFS</a></li>
         <li><a href="#best-practices">Best Practices</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
     </ul>
 
     <h2 id="what-is-ipfs">What is IPFS?</h2>
-    <p>IPFS is a peer-to-peer hypermedia protocol designed to make the web faster, safer, and more open. Instead of relying on a centralized server, IPFS uses a distributed network to store and retrieve files. Each file is identified by its content, making it easy to share and retrieve.</p>
+    <p>IPFS is a peer-to-peer hypermedia protocol designed to make the web faster, safer, and more open. Instead of relying on a centralized server, IPFS uses a distributed network to store and retrieve files. Each file is identified by its content, making it easy to share and retrieve. Here’s how it works:</p>
+    <ol>
+        <li><strong>Upload the File:</strong> You select a file on your computer and add it to IPFS.</li>
+        <li><strong>Chunking:</strong> The file is broken into smaller pieces, called blocks.</li>
+        <li><strong>Hashing:</strong> Each block gets a unique ID (CID) based on its content.</li>
+        <li><strong>Storage:</strong> The blocks are stored on your local IPFS node.</li>
+        <li><strong>Distributed Network:</strong> The blocks are shared with other nodes in the IPFS network.</li>
+        <li><strong>Content Addressing:</strong> You can access the file using its CID, no matter where it's stored.</li>
+        <li><strong>Persistence:</strong> As long as at least one node has the file, it remains available on IPFS.</li>
+    </ol>
+    <p>If you have multiple nodes (like two computers), and one goes offline, you can still retrieve your files from the other node, as long as they were shared between them.</p>
 
     <h2 id="install-ipfs">Installing IPFS on Your Desktop</h2>
     <ol>
@@ -71,7 +87,7 @@ permalink: /support/ipfs_about.html
         <li>Keep your IPFS node running to ensure your files are accessible.</li>
     </ul>
 
-    <h2>Conclusion</h2>
+    <h2 id="conclusion">Conclusion</h2>
     <p>Using IPFS as a backup drive can provide a reliable and decentralized way to store your university projects. With just a few commands, you can ensure your important files are safe and accessible anytime, anywhere.</p>
 </body>
 </html>
