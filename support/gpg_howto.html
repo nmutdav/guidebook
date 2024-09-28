@@ -1,0 +1,76 @@
+---
+layout: default
+title: how to encrypt files before uploading to IPFS
+permalink: /support/gpg_howto
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPG Encryption Tutorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        code {
+            background-color: #ecf0f1;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Encrypting Files with GPG</h1>
+
+    <h2>Step 1: Install GPG</h2>
+    <p>
+        <strong>For Windows:</strong> Download <a href="https://gpg4win.org/download.html">Gpg4win</a> and follow the installation steps.
+    </p>
+    <p>
+        <strong>For macOS:</strong> Use Homebrew. Open Terminal and run:
+        <code>brew install gnupg</code>
+        or download from <a href="https://gpgtools.org">GPG Suite</a>.
+    </p>
+    <p>
+        <strong>For Linux:</strong> Open a terminal and run:
+        <code>sudo apt-get install gnupg</code>
+    </p>
+
+    <h2>Step 2: Generate Your GPG Key Pair</h2>
+    <p>Open your terminal or command prompt and run:</p>
+    <code>gpg --full-generate-key</code>
+    <ul>
+        <li>Select the key type (default is usually fine).</li>
+        <li>Choose a key size (2048 or 4096 bits recommended).</li>
+        <li>Set an expiration date (optional).</li>
+        <li>Enter your user ID information (name and email).</li>
+        <li>Set a passphrase to protect your key.</li>
+    </ul>
+
+    <h2>Step 3: Encrypt a File</h2>
+    <p>To encrypt a file, use the following command:</p>
+    <code>gpg -e -r recipient@example.com filename</code>
+    <ul>
+        <li><strong>-e:</strong> Encrypt the file.</li>
+        <li><strong>-r:</strong> Specify the recipient's email associated with their GPG key.</li>
+        <li><strong>filename:</strong> The file you want to encrypt.</li>
+    </ul>
+
+    <h2>Step 4: Share the Encrypted File</h2>
+    <p>Now, you can safely share the encrypted file on the P2P network.</p>
+
+    <h2>Step 5: Decrypting a File</h2>
+    <p>When you receive an encrypted file, you can decrypt it using:</p>
+    <code>gpg -d filename.gpg > decrypted_file</code>
+
+    <h2>Conclusion</h2>
+    <p>Using GPG ensures that your files are encrypted and secure before sharing them on a P2P network. Make sure to keep your private key and passphrase safe!</p>
+
+</body>
+</html>
