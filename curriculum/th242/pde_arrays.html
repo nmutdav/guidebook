@@ -1,0 +1,107 @@
+---
+layout: default
+title: Introduction to Sound & Media Design
+permalink: /curriculum/th242/pde_arrays
+---
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+    <body>
+    
+        <h1>Understanding Arrays in Processing for Theater Animations</h1>
+    
+        <h2>Objective</h2>
+        <p>By the end of this lecture, students will understand what arrays are and how to use them to create animations for theater productions in Processing.</p>
+    
+        <h2>1. What are Arrays?</h2>
+        <p>An array is a way to store multiple values in a single variable. Think of it as a row of lockers where each locker can hold a piece of information. This allows you to manage a group of related data more efficiently.</p>
+    
+        <h3>Example:</h3>
+        <pre>
+        // Declare and initialize an array of colors
+        color[] colors = {color(255, 0, 0), color(0, 255, 0), color(0, 0, 255)};
+        </pre>
+    
+        <h2>2. Why Use Arrays for Theater Animations?</h2>
+        <p>In theater animations, you often have multiple characters, props, or scenes that need to change over time. Here’s why arrays are particularly useful:</p>
+    
+        <h3>2.1 Efficient Data Management</h3>
+        <ul>
+            <li><strong>Group Related Data:</strong> Arrays allow you to store multiple values (e.g., positions, colors, velocities) in a single variable. This is essential when dealing with multiple animated objects, making the code cleaner and easier to manage.</li>
+            <li><strong>Dynamic Access:</strong> You can use an index to access and manipulate any element in the array efficiently. This is particularly useful for updating positions or states of many objects simultaneously.</li>
+        </ul>
+    
+        <h3>2.2 Iteration and Automation</h3>
+        <ul>
+            <li><strong>Simplifying Loops:</strong> Arrays enable you to use loops to iterate through multiple elements. Instead of writing repetitive code for each object, a single loop can update or draw all objects, making the code shorter and easier to read.</li>
+            <li><strong>Automated Changes:</strong> In animation, properties (like position and size) often change over time. Arrays make it simple to apply the same logic to many objects at once, automating their behavior systematically.</li>
+        </ul>
+    
+        <h2>3. Creating a Simple Animation Using Arrays</h2>
+        <h3>3.1 Example: Moving Characters Across the Stage</h3>
+        <p>Let’s create a simple animation where multiple characters move from left to right across the screen.</p>
+    
+        <pre>
+        // Declare an array for character positions
+        float[] xPositions = new float[5]; // 5 characters
+    
+        void setup() {
+            size(800, 400);
+            // Initialize character positions
+            for (int i = 0; i < xPositions.length; i++) {
+                xPositions[i] = i * 150; // Space them out
+            }
+        }
+    
+        void draw() {
+            background(255); // Clear the screen
+    
+            // Update positions and draw characters
+            for (int i = 0; i < xPositions.length; i++) {
+                xPositions[i] += 1; // Move character to the right
+                fill(255, 0, 0); // Color for characters
+                ellipse(xPositions[i], height / 2, 50, 50); // Draw character as a circle
+            }
+        }
+        </pre>
+    
+        <h2>4. Making It Interactive</h2>
+        <p>We can make the animation more interesting by allowing characters to change direction when they reach the edge of the screen.</p>
+    
+        <pre>
+        // Declare an array for character positions and velocities
+        float[] xPositions = new float[5];
+        float[] velocities = new float[5];
+    
+        void setup() {
+            size(800, 400);
+            for (int i = 0; i < xPositions.length; i++) {
+                xPositions[i] = i * 150;
+                velocities[i] = random(1, 5); // Random speeds
+            }
+        }
+    
+        void draw() {
+            background(255);
+            for (int i = 0; i < xPositions.length; i++) {
+                xPositions[i] += velocities[i];
+                if (xPositions[i] > width || xPositions[i] < 0) {
+                    velocities[i] *= -1; // Change direction
+                }
+                fill(255, 0, 0);
+                ellipse(xPositions[i], height / 2, 50, 50);
+            }
+        }
+        </pre>
+    
+        <h2>5. Conclusion</h2>
+        <p>Arrays are powerful tools for managing multiple elements in your animations. By using arrays, you can efficiently control the positions and behaviors of characters in your theater projects.</p>
+    
+        <h2>6. Questions?</h2>
+        <p>Feel free to ask any questions or share your thoughts on using arrays for theater animations!</p>
+    
+    </body>
+    </html>
+    

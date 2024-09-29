@@ -1,0 +1,178 @@
+---
+layout: default
+title: Introduction to Animation in Processing
+permalink: /curriculum/th242/pde_animation
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Animation in Processing</title>
+</head>
+<body>
+
+    <h1>Introduction to Animation in Processing</h1>
+
+    <h2>Objective</h2>
+    <p>By the end of this lecture, students will understand the fundamental concepts of animation in Processing, including key principles, how to create basic animations, and the importance of the animation loop.</p>
+
+    <h2>1. What is Animation?</h2>
+    <p>Animation is the technique of creating the illusion of movement by rapidly displaying a sequence of images or frames. In programming, this often involves manipulating graphics on the screen to convey motion. Understanding animation is essential for creating dynamic visual experiences in applications, games, and theater productions.</p>
+
+    <h2>2. Key Principles of Animation</h2>
+    <h3>2.1 Frame Rate</h3>
+    <p>Frame rate refers to the number of frames displayed per second (FPS). The higher the frame rate, the smoother the animation appears to the viewer. In Processing, the default frame rate is 60 FPS, but you can customize it using the <code>frameRate()</code> function. A common frame rate for smooth animations is 30 to 60 FPS.</p>
+    <pre>
+    void setup() {
+        size(800, 400);
+        frameRate(30); // Set the frame rate to 30 FPS
+    }
+    </pre>
+
+    <h3>2.2 The Animation Loop</h3>
+    <p>The animation loop is a fundamental concept in creating animations. In Processing, this is handled by the <code>draw()</code> function. This function is called repeatedly, allowing for continuous updates to your graphics. Each time <code>draw()</code> runs, you can modify the properties of your objects to create the illusion of motion.</p>
+    <p>Here’s how it works:</p>
+    <ul>
+        <li><strong>Setup Phase:</strong> The <code>setup()</code> function runs once at the beginning, where you can initialize variables and set up your canvas.</li>
+        <li><strong>Draw Phase:</strong> The <code>draw()</code> function runs continuously in a loop, allowing you to update the state of your animation and redraw the scene.</li>
+    </ul>
+
+    <h2>3. Basic Animation Example</h2>
+    <h3>3.1 Moving and Bouncing a Circle</h3>
+    <p>Let’s create a more dynamic animation where a circle moves across the screen and bounces off the edges. This example will demonstrate how to use variables for direction and speed, as well as how to create a bouncing effect.</p>
+
+    <pre>
+    float x = 50; // Initial x position of the circle
+    float y = 200; // Initial y position of the circle
+    float xSpeed = 3; // Speed of movement in x direction
+    float ySpeed = 2; // Speed of movement in y direction
+
+    void setup() {
+        size(800, 400); // Set the size of the window
+    }
+
+    void draw() {
+        background(255); // Clear the screen to white
+
+        // Draw the bouncing circle
+        ellipse(x, y, 50, 50); // Draw the circle at the current position
+
+        // Update position
+        x += xSpeed; 
+        y += ySpeed;
+
+        // Bounce off the edges
+        if (x > width - 25 || x < 25) {
+            xSpeed *= -1; // Reverse direction on x-axis
+        }
+        if (y > height - 25 || y < 25) {
+            ySpeed *= -1; // Reverse direction on y-axis
+        }
+    }
+    </pre>
+
+    <h3>3.2 Creating Multiple Circles with Random Colors</h3>
+    <p>Let’s add some creativity by animating multiple circles that move in random directions and change colors. This will introduce randomness to your animations, making them more vibrant and dynamic.</p>
+
+    <pre>
+    int numCircles = 10; // Number of circles
+    float[] x = new float[numCircles]; // Array to hold x positions
+    float[] y = new float[numCircles]; // Array to hold y positions
+    float[] xSpeed = new float[numCircles]; // Array to hold x speeds
+    float[] ySpeed = new float[numCircles]; // Array to hold y speeds
+    color[] colors = new color[numCircles]; // Array to hold colors
+
+    void setup() {
+        size(800, 400);
+        for (int i = 0; i < numCircles; i++) {
+            x[i] = random(width); // Random initial x position
+            y[i] = random(height); // Random initial y position
+            xSpeed[i] = random(1, 5) * (random(1) > 0.5 ? 1 : -1); // Random speed
+            ySpeed[i] = random(1, 5) * (random(1) > 0.5 ? 1 : -1); // Random speed
+            colors[i] = color(random(255), random(255), random(255)); // Random color
+        }
+    }
+
+    void draw() {
+        background(255); // Clear the screen
+
+        for (int i = 0; i < numCircles; i++) {
+            fill(colors[i]); // Set fill color
+            ellipse(x[i], y[i], 50, 50); // Draw the circle
+
+            // Update position
+            x[i] += xSpeed[i];
+            y[i] += ySpeed[i];
+
+            // Bounce off the edges
+            if (x[i] > width - 25 || x[i] < 25) {
+                xSpeed[i] *= -1; // Reverse direction on x-axis
+            }
+            if (y[i] > height - 25 || y[i] < 25) {
+                ySpeed[i] *= -1; // Reverse direction on y-axis
+            }
+        }
+    }
+    </pre>
+
+    <h2>4. Adding Interactivity</h2>
+    <p>Animations can become more engaging with user interaction. Let’s modify our previous example to change the color of a circle when the mouse is pressed. This will introduce user input to affect the behavior of animated objects.</p>
+
+    <pre>
+    int numCircles = 10; // Number of circles
+    float[] x = new float[numCircles]; // Array to hold x positions
+    float[] y = new float[numCircles]; // Array to hold y positions
+    float[] xSpeed = new float[numCircles]; // Array to hold x speeds
+    float[] ySpeed = new float[numCircles]; // Array to hold y speeds
+    color[] colors = new color[numCircles]; // Array to hold colors
+
+    void setup() {
+        size(800, 400);
+        for (int i = 0; i < numCircles; i++) {
+            x[i] = random(width); // Random initial x position
+            y[i] = random(height); // Random initial y position
+            xSpeed[i] = random(1, 5) * (random(1) > 0.5 ? 1 : -1); // Random speed
+            ySpeed[i] = random(1, 5) * (random(1) > 0.5 ? 1 : -1); // Random speed
+            colors[i] = color(random(255), random(255), random(255)); // Random color
+        }
+    }
+
+    void draw() {
+        background(255); // Clear the screen
+
+        for (int i = 0; i < numCircles; i++) {
+            fill(colors[i]); // Set fill color
+            ellipse(x[i], y[i], 50, 50); // Draw the circle
+
+            // Update position
+            x[i] += xSpeed[i];
+            y[i] += ySpeed[i];
+
+            // Bounce off the edges
+            if (x[i] > width - 25 || x[i] < 25) {
+                xSpeed[i] *= -1; // Reverse direction on x-axis
+            }
+            if (y[i] > height - 25 || y[i] < 25) {
+                ySpeed[i] *= -1; // Reverse direction on y-axis
+            }
+        }
+    }
+
+    void mousePressed() {
+        // Change the color of the first circle when mouse is pressed
+        colors[0] = color(random(255), random(255), random(255)); // Set new random color
+    }
+    </pre>
+
+    <h2>5. Conclusion</h2>
+    <p>Animation in Processing is a powerful way to create dynamic visual experiences. By understanding frame rates, the animation loop, and how to create basic movements, you can start to build more complex animations. These principles are foundational for further exploration of arrays and advanced animation techniques.</p>
+
+    <h2>6. Next Steps</h2>
+    <p>In the next lecture, we will delve into how to use arrays to manage multiple animated objects effectively, enhancing your animations even further.</p>
+
+    <h2>7. Questions?</h2>
+    <p>Feel free to ask any questions about creating animations in Processing or share your thoughts on how animations can enhance theater productions!</p>
+
+</body>
+</html>
