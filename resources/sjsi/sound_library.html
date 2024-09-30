@@ -1,0 +1,175 @@
+---
+layout: default
+title: Sound Library
+permalink: resources/sjsi/sound_library
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. John's USVI - Soundscape Directory</title>
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+    <style>
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        h2 {
+            color: #34495e;
+        }
+        .recordings-list {
+            list-style: none;
+            padding: 0;
+        }
+        .recordings-list li {
+            padding: 10px;
+            background: #ecf0f1;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+        .download-button {
+            display: inline-block;
+            padding: 8px 12px;
+            margin-top: 10px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .download-button:hover {
+            background-color: #2980b9;
+        }
+        .track-list {
+            margin-top: 10px;
+            list-style: none;
+            padding-left: 0;
+        }
+        .track-list li {
+            padding: 5px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .track-list li:hover {
+            background-color: #dcdcdc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>St. John's USVI - Soundscape Directory</h1>
+        <h1 style="color: red;">EXAMPLE-PAGE</h1>
+        <p>Explore the unique sounds of St. John's ecosystems. All recordings are available under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 License</a> and are hosted on IPFS for decentralized, permanent access.</p>
+
+        <h2>Coral Reefs</h2>
+        <ul class="recordings-list">
+            <li>
+                <strong>Coral Reef Soundscape Playlist</strong><br>
+                <audio id="coralReefPlayer" controls>
+                    <source src="{{ 'resources/sjsi/library/snds/ipfs_audio-test.mp3' | relative_url }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <a href="{{ 'resources/sjsi/library/snds/ipfs_audio-test.mp3' | relative_url }}" class="download-button" download>Download All</a>
+                <ul class="track-list">
+                    <li onclick="playTrack('library/snds/coral1.mp3')">Track 1: Coral Reef Sound 1</li>
+                    <li onclick="playTrack('library/snds/coral2.mp3')">Track 2: Coral Reef Sound 2</li>
+                    <li onclick="playTrack('library/snds/coral3.mp3')">Track 3: Coral Reef Sound 3</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Mangroves</h2>
+        <ul class="recordings-list">
+            <li>
+                <strong>Mangroves Soundscape Playlist</strong><br>
+                <audio id="mangrovePlayer" controls>
+                    <source src="{{ 'resources/sjsi/library/snds/ipfs_audio-test.mp3' | relative_url }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <a href="{{ 'resources/sjsi/library/snds/ipfs_audio-test.mp3' | relative_url }}" class="download-button" download>Download All</a>
+                <ul class="track-list">
+                    <li onclick="playTrack('library/snds/mangrove1.mp3')">Track 1: Mangrove Sound 1</li>
+                    <li onclick="playTrack('library/snds/mangrove2.mp3')">Track 2: Mangrove Sound 2</li>
+                    <li onclick="playTrack('library/snds/mangrove3.mp3')">Track 3: Mangrove Sound 3</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Seagrass Beds</h2>
+        <ul class="recordings-list">
+            <li>
+                <strong>Seagrass Beds Soundscape Playlist</strong><br>
+                <audio id="seagrassPlayer" controls>
+                    <source src="{{ 'library/snds/ipfs_audio-test.mp3' | relative_url }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <a href="{{ 'library/snds/ipfs_audio-test.mp3' | relative_url }}" class="download-button" download>Download All</a>
+                <ul class="track-list">
+                    <li onclick="playTrack('library/snds/seagrass1.mp3')">Track 1: Seagrass Sound 1</li>
+                    <li onclick="playTrack('library/snds/seagrass2.mp3')">Track 2: Seagrass Sound 2</li>
+                    <li onclick="playTrack('library/snds/seagrass3.mp3')">Track 3: Seagrass Sound 3</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Beaches</h2>
+        <ul class="recordings-list">
+            <li>
+                <strong>Beach Soundscape Playlist</strong><br>
+                <audio id="beachPlayer" controls>
+                    <source src="{{ 'resources/sjsi/library/snds/ipfs_audio-test.mp3' | relative_url }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <a href="{{ 'resources/sjsi/library/snds/ipfs_audio-test.mp3' | relative_url }}" class="download-button" download>Download All</a>
+                <ul class="track-list">
+                    <li onclick="playTrack('resources/sjsi/library/snds/ipfs_audio-test.mp3' | relative_url)">Track 1: Beach Sound 1</li>
+                    <li onclick="playTrack('resources/sjsi/library/snds/ipfs_audio-test.mp3' | relative_url)">Track 2: Beach Sound 2</li>
+                    <li onclick="playTrack('resources/sjsi/library/snds/ipfs_audio-test.mp3' | relative_url)">Track 3: Beach Sound 3</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Industrial/Cultural</h2>
+        <ul class="recordings-list">
+            <li>
+                <strong>Industrial/Cultural Soundscape Playlist</strong><br>
+                <audio id="industrialPlayer" controls>
+                    <source src="{{ 'library/snds/ipfs_audio-test.mp3' | relative_url }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <a href="{{ 'library/snds/ipfs_audio-test.mp3' | relative_url }}" class="download-button" download>Download All</a>
+                <ul class="track-list">
+                    <li onclick="playTrack('library/snds/industrial1.mp3')">Track 1: Industrial Sound 1</li>
+                    <li onclick="playTrack('library/snds/industrial2.mp3')">Track 2: Industrial Sound 2</li>
+                    <li onclick="playTrack('library/snds/industrial3.mp3')">Track 3: Industrial Sound 3</li>
+                </ul>
+            </li>
+        </ul>
+
+        <footer>
+            &copy; 2024 St. John's USVI Soundscape Project | Hosted on <a href="https://ipfs.io" target="_blank">IPFS</a>
+        </footer>
+    </div>
+
+    <script>
+        function playTrack(track) {
+            // Get the current player based on the clicked track's parent
+            const parentLi = event.target.closest('li');
+            const audio = parentLi.parentElement.previousElementSibling;
+            audio.src = track;
+            audio.play();
+        }
+    </script>
+</body>
+</html>
