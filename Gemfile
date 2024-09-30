@@ -21,5 +21,5 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 # Additional Gems (make sure you need these for your site)
-gem 'rexml', '3.3.8'
+gem 'rexml', '3.3.6'
 gem 'google-protobuf', '4.28.2'
