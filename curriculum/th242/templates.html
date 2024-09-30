@@ -318,3 +318,166 @@ void setup() {
     }
   }
   </pre>
+
+  <h2> Basic Lightning Animation</h2>
+  <pre>
+    int numBolts = 5;
+    float[][] bolts = new float[numBolts][4]; // x1, y1, x2, y2
+    
+    void setup() {
+      size(800, 600);
+      background(0);
+      stroke(255, 255, 0); // Yellow color for lightning
+      strokeWeight(2);
+    }
+    
+    void draw() {
+      background(0);
+      
+      // Create and draw each bolt
+      for (int i = 0; i < numBolts; i++) {
+        if (random(1) < 0.1) { // 10% chance to regenerate bolt
+          bolts[i][0] = random(width); // Start X
+          bolts[i][1] = random(height / 2); // Start Y
+          bolts[i][2] = random(width); // End X
+          bolts[i][3] = random(height / 2, height); // End Y
+        }
+        drawBolt(bolts[i]);
+      }
+    }
+    
+    void drawBolt(float[] bolt) {
+      // Draw zigzag lines for lightning effect
+      float x1 = bolt[0];
+      float y1 = bolt[1];
+      float x2 = bolt[2];
+      float y2 = bolt[3];
+    
+      // Create zigzag effect
+      float segments = 10;
+      float[][] points = new float[(int)segments + 1][2]; // Store points for zigzag
+      for (int i = 0; i <= segments; i++) {
+        float t = map(i, 0, segments, 0, 1);
+        float x = lerp(x1, x2, t) + random(-10, 10); // Randomize X
+        float y = lerp(y1, y2, t) + random(-10, 10); // Randomize Y
+        points[i][0] = x;
+        points[i][1] = y;
+        
+        // Draw lines
+        if (i > 0) {
+          line(points[i - 1][0], points[i - 1][1], x, y);
+        }
+      }
+    }
+  </pre>
+
+<h2>Flickering Stars</h2>
+<pre>
+  int numStars = 200;
+Star[] stars;
+
+void setup() {
+  size(800, 600);
+  initializeStars(numStars);
+}
+
+void draw() {
+  background(0);
+  for (Star star : stars) {
+    star.flicker();
+    star.display();
+  }
+}
+
+void initializeStars(int num) {
+  stars = new Star[num];
+  for (int i = 0; i < num; i++) {
+    stars[i] = new Star(random(width), random(height));
+  }
+}
+
+class Star {
+  float x, y;
+  float brightness;
+
+  Star(float x, float y) {
+    this.x = x;
+    this.y = y;
+    this.brightness = random(100, 255);
+  }
+
+  void flicker() {
+    brightness = random(100, 255); // Random flickering brightness
+  }
+
+  void display() {
+    stroke(255, brightness);
+    strokeWeight(2);
+    point(x, y);
+  }
+}
+</pre>
+<h2>Starfield Animation</h2>
+<pre>
+  int numStars = 1000;  // Set the number of stars in the flurry
+  Star[] stars = new Star[numStars];  // Create an array to hold Star objects
+  
+  void setup() {
+    size(1920, 1080);  // Set the window size to 800x600 pixels
+    for (int i = 0; i < numStars; i++) {  // Initialize each star in the array
+      stars[i] = new Star();  // Create a new Star object and store it in the array
+    }
+  }
+  
+  void draw() {
+    background(0, 20, 50);  // Clear the screen with a black background in each frame
+    for (int i = 0; i < stars.length; i++) {  // Loop through all the stars
+      stars[i].move();  // Move each star
+      stars[i].display();  // Display each star on the screen
+    }
+  }
+  
+  // Define a class called "Star"
+  class Star {
+    float x, y, z;  // Variables to hold the 3D position of the star
+    float speed;  // Speed of the star's movement
+    float size;  // Size of the star
+    
+    // Constructor to initialize a new star
+    Star() {
+      x = random(-width, width);  // Random x position between -width and +width
+      y = random(-height, height);  // Random y position between -height and +height
+      z = random(width);  // Random z position (distance from the viewer) from 0 to width
+      speed = random(2, 5);  // Set a random speed for the star between 2 and 5
+      size = random(2, 5);  // Set a random size for the star between 2 and 5
+    }
+  
+    // Method to update the star's position
+    void move() {
+      z -= speed;  // Move the star forward (reduce z value)
+      
+      // If the star moves past the viewer (z < 1), reset it
+      if (z < 1) {
+        z = width;  // Reset z to the farthest point (width)
+        x = random(-width, width);  // Re-randomize x position
+        y = random(-height, height);  // Re-randomize y position
+        speed = random(2, 5);  // Re-randomize the speed
+        size = random(2, 5);  // Re-randomize the size
+      }
+    }
+  
+    // Method to draw the star on the screen
+    void display() {
+      // Calculate screen x position based on 3D depth (z)
+      float sx = map(x / z, 0, 1, 0, width);  
+      // Calculate screen y position based on 3D depth (z)
+      float sy = map(y / z, 0, 1, 0, height);  
+      // Map the star's size based on its depth (z); closer stars appear larger
+      float r = map(z, 0, width, size, 0);  
+  
+      noStroke();  // Don't draw an outline around the stars
+      fill(20, 250, 0);  // Set the color of the stars to white
+      ellipse(sx, sy, r, r);  // Draw the star as a circle (ellipse) at position (sx, sy) with radius r
+    }
+  }
+</pre>
