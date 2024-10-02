@@ -1,0 +1,162 @@
+---
+layout: default
+title: Useful Command Tools
+permalink: /resources/useful_command_tools
+---
+<!DOCTYPE html>
+<html>
+
+<body>
+<h1>{{ page.title }}</h1>
+
+<h2>Homebrew</h2>
+<h3>Install Homebrew</h3>
+<pre>
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+</pre>
+<p>Homebrew is a package manager for macOS that simplifies the installation of software.</p>
+
+<h2>GitHub</h2>
+<h3>Install Git</h3>
+<pre>
+    brew install git
+</pre>
+<p>Installs Git, a version control system to manage source code.</p>
+
+<h3>Clone a Repository</h3>
+<pre>
+    git clone &lt;repository-url&gt;
+</pre>
+<p>Creates a local copy of a Git repository from the specified URL.</p>
+
+<h3>Check Status</h3>
+<pre>
+    git status
+</pre>
+<p>Displays the current status of the repository, including staged, unstaged, and untracked files.</p>
+
+<h3>Commit Changes</h3>
+<pre>
+    git add .
+    git commit -m "Your commit message here"
+</pre>
+<p>Adds changes to the staging area and commits them to the repository with a message describing the changes.</p>
+
+<h2>FFMPEG</h2>
+<h3>Install ffmpeg</h3>
+<pre>
+    brew install ffmpeg
+</pre>
+<p>Installs FFmpeg, a powerful tool for handling multimedia data.</p>
+
+<h3>Compress A Video</h3>
+<pre>
+    ffmpeg -i input.mp4 -vcodec libx264 -crf 28 output.mp4
+</pre>
+<p>Compresses a video file while maintaining reasonable quality. The lower the CRF value, the higher the quality.</p>
+
+<h3>Segment A Video</h3>
+<pre>
+    ffmpeg -i /Volumes/Media/HyperDeck_0002.mov -f segment -segment_time 60 -c copy /Volumes/Media/output%03d.mp4
+</pre>
+<p>Splits a video into segments of a specified duration (in seconds).</p>
+
+<h3>Shard A File (Video)</h3>
+<pre>
+    ffmpeg -i input.mp4 -c copy -map 0 -segment_time 60 -f segment output%03d.mp4
+</pre>
+<p>Similar to segmenting, this command allows you to break down a video file into smaller chunks.</p>
+
+<h3>Convert Video Format</h3>
+<pre>
+    ffmpeg -i input.mov output.mp4
+</pre>
+<p>Converts a video from one format to another.</p>
+
+<h3>Extract Audio from Video</h3>
+<pre>
+    ffmpeg -i input.mp4 -q:a 0 -map a output.mp3
+</pre>
+<p>Extracts audio from a video file and saves it as an MP3 file.</p>
+
+<h2>IPFS</h2>
+<h3>Install IPFS</h3>
+<pre>
+    brew install ipfs
+</pre>
+<p>Installs the IPFS command-line tool on your system, enabling you to interact with the IPFS network.</p>
+
+<h3>Initialize IPFS</h3>
+<pre>
+    ipfs init
+</pre>
+<p>Sets up a new IPFS node, creating necessary configuration files and a unique node identity.</p>
+
+<h3>Start the IPFS Daemon</h3>
+<pre>
+    ipfs daemon
+</pre>
+<p>Runs the IPFS node, allowing you to interact with the IPFS network and share files.</p>
+
+<h3>Add a File to IPFS</h3>
+<pre>
+    ipfs add &lt;file-path&gt;
+</pre>
+<p>Uploads a specified file to the IPFS network and returns its content hash, which can be used to retrieve the file later.</p>
+
+<h3>Retrieve a File from IPFS</h3>
+<pre>
+    ipfs cat &lt;file-hash&gt;
+</pre>
+<p>Fetches and displays the contents of a file from IPFS using its unique content hash.</p>
+
+<h3>List All Files in IPFS</h3>
+<pre>
+    ipfs ls
+</pre>
+<p>Displays the files currently stored in your local IPFS node, including their hashes.</p>
+
+<h3>Check IPFS Node Status</h3>
+<pre>
+    ipfs id
+</pre>
+<p>Shows the identity and configuration details of your IPFS node, including your node's peer ID.</p>
+
+<h3>Pin a File to Keep it on Your Node</h3>
+<pre>
+    ipfs pin add &lt;file-hash&gt;
+</pre>
+<p>Ensures that a specified file remains available on your node, preventing it from being garbage collected and deleted.</p>
+
+<h3>Unpin a File</h3>
+<pre>
+    ipfs pin rm &lt;file-hash&gt;
+</pre>
+<p>Removes the pin from a file, allowing it to be garbage collected from your node.</p>
+
+<h3>Check the Status of Pinned Files</h3>
+<pre>
+    ipfs pin ls
+</pre>
+<p>Lists all files that are currently pinned to your IPFS node.</p>
+
+<h3>Publish a File to IPNS</h3>
+<pre>
+    ipfs name publish &lt;file-hash&gt;
+</pre>
+<p>Publishes a file to the InterPlanetary Naming System (IPNS), allowing it to be accessed via a human-readable name.</p>
+
+<h3>Resolve an IPNS Name</h3>
+<pre>
+    ipfs name resolve &lt;ipns-name&gt;
+</pre>
+<p>Fetches the current content hash associated with a given IPNS name, allowing you to retrieve the file.</p>
+
+<h3>Get Peer Connections</h3>
+<pre>
+    ipfs swarm peers
+</pre>
+<p>Displays a list of peers your IPFS node is currently connected to, showing the health and reachability of the network.</p>
+
+</body>
+</html>
