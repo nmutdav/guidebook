@@ -1,64 +1,183 @@
-<html>
-<header class="header-desktop">
-    <div class="logo-title">
-        <img src="{{ '/assets/images/icon.png' | relative_url }}" alt="Site Icon" class="site-icon">
-        <h1><a href="{{ '/' | absolute_url }}">The TDAV Guidebook</a></h1>
-    </div>
-    <nav class="nav-menu">
-        <ul>
-            <li class="dropdown">
-                <span><strong>info</strong></span>
-                <div class="dropdown-content">
-                    <a href="{{ '/info/overview' | absolute_url }}">Overview</a>
-                    <a href="{{ 'info/system_architecture' | absolute_url }}">System Architecture</a>
-                    <a href="{{ '/info/standards' | absolute_url }}">Standards of practice</a>
-                    <a href="{{ '/info/office' | absolute_url }}">Contact & Office Hours</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <span><strong>curriculum</strong></span>
-                <div class="dropdown-content">
-                    <a href="{{ '/roles' | absolute_url }}">The TDAV Crew & Roles</a>
-                    <a href="{{ '/resources/index' | absolute_url }}">Resources</a>
-                    <a href="{{ '/curriculum/th242/index' | absolute_url }}">TH-242 Intro to Sound & Media Design</a>
-                </div>
-            </li>
-            <div class="dropdown-submenu">
-            <li class="dropdown">
-            <span><strong>join us</strong></span>
-            <div class="dropdown-content">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScX2viHIu5XVVzfpZCAmwuWKO1nN2-SErR2XBN7Vu9aUscSqQ/viewform?usp=sf_link"target="_blank">interest form</a>
-                <div class="dropdown-submenu">
-                <span><strong>apply</strong></span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The TDAV Guidebook</title>
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+</head>
+<body>
+    <header class="header-desktop">
+        <div class="logo-title">
+            <img src="{{ '/assets/images/icon.png' | relative_url }}" alt="Site Icon" class="site-icon">
+            <h1><a href="{{ '/' | absolute_url }}">The TDAV Guidebook</a></h1>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li class="dropdown">
+                    <span><strong>info</strong></span>
                     <div class="dropdown-content">
-                    <a href="{{ '/roles/apply/crew_lead_apply' | absolute_url }}">Crew Lead Application</a>
-                    <a href="{{ '/roles/apply/press_manager_apply' | absolute_url }}">Press Manager Application</a>
-                    <a href="{{ '/roles/apply/photo_journalist_apply' | absolute_url }}">Photo Journalist Application</a>
-                    <a href="{{ 'roles/apply/general' | absolute_url }}">General Application</a>
+                        <a href="{{ '/info/overview' | absolute_url }}">Overview</a>
+                        <a href="{{ '/info/system_architecture' | absolute_url }}">System Architecture</a>
+                        <a href="{{ '/info/standards' | absolute_url }}">Standards of practice</a>
+                        <a href="{{ '/info/office' | absolute_url }}">Contact & Office Hours</a>
                     </div>
-                </div>
+                </li>
+                <li class="dropdown">
+                    <span><strong>curriculum</strong></span>
+                    <div class="dropdown-content">
+                        <a href="{{ '/roles' | absolute_url }}">The TDAV Crew & Roles</a>
+                        <a href="{{ '/resources/index' | absolute_url }}">Resources</a>
+                        <a href="{{ '/curriculum/th242/index' | absolute_url }}">TH-242 Intro to Sound & Media Design</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <span><strong>join us</strong></span>
+                    <div class="dropdown-content">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScX2viHIu5XVVzfpZCAmwuWKO1nN2-SErR2XBN7Vu9aUscSqQ/viewform?usp=sf_link" target="_blank">Interest Form</a>
+                        <div class="dropdown-submenu">
+                            <span><strong>apply</strong></span>
+                            <div class="dropdown-content">
+                                <a href="{{ '/roles/apply/crew_lead_apply' | absolute_url }}">Crew Lead Application</a>
+                                <a href="{{ '/roles/apply/press_manager_apply' | absolute_url }}">Press Manager Application</a>
+                                <a href="{{ '/roles/apply/photo_journalist_apply' | absolute_url }}">Photo Journalist Application</a>
+                                <a href="{{ '/roles/apply/general' | absolute_url }}">General Application</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <span><strong>support</strong></span>
+                    <div class="dropdown-content">
+                        <a href="{{ '/support/media_storage' | absolute_url }}">Media Storage Protocol</a>
+                        <a href="{{ '/support/policy/media_policy' | absolute_url }}">Media Usage Policy</a>
+                        <a href="{{ '/manuals' | relative_url }}">Manual Annex</a>
+                        <a href="https://forms.gle/NcJiXXM8eMGTNG6F7" target="_blank">Upload Show Files</a>
+                        <a href="https://forms.gle/UoDwtec6SBRxWgrQ7" target="_blank">General AV Requests</a>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Search Input -->
+            <div class="search-container">
+                <input type="text" id="search-box" placeholder="Search the Guidebook..." onkeyup="searchIndex()">
+                <div id="search-results" class="search-results"></div>
             </div>
-            </li>
-            </div>
-            <div class="dropdown-submenu">
-            <li class="dropdown">
-            <span><strong>support</strong></span>
-            <div class="dropdown-content">
-                <a href="{{ '/support/media_storage' | absolute_url }}">Media Storage Protocol</a>
-                <a href="{{ '/support/policy/media_policy' | absolute_url }}">Media Usage Policy</a>
-                <a href="{{ '/manuals' | relative_url }}">Manual Annex</a>
-                <a href="{{ 'https://forms.gle/NcJiXXM8eMGTNG6F7' | absolute_url }}">Upload Show Files</a>
-                <a href="{{ 'https://forms.gle/UoDwtec6SBRxWgrQ7' | absolute_url }}">General AV Requests</a>
-            </div> 
-        </ul>
-    </nav>
-</header>
-<header class="header-mobile">
-        </div>
-        <div class="navigation-buttons">
-            <a class="button" href="{{ 'index' | absolute_url }}">The TDAV Guidebook</a>
-            <a class="button" href="{{ 'wikindex' | absolute_url }}">Menu</a>
-        </div>
-    </div>
-</header>
+        </nav>
+    </header>
+
+    <script>
+        let idx;
+        let data;
+
+        // Fetch the JSON file and build the Lunr index
+        fetch('{{ '/search.json' | relative_url }}')
+            .then(response => response.json())
+            .then(searchData => {
+                data = searchData;
+                idx = lunr(function () {
+                    this.field('title');
+                    this.field('content');
+                    this.ref('url');
+
+                    searchData.forEach(function (doc) {
+                        this.add(doc);
+                    }, this);
+                });
+            })
+            .catch(error => console.error('Error fetching search data:', error));
+
+        // Search function
+        function searchIndex() {
+            const query = document.getElementById('search-box').value.trim();
+            const resultDiv = document.getElementById('search-results');
+            resultDiv.innerHTML = ''; // Clear previous results
+
+            if (query === '') return; // Exit if query is empty
+
+            const results = idx.search(query);
+
+            if (results.length === 0) {
+                resultDiv.innerHTML = '<div class="no-results">No results found</div>';
+                return;
+            }
+
+            results.forEach(function (result) {
+                const item = data.find(page => page.url === result.ref);
+                const resultItem = document.createElement('div');
+                resultItem.classList.add('result-item');
+                resultItem.innerHTML = `
+                    <a href="${item.url}">
+                        <strong>${item.title}</strong><br>
+                        <span>${item.content.substring(0, 100)}...</span>
+                    </a>`;
+                resultDiv.appendChild(resultItem);
+            });
+        }
+    </script>
+
+    <style>
+        .search-container {
+            position: relative;
+        }
+
+        #search-box {
+            padding: 8px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        .search-results {
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            max-height: 300px;
+            overflow-y: auto;
+            width: 250px;
+            z-index: 1000;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 2px;
+        }
+
+        .result-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .result-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .result-item a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .result-item a:hover {
+            text-decoration: underline;
+        }
+
+        .result-item strong {
+            font-size: 14px;
+            color: #007BFF;
+        }
+
+        .result-item span {
+            display: block;
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .no-results {
+            padding: 10px;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</body>
 </html>
