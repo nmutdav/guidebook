@@ -360,3 +360,37 @@ button:focus {
 .narrow-head h2 {
     margin: 0; /* Ensure no margin for narrow head */
 }
+.search-container {
+    position: relative;
+    border: none; /* Gold border */
+    border-radius: 5px; /* Optional: rounded corners */
+    padding: 5px; /* Optional: space between border and input */
+}
+
+#search-box {
+    padding: 8px;
+    width: 250px;
+    border: none; /* Remove the default border */
+    outline: none; /* Remove outline on focus */
+    font-size: 14px; /* Adjust font size if needed */
+    text-decoration: none; /* Prevent underline */
+}
+
+#search-box:focus {
+    outline: none; /* Remove the outline on focus */
+    border: none; /* Ensure no border on focus */
+    box-shadow: none; /* Remove any shadow that may appear */
+}
+
+.search-results {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 300px;
+    overflow-y: auto;
+    width: 250px;
+    z-index: 1000;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2px;
+}
