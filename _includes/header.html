@@ -71,7 +71,7 @@
         let idx;
         let data;
 
-    fetch('{{ '/search.json' | relative_url }}')
+    fetch('{{ /search.json | relative_url }}')
             .then(response => response.json())
             .then(searchData => {
                 data = searchData;
