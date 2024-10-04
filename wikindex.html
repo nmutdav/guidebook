@@ -4,93 +4,51 @@ title: menu
 permalink: /wikindex
 ---
 <style>
- .header-desktop {
-        display: none;
-    }
-    .header-mobile {
-        display: block;
-        position: sticky;
-        top: 0; /* Ensures the sticky header stays at the top */
-        text-align: center;
-        background-color:  #095339;
-        margin: 0; /* Ensures there’s no extra space around the header */
-        z-index: 3000; /* Keeps the header on top of other elements */
-        color: #073627; /* Ensures text contrasts well with the black background */
-        padding: 10px; /* Adds padding for better spacing */
-    }
-
-    .site-icon
-    
-    main {
-        display: block;
-        text-align: center;
-        margin: 0; /* Sets margin to 0, removes any default margin */
-    }
-
-    body {
-        display: block;
-        text-align: center;
-        padding: 0em; /* Adds padding inside the body */
-        margin: 0; /* Sets margin to 0, removes any default margin */
-    }
-
-    /* Navigation buttons styling */
-    .navigation-buttons {
-        display: block;
-        flex-direction: column; /* Aligns buttons in a vertical column */
-        justify-content: center; /* Centers buttons horizontally */
-        align-items: center; /* Centers buttons vertically */
-        width: 100%; /* Ensures the navigation takes up full width */
-        padding: 10px; /* Adds padding around the buttons container */
-    }
-
-    .nav-button {
-        display: flex;
-        padding: 10px 20px; /* Adds padding inside the buttons */
-        margin: 10px 0; /* Adds vertical spacing between buttons */
-        border-radius: 5px; /* Rounds the corners of the buttons */
-        border-color: #073627;
-        font-size: 1rem; /* Sets a readable font size */
-        transition: background-color 0.3s, color 0.3s;
-        /* Smooth transition for hover effects */
-    }
+  body {
+    text-align: center; /* Centers the text within the h1 */
+  }
 </style>
 <body>
-            <div class="container">
-                <h1>Support</h1>
-                    <div class="navigation-buttons">
-                    <a class="nav-button" href="{{ '/support/media_storage' | absolute_url }}">Media Storage Protocol</a>
-                    <a class="nav-button" href="{{ '/support/policy/media_policy' | absolute_url }}">Media Usage Policy</a>
-                    <a class="nav-button" href="{{ '/manuals' | relative_url }}">Manual Annex</a>
-                    <a class="nav-button" href="{{ 'https://docs.google.com/spreadsheets/d/1Ih1Ua4SBMSC0C_XqI6UFnJAHAoGr-Ija96HS2942CO0/edit?usp=sharing' | absolute_url }}" target="_blank">Public Inventory</a>
-                    <a class="nav-button" href="{{ 'https://forms.gle/NcJiXXM8eMGTNG6F7' | absolute_url }}" target="_blank"> Upload Show Files</a>
-                    <a class="nav-button" href="{{ 'https://forms.gle/UoDwtec6SBRxWgrQ7' | absolute_url }}" target="_blank">General AV Requests</a>
-                </div> 
-                <h1>Info</h1>
-                <div class="navigation-buttons">
-                    <a class="nav-button" href="{{ '/info/overview' | relative_url }}">Overview</a>
-                    <a class="nav-button" href="{{ 'info/system_architecture' | absolute_url }}">System Architecture</a>
-                    <a class="nav-button" href="{{ '/info/standards' | relative_url }}">Standards of Practice</a>
-                    <a class="nav-button" href="{{ '/info/office' | relative_url }}">Contact & Office Hours</a>
-                </div>
-        
-                <h1>Curriculum</h1>
-                <div class="navigation-buttons">
-                    <a class="nav-button" href="{{ '/roles' | absolute_url }}">The TDAV Crew & Roles</a>
-                    <a CLASS="nav-button" href="{{ '/resources' | absolute_url }}">Resources</a>
-                    <a class="nav-button" href="{{ '/curriculum/th242/index' | relative_url }}">TH-242 Intro to Sound & Media Design</a>
-                </div>
-    
-        
-                <h1>Join Us</h1>
-                <div class="navigation-buttons">
-                    <a class="nav-button" href="https://docs.google.com/forms/d/e/1FAIpQLScX2viHIu5XVVzfpZCAmwuWKO1nN2-SErR2XBN7Vu9aUscSqQ/viewform?usp=sf_link"target="_blank">Interest Form</a>
-                    <a class="nav-button" href="{{ '/roles/apply/crew_lead_apply' | relative_url }}">Crew Lead Application</a>
-                    <a class="nav-button" href="{{ '/roles/apply/press_manager_apply' | relative_url }}">Press Manager Application</a>
-                    <a class="nav-button" href="{{ '/roles/apply/photo_journalist_apply' | relative_url }}">Photo Journalist Application</a>
-                    <a class="nav-button" href="{{ '/roles/apply/general' | relative_url }}">General Application</a>
-                </div>
-            </div>
-        </body>
-        </html>
-        
+  <div class="container">
+    <h1>Tech Support</h1>
+    <div class="navigation-buttons">
+      <a class="nav-button" href="https://forms.gle/UoDwtec6SBRxWgrQ7" target="_blank">Place A Work Order</a>
+      <a class="nav-button" href="{{ '/info/office' | relative_url }}">Contact & Office Hours</a>
+    </div>
+
+    <h1>Info</h1>
+    <div class="navigation-buttons">
+      <a class="nav-button" href="{{ '/info/overview' | relative_url }}">Overview</a>
+      <a class="nav-button" href="{{ '/info/standards' | relative_url }}">Standards of Practice</a>
+      <a class="nav-button" href="{{ '/support/policy/media_policy' | absolute_url }}">Media Usage Policy</a>
+      
+    </div>
+
+    <h1>Curriculum</h1>
+    <div class="navigation-buttons">
+      <a class="nav-button" href="{{ '/roles' | absolute_url }}">The TDAV Crew</a>
+      <a class="nav-button" href="{{ '/curriculum/th242/index' | relative_url }}">TH-242 Intro to Sound & Media Design</a>
+      <a class="nav-button" href="{{ '/resources' | absolute_url }}">Annex</a>
+    </div>
+
+    <h1>Join Us</h1>
+    <div class="navigation-buttons">
+      <a class="nav-button" href="https://docs.google.com/forms/d/e/1FAIpQLScX2viHIu5XVVzfpZCAmwuWKO1nN2-SErR2XBN7Vu9aUscSqQ/viewform?usp=sf_link" target="_blank">Interest Form</a>
+      <a class="nav-button" href="{{ '/roles/apply/crew_lead_apply' | relative_url }}">Apply</a>
+    </div>
+  </div>
+
+  <script src="/path/to/luna.js"></script> <!-- Link to luna.js -->
+  <script>
+    // Assuming luna.js is your search functionality
+    // Initialize the search functionality with necessary parameters.
+    const searchEngine = new LunaSearch({
+      searchElement: '.nav-button',  // Bind search to buttons
+      searchUrl: '/wikindex',  // Define the search page
+      resultsContainer: '.results', // Where the search results appear
+      minLength: 3 // Minimum characters for search
+    });
+
+    // Optional: Add any custom functionality or configuration needed.
+  </script>
+</body>

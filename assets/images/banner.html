@@ -1,31 +1,147 @@
----
-layout: default
-title: NMU Theatre & Dance banner
-permalink: /assets/images/banner
----
 <!DOCTYPE html>
-<html>
-    <html lang="en"></html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-.banner {
-    background: linear-gradient(to right, #099009, #095339); /* Gradient background */
-    color: #fff; /* Text color */
-    text-align: center; /* Center text */
-    padding: 500px 200px; /* Padding for the banner */
-    position: relative; /* Position relative for potential child positioning */
-    z-index: 1;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden; /* No scroll */
+            background-color: #000;
+        }
+
+        /* Extreme animated background with neon colors */
+        .banner {
+            background: radial-gradient(circle, #ff0066, #ffcc00, #00ffff, #ff66ff);
+            background-size: 200% 200%;
+            animation: pulseGradient 5s ease infinite;
+            color: #fff;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+            transform-style: preserve-3d; /* Prepare for 3D effects */
+        }
+
+        /* Pulsating background gradient animation */
+        @keyframes pulseGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Darken overlay for readability */
+            z-index: 0;
+        }
+
+        .banner h1, .banner p {
+            position: relative;
+            z-index: 1;
+            margin: 10px 0;
+            animation: zoomIn 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        .banner h1 {
+            font-size: 5em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ff0066;
+            text-shadow: 0 0 15px #00ffff, 0 0 25px #ffcc00, 0 0 35px #ff66ff;
+            transform: rotateX(0deg) rotateY(0deg);
+            animation-delay: 0.5s;
+            animation-name: textSpin, zoomIn; /* Combining 3D and zoom animation */
+            cursor: pointer;
+        }
+
+        .banner h1:hover {
+            transform: rotateX(360deg) rotateY(360deg); /* 3D spin on hover */
+            transition: 0.8s ease-out;
+        }
+
+        .banner p {
+            font-size: 2em;
+            color: #ffcc00;
+            text-shadow: 0 0 10px #ff0066, 0 0 15px #00ffff;
+            animation-delay: 1.5s;
+            transform: translateZ(50px); /* Pushed into 3D space */
+        }
+
+        /* Keyframes for zoom in */
+        @keyframes zoomIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Keyframes for 3D text spin */
+        @keyframes textSpin {
+            0% { transform: rotateX(0deg) rotateY(0deg); }
+            50% { transform: rotateX(180deg) rotateY(180deg); }
+            100% { transform: rotateX(360deg) rotateY(360deg); }
+        }
+
+        /* Starry sky effect using a particle system */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: -1;
+            animation: starMove 50s linear infinite; /* Slow star movement */
+        }
+
+        .stars::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, white 1%, transparent 1%);
+            background-size: 50px 50px;
+            opacity: 0.5;
+        }
+
+        @keyframes starMove {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100vh); }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .banner h1 {
+                font-size: 3em;
+            }
+
+            .banner p {
+                font-size: 1.2em;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="stars"></div>
     <header class="banner">
-        
-        <br><br><h1>Northern Michigan University</h1> 
-        <p>Department of Theatre & Dance<br><br></p>
+        <h1>Northern Michigan University</h1>
+        <p>Department of Theatre & Dance</p>
+        <h2>Sound and Media</h2>
     </header>
-
 </body>
 </html>

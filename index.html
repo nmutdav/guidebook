@@ -1,37 +1,148 @@
----
-layout: default
-title: home
-permalink: /index
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class Absence Plan</title>
+    <title>Northern Michigan University - Theatre & Dance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden; /* No scroll */
+            background-color: #000;
+        }
+
+        /* Subtle animated background with green and gold */
+        .banner {
+            background: radial-gradient(circle at center, #ccac00, #004d00); /* Centered gold to dark green gradient */
+            background-size: 200% 200%;
+            animation: pulseGradient 100s ease infinite; /* Slower pulse for subtlety */
+            color: #fff;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        /* More subtle pulsating background animation */
+        @keyframes pulseGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Slight dark overlay */
+            z-index: 0;
+        }
+
+        .banner h1, .banner p, .banner h2 {
+            position: relative;
+            z-index: 1;
+            margin: 10px 0;
+            animation: fadeIn 3s ease forwards; /* Slower fade-in effect for all elements */
+        }
+
+        .banner h1 {
+            font-size: 4em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ccac00; /* Gold */
+            text-shadow: 0 0 8px #004d00, 0 0 12px #004d00; /* Subtle green glow */
+            transition: color 0.5s ease-in-out;
+        }
+
+        .banner h1:hover {
+            color: #ffffff; /* Lighten text on hover */
+            transition: color 0.5s ease-in-out;
+        }
+
+        .banner p {
+            font-size: 1.5em;
+            color: #004d00; /* Dark green */
+            text-shadow: 0 0 6px #ccac00; /* Subtle gold glow */
+        }
+
+        .banner h2 {
+            font-size: 2em;
+            color: #ccac00; /* Gold */
+            text-shadow: 0 0 8px #004d00; /* Subtle green glow */
+            cursor: pointer; /* Show pointer cursor for clickable text */
+            text-decoration: none; /* Remove underline */
+        }
+
+        /* Subtle fade-in effect */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Starry sky effect with centered stars */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: -1;
+            animation: starMove 100s linear infinite; /* Slow star movement */
+        }
+
+        .stars::before {
+            content: '';
+            position: absolute;
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, white 1%, transparent 1%);
+            background-size: 50px 50px;
+            opacity: 0.3; /* More subtle star effect */
+            transform: translate(-50%, -50%); /* Adjust for centering */
+        }
+
+        @keyframes starMove {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100vh); }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .banner h1 {
+                font-size: 3em;
+            }
+
+            .banner p {
+                font-size: 1.2em;
+            }
+
+            .banner h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
 </head>
-<main>
 <body>
-    <div class="banner">
-        <img src="assets/images/banner.png" alt="Banner Image">
-    </div>
-    <h1>Welcome</h1>
-    <p>Welcome to the Theatre & Dance AV Guidebook! Here you will find course curriculum designed especially for the Northern Michigan University Sound & Engineering Program.</p>
-    <section class="latest-posts">
-        <h2>Latest Posts</h2>
-        <ul>
-            {% for post in site.posts limit:5 %}
-                <li class="post-box">
-                    <div class="post-header">
-                        <a href="{{ post.url | relative_url }}" class="post-title">{{ post.title }}</a>
-                    </div>
-                    <div class="post-content">
-                        <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
-    </section>
+    <div class="stars"></div>
+    <header class="banner">
+        <h1>Northern Michigan University</h1>
+        <p>Department of Theatre & Dance</p>
+        <a style="text-decoration: none"; href="wikindex.html"><h2>The TDAV Guidebook</h2></a> <!-- Link added here -->
+    </header>
 </body>
-</main>
 </html>

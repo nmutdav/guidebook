@@ -1,13 +1,14 @@
----
-layout: none
----
-
-[
-  {% for page in site.pages %}
+{
+  "pages": [
     {
-      "title": "{{ page.title | escape }}",
-      "url": "{{ page.url | absolute_url }}",
-      "content": {{ page.content | strip_html | jsonify }}
-    }{% if forloop.last == false %},{% endif %}
-  {% endfor %}
-]
+      "title": "Page 1 Title",
+      "url": "http://example.com/page-1",
+      "content": "This is the content of page 1."
+    },
+    {
+      "title": "Page 2 Title",
+      "url": "http://example.com/page-2",
+      "content": "This is the content of page 2."
+    }
+  ]
+}
