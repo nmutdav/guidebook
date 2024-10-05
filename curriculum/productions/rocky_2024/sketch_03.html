@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flickering Stars</title>
+    <style>
+        body {
+            background-color: #000; /* Night sky background */
+            overflow: hidden; /* Prevent scrolling */
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* For button positioning */
+        }
+
+        /* Back to Index Button Styling */
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #007bff; /* Blue background color for the button */
+            color: white; /* White text color */
+            border: none; /* Removes the default border */
+            padding: 10px 15px; /* Padding around the button text */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 5px; /* Slightly rounded corners */
+            font-size: 14px; /* Font size */
+            font-family: 'Arial', sans-serif; /* Font family */
+        }
+
+        /* Button hover effect */
+        .back-btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        /* Container to hold stars */
+        .stars-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* Star styles */
+        .star {
+            position: absolute;
+            border-radius: 50%; /* Make stars circular */
+            opacity: 0; /* Initially hidden */
+            animation: flicker linear infinite; /* Apply flicker animation */
+        }
+
+        /* Flicker animation for stars */
+        @keyframes flicker {
+            0%, 100% {
+                opacity: 0.8; /* Stars are visible */
+            }
+            50% {
+                opacity: 0.2; /* Stars fade out */
+            }
+        }
+
+        /* Randomized star styles */
+        .star:nth-child(1) { top: 10%; left: 5%; width: 3px; height: 3px; background-color: #ffffff; animation-duration: 2.5s; }
+        .star:nth-child(2) { top: 15%; left: 20%; width: 4px; height: 4px; background-color: #ffcc00; animation-duration: 3.5s; }
+        .star:nth-child(3) { top: 20%; left: 15%; width: 5px; height: 5px; background-color: #00ccff; animation-duration: 2.0s; }
+        .star:nth-child(4) { top: 25%; left: 40%; width: 6px; height: 6px; background-color: #ff6699; animation-duration: 4.0s; }
+        .star:nth-child(5) { top: 30%; left: 70%; width: 3px; height: 3px; background-color: #99ff33; animation-duration: 2.8s; }
+        .star:nth-child(6) { top: 35%; left: 10%; width: 5px; height: 5px; background-color: #ff33cc; animation-duration: 3.2s; }
+        .star:nth-child(7) { top: 45%; left: 60%; width: 4px; height: 4px; background-color: #33ccff; animation-duration: 4.5s; }
+        .star:nth-child(8) { top: 50%; left: 30%; width: 6px; height: 6px; background-color: #ccff33; animation-duration: 2.3s; }
+        .star:nth-child(9) { top: 55%; left: 80%; width: 3px; height: 3px; background-color: #ff9966; animation-duration: 3.8s; }
+        .star:nth-child(10) { top: 65%; left: 50%; width: 5px; height: 5px; background-color: #66ffcc; animation-duration: 2.5s; }
+        .star:nth-child(11) { top: 70%; left: 90%; width: 4px; height: 4px; background-color: #ffccff; animation-duration: 4.0s; }
+        .star:nth-child(12) { top: 75%; left: 25%; width: 3px; height: 3px; background-color: #ffff33; animation-duration: 3.5s; }
+        .star:nth-child(13) { top: 80%; left: 65%; width: 5px; height: 5px; background-color: #cc6699; animation-duration: 2.7s; }
+        .star:nth-child(14) { top: 85%; left: 40%; width: 4px; height: 4px; background-color: #99ccff; animation-duration: 3.0s; }
+        .star:nth-child(15) { top: 90%; left: 10%; width: 6px; height: 6px; background-color: #33cc99; animation-duration: 4.2s; }
+        .star:nth-child(16) { top: 5%; left: 75%; width: 5px; height: 5px; background-color: #ffcc00; animation-duration: 2.1s; }
+        .star:nth-child(17) { top: 12%; left: 55%; width: 4px; height: 4px; background-color: #ff6699; animation-duration: 3.9s; }
+        .star:nth-child(18) { top: 28%; left: 85%; width: 6px; height: 6px; background-color: #00ccff; animation-duration: 2.4s; }
+        .star:nth-child(19) { top: 38%; left: 35%; width: 5px; height: 5px; background-color: #ff9966; animation-duration: 3.3s; }
+        .star:nth-child(20) { top: 55%; left: 45%; width: 4px; height: 4px; background-color: #66ffcc; animation-duration: 4.5s; }
+
+        /* Add more stars as needed with unique positions and animation durations */
+    </style>
+</head>
+<body>
+    <!-- Container for Stars -->
+    <div class="stars-container">
+        <!-- Create 20 star elements -->
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+</body>
+    <!-- A button that redirects users back to the index (home) page -->
+    <a href="index.html" class="back-btn">Back to Index</a> 
+</html>

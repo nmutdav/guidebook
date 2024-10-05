@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Northern Michigan University - Theatre & Dance</title>
     <style>
+        /* Reset styles */
         * {
             margin: 0;
             padding: 0;
@@ -18,11 +19,11 @@
             background-color: #000;
         }
 
-        /* Subtle animated background with green and gold */
+        /* Banner styling */
         .banner {
-            background: radial-gradient(circle at center, #ccac00, #004d00); /* Centered gold to dark green gradient */
+            background: radial-gradient(circle at center, #f8e09b, #3a8e3b); /* Bright yellow to vibrant green gradient */
             background-size: 200% 200%;
-            animation: pulseGradient 10s ease infinite; /* Slower pulse for subtlety */
+            animation: pulseGradient 15s ease infinite; /* Slower pulse for subtlety */
             color: #fff;
             text-align: center;
             height: 100vh;
@@ -32,15 +33,17 @@
             align-items: center;
             position: relative;
             padding: 20px;
+            overflow: hidden; /* Prevent overflow from elements */
         }
 
-        /* More subtle pulsating background animation */
+        /* Pulsating background animation */
         @keyframes pulseGradient {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
+        /* Overlay for better text visibility */
         .banner::before {
             content: '';
             position: absolute;
@@ -48,52 +51,52 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.3); /* Slight dark overlay */
+            background: rgba(0, 0, 0, 0.5); /* Darker overlay for better contrast */
             z-index: 0;
         }
 
+        /* Heading styles */
         .banner h1, .banner p, .banner h2 {
             position: relative;
             z-index: 1;
             margin: 10px 0;
-            animation: fadeIn 3s ease forwards; /* Slower fade-in effect for all elements */
+            animation: fadeIn 2s ease forwards; /* Slower fade-in effect for all elements */
         }
 
         .banner h1 {
-            font-size: 4em;
-            letter-spacing: 2px;
+            font-size: 4.5em; /* Increased size for prominence */
+            letter-spacing: 3px;
             text-transform: uppercase;
-            color: #ffc425; /* Gold */
-            text-shadow: 0 0 8px #004d00, 0 0 12px #095339; /* Subtle green glow */
+            color: #ffcc00; /* Brighter gold */
+            text-shadow: 0 0 10px #3a8e3b, 0 0 15px #3a8e3b; /* Brighter green glow */
             transition: color 0.5s ease-in-out;
         }
 
         .banner h1:hover {
             color: #ffffff; /* Lighten text on hover */
-            transition: color 0.5s ease-in-out;
         }
 
         .banner p {
-            font-size: 1.5em;
-            color: #004d00; /* Dark green */
-            text-shadow: 0 0 6px #ccac00; /* Subtle gold glow */
+            font-size: 1.8em; /* Increased size for better readability */
+            color: #3a8e3b; /* Consistent vibrant green */
+            text-shadow: 0 0 8px #ffcc00; /* Bright gold glow */
         }
 
         .banner h2 {
-            font-size: 2em;
-            color: #ffc425; /* Gold */
-            text-shadow: 0 0 8px #095339; /* Subtle green glow */
+            font-size: 2.5em; /* Increased size for visibility */
+            color: #ffcc00; /* Brighter gold */
+            text-shadow: 0 0 10px #3a8e3b; /* Brighter green glow */
             cursor: pointer; /* Show pointer cursor for clickable text */
             text-decoration: none; /* Remove underline */
         }
 
-        /* Subtle fade-in effect */
+        /* Fade-in effect */
         @keyframes fadeIn {
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
 
-        /* Starry sky effect with centered stars */
+        /* Starry sky effect */
         .stars {
             position: absolute;
             width: 100%;
@@ -112,7 +115,7 @@
             height: 400px;
             background: radial-gradient(circle, white 1%, transparent 1%);
             background-size: 50px 50px;
-            opacity: 0.3; /* More subtle star effect */
+            opacity: 0.4; /* More subtle star effect */
             transform: translate(-50%, -50%); /* Adjust for centering */
         }
 
@@ -124,25 +127,32 @@
         /* Responsive design */
         @media (max-width: 768px) {
             .banner h1 {
-                font-size: 3em;
+                font-size: 3.5em; /* Responsive heading size */
             }
 
             .banner p {
-                font-size: 1.2em;
+                font-size: 1.5em; /* Responsive paragraph size */
             }
 
             .banner h2 {
-                font-size: 1.5em;
+                font-size: 2em; /* Responsive subheading size */
             }
+        }
+
+        /* Accessibility: Focus styles */
+        a:focus, .banner h2:focus {
+            outline: 3px solid #ffcc00; /* Brighter gold outline for accessibility */
         }
     </style>
 </head>
 <body>
     <div class="stars"></div>
-    <header class="banner">
+    <header class="banner" role="banner">
         <h1>Northern Michigan University</h1>
         <p>Department of Theatre & Dance</p>
-        <a style="text-decoration: none"; href="wikindex.html"><h2>The TDAV Guidebook</h2></a> <!-- Link added here -->
+        <a href="wikindex.html" style="text-decoration: none;">
+            <h2>The TDAV Guidebook</h2>
+        </a> <!-- Link added here -->
     </header>
 </body>
 </html>

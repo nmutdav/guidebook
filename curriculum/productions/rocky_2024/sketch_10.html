@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outer Space Scene</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            background-color: black; /* Space background */
+            position: relative;
+        }
+
+        /* Stars */
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 1.5s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Spaceships */
+        .spaceship {
+            position: absolute;
+            width: 40px;
+            height: 20px;
+            background-color: #00FF00; /* Green */
+            clip-path: polygon(0% 100%, 50% 0%, 100% 100%); /* Triangle shape */
+            animation: fly 5s linear infinite;
+        }
+
+        @keyframes fly {
+            0% { transform: translateX(-100vw) translateY(0); }
+            100% { transform: translateX(100vw) translateY(50vh); }
+        }
+
+        /* Asteroids */
+        .asteroid {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: gray;
+            border-radius: 50%;
+            animation: drift 10s linear infinite;
+        }
+
+        @keyframes drift {
+            0% { transform: translate(-100vw, 0); }
+            100% { transform: translate(100vw, 0); }
+        }
+          /* Back to Index Button Styling */
+		.back-btn {
+			/* Positions the button in the top-left corner of the screen */
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			/* Blue background color for the button */
+			background-color: #007bff;
+			/* White text color for high contrast against the blue background */
+			color: white;
+			/* Removes the default border from the button */
+			border: none;
+			/* Adds padding around the button text for better clickability */
+			padding: 10px 15px;
+			/* Changes the cursor to a pointer to indicate it's clickable */
+			cursor: pointer;
+			/* Rounds the corners of the button slightly for a modern look */
+			border-radius: 5px;
+			/* Sets the font size and a standard sans-serif font for the button text */
+			font-size: 14px;
+			/* Ensures the button uses a readable sans-serif font */
+			font-family: 'Arial', sans-serif;
+		}
+
+		/* Styling for when the user hovers over the button */
+		.back-btn:hover {
+			/* Changes the background color to a darker shade of blue to give visual feedback */
+			background-color: #0056b3;
+		}
+    </style>
+</head>
+<body>
+    <!-- Generate stars -->
+    <script>
+        const starCount = 100; // Number of stars
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+            star.style.top = Math.random() * 100 + 'vh'; // Random vertical position
+            document.body.appendChild(star);
+        }
+
+        // Generate spaceships
+        for (let j = 0; j < 3; j++) {
+            const ship = document.createElement('div');
+            ship.className = 'spaceship';
+            ship.style.top = Math.random() * 100 + 'vh'; // Random vertical position
+            ship.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+            document.body.appendChild(ship);
+        }
+
+        // Generate asteroids
+        for (let k = 0; k < 5; k++) {
+            const asteroid = document.createElement('div');
+            asteroid.className = 'asteroid';
+            asteroid.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+            asteroid.style.top = Math.random() * 100 + 'vh'; // Random vertical position
+            document.body.appendChild(asteroid);
+        }
+    </script>
+                <!-- A button that redirects users back to the index (home) page -->
+                <a href="index.html" class="back-btn">Back to Index</a> 
+</body>
+</html>

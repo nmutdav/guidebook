@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Patootie Abstract Animation</title>
+    <style>
+
+		/* Back to Index Button Styling */
+		.back-btn {
+			/* Positions the button in the top-left corner of the screen */
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			/* Blue background color for the button */
+			background-color: #007bff;
+			/* White text color for high contrast against the blue background */
+			color: white;
+			/* Removes the default border from the button */
+			border: none;
+			/* Adds padding around the button text for better clickability */
+			padding: 10px 15px;
+			/* Changes the cursor to a pointer to indicate it's clickable */
+			cursor: pointer;
+			/* Rounds the corners of the button slightly for a modern look */
+			border-radius: 5px;
+			/* Sets the font size and a standard sans-serif font for the button text */
+			font-size: 14px;
+			/* Ensures the button uses a readable sans-serif font */
+			font-family: 'Arial', sans-serif;
+		}
+
+		/* Styling for when the user hovers over the button */
+		.back-btn:hover {
+			/* Changes the background color to a darker shade of blue to give visual feedback */
+			background-color: #0056b3;
+		}
+        /* Basic Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background: #000; /* Black background for contrast */
+        }
+
+        /* Abstract Shape */
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: moveShape linear infinite;
+        }
+
+        /* Shape Animation */
+        @keyframes moveShape {
+            0% {
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+            50% {
+                transform: translate(calc(50vw - 50%), calc(50vh - 50%)) scale(1);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const colors = ['#FF007F', '#FF4F00', '#00FFFF', '#4B0082', '#FFDD00']; // Colors for the shapes
+
+        const createShape = () => {
+            const shape = document.createElement('div');
+            shape.classList.add('shape');
+
+            // Random size and position for shapes
+            const size = Math.random() * 80 + 20; // Size between 20 and 100
+            shape.style.width = `${size}px`;
+            shape.style.height = `${size}px`;
+            shape.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]; // Random color
+            shape.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+            shape.style.top = Math.random() * 100 + 'vh'; // Random vertical position
+            shape.style.animationDuration = Math.random() * 4 + 2 + 's'; // Random duration
+            shape.style.animationDelay = Math.random() * 5 + 's'; // Staggered appearance
+
+            document.body.appendChild(shape);
+
+            // Remove shape after animation ends
+            shape.addEventListener('animationend', () => {
+                shape.remove();
+            });
+        };
+
+        // Generate shapes every 200 milliseconds
+        setInterval(createShape, 200);
+    </script>
+            <!-- A button that redirects users back to the index (home) page -->
+            <a href="index.html" class="back-btn">Back to Index</a> 
+</body>
+</html>

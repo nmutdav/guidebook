@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Sunset Gradient</title>
+    <style>
+        /* Back to Index Button Styling */
+		.back-btn {
+			/* Positions the button in the top-left corner of the screen */
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			/* Blue background color for the button */
+			background-color: #007bff;
+			/* White text color for high contrast against the blue background */
+			color: white;
+			/* Removes the default border from the button */
+			border: none;
+			/* Adds padding around the button text for better clickability */
+			padding: 10px 15px;
+			/* Changes the cursor to a pointer to indicate it's clickable */
+			cursor: pointer;
+			/* Rounds the corners of the button slightly for a modern look */
+			border-radius: 5px;
+			/* Sets the font size and a standard sans-serif font for the button text */
+			font-size: 14px;
+			/* Ensures the button uses a readable sans-serif font */
+			font-family: 'Arial', sans-serif;
+		}
+
+		/* Styling for when the user hovers over the button */
+		.back-btn:hover {
+			/* Changes the background color to a darker shade of blue to give visual feedback */
+			background-color: #0056b3;
+		}
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, 
+                #1E90FF, /* Dodger Blue */
+                #B0E0E6, /* Powder Blue */
+                #FFDEAD, /* Navajo White */
+                #FFD700, /* Gold */
+                #FF8C00, /* Dark Orange */
+                #FF4500  /* Orange Red */
+            );
+        }
+    </style>
+</head>
+<body>
+                <!-- A button that redirects users back to the index (home) page -->
+                <a href="index.html" class="back-btn">Back to Index</a> 
+</body>
+</html>

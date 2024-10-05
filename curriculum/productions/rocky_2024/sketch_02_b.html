@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downpour Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(to bottom, rgb(3, 3, 3), rgb(14, 0, 23)); /* Gradient background for atmosphere */
+        }
+
+        /* Raindrop styling */
+        .raindrop {
+            position: absolute;
+            top: -20px; /* Start above the viewport */
+            background-color: rgb(84, 1, 144); /* White raindrop color */
+            border-radius: 50%;
+            animation: fall linear infinite; /* Falling animation */
+        }
+
+        /* Raindrop animation */
+        @keyframes fall {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh); /* End at the bottom */
+                opacity: 0; /* Fade out */
+            }
+        }
+        /* Back to Index Button Styling */
+		.back-btn {
+			/* Positions the button absolutely in the top-left corner */
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			/* Blue background color for the button */
+			background-color: #007bff;
+			/* White text color for contrast against the blue background */
+			color: white;
+			/* Removes the default border */
+			border: none;
+			/* Adds padding for better clickability and spacing */
+			padding: 10px 15px;
+			/* Changes the cursor to pointer to indicate the button is clickable */
+			cursor: pointer;
+			/* Adds rounded corners to the button */
+			border-radius: 5px;
+			/* Standard font for the button for easy readability */
+			font-size: 14px;
+			/* Ensures a different font for the button, using a standard sans-serif */
+			font-family: 'Arial', sans-serif;
+		}
+
+    </style>
+</head>
+<body>
+    <script>
+        const createRaindrop = () => {
+            const raindrop = document.createElement('div');
+            raindrop.classList.add('raindrop');
+
+            // Randomize size, position, and animation duration for raindrops
+            const size = Math.random() * 1 + 4; // Random size between 5px and 10px
+            raindrop.style.width = `${size}px`;
+            raindrop.style.height = `${size * 2}px`; // Height is double the width
+            raindrop.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+            raindrop.style.animationDuration = Math.random() * .1 + .5 + 's'; // Random duration between 1s and 2s
+            raindrop.style.animationDelay = Math.random() * 3 + 's'; // Staggered appearance
+
+            document.body.appendChild(raindrop);
+
+            // Remove raindrop after animation ends
+            raindrop.addEventListener('animationend', () => {
+                raindrop.remove();
+            });
+        };
+
+        // Generate raindrops every 100 milliseconds
+        setInterval(createRaindrop, 100);
+    </script>
+    <body>
+        <!-- A button that redirects users back to the index (home) page -->
+        <a href="index.html" class="back-btn">Back to Index</a>
+    
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steamy Cloud Animation</title>
+    <style>
+        /* Back to Index Button Styling */
+		.back-btn {
+			/* Positions the button in the top-left corner of the screen */
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			/* Blue background color for the button */
+			background-color: #007bff;
+			/* White text color for high contrast against the blue background */
+			color: white;
+			/* Removes the default border from the button */
+			border: none;
+			/* Adds padding around the button text for better clickability */
+			padding: 10px 15px;
+			/* Changes the cursor to a pointer to indicate it's clickable */
+			cursor: pointer;
+			/* Rounds the corners of the button slightly for a modern look */
+			border-radius: 5px;
+			/* Sets the font size and a standard sans-serif font for the button text */
+			font-size: 14px;
+			/* Ensures the button uses a readable sans-serif font */
+			font-family: 'Arial', sans-serif;
+		}
+
+		/* Styling for when the user hovers over the button */
+		.back-btn:hover {
+			/* Changes the background color to a darker shade of blue to give visual feedback */
+			background-color: #0056b3;
+		}
+        /* Basic Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevent scrollbars */
+            background-color: #1b0f0f; /* Dark background */
+            position: relative; /* For positioning steam */
+        }
+
+        /* Smoky Steam */
+        .smoke {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(255, 20, 147, 0.5), rgba(30, 144, 255, 0.5));
+            opacity: 0.6;
+            filter: blur(30px); /* Blurring effect for smokiness */
+            animation: smoke-animation 10s linear infinite; /* Smooth animation */
+        }
+
+        /* Animation for each steam cloud */
+        @keyframes smoke-animation {
+            0% {
+                transform: translateY(100vh) scale(1); /* Start from bottom */
+            }
+            50% {
+                transform: translateY(-30vh) scale(1.1); /* Move upward and scale up */
+            }
+            100% {
+                transform: translateY(-100vh) scale(1); /* Move off the top */
+            }
+        }
+
+        /* Additional steam clouds */
+        .smoke:nth-child(1) { animation-duration: 8s; animation-delay: 0s; }
+        .smoke:nth-child(2) { animation-duration: 12s; animation-delay: 2s; }
+        .smoke:nth-child(3) { animation-duration: 10s; animation-delay: 1s; }
+        .smoke:nth-child(4) { animation-duration: 9s; animation-delay: 3s; }
+        .smoke:nth-child(5) { animation-duration: 11s; animation-delay: 4s; }
+
+        /* Styles for creating different sizes and positions */
+        .smoke {
+            left: calc((100vw - 100%) * Math.random());
+            top: calc((100vh - 100%) * Math.random());
+            width: calc(50px + (150px * Math.random())); /* Random width */
+            height: calc(50px + (150px * Math.random())); /* Random height */
+            opacity: 0.5 + Math.random() * 0.5; /* Random opacity */
+            border-radius: 50%; /* Make it roundish */
+            position: absolute; /* Position it absolutely */
+        }
+
+		/* Back to Index Button Styling */
+		.back-btn {
+			/* Positions the button in the top-left corner of the screen */
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			/* Blue background color for the button */
+			background-color: #007bff;
+			/* White text color for high contrast against the blue background */
+			color: white;
+			/* Removes the default border from the button */
+			border: none;
+			/* Adds padding around the button text for better clickability */
+			padding: 10px 15px;
+			/* Changes the cursor to a pointer to indicate it's clickable */
+			cursor: pointer;
+			/* Rounds the corners of the button slightly for a modern look */
+			border-radius: 5px;
+			/* Sets the font size and a standard sans-serif font for the button text */
+			font-size: 14px;
+			/* Ensures the button uses a readable sans-serif font */
+			font-family: 'Arial', sans-serif;
+		}
+
+		/* Styling for when the user hovers over the button */
+		.back-btn:hover {
+			/* Changes the background color to a darker shade of blue to give visual feedback */
+			background-color: #0056b3;
+		}
+    </style>
+</head>
+<body>
+    <!-- Multiple Smoky Clouds -->
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+
+    <script>
+        // Function to create a randomized steam cloud
+        const createSmoke = () => {
+            const smoke = document.createElement('div');
+            smoke.classList.add('smoke');
+
+            // Randomize initial position and size
+            smoke.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+            smoke.style.top = Math.random() * 100 + 'vh'; // Random vertical position
+            smoke.style.width = Math.random() * 100 + 50 + 'px'; // Random width
+            smoke.style.height = Math.random() * 100 + 50 + 'px'; // Random height
+            smoke.style.opacity = Math.random() * 0.5 + 0.5; // Random opacity
+
+            // Add animation duration and delay
+            smoke.style.animationDuration = Math.random() * 6 + 6 + 's'; // Random speed for rising
+            smoke.style.animationDelay = Math.random() * 5 + 's'; // Staggered appearance
+
+            document.body.appendChild(smoke);
+
+            // Remove smoke after animation ends
+            smoke.addEventListener('animationend', () => {
+                smoke.remove();
+            });
+        };
+
+        // Generate steam clouds every 300 milliseconds
+        setInterval(createSmoke, 300);
+    </script>
+    <body>
+        <!-- A button that redirects users back to the index (home) page -->
+        <a href="index.html" class="back-btn">Back to Index</a>    
+</body>
+</html>
