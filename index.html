@@ -124,6 +124,29 @@
             to { transform: translateY(-100vh); }
         }
 
+        /* Don't Panic animation styles */
+        .dont-panic {
+            font-size: 3em; /* Adjust size as needed */
+            color: #ffcc00; /* Brighter gold */
+            text-shadow: 0 0 10px #3a8e3b; /* Brighter green glow */
+            animation: flicker 1.5s infinite; /* Flicker animation */
+            z-index: 1;
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            10% { opacity: 0.7; }
+            20% { opacity: 1; }
+            30% { opacity: 0.5; }
+            40% { opacity: 1; }
+            50% { opacity: 0.9; }
+            60% { opacity: 1; }
+            70% { opacity: 0.3; }
+            80% { opacity: 1; }
+            90% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
         /* Responsive design */
         @media (max-width: 768px) {
             .banner h1 {
@@ -136,6 +159,10 @@
 
             .banner h2 {
                 font-size: 2em; /* Responsive subheading size */
+            }
+
+            .dont-panic {
+                font-size: 2em; /* Responsive Don't Panic size */
             }
         }
 
@@ -153,6 +180,7 @@
         <a href="wikindex.html" style="text-decoration: none;">
             <h1>The TDAV Guidebook</h1>
         </a> <!-- Link added here -->
+        <h1><div class="dont-panic">Don't Panic</div></h1> <!-- Don't Panic text added here -->
     </header>
 </body>
 </html>
