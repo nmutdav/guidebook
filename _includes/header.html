@@ -14,57 +14,14 @@
             <h1><a href="{{ '/' | absolute_url }}">The TDAV Guidebook</a></h1>
         </div>
         <nav class="nav-menu">
-            <ul>
-                <li class="dropdown">
-                    <span><strong>info</strong></span>
-                    <div class="dropdown-content">
-                        <a href="{{ '/info/overview' | absolute_url }}">Overview</a>
-                        <a href="{{ '/info/system_architecture' | absolute_url }}">System Architecture</a>
-                        <a href="{{ '/info/standards' | absolute_url }}">Standards of Practice</a>
-                        <a href="{{ '/info/office' | absolute_url }}">Contact & Office Hours</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <span><strong>curriculum</strong></span>
-                    <div class="dropdown-content">
-                        <a href="{{ '/roles' | absolute_url }}">The TDAV Crew & Roles</a>
-                        <a href="{{ '/resources/index' | absolute_url }}">Resources</a>
-                        <a href="{{ '/curriculum/th242/index' | absolute_url }}">TH-242 Intro to Sound & Media Design</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <span><strong>join us</strong></span>
-                    <div class="dropdown-content">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScX2viHIu5XVVzfpZCAmwuWKO1nN2-SErR2XBN7Vu9aUscSqQ/viewform?usp=sf_link" target="_blank">Interest Form</a>
-                        <div class="dropdown-submenu">
-                            <span><strong>apply</strong></span>
-                            <div class="dropdown-content">
-                                <a href="{{ '/roles/apply/crew_lead_apply' | absolute_url }}">Crew Lead Application</a>
-                                <a href="{{ '/roles/apply/press_manager_apply' | absolute_url }}">Press Manager Application</a>
-                                <a href="{{ '/roles/apply/photo_journalist_apply' | absolute_url }}">Photo Journalist Application</a>
-                                <a href="{{ '/roles/apply/general' | absolute_url }}">General Application</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <span><strong>support</strong></span>
-                    <div class="dropdown-content">
-                        <a href="{{ '/support/media_storage' | absolute_url }}">Media Storage Protocol</a>
-                        <a href="{{ '/support/policy/media_policy' | absolute_url }}">Media Usage Policy</a>
-                        <a href="{{ '/manuals' | relative_url }}">Manual Annex</a>
-                        <a href="https://forms.gle/NcJiXXM8eMGTNG6F7" target="_blank">Upload Show Files</a>
-                        <a href="https://forms.gle/UoDwtec6SBRxWgrQ7" target="_blank">General AV Requests</a>
-                    </div>
-                </li>
-            </ul>
-
+            <a href="{{ '/wikindex' | absolute_url }}" class="nav-button">Back to Index</a>
+        </nav>        
             <!-- Search Input -->
             <div class="search-container">
                 <input type="text" id="search-box" placeholder="Search the Guidebook..." onkeyup="searchIndex()">
                 <div id="search-results" class="search-results"></div>
             </div>
-        </nav>
+        </nav>  
     </header>
 
     <script>
