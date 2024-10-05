@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaotic Lightning Storm</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: #000; /* Black background for contrast */
+            position: relative;
+        }
+
+        /* Lightning bolt styles */
+        .lightning {
+            position: absolute;
+            width: 10px; /* Width of the lightning bolts */
+            height: 150px; /* Height of the lightning bolts */
+            background: rgba(255, 255, 255, 0.8); /* Bright white color */
+            clip-path: polygon(50% 0%, 60% 30%, 50% 25%, 70% 100%, 30% 75%, 40% 100%);
+            animation: flash 0.5s infinite; /* Flash effect */
+            opacity: 0;
+            transform: scale(1);
+        }
+
+        /* Flashing effect with scaling */
+        @keyframes flash {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(1);
+            }
+            10%, 90% {
+                opacity: 1;
+                transform: scale(1.2); /* Zapping effect */
+            }
+        }
+
+        /* Misty clouds for background */
+        .clouds {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1); /* Light misty effect */
+            opacity: 0.2;
+            filter: blur(10px);
+            animation: moveClouds 30s linear infinite; /* Cloud movement effect */
+        }
+
+        @keyframes moveClouds {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="clouds"></div>
+    <!-- Adding multiple lightning bolts with random positions -->
+    <script>
+        const body = document.body;
+        const numBolts = 50; // Increase number of lightning bolts for more chaos
+
+        for (let i = 0; i < numBolts; i++) {
+            const lightning = document.createElement('div');
+            lightning.classList.add('lightning');
+
+            // Randomize position
+            const leftPosition = Math.random() * 100; // Random left position (0-100%)
+            const topPosition = Math.random() * 100; // Random top position (0-100%)
+            lightning.style.left = `${leftPosition}vw`;
+            lightning.style.top = `${topPosition}vh`;
+
+            // Randomize size and rotation
+            const size = Math.random() * 100 + 50; // Random size
+            lightning.style.width = `${Math.random() * 5 + 5}px`; // Random width
+            lightning.style.height = `${size}px`; // Set height
+            lightning.style.transform = `rotate(${Math.random() * 360}deg)`; // Random rotation
+
+            // Random flash delay
+            lightning.style.animationDelay = `${Math.random() * 2}s`; // Random delay
+            lightning.style.animationDuration = `${Math.random() * 0.3 + 0.2}s`; // Random duration
+            lightning.style.animation = `flash ${lightning.style.animationDuration} infinite`; // Set animation
+
+            body.appendChild(lightning);
+        }
+    </script>
+</body>
+</html>

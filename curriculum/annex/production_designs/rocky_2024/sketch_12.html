@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immersive Bubbles Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: rgba(128, 0, 128, 0.9); /* Dark rose background */
+            overflow: hidden; /* Prevent scrolling */
+            position: relative;
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%; /* Make them circular */
+            animation: float 6s infinite ease-in-out; /* Float animation */
+            opacity: 0.8; /* Initial opacity */
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 0.8; /* Start with full opacity */
+            }
+            50% {
+                transform: translateY(-30px); /* Float up */
+                opacity: 0.4; /* Fade slightly */
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 0.8; /* Fade back to full opacity */
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const createBubble = () => {
+            const bubble = document.createElement('div');
+            const size = Math.random() * 100 + 20; // Random size
+            const leftPosition = Math.random() * 100; // Random horizontal position (0-100%)
+            const topPosition = Math.random() * 100; // Random vertical position (0-100%)
+            const animationDelay = Math.random() * 4; // Random delay
+            const floatDuration = Math.random() * 4 + 4; // Random float duration between 4s and 8s
+
+            bubble.classList.add('bubble');
+            bubble.style.width = `${size}px`;
+            bubble.style.height = `${size}px`;
+            bubble.style.left = `${leftPosition}vw`;
+            bubble.style.top = `${topPosition}vh`; // Set random top position
+            bubble.style.animationDelay = `${animationDelay}s`;
+            bubble.style.animationDuration = `${floatDuration}s`; // Set random float duration
+
+            // Randomly set bubble color (pink or baby blue)
+            const randomColor = Math.random();
+            bubble.style.background = randomColor < 0.8 ? 
+                `rgba(255, 105, 180, 0.7)` : // 80% chance for pink
+                `rgba(173, 216, 230, 0.7)`; // 20% chance for baby blue
+
+            document.body.appendChild(bubble);
+
+            // Remove bubble after animation
+            bubble.addEventListener('animationiteration', () => {
+                bubble.remove();
+            });
+        };
+
+        // Create multiple bubbles
+        setInterval(createBubble, 200); // Create a new bubble every 200ms
+    </script>
+</body>
+</html>

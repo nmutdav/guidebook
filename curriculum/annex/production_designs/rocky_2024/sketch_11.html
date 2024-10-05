@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don't Dream It, Be It - Neon Animation</title>
+    <style>
+        body {
+            background-color: #000; /* Black background for dramatic effect */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Rock Salt', cursive; /* Custom font for a unique feel */
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Neon Text Styling */
+        .neon-text {
+            font-size: 80px; /* Large font size for prominence */
+            color: #ff004d; /* Neon red color */
+            text-transform: uppercase; /* Uppercase letters for impact */
+            text-align: center; /* Center text */
+            text-shadow: 
+                0 0 5px #ff004d,
+                0 0 10px #ff004d,
+                0 0 20px #ff004d,
+                0 0 40px #ff004d,
+                0 0 80px #ff004d,
+                0 0 100px #ff004d,
+                0 0 200px #ff004d; /* Neon glow effect */
+            animation: flicker 1.5s infinite alternate; /* Flickering animation */
+        }
+
+        /* Flicker Animation */
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 
+                    0 0 5px #ff004d,
+                    0 0 10px #ff004d,
+                    0 0 20px #ff004d,
+                    0 0 40px #ff004d,
+                    0 0 80px #ff004d,
+                    0 0 100px #ff004d,
+                    0 0 200px #ff004d;
+            }
+            20%, 24%, 55% {
+                text-shadow: none; /* Flicker effect */
+            }
+        }
+
+        /* Star Effects for Atmosphere */
+        .star {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Star glow */
+            animation: twinkle 2s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const body = document.body;
+        const numStars = 100; // Number of stars
+
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+
+            // Randomize position
+            const leftPosition = Math.random() * 100; // Random left position (0-100%)
+            const topPosition = Math.random() * 100; // Random top position (0-100%)
+            star.style.left = `${leftPosition}vw`;
+            star.style.top = `${topPosition}vh`;
+
+            // Randomize size
+            const size = Math.random() * 3 + 2; // Random size between 2px and 5px
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+
+            // Randomize animation delay
+            star.style.animationDelay = `${Math.random() * 2}s`; // Random delay
+
+            body.appendChild(star);
+        }
+    </script>
+
+    <div class="neon-text">Don't Dream It, Be It</div>
+</body>
+</html>
