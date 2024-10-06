@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chaotic Lightning Storm</title>
     <style>
+        /* Style for the body */
         body {
             margin: 0;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
+            overflow: hidden; /* Prevent scrollbars */
             background: #000; /* Black background for contrast */
             position: relative;
         }
@@ -19,23 +21,20 @@
         /* Lightning bolt styles */
         .lightning {
             position: absolute;
-            width: 10px; /* Width of the lightning bolts */
-            height: 150px; /* Height of the lightning bolts */
+            width: 10px; /* Base width of the lightning bolts */
+            height: 150px; /* Base height of the lightning bolts */
             background: rgba(255, 255, 255, 0.8); /* Bright white color */
-            clip-path: polygon(50% 0%, 60% 30%, 50% 25%, 70% 100%, 30% 75%, 40% 100%);
             animation: flash 0.5s infinite; /* Flash effect */
-            opacity: 0;
-            transform: scale(1);
+            opacity: 0; /* Start invisible */
         }
 
         /* Flashing effect with scaling */
         @keyframes flash {
             0%, 100% {
-                opacity: 0;
-                transform: scale(1);
+                opacity: 0; /* Invisible at start and end */
             }
             10%, 90% {
-                opacity: 1;
+                opacity: 1; /* Visible during flash */
                 transform: scale(1.2); /* Zapping effect */
             }
         }
@@ -46,51 +45,82 @@
             width: 100%;
             height: 100%;
             background: rgba(255, 255, 255, 0.1); /* Light misty effect */
-            opacity: 0.2;
-            filter: blur(10px);
+            opacity: 0.2; /* Cloud visibility */
+            filter: blur(10px); /* Blurry effect */
             animation: moveClouds 30s linear infinite; /* Cloud movement effect */
         }
 
+        /* Animation for clouds moving across the screen */
         @keyframes moveClouds {
             from {
-                transform: translateX(-100%);
+                transform: translateX(-100%); /* Start off-screen left */
             }
             to {
-                transform: translateX(100%);
+                transform: translateX(100%); /* End off-screen right */
             }
         }
     </style>
 </head>
+
 <body>
-    <div class="clouds"></div>
-    <!-- Adding multiple lightning bolts with random positions -->
+    <div class="clouds"></div> <!-- Misty clouds for the background -->
+
     <script>
         const body = document.body;
-        const numBolts = 50; // Increase number of lightning bolts for more chaos
+        const numBolts = 50; // Number of lightning bolts to create
+        const lightningSounds = [
+            'https://example.com/lightning1.mp3', // Replace with actual sound file URLs
+            'https://example.com/lightning2.mp3'
+        ];
 
-        for (let i = 0; i < numBolts; i++) {
-            const lightning = document.createElement('div');
-            lightning.classList.add('lightning');
+        // Function to play random lightning sound
+        const playSound = () => {
+            const sound = new Audio(lightningSounds[Math.floor(Math.random() * lightningSounds.length)]);
+            sound.volume = 0.5; // Set volume
+            sound.play();
+        };
 
-            // Randomize position
-            const leftPosition = Math.random() * 100; // Random left position (0-100%)
-            const topPosition = Math.random() * 100; // Random top position (0-100%)
-            lightning.style.left = `${leftPosition}vw`;
-            lightning.style.top = `${topPosition}vh`;
+        // Different clip-path shapes for lightning bolts
+        const lightningShapes = [
+            'polygon(50% 0%, 60% 30%, 50% 25%, 70% 100%, 30% 75%, 40% 100%)', // Original shape
+            'polygon(50% 0%, 55% 25%, 40% 30%, 50% 100%, 30% 75%, 20% 100%)', // Shape 2
+            'polygon(50% 0%, 65% 20%, 55% 40%, 70% 100%, 35% 60%, 25% 100%)', // Shape 3
+            'polygon(50% 0%, 40% 15%, 50% 25%, 35% 100%, 50% 80%, 60% 100%)', // Shape 4
+            'polygon(50% 0%, 55% 20%, 50% 30%, 65% 100%, 35% 75%, 45% 100%)'  // Shape 5
+        ];
 
-            // Randomize size and rotation
-            const size = Math.random() * 100 + 50; // Random size
-            lightning.style.width = `${Math.random() * 5 + 5}px`; // Random width
-            lightning.style.height = `${size}px`; // Set height
-            lightning.style.transform = `rotate(${Math.random() * 360}deg)`; // Random rotation
+        // Create lightning bolts
+        const createLightning = () => {
+            for (let i = 0; i < numBolts; i++) {
+                const lightning = document.createElement('div');
+                lightning.classList.add('lightning');
 
-            // Random flash delay
-            lightning.style.animationDelay = `${Math.random() * 2}s`; // Random delay
-            lightning.style.animationDuration = `${Math.random() * 0.3 + 0.2}s`; // Random duration
-            lightning.style.animation = `flash ${lightning.style.animationDuration} infinite`; // Set animation
+                // Randomize position
+                lightning.style.left = `${Math.random() * 100}vw`; // Horizontal position
+                lightning.style.top = `${Math.random() * 100}vh`; // Vertical position
 
-            body.appendChild(lightning);
-        }
+                // Randomize size and rotation
+                const size = Math.random() * 100 + 50; // Random height between 50 and 150px
+                lightning.style.width = `${Math.random() * 5 + 5}px`; // Random width between 5 and 10px
+                lightning.style.height = `${size}px`; // Set height
+                lightning.style.transform = `rotate(${Math.random() * 360}deg)`; // Random rotation
+
+                // Assign a random shape from the lightningShapes array
+                lightning.style.clipPath = lightningShapes[Math.floor(Math.random() * lightningShapes.length)];
+
+                // Random flash delay and duration
+                lightning.style.animationDelay = `${Math.random() * 2}s`; // Random delay
+                lightning.style.animationDuration = `${Math.random() * 0.3 + 0.2}s`; // Random duration between 0.2 and 0.5s
+
+                // Play sound on flash
+                lightning.addEventListener('animationiteration', playSound); // Play sound every time the animation iterates
+
+                body.appendChild(lightning); // Append lightning bolt to body
+            }
+        };
+
+        createLightning(); // Call function to create lightning bolts
     </script>
 </body>
+
 </html>

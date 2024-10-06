@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Northern Michigan University - Theatre & Dance Presents</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #000; /* Black background for dramatic effect */
@@ -13,7 +16,7 @@
             align-items: center; /* Center items horizontally */
             height: 100vh; /* Full viewport height */
             margin: 0;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Sixtyfour Convergence', sans-serif; /* Font updated to match branding */
             position: relative; /* For absolute positioning of elements */
             overflow: hidden; /* Prevent scrolling */
         }
@@ -25,13 +28,10 @@
             text-transform: uppercase; /* Uppercase letters for emphasis */
             text-align: center; /* Center the text */
             text-shadow: 
+                0 0 2px #ffcc00,
                 0 0 5px #ffcc00,
                 0 0 10px #ffcc00,
-                0 0 20px #ffcc00,
-                0 0 40px #ffcc00,
-                0 0 80px #ffcc00,
-                0 0 100px #ffcc00,
-                0 0 200px #ffcc00; /* Neon glow effect */
+                0 0 20px #ffcc00; /* Reduced neon glow effect */
             animation: flicker 2s infinite alternate; /* Flickering animation */
             margin: 10px 0; /* Space between titles */
             mix-blend-mode: screen; /* Blend mode for a vibrant effect */
@@ -39,17 +39,14 @@
 
         /* Flicker Animation */
         @keyframes flicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+            0%, 1%, 22%, 3%, 41%, 5%, 60%, 30% {
                 text-shadow: 
-                    0 0 5px #ffcc00,
-                    0 0 10px #ffcc00,
-                    0 0 20px #ffcc00,
-                    0 0 40px #ffcc00,
-                    0 0 80px #ffcc00,
-                    0 0 100px #ffcc00,
-                    0 0 200px #ffcc00; /* Maintain neon glow */
+                    0 0 1px #ffcc00,
+                    0 0 2px #ffcc00,
+                    0 0 3px #ffcc00,
+                    0 0 4px #ffcc00; /* Maintain reduced neon glow */
             }
-            20%, 24%, 55% {
+            30%, 20%, 10% {
                 text-shadow: none; /* Flicker effect */
             }
         }
@@ -66,7 +63,7 @@
             cursor: pointer; /* Pointer cursor */
             border-radius: 5px; /* Rounded corners */
             font-size: 14px; /* Font size */
-            font-family: 'Arial', sans-serif;
+            font-family: 'Arial', sans-serif; /* Button font */
             transition: background-color 0.3s; /* Smooth transition */
         }
 
@@ -110,6 +107,8 @@
             width: 15px; /* Width of the lights */
             height: 15px; /* Height of the lights */
             animation: lightPulse 1.5s infinite; /* Pulse animation */
+            animation: flicker 2s infinite alternate; /* Flickering animation */
+
         }
 
         /* Random Light Colors */
@@ -193,5 +192,8 @@
     <div class="light"></div>
     <div class="light"></div>
     <div class="light"></div>
+
+    <!-- Snake Light Element -->
+    <div class="snake"></div>
 </body>
 </html>

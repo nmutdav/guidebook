@@ -37,35 +37,42 @@
             bottom: 0; /* Align to the bottom */
             width: 200%; /* Extended width for continuous motion */
             height: 100%; /* Fill the container */
-            clip-path: polygon(0% 50%, 5% 70%, 10% 30%, 15% 80%, 20% 40%, 25% 90%, 30% 50%, 35% 70%, 40% 20%, 45% 80%, 50% 60%, 55% 90%, 60% 30%, 65% 70%, 70% 50%, 75% 90%, 80% 40%, 85% 70%, 90% 20%, 95% 80%, 100% 50%);
+            clip-path: polygon(
+                0% 50%, 5% 70%, 10% 30%, 15% 80%, 
+                20% 40%, 25% 90%, 30% 50%, 35% 70%, 
+                40% 20%, 45% 80%, 50% 60%, 55% 90%, 
+                60% 30%, 65% 70%, 70% 50%, 75% 90%, 
+                80% 40%, 85% 70%, 90% 20%, 95% 80%, 
+                100% 50%
+            );
             animation: zigzag 4s linear infinite; /* Slower animation */
+            background: linear-gradient(to right, rgba(255, 0, 127, 0.3), rgba(0, 0, 255, 0.5), rgba(255, 0, 127, 0.3));
         }
 
         /* Keyframes for zigzag animation */
         @keyframes zigzag {
             0% {
                 transform: translateX(0) translateY(0);
-                background: linear-gradient(to right, rgba(255, 0, 127, 0.3), rgba(0, 0, 255, 0.5), rgba(255, 0, 127, 0.3));
             }
             20% {
                 transform: translateX(-10%) translateY(-5%);
-                background: linear-gradient(to right, rgba(0, 255, 127, 0.3), rgba(255, 255, 0, 0.5), rgba(0, 255, 127, 0.3));
+                background: linear-gradient(to right, rgba(0, 255, 127, 0.5), rgba(255, 255, 0, 0.5), rgba(0, 255, 127, 0.5));
             }
             40% {
                 transform: translateX(-20%) translateY(-10%);
-                background: linear-gradient(to right, rgba(0, 0, 255, 0.3), rgba(255, 0, 127, 0.5), rgba(0, 0, 255, 0.3));
+                background: linear-gradient(to right, rgba(0, 0, 255, 0.5), rgba(255, 0, 127, 0.5), rgba(0, 0, 255, 0.5));
             }
             60% {
                 transform: translateX(-30%) translateY(-5%);
-                background: linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(0, 255, 255, 0.5), rgba(255, 0, 0, 0.3));
+                background: linear-gradient(to right, rgba(255, 0, 0, 0.5), rgba(0, 255, 255, 0.5), rgba(255, 0, 0, 0.5));
             }
             80% {
                 transform: translateX(-40%) translateY(0);
-                background: linear-gradient(to right, rgba(255, 0, 127, 0.3), rgba(0, 0, 255, 0.5), rgba(255, 0, 127, 0.3));
+                background: linear-gradient(to right, rgba(255, 0, 127, 0.5), rgba(0, 0, 255, 0.5), rgba(255, 0, 127, 0.5));
             }
             100% {
                 transform: translateX(-50%) translateY(5%);
-                background: linear-gradient(to right, rgba(0, 255, 127, 0.3), rgba(255, 255, 0, 0.5), rgba(0, 255, 127, 0.3));
+                background: linear-gradient(to right, rgba(0, 255, 127, 0.5), rgba(255, 255, 0, 0.5), rgba(0, 255, 127, 0.5));
             }
         }
     </style>

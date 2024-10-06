@@ -41,10 +41,10 @@
             position: absolute;
             width: 100vw;
             height: 100vh;
-            background: linear-gradient(135deg, rgba(255, 20, 147, 0.5), rgba(30, 144, 255, 0.5));
-            opacity: 0.02; /* Base opacity */
-            filter: blur(50px); /* Increased blurring effect for smokiness */
-            animation: smoke-animation 100s linear infinite; /* Smooth animation */
+            background: linear-gradient(135deg, rgba(255, 20, 147, 0.7), rgba(30, 144, 255, 0.7)); /* More vivid colors */
+            opacity: 0.3; /* Base opacity */
+            filter: blur(30px); /* Reduced blurring effect for more visibility */
+            animation: smoke-animation 10s linear infinite; /* Smooth animation */
         }
 
         /* Animation for each steam cloud */
@@ -53,7 +53,7 @@
                 transform: translateY(10vh) scale(1); /* Start from bottom */
             }
             50% {
-                transform: translateY(-40vh) scale(1.1); /* Move upward and scale up */
+                transform: translateY(-40vh) scale(1.2); /* Move upward and scale up */
             }
             100% {
                 transform: translateY(-10vh) scale(1); /* Move off the top */
@@ -64,9 +64,9 @@
         .smoke {
             left: calc((100vw - 100%) * Math.random());
             top: calc((100vh - 100%) * Math.random());
-            width: calc(50px + (150px * Math.random())); /* Random width */
-            height: calc(50px + (150px * Math.random())); /* Random height */
-            opacity: 0.3 + Math.random() * 0.5; /* Random opacity */
+            width: calc(75px + (200px * Math.random())); /* Increased size variability */
+            height: calc(75px + (200px * Math.random())); /* Increased size variability */
+            opacity: 0.3 + Math.random() * 0.4; /* Random opacity with higher minimum */
             border-radius: 50%; /* Make it roundish */
         }
     </style>
@@ -88,12 +88,12 @@
             // Randomize initial position and size
             smoke.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
             smoke.style.top = Math.random() * 100 + 'vh'; // Random vertical position
-            smoke.style.width = Math.random() * 100 + 50 + 'px'; // Random width
-            smoke.style.height = Math.random() * 100 + 50 + 'px'; // Random height
-            smoke.style.opacity = Math.random() * 0.5 + 0.5; // Random opacity
+            smoke.style.width = Math.random() * 100 + 75 + 'px'; // Random width
+            smoke.style.height = Math.random() * 100 + 75 + 'px'; // Random height
+            smoke.style.opacity = Math.random() * 0.4 + 0.3; // Random opacity
 
             // Add animation duration and delay
-            smoke.style.animationDuration = Math.random() * 6 + 6 + 's'; // Random speed for rising
+            smoke.style.animationDuration = Math.random() * 4 + 4 + 's'; // Random speed for rising
             smoke.style.animationDelay = Math.random() * 5 + 's'; // Staggered appearance
 
             document.body.appendChild(smoke);

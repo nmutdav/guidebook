@@ -1,241 +1,56 @@
+---
+layout: default
+title: menu
+permalink: /index
+---
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Northern Michigan University - Theatre & Dance</title>
-    <style>
-        /* Reset styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body,
-        html {
-            height: 100%;
-            font-family: 'Arial', sans-serif;
-            overflow: hidden; /* No scroll */
-            background-color: #000;
-        }
-
-        /* Banner styling */
-        .banner {
-            background: radial-gradient(circle at center, #ffcc00, #007a00); /* Bright gold to dark green gradient */
-            background-size: 200% 200%;
-            animation: pulseGradient 15s ease infinite; /* Slower pulse for subtlety */
-            color: #fff;
-            text-align: center;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            padding: 20px;
-            overflow: hidden; /* Prevent overflow from elements */
-        }
-
-        /* Pulsating background animation */
-        @keyframes pulseGradient {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        /* Overlay for better text visibility */
-        .banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7); /* Darker overlay for better contrast */
-            z-index: 0;
-        }
-
-        /* Heading styles */
-        .banner h1,
-        .banner p,
-        .banner h2 {
-            position: relative;
-            z-index: 1;
-            margin: 10px 0;
-            animation: fadeIn 2s ease forwards; /* Slower fade-in effect for all elements */
-        }
-
-        .banner h1 {
-            font-size: 4.5em; /* Increased size for prominence */
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #ffcc00; /* Brighter gold */
-            text-shadow: 0 0 15px #003300, 0 0 20px #003300; /* Darker green glow */
-            transition: color 0.5s ease-in-out;
-        }
-
-        .banner h1:hover {
-            color: #ffffff; /* Lighten text on hover */
-        }
-
-        .banner p {
-            font-size: 1.8em; /* Increased size for better readability */
-            color: #ffffff; /* White for better contrast */
-            text-shadow: 0 0 10px #ffcc00; /* Bright gold glow */
-        }
-
-        .banner h2 {
-            font-size: 2.5em; /* Increased size for visibility */
-            color: #ffcc00; /* Brighter gold */
-            text-shadow: 0 0 15px #003300; /* Darker green glow */
-            cursor: pointer; /* Show pointer cursor for clickable text */
-            text-decoration: none; /* Remove underline */
-        }
-
-        /* Fade-in effect */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        /* Starry sky effect */
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            z-index: -1;
-            animation: starMove 100s linear infinite; /* Slow star movement */
-        }
-
-        .stars::before {
-            content: '';
-            position: absolute;
-            top: 50%; /* Center vertically */
-            left: 50%; /* Center horizontally */
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 1%, transparent 1%); /* Lighter stars */
-            background-size: 50px 50px;
-            opacity: 0.5; /* More subtle star effect */
-            transform: translate(-50%, -50%); /* Adjust for centering */
-        }
-
-        @keyframes starMove {
-            from {
-                transform: translateY(0);
-            }
-
-            to {
-                transform: translateY(-100vh);
-            }
-        }
-
-        /* Don't Panic animation styles */
-        .dont-panic {
-            font-size: 3em; /* Adjust size as needed */
-            color: #ffcc00; /* Brighter gold */
-            text-shadow: 0 0 15px #003300; /* Darker green glow */
-            animation: flicker 1.5s infinite; /* Flicker animation */
-            z-index: 1;
-        }
-
-        @keyframes flicker {
-            0% {
-                opacity: 1;
-            }
-
-            10% {
-                opacity: 0.7;
-            }
-
-            20% {
-                opacity: 1;
-            }
-
-            30% {
-                opacity: 0.5;
-            }
-
-            40% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.9;
-            }
-
-            60% {
-                opacity: 1;
-            }
-
-            70% {
-                opacity: 0.3;
-            }
-
-            80% {
-                opacity: 1;
-            }
-
-            90% {
-                opacity: 0.6;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .banner h1 {
-                font-size: 3.5em; /* Responsive heading size */
-            }
-
-            .banner p {
-                font-size: 1.5em; /* Responsive paragraph size */
-            }
-
-            .banner h2 {
-                font-size: 2em; /* Responsive subheading size */
-            }
-
-            .dont-panic {
-                font-size: 2em; /* Responsive Don't Panic size */
-            }
-        }
-
-        /* Accessibility: Focus styles */
-        a:focus,
-        .banner h2:focus {
-            outline: 3px solid #ffcc00; /* Brighter gold outline for accessibility */
-        }
-    </style>
+    <title>Overview</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+  .navigation-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .nav-button {
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Spacing between buttons */
+    text-align: center; /* Center text */
+  }
+</style>
 </head>
-
 <body>
-    <div class="stars"></div>
-    <header class="banner" role="banner">
-        <h2>Northern Michigan University</h2>
-        <p>Department of Theatre & Dance</p>
-        <a href="wikindex.html" style="text-decoration: none;">
-            <h1>The TDAV Guidebook</h1>
-        </a>
-    </header>
+  <div class="container">
+    <h1>Info</h1>
+    <div class="navigation-buttons">
+      <a class="nav-button" href="{{ '/info/overview' | relative_url }}">Overview</a>
+      <a class="nav-button" href="{{ '/support/policy/media_policy' | absolute_url }}">Media Usage Policy</a>
+    </div>
+
+    <h1>Curriculum</h1>
+    <div class="navigation-buttons">
+      <a class="nav-button" href="{{ '/roles' | absolute_url }}">Crew</a>
+      <a class="nav-button" href="{{ '/curriculum/index' | relative_url }}">Courses</a>
+      <a class="nav-button" href="{{ '/curriculum/annex/index' | absolute_url }}">Annex</a>
+    </div>
+
+    <h1>Join Us</h1>
+    <div class="navigation-buttons">
+      <a class="nav-button" href="https://docs.google.com/forms/d/e/1FAIpQLScX2viHIu5XVVzfpZCAmwuWKO1nN2-SErR2XBN7Vu9aUscSqQ/viewform?usp=sf_link" target="_blank">Crew Interest Form</a>
+      <a class="nav-button" href="{{ '/roles/apply/crew_lead_apply' | relative_url }}">Apply</a>
+      <a class="nav-button" href="{{ '/join/developers' | relative_url }}">Developers</a>
+    </div>
+
+    <h1>Tech Support</h1>
+    <div class="navigation-buttons">
+      <a class="nav-button" href="https://forms.gle/UoDwtec6SBRxWgrQ7" target="_blank">Place A Work Order</a>
+      <a class="nav-button" href="{{ '/support/contact' | relative_url }}">Contact</a>
+    </div>
+  </div>
 </body>
-</html>

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Northern Michigan University - Theatre & Dance Presents</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #000; /* Black background for dramatic effect */
@@ -11,46 +14,46 @@
             flex-direction: column; /* Align items vertically */
             justify-content: center; /* Center items vertically */
             align-items: center; /* Center items horizontally */
-            height: 100vh; /* Full viewport height */
+            min-height: 100vh; /* Full viewport height */
             margin: 0;
-            font-family: 'Arial', sans-serif;
             position: relative; /* For absolute positioning of elements */
+            
+            font-family: 'Sixtyfour Convergence', sans-serif; /* Apply the correct font to the body */
         }
+/* Neon Text Styling */
+.neon-text {
+    font-size: 80px; /* Large font size for prominence */
+    color: #ffcc00; /* Bright gold color */
+    text-transform: uppercase; /* Uppercase letters for emphasis */
+    text-align: center; /* Center the text horizontally */
+    text-shadow: 
+        0 0 5px #ffcc00,    /* Shadow effect at 5px offset, creating a glow */
+        0 0 10px #ffcc00,   /* Shadow effect at 10px offset for a deeper glow */
+        0 0 20px #ffcc00,   /* Shadow effect at 20px offset for increased glow */
+        0 0 40px #ffcc00,   /* Shadow effect at 40px offset for stronger glow */
+        0 0 80px #ffcc00,   /* Shadow effect at 80px offset for very strong glow */
+        0 0 100px #ffcc00,  /* Shadow effect at 100px offset for maximum glow */
+        0 0 200px #ffcc00;  /* Shadow effect at 200px offset for a super glowing effect */
+    animation: flicker 2s infinite alternate; /* Apply flickering animation over 2 seconds, repeating infinitely in alternate directions */
+    margin: 10px 0; /* Vertical space between titles */
+}
 
-        /* Neon Text Styling */
-        .neon-text {
-            font-size: 80px; /* Large font size for prominence */
-            color: #ffcc00; /* Bright gold color */
-            text-transform: uppercase; /* Uppercase letters for emphasis */
-            text-align: center; /* Center the text */
-            text-shadow: 
-                0 0 5px #ffcc00,
-                0 0 10px #ffcc00,
-                0 0 20px #ffcc00,
-                0 0 40px #ffcc00,
-                0 0 80px #ffcc00,
-                0 0 100px #ffcc00,
-                0 0 200px #ffcc00; /* Neon glow effect */
-            animation: flicker 2s infinite alternate; /* Flickering animation */
-            margin: 10px 0; /* Space between titles */
-        }
-
-        /* Flicker Animation */
-        @keyframes flicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-                text-shadow: 
-                    0 0 5px #ffcc00,
-                    0 0 10px #ffcc00,
-                    0 0 20px #ffcc00,
-                    0 0 40px #ffcc00,
-                    0 0 80px #ffcc00,
-                    0 0 100px #ffcc00,
-                    0 0 200px #ffcc00; /* Maintain neon glow */
-            }
-            20%, 24%, 55% {
-                text-shadow: none; /* Flicker effect */
-            }
-        }
+/* Flicker Animation */
+@keyframes flicker {
+    0%, 1%, 2%, 3%, 4%, 3%, 2%, 1% { /* Define keyframes for flickering effect */
+        text-shadow: 
+            0 0 0px #ffcc00, /* No shadow at the start for flicker effect */
+            0 0 1px #ffcc00, /* Subtle shadow at 1px offset */
+            0 0 2px #ffcc00, /* Slightly larger shadow at 2px offset */
+            0 0 3px #ffcc00, /* Medium shadow at 3px offset */
+            0 0 3px #ffcc00, /* Maintain the medium shadow */
+            0 0 2px #ffcc00, /* Reduce back to a smaller shadow */
+            0 0 1px #ffcc00; /* Final reduction to a subtle shadow */
+    }
+    2%, 2%, 5% { /* Keyframes for flickering effect */
+        text-shadow: none; /* Remove shadow to create flicker effect */
+    }
+}
 
         /* Back to Index Button Styling */
         .back-btn {
@@ -76,11 +79,11 @@
 
 <body>
     <!-- A button that redirects users back to the index (home) page -->
-    <a href="index.html" class="back-btn">Back to Index</a>
+    <a href="index.html" class="back-btn" aria-label="Back to Index">Back to Index</a>
 
     <!-- Neon text for Northern Michigan University Theatre & Dance Presents -->
     <div class="neon-text">Northern Michigan University</div>
-    <div class="neon-text">Department of Theatre & Dance</div>
-    <div class="neon-text" style="font-size: 60px;">Presents</div> <!-- Presents title -->
+    <div class="neon-text"><small>Department of Theatre & Dance</small></div>
+    <br><br><div class="neon-text" style="font-size: 60px;">Presents...</div> <!-- Presents title -->
 </body>
 </html>

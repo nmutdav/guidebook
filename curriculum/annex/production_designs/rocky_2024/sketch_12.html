@@ -11,7 +11,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: rgba(128, 0, 128, 0.9); /* Dark rose background */
+            background: linear-gradient(135deg, rgba(128, 0, 128, 0.9), rgba(0, 0, 0, 0.9)); /* Gradient background */
             overflow: hidden; /* Prevent scrolling */
             position: relative;
         }
@@ -21,6 +21,7 @@
             border-radius: 50%; /* Make them circular */
             animation: float 6s infinite ease-in-out; /* Float animation */
             opacity: 0.8; /* Initial opacity */
+            filter: blur(2px); /* Slight blur for smoothness */
         }
 
         @keyframes float {
@@ -43,7 +44,7 @@
     <script>
         const createBubble = () => {
             const bubble = document.createElement('div');
-            const size = Math.random() * 100 + 20; // Random size
+            const size = Math.random() * 80 + 20; // Random size between 20px and 100px
             const leftPosition = Math.random() * 100; // Random horizontal position (0-100%)
             const topPosition = Math.random() * 100; // Random vertical position (0-100%)
             const animationDelay = Math.random() * 4; // Random delay
@@ -65,7 +66,7 @@
 
             document.body.appendChild(bubble);
 
-            // Remove bubble after animation
+            // Remove bubble after animation ends
             bubble.addEventListener('animationiteration', () => {
                 bubble.remove();
             });
