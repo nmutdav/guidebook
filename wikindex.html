@@ -4,53 +4,45 @@ title: menu
 permalink: /wikindex
 ---
 <style>
-  .dropdown {
-    display: none;
+  .navigation-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
   }
-  body {
-    text-align: center; /* Centers the text within the h1 */
+  .nav-button {
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Spacing between buttons */
+    text-align: center; /* Center text */
   }
 </style>
 <body>
+  <div class="container">
     <h1>Info</h1>
     <div class="navigation-buttons">
       <a class="nav-button" href="{{ '/info/overview' | relative_url }}">Overview</a>
       <a class="nav-button" href="{{ '/support/policy/media_policy' | absolute_url }}">Media Usage Policy</a>
-      
     </div>
 
     <h1>Curriculum</h1>
     <div class="navigation-buttons">
-      <a class="nav-button" href="{{ '/roles' | absolute_url }}">The TDAV Crew</a>
-      <a class="nav-button" href="{{ '/info/standards' | relative_url }}">Standards of Practice</a>
-      <a class="nav-button" href="{{ '/curriculum/th242/index' | relative_url }}">TH-242 Intro to Sound & Media Design</a>
+      <a class="nav-button" href="{{ '/roles' | absolute_url }}">Crew</a>
+      <a class="nav-button" href="{{ '/curriculum/th242/index' | relative_url }}">Courses</a>
       <a class="nav-button" href="{{ '/curriculum/annex/index' | absolute_url }}">Annex</a>
     </div>
 
     <h1>Join Us</h1>
     <div class="navigation-buttons">
-      <a class="nav-button" href="https://docs.google.com/forms/d/e/1FAIpQLScX2viHIu5XVVzfpZCAmwuWKO1nN2-SErR2XBN7Vu9aUscSqQ/viewform?usp=sf_link" target="_blank">Interest Form</a>
+      <a class="nav-button" href="https://docs.google.com/forms/d/e/1FAIpQLScX2viHIu5XVVzfpZCAmwuWKO1nN2-SErR2XBN7Vu9aUscSqQ/viewform?usp=sf_link" target="_blank">Crew Interest Form</a>
       <a class="nav-button" href="{{ '/roles/apply/crew_lead_apply' | relative_url }}">Apply</a>
+      <a class="nav-button" href="{{ '/roles/apply/crew_lead_apply' | relative_url }}">Developers</a>
     </div>
-  </div>
-  <div class="container">
+
     <h1>Tech Support</h1>
     <div class="navigation-buttons">
       <a class="nav-button" href="https://forms.gle/UoDwtec6SBRxWgrQ7" target="_blank">Place A Work Order</a>
       <a class="nav-button" href="{{ '/info/office' | relative_url }}">Contact</a>
     </div>
-
-  <script src="/path/to/luna.js"></script> <!-- Link to luna.js -->
-  <script>
-    // Assuming luna.js is your search functionality
-    // Initialize the search functionality with necessary parameters.
-    const searchEngine = new LunaSearch({
-      searchElement: '.nav-button',  // Bind search to buttons
-      searchUrl: '/wikindex',  // Define the search page
-      resultsContainer: '.results', // Where the search results appear
-      minLength: 3 // Minimum characters for search
-    });
-
-    // Optional: Add any custom functionality or configuration needed.
-  </script>
+  </div>
 </body>
