@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Northern Michigan University - Theatre & Dance Presents</title>
+    <style>
+        body {
+            background-color: #000; /* Black background for dramatic effect */
+            display: flex;
+            flex-direction: column; /* Align items vertically */
+            justify-content: center; /* Center items vertically */
+            align-items: center; /* Center items horizontally */
+            height: 100vh; /* Full viewport height */
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            position: relative; /* For absolute positioning of elements */
+        }
+
+        /* Neon Text Styling */
+        .neon-text {
+            font-size: 80px; /* Large font size for prominence */
+            color: #ffcc00; /* Bright gold color */
+            text-transform: uppercase; /* Uppercase letters for emphasis */
+            text-align: center; /* Center the text */
+            text-shadow: 
+                0 0 5px #ffcc00,
+                0 0 10px #ffcc00,
+                0 0 20px #ffcc00,
+                0 0 40px #ffcc00,
+                0 0 80px #ffcc00,
+                0 0 100px #ffcc00,
+                0 0 200px #ffcc00; /* Neon glow effect */
+            animation: flicker 2s infinite alternate; /* Flickering animation */
+            margin: 10px 0; /* Space between titles */
+        }
+
+        /* Flicker Animation */
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 
+                    0 0 5px #ffcc00,
+                    0 0 10px #ffcc00,
+                    0 0 20px #ffcc00,
+                    0 0 40px #ffcc00,
+                    0 0 80px #ffcc00,
+                    0 0 100px #ffcc00,
+                    0 0 200px #ffcc00; /* Maintain neon glow */
+            }
+            20%, 24%, 55% {
+                text-shadow: none; /* Flicker effect */
+            }
+        }
+
+        /* Back to Index Button Styling */
+        .back-btn {
+            position: absolute; /* Position the button at the top-left */
+            top: 20px;
+            left: 20px;
+            background-color: #007bff; /* Button color */
+            color: white; /* Text color */
+            border: none; /* Remove border */
+            padding: 10px 15px; /* Button padding */
+            cursor: pointer; /* Pointer cursor */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 14px; /* Font size */
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Button hover effect */
+        .back-btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- A button that redirects users back to the index (home) page -->
+    <a href="index.html" class="back-btn">Back to Index</a>
+
+    <!-- Neon text for Northern Michigan University Theatre & Dance Presents -->
+    <div class="neon-text">Northern Michigan University</div>
+    <div class="neon-text">Department of Theatre & Dance</div>
+    <div class="neon-text" style="font-size: 60px;">Presents</div> <!-- Presents title -->
+</body>
+</html>

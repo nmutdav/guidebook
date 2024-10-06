@@ -83,7 +83,30 @@
         .star:nth-child(19) { top: 38%; left: 35%; width: 5px; height: 5px; background-color: #ff9966; animation-duration: 3.3s; }
         .star:nth-child(20) { top: 55%; left: 45%; width: 4px; height: 4px; background-color: #66ffcc; animation-duration: 4.5s; }
 
-        /* Add more stars as needed with unique positions and animation durations */
+        /* Bright light representing the light over at the Frankenstein place */
+        .bright-light {
+            position: absolute;
+            top: 70%; /* Position it towards the bottom */
+            left: 80%; /* Position it towards the right */
+            width: 10px; /* Size of the bright light */
+            height: 10px; /* Size of the bright light */
+            background-color: #ff0000; /* Bright red color */
+            border-radius: 50%; /* Make it circular */
+            animation: flicker linear infinite; /* Apply flicker animation */
+            opacity: 0; /* Initially hidden */
+            animation-duration: 1.5s; /* Flicker duration */
+        }
+        
+        /* Keyframes for bright light flicker */
+        @keyframes flicker {
+            0%, 100% {
+                opacity: 0.9; /* Bright light is more visible */
+            }
+            50% {
+                opacity: 0.3; /* Light fades out */
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -110,8 +133,12 @@
         <div class="star"></div>
         <div class="star"></div>
         <div class="star"></div>
+
+        <!-- Create the bright light -->
+        <div class="bright-light"></div>
     </div>
-</body>
+
     <!-- A button that redirects users back to the index (home) page -->
     <a href="index.html" class="back-btn">Back to Index</a> 
+</body>
 </html>

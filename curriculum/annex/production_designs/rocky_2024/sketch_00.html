@@ -1,133 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Defines the document as an HTML5 document -->
+<!-- Declares the document as HTML5 -->
 <head>
-	<!-- Sets the character encoding for the HTML document to UTF-8, ensuring proper display of characters -->
+	<!-- Sets the character encoding to UTF-8 to ensure that all characters display correctly -->
 	<meta charset="UTF-8">
-	
-	<!-- Controls the viewport settings for responsiveness, especially for mobile devices -->
+
+	<!-- Ensures the website is responsive on all devices by controlling the viewport's scaling and size -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<!-- The title that appears on the browser tab -->
-	<title>Neon Sign - Northern Michigan University Presents...</title>
+	<!-- Title of the page that appears in the browser's tab -->
+	<title>Neon Sign - The Rocky Horror Picture Show</title>
 
-	<!-- Internal CSS for styling the page elements -->
+	<!-- Internal styles for the page -->
 	<style>
 		body {
-			/* Sets a deep green background to create a theatrical and atmospheric effect */
-			background-color: #00160e;
-			/* Centers the content both vertically and horizontally */
+			/* Sets the background color to black for a dark, dramatic effect */
+			background-color: #000;
+			/* Centers the content horizontally and vertically within the viewport */
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			/* Sets the height of the body to cover the full viewport */
+			/* Sets the height to full viewport for complete coverage */
 			height: 100vh;
-			/* Removes default body margin */
+			/* Removes any default margin around the body */
 			margin: 0;
-			/* Uses a rock-themed cursive font to match the Rocky Horror Picture Show vibe */
+			/* Uses a custom rocky horror-like cursive font for the entire page */
 			font-family: 'Rock Salt', cursive;
-			/* Sets default text color to white for high contrast against the dark background */
-			color: #fff;
 		}
 
 		/* Neon Text Styling */
 		.neon-text {
-			/* Defines large font size to make the text stand out */
+			/* Large font size to make the title prominent */
 			font-size: 80px;
-			/* Neon yellow text color */
-			color: #ffc425;
-			/* Transforms the text to uppercase */
+			/* Neon red color for the text to match the Rocky Horror theme */
+			color: #ff004d;
+			/* Transforms all letters to uppercase for a more striking appearance */
 			text-transform: uppercase;
 			/* Centers the text */
 			text-align: center;
-			/* Adds multiple layers of text-shadow to create a glowing neon effect */
+			/* Applies multiple layers of shadows to create a neon glow effect */
 			text-shadow: 
-				0 0 5px #ffc425,
-				0 0 10px #ffc425,
-				0 0 20px #ffc425,
-				0 0 40px #ffc425,
-				0 0 80px #ffc425,
-				0 0 100px #ffc425,
-				0 0 200px #ffc425;
-			/* Adds a flickering animation to simulate a neon sign */
+				0 0 5px #ff004d,
+				0 0 10px #ff004d,
+				0 0 20px #ff004d,
+				0 0 40px #ff004d,
+				0 0 80px #ff004d,
+				0 0 100px #ff004d,
+				0 0 200px #ff004d;
+			/* Adds a flickering animation to simulate the visual effect of neon lights */
 			animation: flicker 2s infinite alternate;
 		}
 
 		/* Flicker Animation */
 		@keyframes flicker {
-			/* Keyframes to simulate a flickering effect, alternating between glowing and dimming */
+			/* Defines the keyframes for the flicker effect, where the text-shadow alternates to create the flickering neon look */
 			0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+				/* Maintains the neon glow during most of the animation */
 				text-shadow: 
-					0 0 5px #ffc425,
-					0 0 10px #ffc425,
-					0 0 20px #ffc425,
-					0 0 40px #ffc425,
-					0 0 80px #ffc425,
-					0 0 100px #ffc425,
-					0 0 200px #ffc425;
+					0 0 5px #ff004d,
+					0 0 10px #ff004d,
+					0 0 20px #ff004d,
+					0 0 40px #ff004d,
+					0 0 80px #ff004d,
+					0 0 100px #ff004d,
+					0 0 200px #ff004d;
 			}
-			/* Text-shadow disappears briefly at these percentages to simulate a flicker */
+			/* Creates brief moments where the neon glow flickers off */
 			20%, 24%, 55% {
 				text-shadow: none;
 			}
 		}
 
-		/* Subheading Styling */
-		.neon-text small {
-			/* Displays the subheading text in a new line by using block layout */
-			display: block;
-			/* Sets a smaller font size for the subheading */
-			font-size: 30px;
-			/* Neon red color to differentiate the subheading from the main text */
-			color: #ff004d;
-			/* Adds text-shadow for a glowing neon effect, but smaller compared to the main text */
-			text-shadow: 
-				0 0 5px #ff004d,
-				0 0 10px #ff004d,
-				0 0 20px #ff004d;
-		}
-
 		/* Back to Index Button Styling */
 		.back-btn {
-			/* Positions the button absolutely in the top-left corner */
+			/* Positions the button in the top-left corner of the screen */
 			position: absolute;
 			top: 20px;
 			left: 20px;
 			/* Blue background color for the button */
 			background-color: #007bff;
-			/* White text color for contrast against the blue background */
+			/* White text color for high contrast against the blue background */
 			color: white;
-			/* Removes the default border */
+			/* Removes the default border from the button */
 			border: none;
-			/* Adds padding for better clickability and spacing */
+			/* Adds padding around the button text for better clickability */
 			padding: 10px 15px;
-			/* Changes the cursor to pointer to indicate the button is clickable */
+			/* Changes the cursor to a pointer to indicate it's clickable */
 			cursor: pointer;
-			/* Adds rounded corners to the button */
+			/* Rounds the corners of the button slightly for a modern look */
 			border-radius: 5px;
-			/* Standard font for the button for easy readability */
+			/* Sets the font size and a standard sans-serif font for the button text */
 			font-size: 14px;
-			/* Ensures a different font for the button, using a standard sans-serif */
+			/* Ensures the button uses a readable sans-serif font */
 			font-family: 'Arial', sans-serif;
 		}
 
-		/* Styling for when the button is hovered */
+		/* Styling for when the user hovers over the button */
 		.back-btn:hover {
-			/* Darkens the background color when hovered over, to give a visual feedback */
+			/* Changes the background color to a darker shade of blue to give visual feedback */
 			background-color: #0056b3;
 		}
 	</style>
 </head>
 
 <body>
-	<!-- A button that takes the user back to the homepage or index page -->
+	<!-- A button that redirects users back to the index (home) page -->
 	<a href="index.html" class="back-btn">Back to Index</a>
 
-	<!-- Main neon text with a subheading (small) for "Department of Theatre & Dance" -->
-	<div class="neon-text">
-        Northern Michigan University
-        <br><small>Department of Theatre & Dance</small>
-    </div>
+	<!-- The neon text title for "Rocky Horror Picture Show" with glowing red neon effect -->
+	<div class="neon-text">The Rocky Horror Picture Show</div>
 
 </body>
 </html>

@@ -14,12 +14,6 @@
     box-sizing: border-box;
     margin: 0;
 }
-
-.header-mobile {
-    .dropdown {
-        display: none;
-    }
-}
 /* Logo and title styling */
 .logo-title {
     text-align: left;
@@ -317,21 +311,12 @@ button:focus {
 
 @media (max-width: 1000px) {
     .header-desktop {
-        display: none; /* Hide desktop header on mobile */
-    }
-    .header-mobile {
-        display: block; /* Show mobile header */
-        position: sticky;
-        top: 0; /* Ensures the sticky header stays at the top */
-        text-align: center;
-        background-color: #095339; /* Background color for the mobile header */
-        margin: 0; /* No extra space around the header */
-        z-index: 3000; /* Keeps the header on top of other elements */
-        color: #073627; /* Text color */
-        padding: 10px; /* Adds padding for better spacing */
+        display: flex; /* Keep using flexbox layout */
+        flex-direction: column; /* Stack items vertically if needed */
+        align-items: center; /* Center items horizontally */
     }
     main {
-        margin: 0; /* No margin in the main content */
+        margin-top: 150px; /* No margin in the main content */
         width: 100%; /* Full width */
     }
     
@@ -381,6 +366,7 @@ button:focus {
     outline: none; /* Remove the outline on focus */
     border: none; /* Ensure no border on focus */
     box-shadow: none; /* Remove any shadow that may appear */
+    text-decoration: none; /* Prevent underline */
 }
 
 .search-results {
@@ -394,4 +380,5 @@ button:focus {
     border-radius: 4px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-top: 2px;
+    text-decoration: none; /* Prevent underline */
 }
