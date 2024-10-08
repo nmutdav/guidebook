@@ -1,0 +1,77 @@
+---
+layout: default
+title: Place A Work Order
+permalink: /support/work-order
+---
+
+<h1>{{ page.title }}</h1>
+
+<p>If you need sound or media equipment for a class, meeting, or other event, please let us know. Your request will automatically be added to our to-do list, and we will address it during our scheduled shop hours.</p>
+<p>For AV emergencies, please contact Dominic Mrakovcich directly at 860-705-0938 or <a href="mailto:dmrakovc@nmu.edu">dmrakovc@nmu.edu</a>.</p>
+
+<form action="https://formspree.io/f/mwpkerdw" method="POST">
+  <fieldset>
+    <legend>Work Order Details</legend>
+
+    <label for="email">
+      Your email: *
+      <input type="email" id="email" name="email" value="dmrakovc@nmu.edu" required>
+    </label>
+
+    <label for="who">
+      Who is requesting this work order? *
+      <input type="text" id="who" name="who" required>
+    </label>
+
+    <label for="what">
+      What do you need? *
+      <select id="what" name="what" required>
+        <option value="">--Please Select--</option>
+        <option value="Audio Equipment">Audio Equipment</option>
+        <option value="Video Equipment">Video Equipment</option>
+        <option value="Technology Assistance">Technology Assistance</option>
+        <option value="Other">Please Specify</option>
+      </select>
+      <textarea id="what-specify" name="what-specify" placeholder="Please specify if 'Other'" style="display:none;"></textarea>
+    </label>
+
+    <label for="where">
+      Where do you need it? *
+      <select id="where" name="where" required>
+        <option value="">--Please Select--</option>
+        <option value="Forest Roberts Theatre">Forest Roberts Theatre</option>
+        <option value="Black Box">Black Box</option>
+        <option value="Room 117">Room 117</option>
+        <option value="Room 125-O">Room 125-O</option>
+        <option value="Dance Studio">Dance Studio</option>
+        <option value="Other">Other:</option>
+      </select>
+      <input type="text" id="where-other" name="where-other" placeholder="Please specify" style="display:none;">
+    </label>
+
+    <label for="when">
+      When do you need it by? * 
+      <input type="date" id="when" name="when" required>
+    </label>
+
+    <label for="message">
+      Additional details (optional):
+      <textarea id="message" name="message" placeholder="Please provide any additional details that may help clarify your request."></textarea>
+    </label>
+  </fieldset>
+
+  <button type="submit">Send Work Order</button>
+</form>
+
+<script>
+  // Show/hide additional input fields based on selection
+  document.getElementById('what').addEventListener('change', function() {
+    const specify = document.getElementById('what-specify');
+    specify.style.display = this.value === 'Other' ? 'block' : 'none';
+  });
+
+  document.getElementById('where').addEventListener('change', function() {
+    const otherInput = document.getElementById('where-other');
+    otherInput.style.display = this.value === 'Other' ? 'block' : 'none';
+  });
+</script>

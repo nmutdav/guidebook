@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Road Animation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at center, #001a33, #000000 50%);
+        }
+
+        .road {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to bottom, #333, #111);
+            overflow: hidden;
+            transform: perspective(1000px) rotateX(15deg);
+            animation: road-swerve 5s linear infinite;
+        }
+
+        .windshield {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100%;
+            height: 30%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+            border-bottom-left-radius: 100px;
+            border-bottom-right-radius: 100px;
+            transform: translateX(-50%);
+            z-index: 3;
+            box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .road-overlay {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.8));
+            transform: translateX(-50%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        @keyframes road-swerve {
+            0%, 100% {
+                transform: perspective(600px) rotateX(20deg) translateX(0);
+            }
+            50% {
+                transform: perspective(600px) rotateX(20deg) translateX(-10px);
+            }
+        }
+
+        .headlights {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            display: flex;
+            justify-content: space-between;
+            width: 1000px;
+            height: 100px;
+            z-index: 2;
+            transform: translateX(-50%);
+        }
+
+        .headlight {
+            width: 250px;
+            height: 150px;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2), transparent);
+            border-radius: 50%;
+            box-shadow: 0 0 100px 60px rgba(255, 255, 255, 0.4);
+            animation: headlight-flicker 2s alternate infinite;
+        }
+
+        @keyframes headlight-flicker {
+            0% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="road">
+        <div class="windshield"></div>
+        <div class="road-overlay"></div>
+        <div class="headlights">
+            <div class="headlight"></div>
+            <div class="headlight"></div>
+        </div>
+    </div>
+</body>
+</html>
