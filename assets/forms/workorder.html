@@ -1,0 +1,81 @@
+---
+layout: default
+title: Place A Work Order
+permalink: assets/forms/workorder
+---
+<head>
+  <br>
+</head>
+<body>
+<h1>Place A Work Order</h1>
+<style>
+  /* General Form Styling */
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+
+  h2, h3 {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin-bottom: 8px;
+  }
+
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  textarea {
+    height: 150px;
+  }
+
+  button {
+    background-color: #095339;
+    color: white;
+    border: solid 2px #ffc425;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  button:hover {
+    background-color: #ffc425;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
+
+<form action="https://api.web3forms.com/submit" method="POST">
+  <!-- Replace with your Access Key -->
+  <input type="hidden" name="access_key" value="6a70b6dc-f7c5-43e5-a757-5aa598864a4b">
+
+  <!-- Form Inputs -->
+  <h2>Name</h2>
+  <input type="text" name="name" required>
+
+  <h2>Email</h2>
+  <input type="email" name="email" required>
+
+  <h3>Message</h3>
+  <textarea name="message" required></textarea>
+
+  <!-- Honeypot Spam Protection -->
+  <input type="checkbox" name="botcheck" class="hidden">
+
+  <!-- Submit Button -->
+  <button type="submit">Submit Form</button>
+</form>
+</body>
