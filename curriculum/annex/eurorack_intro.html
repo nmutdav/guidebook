@@ -1,0 +1,89 @@
+---
+layout: default
+title: Introduction to Eurorack Synthesis
+permalink: curriculum/annex/eurorack-intro
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An introduction to Eurorack synthesis, covering the different types of modules, their functions, and how they combine.">
+    <title>Introduction to Eurorack Synthesis</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Introduction to Eurorack Synthesis</h1>
+        
+        <p>If you're new to synthesizers, Eurorack can seem a little overwhelming. It's a type of modular synthesizer system where you build your instrument by connecting various modules. Each module does something different, like generating sound or shaping it. The beauty of Eurorack is that you get to decide exactly what your instrument does by choosing and combining different modules. Let's break down the basics so you can start creating your own sound!</p>
+
+        <h2>What is a Modular Synthesizer?</h2>
+        <p>A modular synthesizer is made up of different components called <strong>modules</strong> that perform specific tasks. Unlike traditional synthesizers where everything is built into one unit, in a modular system, you pick and choose the parts you want to use. The <strong>Eurorack</strong> format is the most popular way to do this.</p>
+        <p>Each module has inputs and outputs, which you connect using cables to create different sounds. By combining different modules, you can create anything from simple tones to complex, evolving soundscapes.</p>
+
+        <h2>Basic Types of Eurorack Modules</h2>
+        
+        <h3>1. Oscillators (VCO - Voltage Controlled Oscillators)</h3>
+        <p>Oscillators are the sound sources of your synthesizer. They generate the raw sound waves, which you can then modify to create different tones and textures. Oscillators produce waveforms like <em>sine</em>, <em>square</em>, <em>triangle</em>, and <em>sawtooth</em>. You can think of them as the "voice" of your synth, and by adjusting the oscillator, you control the pitch of the sound.</p>
+        <p><strong>Examples:</strong></p>
+        <ul>
+            <li><strong>Mutable Instruments Plaits</strong> - A digital oscillator capable of producing a wide variety of sound types, from classic analog waves to complex textures like speech or percussion.</li>
+            <li><strong>Make Noise STO</strong> - A compact analog oscillator that excels at producing warm, rich tones and can be shaped in interesting ways.</li>
+        </ul>
+        
+        <h3>2. Filters (VCF - Voltage Controlled Filters)</h3>
+        <p>Filters are used to shape the sound by removing certain frequencies. For example, a low-pass filter allows low frequencies to pass through and removes higher frequencies, making the sound darker or less bright. Filters are key to giving your sound its unique character.</p>
+        <p><strong>Examples:</strong></p>
+        <ul>
+            <li><strong>Mutable Instruments Ripples</strong> - A clean, smooth-sounding filter that is great for making your sound more polished.</li>
+            <li><strong>Doepfer A-120 VCF</strong> - A classic Moog-style filter that can give your sound a vintage, warm tone.</li>
+        </ul>
+        
+        <h3>3. Amplifiers (VCA - Voltage Controlled Amplifiers)</h3>
+        <p>VCAs control the volume of your sound. While this might seem simple, they're actually incredibly important for making your sound come alive. For example, you can use a VCA to make a sound start quietly and then get louder over time or fade out smoothly. VCAs are often paired with envelopes to control how the sound changes over time.</p>
+        <p><strong>Examples:</strong></p>
+        <ul>
+            <li><strong>Intellijel Quad VCA</strong> - A flexible VCA that allows for mixing multiple signals and adjusting their levels independently.</li>
+            <li><strong>Doepfer A-130</strong> - A basic but powerful linear VCA module, great for beginners.</li>
+        </ul>
+        
+        <h3>4. Envelopes (ADSR - Attack, Decay, Sustain, Release)</h3>
+        <p>Envelopes help shape how a sound evolves over time. The most common type of envelope is an <strong>ADSR</strong>, which stands for <strong>Attack</strong>, <strong>Decay</strong>, <strong>Sustain</strong>, and <strong>Release</strong>. These terms describe how a sound begins, fades in, holds, and fades out. Envelopes are often used with VCAs or filters to control the dynamics of the sound.</p>
+        <p><strong>Examples:</strong></p>
+        <ul>
+            <li><strong>Make Noise Maths</strong> - A versatile module that can create complex envelopes and also works as a modulation source.</li>
+            <li><strong>Doepfer A-140</strong> - A standard ADSR envelope that is easy to use and perfect for controlling VCAs or filters.</li>
+        </ul>
+        
+        <h3>5. Low-Frequency Oscillators (LFO)</h3>
+        <p>LFOs are similar to oscillators, but they work at a much slower rate. Instead of producing audible sound, LFOs are used to control other modules. For example, you can use an LFO to slowly sweep the cutoff of a filter, making the sound evolve over time. LFOs are great for adding movement and modulation to your patch.</p>
+        <p><strong>Examples:</strong></p>
+        <ul>
+            <li><strong>Mutable Instruments Tides</strong> - A powerful digital LFO that can also function as an oscillator.</li>
+            <li><strong>Doepfer A-145</strong> - A classic analog LFO with multiple waveform outputs for flexible modulation options.</li>
+        </ul>
+        
+        <h3>6. Sequencers</h3>
+        <p>Sequencers allow you to program a series of notes or changes in parameters that repeat over time. They can be used to create rhythmic patterns or evolving melodies. Many people use sequencers to create complex musical sequences that evolve automatically.</p>
+        <p><strong>Examples:</strong></p>
+        <ul>
+            <li><strong>Make Noise Rene</strong> - A powerful and flexible touch-based sequencer that allows you to create complex melodic patterns.</li>
+            <li><strong>Arturia Keystep</strong> - A beginner-friendly sequencer and keyboard that integrates well with Eurorack systems.</li>
+        </ul>
+
+        <h2>Combining Modules: Building a Patch</h2>
+        <p>Once you have a few modules, you can start combining them to create your own unique patches. A simple patch might look like this:</p>
+        <ol>
+            <li><strong>Oscillator (VCO)</strong> generates a waveform at a specific pitch.</li>
+            <li>The sound is sent to a <strong>Filter (VCF)</strong>, which removes unwanted frequencies and shapes the tone.</li>
+            <li>The filtered signal is sent to a <strong>VCA</strong>, where the amplitude is modulated by an <strong>Envelope (ADSR)</strong> to control how the sound starts and fades out.</li>
+            <li>An <strong>LFO</strong> might modulate the filter’s cutoff frequency to add movement to the sound.</li>
+        </ol>
+
+        <p>As you gain more experience, you can create increasingly complex patches. You can add effects modules, random voltage generators, and much more to create evolving soundscapes, rhythms, and textures.</p>
+
+        <h2>Conclusion</h2>
+        <p>Eurorack modular synthesis is a creative playground for sound design. The more you experiment with different modules and patches, the more you will discover the endless possibilities it offers. Whether you're interested in crafting ambient atmospheres, techno rhythms, or experimental textures, there's no limit to what you can achieve with Eurorack synthesis!</p>
+    </div>
+</body>
+</html>
