@@ -1,384 +1,76 @@
-/* Header styles */
-.header-desktop {
-    display: flex; /* Use flexbox for layout */
-    align-items: center; /* Vertically center items in the header */
-    justify-content: flex-start; /* Align title and nav items to the left */
-    padding: 1em 2em; /* Padding for spacing */
-    background: #095339; /* Dark green background */
-    color: #ffffff; /* White text color */
-    border-bottom: 4px solid #ffc425; /* Gold border at the bottom */
-    position: fixed; /* Fix header to the top of the viewport */
-    top: 0;
-    width: 100%;
-    z-index: 2000;
-    box-sizing: border-box;
-    margin: 0;
-}
-/* Logo and title styling */
-.logo-title {
-    text-align: left;
-    display: flex;
-    align-items: center; /* Center items vertically */
-    margin-right: 2em; /* Add space between title and nav */
-}
-
-.site-icon {
-    text-align: left;
-    width: 40px;
-    height: auto;
-    margin-right: 1em; /* Space between icon and title */
-}
-
-header h1 {
-    margin: 0;
-}
-
-header h1 a {
-    color: #ffffff;
-    font-size: 1em;
-    text-decoration: none;
-}
-
-header h1 a:hover, 
-header h1 a:active {
-    text-decoration: underline;
-}
-
-nav {
-    display: flex;
-    align-items: center; /* Vertically center nav items */
-    margin-left: reverse; /* Push nav items to the right */
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Align navigation items horizontally */
-    justify-content: flex-start; /* Align items to the left */
-    position: relative; /* Ensure nav is positioned for dropdowns */
-}
-
-nav ul li {
-    position: relative; /* Ensure dropdowns are positioned relative to this */
-    margin: 0 1em; /* Add spacing between items */
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #333333; /* Darker background for better contrast */
-    min-width: 160px;
-    border-radius: 0; /* Flat look */
-    z-index: 1000; /* Ensure dropdown is on top */
-    top: 100%; /* Position below the parent item */
-    left: 0; /* Align to the left of the parent item */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow */
-    white-space: nowrap; /* Prevent wrapping */
-}
-
-.dropdown-content a {
-    color: #ffffff;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    text-transform: lowercase;
-}
-
-.dropdown-content a:hover {
-    text-decoration: underline solid #ffc425; /* Gold underline on hover */
-    background-color: #444444; /* Slightly lighter background on hover */
-}
-
-nav ul li:hover > .dropdown-content {
-    display: block;
-}
-
-.dropdown-submenu {
-    position: relative; /* Position submenu relative to parent */
-}
-
-.dropdown-submenu > span {
-    background: #095339; /* Darker green for parent folders */
-    color: #ffffff; /* White text color */
-    padding: 12px;
-    cursor: default;
-    display: block;
-    font-weight: bold;
-    text-transform: lowercase;
-}
-
-.dropdown-submenu > span::after {
-    content: ' >'; /* Down arrow for dropdown */
-    font-size: 1em;
-    color: #ffc425; /* Gold arrow */
-    font-weight: bold;
-}
-
-.dropdown-submenu .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 100%; /* Position to the right of parent submenu item */
-    background: #333333; /* Darker background for better contrast */
-    min-width: 160px;
-    border-radius: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow */
-}
-
-.dropdown-submenu:hover > .dropdown-content {
-    display: block;
-}
-
-/* Main content styling */
-main {
-    max-width: 1000px;
-    margin: 2em auto; /* Center the content horizontally with vertical margins */
-    padding: 1em 2em;
-    margin-top: 2em;
-    background: #ffffff;
-    color: #000000;
-    border-radius: 8px; /* Slightly rounded corners for a softer look */
-    box-sizing: border-box; /* Ensure padding and border are included in width */
-}
-
-/* Body styling */
+/* BODY + OUTER BACKGROUND */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
-    padding-top: 2em; /* Adjust padding based on header height */
-    background: #ffffff;
-    color: #000000;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #073627; /* dark green sides */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers main-wrapper horizontally */
 }
 
-.code-container {
-    position: relative; /* To position the button within the container */
-}
-
-.copy-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
-    font-size: 12px;
-    color: white;
-    background-color: #007bff; /* Blue color for the button */
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.copy-btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-pre {
-    font-family: Menlo, Monaco, 'Courier New', monospace;
-    font-size: 14px;
-    font-weight: bold;
-    background: #efefef; /* Light gray background for contrast */
-    color: black; /* Black text for readability */
-    padding: 1em;
-    border: 2px solid #000; /* Black border for contrast */
-    border-radius: 4px; /* Slightly rounded corners */
-    overflow-x: auto; /* Horizontal scroll if content overflows */
-    white-space: pre-wrap; /* Preserve formatting */
-    margin: 1.5em 0; /* Spacing around code blocks */
-    position: relative; /* To make space for the button */
-}
-
-/* Inline code styling */
-code {
-    font-family: Menlo, Monaco, 'Courier New', monospace;
-    background: transparent; /* Light gray background for slight contrast */
-    color: black; /* Black text for clarity */
-    padding: 0.2em 0.4em;
-    border-radius: 4px; /* Rounded corners for neat appearance */
-    font-size: 0.95em; /* Slightly smaller font size for inline code */
-    font-weight: bold;
-}
-
-
-/* Table styling */
-table {
+/* SITE HEADER */
+.site-header {
     width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    background-color: #095339; /* dark green */
+    color: white;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 20px 0;
+    border-bottom: 4px solid #ffc425; /* gold underline */
 }
 
-th, td {
-    border: 2px solid black;
-    padding: 8px;
-    text-align: left;
+/* MAIN CONTENT BOX */
+.main-wrapper {
+    background-color: white;
+    width: 100%;
+    max-width: 700px; /* limits width on large screens */
+    padding: 30px;
+    margin: 20px 0 50px 0; /* space from header and bottom */
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.2);
 }
 
-th {
-    background-color: #f2f2f2;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-/* Banner styling */
-.banner {
-    text-align: left; /* Align content within the banner container */
-}
-
-.banner img {
-    max-width: 100%; /* Ensure the image is responsive */
-    height: auto;    /* Maintain aspect ratio */
-    display: block;  /* Remove bottom space/line-height */
-}
-
-/* Main heading styling */
-main h1 {
-    border-bottom: 2px solid #ffc425; /* Gold underline */
+/* HEADINGS */
+h1 {
+    text-align: center;
     margin-bottom: 20px;
+    border-bottom: 2px solid #ffc425;
+    padding-bottom: 5px;
 }
 
-/* Footer styling */
-footer {
-    background: #ffffff;
-    border-top: 4px solid #ffc425; /* Gold border at the top */
-    color: #808080; /* Dark gray text color */
-    text-align: left;
-    padding: 1em 2em;
-    margin-top: 2em;
-}
-
-/* Button styling */
-a.button, button {
-    display: inline-flex; /* Use inline-flex for better alignment and spacing */
-    align-items: center; /* Vertically center content */
-    justify-content: center; /* Horizontally center content */
-    padding: 12px 24px; /* Slightly larger padding for better touch targets */
-    font-size: 16px; /* Consistent font size */
-    color: #ffffff; /* White text */
-    background-color: #095339; /* Dark green background */
-    border: solid 2px #ffc425; /* Remove default border */
-    border-radius: 8px; /* Slightly more rounded corners for a modern look */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-    text-decoration: none; /* Remove underline from links */
-    margin: 5px; /* Space between buttons */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    text-align: center; /* Center text within the button */
-}
-
-a.button:hover, 
-a.button:active, 
-button:hover, 
-button:active {
-    background-color: #ffc425; /* Gold on hover */
-    color: #073627;
-    transform: scale(1.05);
-}
-
-a.button:focus,
-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 195, 37, 0.5); /* Gold shadow for focus */
-}
-/* Navigation button styling */
+/* BUTTONS */
 .navigation-buttons {
-    text-align: center; /* Center buttons horizontally */
-    margin-top: 20px; /* Space above the buttons */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 25px;
 }
 
 .nav-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #095339; /* Default background color */
-    color: white;
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    padding: 14px;
+    text-align: center;
     text-decoration: none;
-     border: solid 2px #ffc425; /* Remove default border */
-    font-size: 16px;
+    background: #095339;
+    color: white;
     border-radius: 8px;
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+    border: 2px solid #ffc425;
+    font-size: 1rem;
+    transition: 0.3s ease;
 }
 
-.nav-button:hover,
-.nav-button:active {
-    background-color: #ffc425; /* Gold on hover */
-    color: #095339;
-    transform: scale(1.05); /* Slightly enlarge the button */
+.nav-button:hover {
+    background: #ffc425;
+    color: #073627;
+    transform: scale(1.04);
 }
 
-@media (max-width: 1000px) {
-    .header-desktop {
-        display: flex; /* Keep using flexbox layout */
-        flex-direction: column; /* Stack items vertically if needed */
-        align-items: center; /* Center items horizontally */
-    }
-    main {
-        margin-top: 150px; /* No margin in the main content */
-        width: 100%; /* Full width */
-    }
-    
-    body {
-        padding: 0; /* No padding in the body */
-        margin: 0; /* No margin in the body */
-        width: 100%; /* Full width */
-    }
-}
-
-@media print {
-    .header-desktop {
-        display: none; /* Hide desktop header when printing */
-    }
-    .header-mobile {
-        display: none; /* Hide mobile header when printing */
-    }
-    footer {
-        display: none; /* Hide footer when printing */
-    }
-}
-
-.comp-text {
-    line-height: 1.5em; /* Adjust line height for comp text */
-}
-
-.narrow-head h2 {
-    margin: 0; /* Ensure no margin for narrow head */
-}
-.search-container {
-    position: relative;
-    border: none; /* Gold border */
-    border-radius: 5px; /* Optional: rounded corners */
-    padding: 5px; /* Optional: space between border and input */
-}
-
-#search-box {
-    padding: 8px;
-    width: 250px;
-    border: none; /* Remove the default border */
-    outline: none; /* Remove outline on focus */
-    font-size: 14px; /* Adjust font size if needed */
-    text-decoration: none; /* Prevent underline */
-}
-
-#search-box:focus {
-    outline: none; /* Remove the outline on focus */
-    border: none; /* Ensure no border on focus */
-    box-shadow: none; /* Remove any shadow that may appear */
-    text-decoration: none; /* Prevent underline */
-}
-
-.search-results {
-    position: absolute;
-    background-color: white;
-    border: 1px solid #ccc;
-    max-height: 300px;
-    overflow-y: auto;
-    width: 250px;
-    z-index: 1000;
-    border-radius: 4px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 2px;
-    text-decoration: none; /* Prevent underline */
+/* PAGE SECTION */
+.page-section {
+    margin-top: 35px;
 }
